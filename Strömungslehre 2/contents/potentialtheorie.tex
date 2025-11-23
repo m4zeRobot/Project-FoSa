@@ -1,5 +1,4 @@
-
-\restoregeometry
+% ### Erste Seite der Potentialtheorie ###
 \begin{center}
     \section*{\underline{Potentialtheorie}}
 \end{center}
@@ -191,7 +190,8 @@
     \setlength{\cellwidth}{35mm}
     \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Feste Wände}
+            \titlebf{Feste Wände} \\
+            \vspace*{4mm}
             \begin{equation*}
                 \varphi_{k,n} = k\cdot\dfrac{\pi}{n}
             \end{equation*}
@@ -235,7 +235,88 @@
     \setlength{\cellwidth}{57mm}
     \Tile{D5}{(C5.north east)}{\cellwidth}{\rowheight}
         {
-            \titlebf{$n > 2$}
+            \titlebf{$n > 2$} \\
+            \vspace*{5mm}
+            \includegraphics[width=49mm]{images/scharfe_konkave_ecke.pdf} \\
         }{0}{0}{1}{0}
 
+% --- Sechse REIHE: unter A5, dann rechts anbauen
+\setlength{\rowheight}{55mm}
+
+    % A6) Erste Kachel relativ zu A5
+    \setlength{\cellwidth}{78mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{$n = \tfrac{1}{2}$} \\[-3.0ex]
+            \begin{equation*}
+                F(z) = 2\cdot a \cdot \sqrt{z} = 2\cdot a \cdot \sqrt{r}\cdot \left( \cos\left(\frac{\varphi}{2}\right) + i \sin\left(\frac{\varphi}{2}\right) \right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B6) Zweite Kachel relativ zu A6
+    \setlength{\cellwidth}{52mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{$n = 1$} \\[-3.0ex]
+            \begin{equation*}
+                F(z) = a \cdot z
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C6) Dritte Kachel relativ zu B6
+    \setlength{\cellwidth}{60mm}
+    \Tile{C6}{(B6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{$n = 2$} \\[-3.0ex]
+            \begin{equation*}
+                F(z) = \frac{a}{2} \cdot z^2
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- Siebte REIHE: unter A6, dann rechts anbauen
+\setlength{\rowheight}{45mm}
+
+    % A7) Erste Kachel relativ zu A6
+    \setlength{\cellwidth}{190mm}
+    \Tile{A7}{(A6.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Strömungsbild bestimmen} \\[3.0ex]
+
+            \begin{tikzpicture}[node distance=6mm, >=Stealth]
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm] (A) {
+                    $\varPsi(x,y)$
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=of A] (B) {
+                    $u(x,y), v(x,y)$
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=of B] (C) {
+                $
+                    \left.
+                    \begin{aligned}
+                        u &= 0 \\
+                        v &= 0
+                    \end{aligned}
+                    \ \right\}\Rightarrow\text{ Staupunkte }x_{0,i}\text{, }y_{0,i}
+                $
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=of C] (D) {
+                    $\varPsi_{0,i} = \varPsi\left(x_{0,i}\text{, }y_{0,i}\right)$
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=of D] (E) {
+                    $\varPsi_{\text{S},i}\left(x,y\right) = \varPsi_{0,i}$
+                };
+                \draw[->] (A) -- (B);
+                \draw[->] (B) -- (C);
+                \draw[->] (C) -- (D);
+                \draw[->] (D) -- (E);
+            \end{tikzpicture}
+            
+        }{0}{0}{0}{0}
+
 \end{tikzpicture}
+
+% ### Zweite Seite der Potentialtheorie ###
+\newpage
+\begin{center}
+    \section*{\underline{Potentialtheorie}}
+\end{center}
