@@ -1,0 +1,49 @@
+## Exclude VSCode settings folder
+.vscode/*
+
+## Exclude Mac DS_Store
+**/.DS_Store
+
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*SAVE-ERROR
+
+## Generated LaTeX output files:
+*.dvi
+SL1 - FoSa.pdf
+SL2 - FoSa.pdf
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Build tool directories for auxiliary files:
+latex.out/
+
+## Auxiliary and intermediate files from other packages:
+*.alg
+*.loa
+*~$*.xlsx
