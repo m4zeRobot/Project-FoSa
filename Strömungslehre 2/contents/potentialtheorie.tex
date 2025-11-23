@@ -1,0 +1,241 @@
+
+\restoregeometry
+\begin{center}
+    \section*{\underline{Potentialtheorie}}
+\end{center}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{20mm}
+
+    % A1) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{70mm}
+    \Tile{A1}{([xshift=10mm, yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlebf{Geschwindigkeitspotential} \\[1.5ex]
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|Z}
+                \begin{tabular}[c]{@{}c@{}}
+                    \myul{Definition} \\[2.0ex]
+                    $\underline{v} = \nabla(\phi)$ \vspace{2mm}
+                \end{tabular} & \begin{tabular}[c]{@{}c@{}}
+                    \myul{Inkompressibel} \\[2.0ex]
+                    $\Delta(\phi) = 0$ \vspace{2mm}
+                \end{tabular}
+            \end{tabularx}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel relativ zu A1
+    \setlength{\cellwidth}{62mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlebf{Grundgleichung} \\[-1.5ex]
+            \begin{equation*}
+                \frac{\partial\phi}{\partial t} +\frac{1}{2} \left(\nabla(\phi)\right)^2 + \frac{r}{\rho} + U = F(t)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C1) Zweite Kachel relativ zu B1
+    \setlength{\cellwidth}{58mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlebf{Zirkulation} \\[-1.5ex]
+            \begin{equation*}
+                \Gamma_{1\rightarrow 2} = \int_1^2 \underline{v}\cdot\text{d}\underline{s} = \phi_2 - \phi_1
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- Zweite REIHE: direkt an erster Reihe
+\setlength{\rowheight}{26mm}
+
+    % A2) Erste Kachel relativ zu A1
+    \setlength{\cellwidth}{98mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Laplace-Gleichung (ausgeschrieben)} \\[1.5ex]
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|c}
+                \begin{tabular}[c]{@{}c@{}}
+                    \myul{Kartesisch} \\[2.0ex]
+                    $\dfrac{\partial^2 \phi}{\partial x^2} + \dfrac{\partial^2 \phi}{\partial y^2} + \dfrac{\partial^2 \phi}{\partial z^2} = 0$ \vspace{2mm}
+                \end{tabular}\hspace{1mm} & \begin{tabular}[c]{@{}c@{}}
+                    \myul{Zylinderkoordinaten} \\[2.0ex]
+                    \hspace{2mm}$\dfrac{1}{r} \dfrac{\partial}{\partial r} \left( r \dfrac{\partial \phi}{\partial r} \right) + \dfrac{1}{r^2} \dfrac{\partial^2 \phi}{\partial \varphi^2} + \dfrac{\partial^2 \phi}{\partial z^2} = 0$ \vspace{2mm}
+                \end{tabular}
+            \end{tabularx}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel relativ zu A2
+    \setlength{\cellwidth}{92mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Randbedingungen} \\[1.5ex]
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|Z|Z}
+                \begin{tabular}[c]{@{}c@{}}
+                    \myul{Feste Wand} \\[2.0ex]
+                    $\dfrac{\partial\phi}{\partial n} = 0$ \vspace{3.8mm}
+                \end{tabular} & \begin{tabular}[c]{@{}c@{}}
+                    \myul{Bewegte Wand} \\[2.0ex]
+                    $\dfrac{\partial\phi}{\partial n} = \underline{u}\cdot\underline{n}$ \vspace{3.8mm}
+                \end{tabular} & \begin{tabular}[c]{@{}c@{}}
+                    \myul{Im Unendlichen} \\[2.0ex]
+                    $\nabla(\phi)=\underline{v}_\infty$ \vspace{3.8mm}
+                \end{tabular}
+            \end{tabularx}
+        }{0}{0}{1}{0}
+
+% --- Dritte REIHE: unter A2, dann rechts anbauen
+\setlength{\rowheight}{36mm}
+
+    % A3) Erste Kachel relativ zu A2
+    \setlength{\cellwidth}{95mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Ebene Geschwindigkeiten} \\[1.5ex]
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|Z}
+                \begin{tabular}[c]{@{}c@{}}
+                    \myul{Kartesisch} \\[2.5ex]
+                    $u = \dfrac{\partial\phi}{\partial x} = \dfrac{\partial\psi}{\partial y}$ \\[3.0ex]
+                    $v = \dfrac{\partial\phi}{\partial y} = -\dfrac{\partial\psi}{\partial x}$ \vspace*{2mm}
+                \end{tabular} & \begin{tabular}[c]{@{}c@{}}
+                    \myul{Kartesisch} \\[2.5ex]
+                    $u_r = \dfrac{\partial\phi}{\partial r} = \dfrac{1}{r}\cdot\dfrac{\partial\psi}{\partial\varphi}$ \\[3.0ex]
+                    $v_\varphi = \dfrac{1}{r}\cdot\dfrac{\partial\phi}{\partial\varphi} = -\dfrac{\partial\psi}{\partial r}$ \vspace*{2mm}
+                \end{tabular}
+            \end{tabularx}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel relativ zu A3
+    \setlength{\cellwidth}{95mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Geschwindigkeitsbeziehungen} \\[1.5ex]
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|Z}
+                \begin{tabular}[c]{@{}c@{}}
+                    \myul{Eben (Cauchy-Riemann)} \\[2.5ex]
+                    $u = \dfrac{\partial\phi}{\partial x} = \dfrac{\partial\psi}{\partial y}$ \\[3.0ex]
+                    $v = \dfrac{\partial\phi}{\partial y} = -\dfrac{\partial\psi}{\partial x}$ \vspace*{2mm}
+                \end{tabular} & \begin{tabular}[c]{@{}c@{}}
+                    \myul{Rotationssymmetrisch} \\[2.5ex]
+                    $v_r = \dfrac{\partial\phi}{\partial r} = -\dfrac{1}{r}\cdot\dfrac{\partial\psi}{\partial z}$ \\[3.0ex]
+                    $v_z = \dfrac{\partial\phi}{\partial z} = \dfrac{1}{r}\cdot\dfrac{\partial\psi}{\partial r}$ \vspace*{2mm}
+                \end{tabular}
+            \end{tabularx}
+        }{0}{0}{1}{0}
+
+% --- Vierte REIHE: unter A3, dann rechts anbauen
+\setlength{\rowheight}{40mm}
+
+    % A4) Erste Kachel relativ zu A3
+    \setlength{\cellwidth}{75.5mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Resultierende Geschw.}
+            \begin{equation*}
+                F(z) = F(x+iy) = \phi(x,y)+i\psi(x,y)
+            \end{equation*} \\[-1.5ex]
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \vspace{1mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|Z}
+                \begin{tabular}[c]{@{}c@{}}
+                    \myul{Geschwindigkeiten} \\[1.5ex]
+                    $w = u + iv$ \\[1.5ex]
+                    $w_* = u - iv = \dfrac{\text{d}F(z)}{\text{d}z}$ \vspace*{2mm}
+                \end{tabular} & \hspace{1mm}\begin{tabular}[c]{@{}c@{}}
+                    \myul{Druckverteilung} \\[3.5ex]
+                    $p = p_0 - \dfrac{\rho}{2} a^2 r^{2(n-1)}$ \vspace*{6mm}
+                \end{tabular}
+            \end{tabularx}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel relativ zu A4
+    \setlength{\cellwidth}{54.5mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Ebene Translationsströmung} \\[-1.5ex]
+            \begin{equation*}
+                F(z) = a\cdot z = (a_1 - i a_2)\cdot z
+            \end{equation*}\\[-4.0ex]
+            \begin{align*}
+                \phi &= a_1 \cdot x + a_2\cdot y \\
+                \psi &= a_1 \cdot y - a_2\cdot x
+            \end{align*}
+            \begin{equation*}
+                u=a_1\ ;\ \ \ v=a_2
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C4) Dritte Kachel relativ zu B4
+    \setlength{\cellwidth}{60mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Ebene Eckenströmung} \\[-2.0ex]
+            \begin{equation*}
+                F(z) = \frac{a}{n}z^n = \frac{a}{n}r^n (\cos(n\varphi)+i\sin(n\varphi))
+            \end{equation*}\\[-4.0ex]
+            \begin{align*}
+                \phi &= \tfrac{a}{n}r^n\cos(n\varphi) \\[1.0ex]
+                \psi &= \tfrac{a}{n}r^n\sin(n\varphi)
+            \end{align*}
+            \begin{equation*}
+                |w| = \left|a\cdot z^{n-1}\right| = |a|\cdot r^{n-1}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- Fünfte REIHE: unter A4, dann rechts anbauen
+\setlength{\rowheight}{58mm}
+
+    % A5) Erste Kachel relativ zu A4
+    \setlength{\cellwidth}{35mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Feste Wände}
+            \begin{equation*}
+                \varphi_{k,n} = k\cdot\dfrac{\pi}{n}
+            \end{equation*}
+            \begin{equation*}
+                \varepsilon = \dfrac{\pi}{n}
+            \end{equation*}
+            \begin{equation*}
+                \vartheta = \pi - \varepsilon = \pi\cdot\dfrac{n-1}{n}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel relativ zu A5
+    \setlength{\cellwidth}{52mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{$\tfrac{1}{2} < n < 1$} \\
+            \vspace*{2mm}
+            \includegraphics[width=34mm]{images/konvexe_ecke.pdf} \\
+            \vspace*{2mm}
+            Konvexe Ecke
+            \begin{equation*}
+                \left|w\right|\sim\dfrac{1}{r^{n-1}}
+            \end{equation*}
+            $r = 0 \Rightarrow$ Eckenstr. mit $\left|w\right|\rightarrow\infty$
+        }{0}{1}{1}{0}
+
+    % C5) Dritte Kachel relativ zu B5
+    \setlength{\cellwidth}{46mm}
+    \Tile{C5}{(B5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{$1 < n < 2$} \\
+            \vspace*{4mm}
+            \includegraphics[width=39.5mm]{images/konkave_ecke.pdf} \\
+            \vspace*{3mm}
+            Konkave Ecke \\[3.0ex]
+            $\left|w\right|\sim r^{n-1}$ \\[3.0ex]
+            $r = 0 \Rightarrow$ Staupunkt
+        }{0}{1}{1}{0}
+
+    % D5) Vierte Kachel relativ zu C5
+    \setlength{\cellwidth}{57mm}
+    \Tile{D5}{(C5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{$n > 2$}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}

@@ -1,0 +1,308 @@
+\begin{center}
+    \section*{\underline{Wirbeltheorie}}
+\end{center}
+
+\begin{tikzpicture}[remember picture, overlay]
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{54mm} % Erste Reihenhöhe: 54mm
+
+    % A1) Erste Kachel absolut platzieren (vom Seiten-Nordwest-Anker aus)
+    \setlength{\cellwidth}{62mm} % Breite einstellen
+    \Tile{A1}{([xshift=10mm,yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Drehungsfrei}
+            \begin{equation*}
+                \text{rot}(\underline{v}_1) = 0\ \ |\ \ \text{div}(\rho\underline{v}_1) \neq 0\ \ |\ \ \underline{v}_1 = \nabla(\phi)
+            \end{equation*}
+            $\phi =$ Skalares Geschwindigkeitspotential \\[3.0ex]
+            % Unterteilung des folgenden Bereiches in 2 Spalten mit tabularx
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|c} % Breite der tabularx = (Zellenbreite - 2 * Tile-Randabstand)
+                \begin{minipage}{0.4\cellwidth}
+                    \includegraphics[width=0.4\cellwidth]{wirbeltheorie-drehungsfrei.pdf}
+                \end{minipage} & \begin{tabular}[c]{@{}c@{}}
+                    \titlebf{Volumenstrom}\\[1.5ex] $Q=\underline{v}\cdot \underline{A}$
+                \end{tabular}
+            \end{tabularx}
+        }{0}{1}{1}{0} % Kanten: unten & rechts
+
+    % B1) Zweite Kachel mitte
+    \setlength{\cellwidth}{68mm} % Breite einstellen
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Drehungsbehaftet}
+            \begin{equation*}
+                \text{rot}(\underline{v}_2) \neq 0\ \ |\ \ \text{div}(\rho\underline{v}_2) = 0\ \ |\ \ \rho\underline{v}_2 = \rho_\text{b}\text{rot}(\psi)
+            \end{equation*}
+            $\psi =$ Vektorielles Wirbelpotential \\ \vspace{3mm} % 2mm Platz über dem kommenden Bild
+            % Unterteilung des folgenden Bereiches in 2 Spalten mit tabularx
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|c} % Breite der tabularx = (Zellenbreite - 2 * Tile-Randabstand)
+                \begin{minipage}{0.44\cellwidth}
+                    \includegraphics[width=0.44\cellwidth]{wirbeltheorie-wirbel.pdf}
+                \end{minipage} & \hspace{2mm}\begin{tabular}[c]{@{}c@{}}
+                    \titlebf{Wirbelstrom}\\[1.0ex]
+                    $\underline{\omega}\cdot \underline{A}$ \\[2.0ex]
+                    \titlebf{Wirbelstärke}\\[1.0ex]
+                    $\underline{\omega}=\dfrac{1}{2}\text{rot}(\underline{v})$
+                \end{tabular}
+            \end{tabularx}
+        }{0}{1}{1}{0} % Kanten: unten & rechts
+
+    % C1) Dritte Kachel rechts
+    \setlength{\cellwidth}{60mm} % Breite einstellen (Summe aller Zellen sei 190mm!)
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Zirkulation} {\normalsize(positiv: $\mathrlap{\circlearrowleft}\hspace*{0.88mm}\cdot$ )}
+            \begin{align}
+                \Gamma &= \oint_S \underline{v}\cdot \text{d}\underline{s} = \oint_S v \cos(\alpha)\text{d}s \tag*{\color{NavyBlue}(7.20a)}\\
+                       &= \oiint_A \text{rot}(\underline{v})\cdot\underline{n}\text{d}A = \oiint_A\underline{\Omega}\cdot \underline{n}\text{d}A \nonumber
+            \end{align} \\[-0.5ex]
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \titlebf{Laplace-Operator} \\[-3.0ex]
+            \begin{equation*}
+                \Delta(\underline{\psi}) = 
+                \begin{pmatrix}
+                    \tfrac{\partial^2\psi_x}{\partial x^2} + \tfrac{\partial^2\psi_x}{\partial y^2} + \tfrac{\partial^2\psi_x}{\partial z^2} \\[1.0ex]
+                    \tfrac{\partial^2\psi_y}{\partial x^2} + \tfrac{\partial^2\psi_y}{\partial y^2} + \tfrac{\partial^2\psi_y}{\partial z^2} \\[1.0ex]
+                    \tfrac{\partial^2\psi_z}{\partial x^2} + \tfrac{\partial^2\psi_z}{\partial y^2} + \tfrac{\partial^2\psi_z}{\partial z^2}
+                \end{pmatrix}
+            \end{equation*}
+        }{0}{0}{1}{0} % Kante: unten
+
+
+% --- ZWEITE REIHE: unter A1 starten, dann wieder nach rechts anbauen
+\setlength{\rowheight}{28mm} % Zweite Reihenhöhe
+
+    % X2) EIGENES FELD für die Zeilen-Überschrift
+    %     (Volle Breite: 190mm + 2*10mm Seitenrand = 210mm von DIN A4)
+    %     Relativ zu Feld A1 (untere linke Ecke), am Boden der Kachel X2, 2mm nach oben
+    \Tile{X2}{([yshift=-3mm]A1.south west)}{190mm}{10mm}
+        {
+            \titlebf{Rotation}
+        }{0}{0}{0}{0} % Kanten: unten & rechts
+
+    % A2) Erste Kachel relativ zu A1
+    \setlength{\cellwidth}{35mm} % Breite einstellen
+    \Tile{A2}{([yshift=-10mm]A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Allgemein} \\[-1.5ex]
+            \begin{equation*}
+                \underline{\omega} = 2\underline{\omega} = \text{rot}(\underline{v})
+            \end{equation*}
+            {\color{NavyBlue}(7.11)}
+        }{0}{1}{1}{0} % Kanten: unten & rechts
+
+    % B2) Zweite Kachel relativ zu A2
+    \setlength{\cellwidth}{65mm} % Breite einstellen
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Dichtebeständig} \\[3.0ex]
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|c} % Breite der tabularx = (Zellenbreite - 2 * Tile-Randabstand)
+                \centering
+                \begin{tabular}[c]{@{}c@{}}\underline{Allgemein}\\[3.0ex]$\underline{\Omega} = \nabla(\text{div}(\underline{\psi})) - \Delta(\underline{\psi})$\\[3.0ex]\end{tabular} & \begin{tabular}[c]{@{}c@{}}\underline{Ebene Platte}\\[3.0ex]$\Omega_z = -\Delta(\psi_z)$\\[3.0ex]\end{tabular}
+            \end{tabularx}
+        }{0}{1}{1}{0} % Kanten: unten & rechts
+
+    % C2) Dritte Kachel relativ zu B2
+    \setlength{\cellwidth}{40mm} % Breite einstellen
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Kartesisch} \\[-2.0ex]
+            \begin{equation*}
+                \underline{\Omega} =
+                \begin{pmatrix}
+                    \tfrac{\partial w}{\partial y} - \tfrac{\partial v}{\partial z} \\[1.0ex]
+                    \tfrac{\partial u}{\partial z} - \tfrac{\partial w}{\partial x} \\[1.0ex]
+                    \tfrac{\partial v}{\partial x} - \tfrac{\partial u}{\partial y}
+                \end{pmatrix}
+            \end{equation*}
+        }{0}{1}{1}{0} % Kante: unten & rechts
+
+    % D2) Dritte Kachel relativ zu C2
+    \setlength{\cellwidth}{50mm} % Breite einstellen
+    \Tile{D2}{(C2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Zylindrisch} \\[-2.5ex]
+            \begin{equation*}
+                \underline{\Omega} =
+                \begin{pmatrix}
+                    \tfrac{1}{r}\tfrac{\partial v_z}{\partial\varphi} - \tfrac{\partial v_\varphi}{\partial z} \\[1.0ex]
+                    \tfrac{\partial v_r}{\partial z} - \tfrac{\partial v_z}{\partial r} \\[1.0ex]
+                    \tfrac{1}{r}\left(\tfrac{\partial}{\partial r}\left(r\cdot v_\varphi\right) - \tfrac{\partial v_r}{\partial\varphi}\right)
+                \end{pmatrix}
+            \end{equation*}
+        }{0}{0}{1}{0} % Kante: unten
+
+% --- DRITTE REIHE: unter A2 starten, dann wieder nach rechts anbauen
+\setlength{\rowheight}{50mm} % Dritte Reihenhöhe
+
+    % X3) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X3}{([yshift=-3mm]A2.south west)}{190mm}{10mm}
+        {
+            \titlebf{Wirbelsätze}
+        }{0}{0}{0}{0} % Kanten: unten & rechts
+
+    % A3) Erste Kachel relativ zu A2
+    \setlength{\cellwidth}{95mm} % Breite einstellen
+    \Tile{A3}{([yshift=-10mm]A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{1. Helmholtz'scher Wirbelsatz}
+            \begin{equation*}
+                \text{div}(\underline{\omega}) = \text{div}(\underline{\Omega}) = 0
+            \end{equation*} \\[-1.5ex]
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\[2.5ex]
+            \titlebf{2. Helmholtz'scher Wirbelsatz} \\[3.0ex]
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{p{0.37\cellwidth}|X}
+                \begin{tabular}[c]{@{}c@{}}
+                    \myul{Reibungsfrei \& Barotrop} \\[3.0ex]
+                    $\dfrac{\text{D}}{\text{D}t}\left(\dfrac{\underline{\omega}}{\rho}\right)=\dfrac{\underline{\omega}}{\rho}\cdot\nabla\left(\underline{v}\right)$
+                \end{tabular} & \begin{tabular}[c]{@{}c@{}} \\[-3.5ex]
+                    \myul{2D / Rotationssym. \& Inkompr.} \\[3.0ex]
+                    $\dfrac{\text{D}\omega}{\text{D}t}=\dfrac{\partial\omega}{\partial t}+\underline{v}\cdot\nabla(\omega)=0$
+                \end{tabular} \\[6.0ex]
+            \end{tabularx}
+        }{0}{1}{1}{0} % Kanten: unten & rechts
+
+    % B3) Zweite Kachel relativ zu A3
+    \setlength{\cellwidth}{50mm} % Breite einstellen
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Wirbeltransportgleichung} \\[2.0ex]
+            \titlerm{Allgemein} \\[-2.0ex]
+            \begin{equation*}
+                \frac{\text{D}}{\text{D}t}\left(\underline{\omega}\right)=\underline{\omega}\cdot\nabla\left(\underline{v}\right)+\nu\Delta\left(\underline{\omega}\right)
+            \end{equation*} \\
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\[2.0ex]
+            \titlerm{2D / Rotationssym.} \\[-2.0ex]
+            \begin{equation*}
+                \frac{\text{D}\omega}{\text{D}t}=\frac{\partial\omega}{\partial t} + \underline{v}\cdot\nabla(\omega) = 0
+            \end{equation*}
+        }{0}{1}{1}{0} % Kanten: unten & rechts
+
+    % C3) Zweite Kachel relativ zu B3
+    \setlength{\cellwidth}{45mm} % Breite einstellen
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Satz von}\\\titlebf{Thomson / Kelvin} \\[1.0ex]
+            \begin{equation*}
+                \frac{\text{D}\Gamma}{\text{D}t} = - \oint_{S(t)} \left(\frac{1}{\rho}\right)\text{d}p
+            \end{equation*} \\[1.0ex]
+            Reibungsfrei,\\
+            Barotrop / Inkompressibel,\\
+            $U$ existiert
+        }{0}{0}{1}{0} % Kanten: unten & rechts
+
+
+% --- VIERTE REIHE: unter A3, dann rechts anbauen
+\setlength{\rowheight}{44mm}
+
+    % X4) Zeilen-Überschrift
+    \Tile{X4}{([yshift=-3mm]A3.south west)}{190mm}{10mm}
+        {
+            \hspace*{34mm}\titlebf{Biot-Savart'sches Gesetz}\ \ \ {\normalsize(positiv: $\mathrlap{\circlearrowleft}\hspace*{0.88mm}\cdot$\ ,\ RHR)}
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel relativ zu A3
+    \setlength{\cellwidth}{38mm}
+    \Tile{A4}{([yshift=-10mm]A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Vektorform}
+            \begin{equation*}
+                \text{d}\underline{v} = \frac{\Gamma}{4\pi}\cdot\frac{\underline{a}\times\text{d}\underline{s}}{a^3}
+            \end{equation*} \\[-0.5ex]
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\[1.5ex]
+            \titlebf{Betragsform}
+            \begin{equation*}
+                \text{d}v = \frac{\Gamma}{4\pi}\cdot\frac{\sin(\alpha)\ \text{d}s}{a^2}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel relativ zu A4
+    \setlength{\cellwidth}{42mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Einseiting Unendlich}
+            \begin{equation*}
+                v = \frac{\Gamma}{4\pi r}\cdot\left(1+\cos(\alpha_1)\right)
+            \end{equation*}
+            \begin{equation*}
+                \alpha_2 = \pi
+            \end{equation*} \\[-1.0ex]
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\[1.5ex]
+            \titlebf{Gerade Wirbellinie}
+            \begin{equation*}
+                \text{d}v = \frac{\Gamma}{4\pi r}\cdot\sin(\alpha)\ \text{d}\alpha
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C4) Dritte Kachel relativ zu B4
+    \setlength{\cellwidth}{28mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{10mm}
+            \titlebf{Beidseitig} \\
+            \ \titlebf{Unendlich}
+            \begin{equation*}
+                v = \frac{\Gamma}{2\pi r}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D4) Vierte Kachel relativ zu C4
+    \setlength{\cellwidth}{82mm}
+    \Tile{D4}{(C4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{5mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{X X}
+                \hspace{1mm}\includegraphics[height=0.65\rowheight]{biot-savart-1.pdf} & \hspace{-6mm}\includegraphics[height=0.65\rowheight]{biot-savart-2.pdf}
+            \end{tabularx}
+        }{0}{0}{1}{0}
+
+% --- FÜNFTE REIHE: unter A4, dann rechts anbauen
+\setlength{\rowheight}{46mm}
+
+    % X5) Zeilen-Überschrift
+    \Tile{X5}{([yshift=-3mm]A4.south west)}{190mm}{10mm}
+        {
+            \titlebf{arctan2 - Funktion}
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel relativ zu A3
+    \setlength{\cellwidth}{70mm}
+    \Tile{A5}{([yshift=-10mm]A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-1mm}
+            {\color{RedOrange}arctan2($x,y$)}
+            \begin{equation*}
+                =
+                \begin{cases}
+                    \tan^{-1}\left(\tfrac{y}{x}\right)     & \text{für }x>0      \\[0.5ex]
+                    \tan^{-1}\left(\tfrac{y}{x}\right)+\pi & \text{für }x<0, y>0 \\[0.5ex]
+                    \pm\pi                                 & \text{für }x<0, y=0 \\[0.5ex]
+                    \tan^{-1}\left(\tfrac{y}{x}\right)-\pi & \text{für }x<0, y<0 \\[0.5ex]
+                    +\tfrac{\pi}{2}                        & \text{für }x=0, y>0 \\[0.5ex]
+                    -\tfrac{\pi}{2}                        & \text{für }x=0, y<0 \\[0.5ex]
+                    \text{undefiniert}                     & \text{für }x=0, y=0
+                \end{cases}
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+% B5) Zweite Kachel relativ zu A4
+    \setlength{\cellwidth}{120mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{3mm}
+            \titlerm{Rechenregeln}
+            \begin{equation*}
+                \text{arctan2}(x,-y) = -\text{arctan2}(x,y)
+            \end{equation*}
+            \begin{equation*}
+                \text{arctan2}(-x,y) =
+                \begin{cases}
+                    -\text{arctan2}(-x,y) + {\color{RedOrange}\text{sign}(y)}\cdot\pi & \text{für }y\neq 0        \\[0.8ex]
+                    0                                                                 & \text{für }y=0 \wedge x<0 \\[0.8ex]
+                    \pm\pi                                                            & \text{für }y=0 \wedge x>0
+                \end{cases}
+            \end{equation*} \\[1.0ex]
+            (Die Funktion sign($x$) gibt das Vorzeichen von $x$ zurück.)
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}

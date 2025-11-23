@@ -1,0 +1,96 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[top=10mm,left=0mm,right=0mm,bottom=0mm]{geometry} % Für das Blatt-Layout
+\usepackage{tikz}                       % Für die Grafik-Erstellung
+\usepackage{amsmath, amssymb, esint}    % Mathematik-Umgebung
+\usepackage{graphicx}                   % Für Bilder
+\usepackage{hyperref}                   % Für Links
+\usepackage{float}                      % Für einfachere Float-Optionen, bspw. [H] an figures
+\usepackage{tabularx}                   % Für mehr Tabellen-Tools
+\usepackage{mathtools}                  % Mehr Tricks in der Mathe-Umgebung
+\usepackage[dvipsnames]{xcolor}         % Für mehr Farben-Presets
+\usepackage{contour}                    % Zur Einstellung verschiedener Konturabstände
+\usepackage[normalem]{ulem}             % Für anliegende Unterstreichungen von Titeln
+\usepackage{fancyhdr}                   % Für eigene Kopf- und Fußzeilen
+
+\contourlength{0.8pt}                   % Abstand der Unterstreichungen zu herabhängenden Buchstaben einstellen
+\newcommand{\myul}[1]{%                 % Eigene Unterstreichungen definieren
+    \uline{\phantom{#1}}%
+    \llap{\contour{white}{#1}}%
+}
+\graphicspath{{./images/}}              % Pfad für Bilder
+\usetikzlibrary{calc}                   % Für ([xshift=..]node.anchor)
+\fancyhead[L,C,R]{}                     % Header leer einstellen
+\renewcommand{\headrulewidth}{0pt}      % Header-Trennlinie entfernen
+\fancyfoot[L,R]{}                       % Footer leer einstellen, bis auf die Mitte
+\fancyfoot[C]{                          % Hinweis im Footer
+    \vspace*{-20mm}\\
+    \tiny Gleichungsnummern aus der Vorlesung von Prof.\ Dr.-Ing. Krämer {\color{NavyBlue}in Blau}. CAS-Programmaufrufe {\color{RedOrange}in Orange}.
+}
+\newcolumntype{Z}{>{\centering\arraybackslash}X} % Eigenen Spaltentyp in Tabellen definieren (Auto-Größe & zentriert)
+
+\renewcommand{\ULdepth}{1.8pt}
+
+% ---- Kanten-Helfer (wähle die zu ziehenden Kanten aus)
+\newcommand{\topedge}[1]{\draw[line width=0.6pt]   (#1.north west)--(#1.north east);}
+\newcommand{\bottomedge}[1]{\draw[line width=0.6pt](#1.south west)--(#1.south east);}
+\newcommand{\leftedge}[1]{\draw[line width=0.6pt]  (#1.north west)--(#1.south west);}
+\newcommand{\rightedge}[1]{\draw[line width=0.6pt] (#1.north east)--(#1.south east);}
+
+% ---- Innenabstand als Länge anlegen
+\newlength{\TileSep}
+\setlength{\TileSep}{2mm}
+
+% ---- Spaltenhöhe und Zellbreite als Länge anlegen
+\newlength{\rowheight}
+\newlength{\cellwidth}
+
+% ---- Funktion "Tile": eine Kachel in einem Rutsch anlegen & optionale Kanten
+% \Tile{Name}{Koordinate}{Breite}{Höhe}{Inhalt}{Top}{Right}{Bottom}{Left}  (0/1-Schalter)
+\newcommand{\Tile}[9]{%
+    \node[
+        anchor=north west, inner sep=\TileSep, minimum width=#3, minimum height=#4
+    ] (#1) at #2
+    {%
+        % Parbox mit exakt (Höhe - 2 * Innenabstand) und (Breite - 2 * Innenabstand)
+        % [t][...][t]  -> Inhalt an den oberen Rand der Box
+        \parbox[t][\dimexpr#4-2\TileSep\relax][t]{\dimexpr#3-2\TileSep\relax}{\centering\small #5}%
+    };%
+    \ifnum#6=1 \topedge{#1}\fi
+    \ifnum#7=1 \rightedge{#1}\fi
+    \ifnum#8=1 \bottomedge{#1}\fi
+    \ifnum#9=1 \leftedge{#1}\fi
+}
+
+% ---- Funktionen für Titel mit korrekter Größe (nur die Formeln sollen platzsparend klein sein)
+\newcommand{\titlebf}[1]{%
+    \myul{\textbf{\normalsize{#1}}}
+}
+\newcommand{\titlerm}[1]{%
+    \myul{\normalsize{#1}}
+}
+
+% ---------------------------------------------------------------------------- %
+
+% Titel der Formelsammlung hier ändern (bis zu zwei Zeilen möglich):
+\newcommand{\thetitle}{\textbf{
+    Strömungslehre II
+}}
+
+% ---------------------------------------------------------------------------- %
+
+\begin{document}
+\pagestyle{fancy}
+
+% Deckblatt einbinden
+\include{contents/deckblatt.tex}
+
+% ---- Ab hier beginnt die eigentliche Formelsammlung
+
+\include{contents/theoretische_grundlagen.tex}
+
+\include{contents/wirbeltheorie.tex}
+
+\include{contents/potentialtheorie.tex}
+
+\end{document}
