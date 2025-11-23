@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 
-\usepackage[top=10mm,left=0mm,right=0mm,bottom=0mm]{geometry} % Für das Blatt-Layout
+\usepackage[top=10mm, left=0mm, right=0mm, bottom=0mm]{geometry} % Für das Blatt-Layout
 \usepackage{tikz}                       % Für die Grafik-Erstellung
 \usepackage{amsmath, amssymb, esint}    % Mathematik-Umgebung
 \usepackage{graphicx}                   % Für Bilder
@@ -22,7 +22,11 @@
 \usetikzlibrary{calc}                   % Für ([xshift=..]node.anchor)
 \fancyhead[L,C,R]{}                     % Header leer einstellen
 \renewcommand{\headrulewidth}{0pt}      % Header-Trennlinie entfernen
-\fancyfoot[L,R]{}                       % Footer leer einstellen, bis auf die Mitte
+\fancyfoot[L]{}                         % Footer links leer einstellen
+\fancyfoot[R]{                          % Footer rechts mit Seitenzahl
+    \vspace*{-22mm}\\
+    \thepage\hspace*{10mm}
+}                         
 \fancyfoot[C]{                          % Hinweis im Footer
     \vspace*{-20mm}\\
     \tiny Gleichungsnummern aus der Vorlesung von Prof.\ Dr.-Ing. Krämer {\color{NavyBlue}in Blau}. CAS-Programmaufrufe {\color{RedOrange}in Orange}.
@@ -88,7 +92,9 @@
 % ---- Ab hier beginnt die eigentliche Formelsammlung
 
 \include{contents/theoretische_grundlagen.tex}
+\restoregeometry
 
+\setcounter{page}{1}
 \include{contents/wirbeltheorie.tex}
 
 \include{contents/potentialtheorie.tex}
