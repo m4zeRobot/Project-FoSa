@@ -1,5 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 
+% ---- Pakete einbinden ---- %
 \usepackage[top=10mm, left=0mm, right=0mm, bottom=0mm]{geometry} % Für das Blatt-Layout
 \usepackage{tikz}                                                % Für die Grafik-Erstellung
 \usetikzlibrary{arrows.meta, positioning}                        % Für Pfeilspitzen & relative Positionierung
@@ -13,7 +14,10 @@
 \usepackage{contour}                                             % Zur Einstellung verschiedener Konturabstände
 \usepackage[normalem]{ulem}                                      % Für anliegende Unterstreichungen von Titeln
 \usepackage{fancyhdr}                                            % Für eigene Kopf- und Fußzeilen
+\usepackage{multirow}                                            % Für Zellen, die sich über mehrere Zeilen erstrecken
+\usepackage{setspace}                                            % Für kontrollierten Zeilenabstand
 
+% ---- Voreinstellungen ---- %
 \contourlength{0.8pt}                                            % Abstand der Unterstreichungen zu herabhängenden Buchstaben einstellen
 \newcommand{\myul}[1]{%                                          % Eigene Unterstreichungen definieren
     \uline{\phantom{#1}}%
@@ -32,17 +36,32 @@
     \vspace*{-20mm}\\
     \tiny Gleichungsnummern aus der Vorlesung von Prof.\ Dr.-Ing. Krämer {\color{NavyBlue}in Blau}. CAS-Programmaufrufe {\color{RedOrange}in Orange}.
 }
-\newcolumntype{Z}{>{\centering\arraybackslash}X} % Eigenen Spaltentyp in Tabellen definieren (Auto-Größe & zentriert)
+\newcolumntype{Z}{>{\centering\arraybackslash}X}                 % Eigenen Spaltentyp in Tabellen definieren (Auto-Größe & zentriert)
+\renewcommand{\ULdepth}{1.8pt}                                   % Tiefe der Unterstreichungen anpassen
 
-\renewcommand{\ULdepth}{1.8pt}
+% ---- Eigene Tabellenlinie mit variabler Dicke definieren
+% Nutzung: \Cline{<erste Spalte>-<letzte Spalte>}{<Dicke>}
+\makeatletter
+\def\Cline#1#2{\@Cline#1#2\@nil}
+\def\@Cline#1-#2#3\@nil{%
+    \omit
+    \@multicnt#1%
+    \advance\@multispan\m@ne
+    \ifnum\@multicnt=\@ne\@firstofone{&\omit}\fi
+    \@multicnt#2%
+    \advance\@multicnt-#1%
+    \advance\@multispan\@ne
+    \leaders\hrule\@height#3\hfill
+    \cr}
+\makeatother
 
-% ---- Kanten-Helfer (wähle die zu ziehenden Kanten aus)
+% ---- Kanten-Helfer erstellen
 \newcommand{\topedge}[1]{\draw[line width=0.6pt]   (#1.north west)--(#1.north east);}
 \newcommand{\bottomedge}[1]{\draw[line width=0.6pt](#1.south west)--(#1.south east);}
 \newcommand{\leftedge}[1]{\draw[line width=0.6pt]  (#1.north west)--(#1.south west);}
 \newcommand{\rightedge}[1]{\draw[line width=0.6pt] (#1.north east)--(#1.south east);}
 
-% ---- Innenabstand als Länge anlegen
+% ---- Abstand der Inhalte zur Tile-Wand als Länge anlegen
 \newlength{\TileSep}
 \setlength{\TileSep}{2mm}
 
@@ -51,7 +70,7 @@
 \newlength{\cellwidth}
 
 % ---- Funktion "Tile": eine Kachel in einem Rutsch anlegen & optionale Kanten
-% \Tile{Name}{Koordinate}{Breite}{Höhe}{Inhalt}{Top}{Right}{Bottom}{Left}  (0/1-Schalter)
+% Nutzung: \Tile{Name}{Koordinate}{Breite}{Höhe}{Inhalt}{Top}{Right}{Bottom}{Left}  (0/1-Schalter)
 \newcommand{\Tile}[9]{%
     \node[
         anchor=north west, inner sep=\TileSep, minimum width=#3, minimum height=#4

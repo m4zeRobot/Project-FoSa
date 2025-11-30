@@ -319,4 +319,22 @@
 \newpage
 \begin{center}
     \section*{\underline{Potentialtheorie}}
+    \titlebf{Singularitätentabelle}
 \end{center}
+
+\vspace*{-4mm}
+\begin{table}[H]
+    \centering
+    \scriptsize
+    \renewcommand{\arraystretch}{2.0}
+    \begin{tabularx}{190mm}{|c|c|c|ZZ|ZZZZ|} \hline
+        \multirow{4}{*}{Bezeichnung} & \multirow{4}{*}{Stromlinienbild} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Komplexe\\[-2.5ex] Potentialfunktion\end{tabular}} & \multicolumn{2}{c|}{Skalare} & \multicolumn{4}{c|}{\multirow{2}{*}{Geschwindigkeits-Komponenten}} \\ \cline{4-5}
+         &  &  & \multicolumn{1}{c|}{Potentialfunktion} & Stromfunktion & \multicolumn{4}{c|}{} \\ \cline{3-9} 
+         &  & $F(z)$ & \multicolumn{1}{c|}{$\varPhi(x,y)$} & $\varPsi(x,y)$ & \multicolumn{1}{c|}{$v_x(x,y)$} & \multicolumn{1}{c|}{$v_y(x,y)$} & \multicolumn{1}{c|}{$v_r(x,y)$} & $v_\varphi(x,y)$ \\ \cline{3-9} 
+         &  & $F(r,\varphi)$ & \multicolumn{1}{c|}{$\varPhi(r,\varphi)$} & $\varPsi(r,\varphi)$ & \multicolumn{1}{c|}{$v_x(r,\varphi)$} & \multicolumn{1}{c|}{$v_y(r,\varphi)$} & \multicolumn{1}{c|}{$v_r(r,\varphi)$} & $v_\varphi(r,\varphi)$ \\ \Cline{1-9}{1.2pt}
+        \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Translations-\\[-2.5ex] strömung in\\[-2.5ex] $x$-Richtung\end{tabular}} & \multirow{2}{*}{} & $u_\infty\,z$ & \multicolumn{1}{c|}{$u_\infty\,x$} & $u_\infty\,y$ & \multicolumn{1}{c|}{$u_\infty$} & \multicolumn{1}{c|}{$0$} & \multicolumn{1}{c|}{$u_\infty\,\tfrac{x}{\sqrt{x^2+y^2}}$} & $-u_\infty\,\tfrac{y}{\sqrt{x^2+y^2}}$\vspace*{2pt} \\ \cline{3-9}
+         &  & $u_\infty\, r\, e^{i\varphi}$ & \multicolumn{1}{c|}{$u_\infty\,r\cos(\varphi)$} & $u_\infty\,r\sin(\varphi)$ & \multicolumn{1}{c|}{$u_\infty$} & \multicolumn{1}{c|}{$0$} & \multicolumn{1}{c|}{$u_\infty\,\cos(\varphi)$} & $-u_\infty\,\sin(\varphi)$\vspace*{2pt} \\ \Cline{1-9}{1.2pt}
+        \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Translations-\\[-2.5ex] strömung in\\[-2.5ex] $y$-Richtung\end{tabular}} & \multirow{2}{*}{} & $-i\,v_\infty\,z$ & \multicolumn{1}{c|}{$v_\infty\, y$} & $-v_\infty\, x$ & \multicolumn{1}{c|}{$0$} & \multicolumn{1}{c|}{$v_\infty$} & \multicolumn{1}{c|}{t} & u \\ \cline{3-9} 
+         &  & v & \multicolumn{1}{c|}{w} & x & \multicolumn{1}{c|}{$0$} & \multicolumn{1}{c|}{$v_\infty$} & \multicolumn{1}{c|}{zz} & zzz \\ \Cline{1-9}{1.2pt}
+    \end{tabularx}
+\end{table}
