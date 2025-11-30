@@ -16,6 +16,9 @@
 \usepackage{fancyhdr}                                            % Für eigene Kopf- und Fußzeilen
 \usepackage{multirow}                                            % Für Zellen, die sich über mehrere Zeilen erstrecken
 \usepackage{setspace}                                            % Für kontrollierten Zeilenabstand
+\usepackage{stackengine}                                         % Für das Überlagern von Elementen
+\usepackage{xfrac}                                               % Für diagonale Brüche in Überschriften
+\usepackage{lmodern}
 
 % ---- Voreinstellungen ---- %
 \contourlength{0.8pt}                                            % Abstand der Unterstreichungen zu herabhängenden Buchstaben einstellen
@@ -38,6 +41,12 @@
 }
 \newcolumntype{Z}{>{\centering\arraybackslash}X}                 % Eigenen Spaltentyp in Tabellen definieren (Auto-Größe & zentriert)
 \renewcommand{\ULdepth}{1.8pt}                                   % Tiefe der Unterstreichungen anpassen
+
+% ---- Eigene Zeilenhöhe in Tabellen einstellen
+% 
+\newcommand{\xrowht}[2][0]{
+    \hspace{-6pt}\addstackgap[0.5\dimexpr#2\relax]{\vphantom{#1}}
+}
 
 % ---- Eigene Tabellenlinie mit variabler Dicke definieren
 % Nutzung: \Cline{<erste Spalte>-<letzte Spalte>}{<Dicke>}
