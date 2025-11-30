@@ -47,3 +47,5 @@ latex.out/
 *.alg
 *.loa
 *~$*.xlsx
+*~$*.pptx
+*~$*.docx
