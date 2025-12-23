@@ -263,7 +263,7 @@
             \begin{equation*}
                 F(z) = a \cdot z
             \end{equation*}
-            \includegraphics[height=28mm]{images/ebene-translationsströmung.pdf} \\[2.5ex]
+            \includegraphics[height=27.5mm]{images/ebene-translationsströmung.pdf} \\[3.15ex]
             Ebene Translationsströmung
         }{0}{1}{1}{0}
 
@@ -275,7 +275,7 @@
             \begin{equation*}
                 F(z) = \frac{a}{2} \cdot z^2
             \end{equation*}
-            \includegraphics[height=28mm]{images/ebene-staupunktströmung.pdf} \\[1.5ex]
+            \includegraphics[height=29mm]{images/ebene-staupunktströmung.pdf} \\[1.1ex]
             Ebene Staupunktströmung
         }{0}{0}{1}{0}
 
@@ -331,46 +331,118 @@
 \begin{table}[H]
     \centering
     \newlength{\rowhght}
-    \setlength{\rowhght}{6.5mm}
-    \footnotesize
+    \setlength{\rowhght}{6.8mm}
+    \newlength{\thickline}
+    \setlength{\thickline}{1.4pt}
     \renewcommand{\arraystretch}{2.0}
-    \resizebox{\textwidth-20mm}{!}{\begin{tabularx}{205mm}{|l|c|c|c|c|Z|Z|Z|c|}
+    \resizebox{\textwidth-20mm}{!}{\begin{tabularx}{249mm}{|l|Z|c|c|c|c|c|c|c|}
         \cline{1-9}
-        \multirow{4}{*}{Bezeichnung} & \multirow{4}{*}{Stromlinienbild} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}\scriptsize Komplexe\\[-2.6ex]\scriptsize Potentialfunktion\end{tabular}} & \multicolumn{2}{c|}{Skalare} & \multicolumn{4}{c|}{\multirow{2}{*}{Geschwindigkeitskomponenten}} \\ 
+        \multirow{4}{*}{Bezeichnung} & \multirow{4}{*}{Stromlinienbild} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Komplexe\\[-2.6ex] Potentialfunktion\end{tabular}} & \multicolumn{2}{c|}{Skalare} & \multicolumn{4}{c|}{\multirow{2}{*}{Geschwindigkeitskomponenten}} \\ 
         \cline{4-5}
-         &  &  & \scriptsize Potentialfunktion & \scriptsize Stromfunktion & \multicolumn{4}{c|}{} \\ 
+         &  &  & Potentialfunktion & Stromfunktion & \multicolumn{4}{c|}{} \\ 
         \cline{3-9}
          &  & $F(z)$ & $\varPhi(x,y)$ & $\varPsi(x,y)$ & $u(x,y)$ & $v(x,y)$ & $v_r(x,y)$ & $v_\varphi(x,y)$ \\ 
         \cline{3-9}
          &  & $F(r,\varphi)$ & $\varPhi(r,\varphi)$ & $\varPsi(r,\varphi)$ & $u(r,\varphi)$ & $v(r,\varphi)$ & $v_r(r,\varphi)$ & $v_\varphi(r,\varphi)$ \\ 
-        \Cline{1-9}{1.2pt}
+        \Cline{1-9}{\thickline}
         \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Translations-\\[-2.6ex]Strömung in\\[-2.6ex]$x$-Richtung\end{tabular}} & \multirow{2}{*}{} & $u_\infty\,z$ & $u_\infty\,x$ & $u_\infty\,y$ & $u_\infty$ & $0$ & $u_\infty\,\tfrac{x}{\sqrt{x^2+y^2}}$ & $-u_\infty\,\tfrac{y}{\sqrt{x^2+y^2}}$ \\
         \cline{3-9}
         \xrowht[()]{\rowhght} &  & $u_\infty\,r\,e^{i\varphi}$ & $u_\infty\,r\,\cos(\varphi)$ & $u_\infty\,r\,\sin(\varphi)$ & $u_\infty$ & $0$ & $u_\infty\,\cos(\varphi)$ & $-u_\infty\,\sin(\varphi)$ \\ 
-        \Cline{1-9}{1.2pt}
+        \Cline{1-9}{\thickline}
         \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Translations-\\[-2.6ex]Strömung in\\[-2.6ex]$y$-Richtung\end{tabular}} & \multirow{2}{*}{} & $-i\,v_\infty\,z$ & $v_\infty\,y$ & $-v_\infty\,x$ & $0$ & $v_\infty$ & $v_\infty\,\tfrac{y}{\sqrt{x^2+y^2}}$ & $v_\infty\,\tfrac{x}{\sqrt{x^2+y^2}}$ \\ 
         \cline{3-9}
         \xrowht[()]{\rowhght} &  & $-i\,v_\infty\,r\,e^{i\varphi}$ & $v_\infty\,r\,\sin(\varphi)$ & $-v_\infty\,r\,\cos(\varphi)$ & $0$ & $v_\infty$ & $v_\infty\,\sin(\varphi)$ & $v_\infty\,\cos(\varphi)$ \\ 
-        \Cline{1-9}{1.2pt}
+        \Cline{1-9}{\thickline}
         \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Staupunkt-\\[-2.6ex]\& Eckenstr.\\[-2.6ex]$a\in\mathbb{R}^+$\end{tabular}} & \multirow{2}{*}{} & $\tfrac{a}{2}\,z^2$ & $\tfrac{a}{2}\left(x^2-y^2\right)$ & $a\,x\,y$ & $a\,x$ & $-a\,y$ & $a\,\tfrac{x^2-y^2}{\sqrt{x^2+y^2}}$ & $-a\,\tfrac{2\,x\,y}{\sqrt{x^2+y^2}}$ \\
         \cline{3-9}
         \xrowht[()]{\rowhght} &  & $\tfrac{a}{2}\,r^2\,e^{2i\varphi}$ & $\tfrac{a}{2}\,r^2\,\cos(2\,\varphi)$ & $\tfrac{a}{2}\,r^2\,\sin(2\,\varphi)$ & $a\,r\,\cos(\varphi)$ & $-a\,r\,\sin(\varphi)$ & $a\,r\,\cos(2\,\varphi)$ & $-a\,r\,\sin(2\,\varphi)$ \\
-        \Cline{1-9}{1.2pt}
-        \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Quelle, Senke\\[-2.6ex](Ergiebigkeit\\[-2.6ex]sei $Q \neq 0$)\end{tabular}} & \multirow{2}{*}{} & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ \\
+        \Cline{1-9}{\thickline}
+        \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Quelle, Senke\\[-2.6ex](Ergiebigkeit\\[-2.6ex]sei $Q \neq 0$)\end{tabular}} & \multirow{2}{*}{} & $\tfrac{Q}{2\pi}\,\ln(z)$ & $\tfrac{Q}{2\pi}\,\ln\left(\sqrt{x^2+y^2}\right)$ & $\tfrac{Q}{2\pi}\,\arctan\left(\tfrac{y}{x}\right)$ & $\tfrac{Q}{2\pi}\,\tfrac{x}{x^2+y^2}$ & $\tfrac{Q}{2\pi}\,\tfrac{y}{x^2+y^2}$ & $\tfrac{Q}{2\pi}\,\tfrac{1}{\sqrt{x^2+y^2}}$ & $0$ \\
         \cline{3-9}
-        \xrowht[()]{\rowhght} &   & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ \\
-        \Cline{1-9}{1.2pt}
-        \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]\scriptsize Potentialwirbel\\[-2.6ex](Zirkulation\\[-2.6ex]sei $\Gamma\neq 0$)\end{tabular}} & \multirow{2}{*}{} & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ \\
+        \xrowht[()]{\rowhght} &   & $\tfrac{Q}{2\pi}\,(\ln(r)+i\,\varphi)$ & $\tfrac{Q}{2\pi}\,\ln(r)$ & $\tfrac{Q}{2\pi}\,\varphi$ & $\tfrac{Q}{2\pi}\,\tfrac{\cos(\varphi)}{r}$ & $\tfrac{Q}{2\pi}\,\tfrac{\sin(\varphi)}{r}$ & $\tfrac{Q}{2\pi}\,\tfrac{1}{r}$ & $0$ \\
+        \Cline{1-9}{\thickline}
+        \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]\scriptsize Potentialwirbel\\[-2.6ex](Zirkulation\\[-2.6ex]sei $\Gamma\neq 0$)\end{tabular}} & \multirow{2}{*}{} & $-i\,\tfrac{\Gamma}{2\pi}\,\ln(z)$ & $\tfrac{\Gamma}{2\pi}\,\text{arctan}\left(\tfrac{y}{x}\right)$ & $-\tfrac{\Gamma}{2\pi}\,\ln\left(\sqrt{x^2+y^2}\right)$ & $-\tfrac{\Gamma}{2\pi}\,\tfrac{y}{x^2+y^2}$ & $\tfrac{\Gamma}{2\pi}\,\tfrac{x}{x^2+y^2}$ & $0$ & $\tfrac{\Gamma}{2\pi}\,\tfrac{1}{\sqrt{x^2+y^2}}$ \\
         \cline{3-9}
-        \xrowht[()]{\rowhght} &   & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ \\
-        \Cline{1-9}{1.2pt}
-        \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Dipol\\[-2.6ex](Auf der\\[-2.6ex]$x$-Achse)\end{tabular}} & \multirow{2}{*}{} & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ \\
+        \xrowht[()]{\rowhght} &   & $-\tfrac{\Gamma}{2\pi}\,\left(i\,\ln\left(r\right)-\varphi\right)$ & $\tfrac{\Gamma}{2\pi}\,\varphi$ & $-\tfrac{\Gamma}{2\pi}\,\ln\left(r\right)$ & $-\tfrac{\Gamma}{2\pi}\,\tfrac{\sin(\varphi)}{r}$ & $\tfrac{\Gamma}{2\pi}\,\tfrac{\cos(\varphi)}{r}$ & $0$ & $\tfrac{\Gamma}{2\pi}\,\tfrac{1}{r}$ \\
+        \Cline{1-9}{\thickline}
+        \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Dipol\\[-2.6ex](Auf der\\[-2.6ex]$x$-Achse)\end{tabular}} & \multirow{2}{*}{} & $-\tfrac{\mu}{2\pi}\,\tfrac{1}{z}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{x}{x^2+y^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{y}{x^2+y^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{x^2-y^2}{\left(x^2+y^2\right)^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{2\,x\,y}{\left(x^2+y^2\right)^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{x}{\sqrt{\left(x^2+y^2\right)^3}}$ & $\tfrac{\mu}{2\pi}\,\tfrac{y}{\sqrt{\left(x^2+y^2\right)^3}}$ \\
         \cline{3-9}
-        \xrowht[()]{\rowhght} &   & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ \\
-        \Cline{1-9}{1.2pt}
-        \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Dipol\\[-2.6ex](Auf der\\[-2.6ex]$y$-Achse)\end{tabular}} & \multirow{2}{*}{} & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ \\
+        \xrowht[()]{\rowhght} &   & $-\tfrac{\mu}{2\pi}\,\tfrac{1}{r}\,e^{-i\,\varphi}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{\cos(\varphi)}{r}$ & $\tfrac{\mu}{2\pi}\,\tfrac{\sin(\varphi)}{r}$ & $\tfrac{\mu}{2\pi}\,\tfrac{\cos(2\varphi)}{r^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{\sin(2\varphi)}{r^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{\cos(\varphi)}{r^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{\sin(\varphi)}{r^2}$ \\
+        \Cline{1-9}{\thickline}
+        \xrowht[()]{\rowhght}\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}\\[\dimexpr(\rowhght/2)-10.8ex]Dipol\\[-2.6ex](Auf der\\[-2.6ex]$y$-Achse)\end{tabular}} & \multirow{2}{*}{} & $-i\,\tfrac{\mu}{2\pi}\,\tfrac{1}{z}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{y}{x^2+y^2}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{x}{x^2+y^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{2\,x\,y}{\left(x^2+y^2\right)^2}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{x^2-y^2}{\left(x^2+y^2\right)^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{y}{\sqrt{\left(x^2+y^2\right)^3}}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{x}{\sqrt{\left(x^2+y^2\right)^3}}$ \\
         \cline{3-9}
-        \xrowht[()]{\rowhght} &   & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ & $a$ \\
+        \xrowht[()]{\rowhght} &   & $-i\,\tfrac{\mu}{2\pi}\,\tfrac{1}{r}\,e^{-i\,\varphi}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{\sin(\varphi)}{r}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{\cos(\varphi)}{r}$ & $\tfrac{\mu}{2\pi}\,\tfrac{\sin(2\varphi)}{r^2}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{\cos(2\varphi)}{r^2}$ & $\tfrac{\mu}{2\pi}\,\tfrac{\sin(\varphi)}{r^2}$ & $-\tfrac{\mu}{2\pi}\,\tfrac{\cos(\varphi)}{r^2}$ \\
         \cline{1-9}
     \end{tabularx}}
 \end{table}
+Dipolmoment $M = -\mu\quad\left[\tfrac{\text{m}^3}{\text{s}}\right]$ \qquad\qquad Ergiebigkeit einer Quelle / Senke $E = Q\quad\left[\tfrac{\text{m}^2}{\text{s}}\right]$
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE nach der Tabelle: Am Seitenursprung anfangen, stark nach unten korrigiert
+\setlength{\rowheight}{8mm}
+
+    % A1) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{([xshift=10mm, yshift=-180mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Kreiszylinder}
+        }{1}{0}{0}{0}
+
+% --- Zweite REIHE: unter A1, dann rechts anbauen
+\setlength{\rowheight}{36mm}
+
+    % A2) Erste Kachel relativ zu A1
+    \setlength{\cellwidth}{62mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Kutta-Joukowskischer Auftriebssatz} \\
+            \vspace{2mm}
+            \begin{align*}
+                F_y = F_\text{A} = b\cdot\rho\cdot u_\infty\cdot\Gamma \\
+            \end{align*}
+            $\Rightarrow$ Nur Wirbel trägt zum Auftrieb bei
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel relativ zu A2
+    \setlength{\cellwidth}{128mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Druckverteilung}
+            \begin{align*}
+                \underbrace{c_\text{p} = \frac{p_\text{w}(\varphi) - p_\infty}{\frac{\rho}{2}\cdot u_\infty^2 \vphantom{\dfrac{}{}}} = 1 - \left(\frac{v_{\varphi \text{w}}}{u_\infty}\right)^2} &= \underbrace{1 - \left(4\,\sin^2(\varphi)+\frac{2\,\Gamma\,\sin(\varphi)}{\pi\,a\,u_\infty \vphantom{\dfrac{}{}}}+\left(\frac{\Gamma}{2\,\pi\,a\,u_\infty}\right)^2\right)} \\
+                c_\text{p,\,max} = 1 \hspace{16mm} & \hspace{28mm} c_\text{p,\,min} = -3
+            \end{align*}
+            Inkompressibel
+        }{0}{0}{1}{0}
+
+% --- Dritte REIHE: unter A2, dann rechts anbauen
+\setlength{\rowheight}{28mm}
+
+    % A3) Erste Kachel relativ zu A2
+    \setlength{\cellwidth}{58mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Einfache Staupunkte}\\[1.0ex]
+            Staupunkte eines Dipol-Zylinders\\
+            mit Radius a:
+            \begin{equation*}
+                \sin(\varphi_\text{s}) = -\frac{\Gamma}{4\,\pi\,u_\infty\,a}
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+
+    % B3) Zweite Kachel relativ zu A3
+    \setlength{\cellwidth}{42mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Druckbeiwert Allg.}\\
+            \vspace{3mm}
+            \begin{equation*}
+                c_\text{p} = \frac{p-p_\infty}{\frac{\rho}{2}\cdot u_\infty^2}
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+\end{tikzpicture}
