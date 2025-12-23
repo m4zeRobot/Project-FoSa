@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper, 10pt]{article}
 
 % ---- Pakete einbinden ---- %
 \usepackage[top=10mm, left=0mm, right=0mm, bottom=0mm]{geometry} % Für das Blatt-Layout
@@ -22,10 +22,6 @@
 
 % ---- Voreinstellungen ---- %
 \contourlength{0.8pt}                                            % Abstand der Unterstreichungen zu herabhängenden Buchstaben einstellen
-\newcommand{\myul}[1]{%                                          % Eigene Unterstreichungen definieren
-    \uline{\phantom{#1}}%
-    \llap{\contour{white}{#1}}%
-}
 \graphicspath{{./images/}}                                       % Pfad für Bilder
 \usetikzlibrary{calc}                                            % Für ([xshift=..]node.anchor)
 \fancyhead[L,C,R]{}                                              % Header leer einstellen
@@ -42,8 +38,15 @@
 \newcolumntype{Z}{>{\centering\arraybackslash}X}                 % Eigenen Spaltentyp in Tabellen definieren (Auto-Größe & zentriert)
 \renewcommand{\ULdepth}{1.8pt}                                   % Tiefe der Unterstreichungen anpassen
 
+% ---- Eigene Unterstreichungen definieren
+% Nutzung: \myul{<Text hier einfügen>}
+\newcommand{\myul}[1]{
+    \uline{\phantom{#1}}%
+    \llap{\contour{white}{#1}}%
+}
+
 % ---- Eigene Zeilenhöhe in Tabellen einstellen
-% 
+% Nutzung: \xrowht[()]{<Zeilenhöhe als dimexpr>}
 \newcommand{\xrowht}[2][0]{
     \hspace{-6pt}\addstackgap[0.5\dimexpr#2\relax]{\vphantom{#1}}
 }
