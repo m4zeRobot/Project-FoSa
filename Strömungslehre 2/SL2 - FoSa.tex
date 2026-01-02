@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{article}
+\documentclass[a4paper, 10pt, twoside]{article}
 
 % ---- Pakete einbinden ---- %
 \usepackage[top=10mm, left=0mm, right=0mm, bottom=0mm]{geometry} % Für das Blatt-Layout
@@ -26,11 +26,15 @@
 \usetikzlibrary{calc}                                            % Für ([xshift=..]node.anchor)
 \fancyhead[L,C,R]{}                                              % Header leer einstellen
 \renewcommand{\headrulewidth}{0pt}                               % Header-Trennlinie entfernen
-\fancyfoot[L]{}                                                  % Footer links leer einstellen
-\fancyfoot[R]{                                                   % Footer rechts mit Seitenzahl
+\fancyfoot[LO, RE]{}                                             % Footer gegenüber der Seitenzahl leer einstellen
+\fancyfoot[RO]{                                                  % Footer rechts mit Seitenzahl (ungerade Seiten)
     \vspace*{-22mm}\\
     \thepage\hspace*{10mm}
-}                         
+}
+\fancyfoot[LE]{                                                  % Footer links mit Seitenzahl (gerade Seiten)
+    \vspace*{-22mm}\\
+    \hspace*{10mm}\thepage
+}    
 \fancyfoot[C]{                                                   % Hinweis im Footer
     \vspace*{-20mm}\\
     \tiny Gleichungsnummern aus der Vorlesung von Prof.\ Dr.-Ing. Krämer {\color{NavyBlue}in Blau}. CAS-Programmaufrufe {\color{RedOrange}in Orange}.
