@@ -6,29 +6,24 @@
 \begin{tikzpicture}[remember picture, overlay]
 
 % --- ERSTE REIHE: Am Seitenursprung anfangen
-\setlength{\rowheight}{7mm}
+\setlength{\rowheight}{35mm}
 
-    % A1) Erste Kachel relativ zum Seitenursprung
-    \setlength{\cellwidth}{190mm}
-    \Tile{A1}{([xshift=10mm, yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
+    % X1) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{8mm}
         {
-            \vspace{-2mm}
             \titlebf{Geschwindigkeiten}
         }{0}{0}{0}{0}
 
-% --- ZWEITE REIHE: Am Seitenursprung anfangen
-\setlength{\rowheight}{35mm}
-
-    % A2) Erste Kachel relativ zu A1
+    % A1) Erste Kachel relativ zu X1
     \setlength{\cellwidth}{62mm}
-    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
         {
             \includegraphics[height=30mm]{images/tropfen.pdf}
         }{0}{1}{1}{0}
 
-    % B2) Zweite Kachel relativ zu A2
+    % B1) Zweite Kachel relativ zu A1
     \setlength{\cellwidth}{71mm}
-    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-2mm}
             \titlerm{Allgemein}\\ \vspace{-2mm}
@@ -40,9 +35,9 @@
             \end{equation*}
         }{0}{1}{1}{0}
 
-    % C2) Zweite Kachel relativ zu A2
+    % C1) Zweite Kachel relativ zu A1
     \setlength{\cellwidth}{57mm}
-    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-2mm}
             \titlerm{Dünnes Profil (Körperoberfläche)}\\ \vspace{-0.5mm}
@@ -54,32 +49,32 @@
             \end{equation*}
         }{0}{0}{1}{0}
 
-% --- DRITTE REIHE: Am Seitenursprung anfangen
+% --- ZWEITE REIHE: Am Seitenursprung anfangen
 \setlength{\rowheight}{30mm}
 
-    % A3) Erste Kachel relativ zu A2
+    % A2) Erste Kachel relativ zu A1
     \setlength{\cellwidth}{56mm}
-    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Kinematische Verträglichkeit}\\
+            \titlebf{Kinematische Verträglichkeit}\\ \vspace{1.5mm}
             \begin{equation*}
                 \frac{\text{d}y_\text{t}}{\text{d}x} = \frac{V(x)}{U(x)}
             \end{equation*}
         }{0}{1}{1}{0}
 
-    % B3) Zweite Kachel relativ zu A3
+    % B2) Zweite Kachel relativ zu A2
     \setlength{\cellwidth}{35mm}
-    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Druckverteilung}\\
+            \titlebf{Druckverteilung}\\ \vspace{1.5mm}
             \begin{equation*}
                 c_\text{p} = 1 - \frac{U^2+V^2}{U_\infty^2}
             \end{equation*}
         }{0}{1}{1}{0}
 
-    % C3) Zweite Kachel relativ zu A3
+    % C2) Dritte Kachel relativ zu B2
     \setlength{\cellwidth}{99mm}
-    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
         {
             \titlebf{Quell- und Senkenverteilung}\\ \vspace{3mm}
             \begin{tabularx}{\cellwidth-6mm}{Z|Z}
@@ -87,5 +82,91 @@
                 $q(x) = 2\,\dfrac{\text{d}}{\text{d}x}\left((U_\infty + u)\cdot y_\text{t}\right)$ & $q(x) = 2\,U_\infty\,\dfrac{\text{d}y_\text{t}(x)}{\text{d}x}$ \\[4.0ex]
             \end{tabularx}
         }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{22mm}
+
+    % X3) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{8mm}
+        {
+            \titlebf{Riegels-Korrektur}
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel relativ zu X3
+    \setlength{\cellwidth}{40mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Druckverteilung}\\ \vspace{-2.5mm}
+            \begin{equation*}
+                c_\text{p} = 1-\left(\frac{U_\text{k}}{U_\infty}\right)^2
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel relativ zu A3
+    \setlength{\cellwidth}{75mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Definition}\\ \vspace{-2.5mm}
+            \begin{equation*}
+                \kappa(x) = \frac{1}{\cos(\theta)} = \sqrt{1+\tan^2(\theta)} = \sqrt{1+\left(\frac{\text{d}y_\text{t}}{\text{d}x}\right)^2}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C3) Dritte Kachel relativ zu B3
+    \setlength{\cellwidth}{75mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Geschwindigkeit}\\ \vspace{-2.5mm}
+            \begin{equation*}
+                U_\text{k}(x) = \frac{U}{\kappa(x)} = \frac{U_\infty}{\kappa(x)}\,\left(1+\frac{1}{\pi}\,{\mathrlap{\int_0^l}\hspace{0.3mm}C\hspace{1.5mm}}\,\frac{\frac{\text{d}y_\text{t}}{\text{d}x}(x')}{x-x'}\,\text{d}x'\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{22mm}
+
+    % X4) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{8mm}
+        {
+            \titlebf{Fourier-Ansatz}
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel relativ zu X4
+    \setlength{\cellwidth}{66mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Definition}\\ \vspace{2mm}\hspace{-7mm}
+            \begin{tabularx}{\cellwidth-4mm}{c|c}
+                 & \\[-0.5ex]
+                $Y_\text{t} = \dfrac{1}{2}\,\sum\limits_{\nu=1}^{n}\,b_\nu\sin(\nu\,\varphi)$ & $X = \dfrac{1}{2}\,\left(1+\cos(\varphi)\right)$ \\[3.8ex]
+            \end{tabularx}
+        }{0}{1}{0}{0}
+
+    % B4) Zweite Kachel relativ zu A4
+    \setlength{\cellwidth}{59.8mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Geschwindigkeit}\\ \vspace{-2.5mm}
+            \begin{equation*}
+                U_\text{k}(\varphi) = \frac{U_\infty}{\kappa(\varphi)}\,\left(1+\sum\limits_{\nu=1}^{n}\nu\,b_\nu\,\frac{\sin(\nu\,\varphi)}{\sin(\varphi)}\right)
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+    % C4) Dritte Kachel relativ zu B4
+    \setlength{\cellwidth}{64.2mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Riegels-Faktor}\\ \vspace{4.5mm}
+            % Super Trick, um einen Ausdruck doch noch auf eine gewisse Größe zu schrumpfen:
+            \resizebox{\cellwidth-4mm}{!}{ 
+                $\kappa(\varphi) = \sqrt{1+\left(\dfrac{\text{d}Y_\text{t}}{\text{d}X}\right)^2} = \sqrt{1+\left(\dfrac{\text{d}Y_\text{t}}{\text{d}X}\,\dfrac{\text{d}\varphi}{\text{d}X}\right)^2}$
+            }
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
