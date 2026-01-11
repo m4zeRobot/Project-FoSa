@@ -10,3 +10,4 @@ If you want to contribute, just text me for repo access!
 - Each graphic has been re-created as a vector graphic, letting you a) fix possible mistakes and b) making it crisp after printing, all while c) colorizing each image for easier recognition.
 - Useful notes have been added to each document, from CAS commands over simple page numbers to equation numbers, all in accordance with the respective lecture.
 - Giving the power to fix mistakes back to everyone!
+- Since the original documents are all in German, this project enables easy translation to other languages.
