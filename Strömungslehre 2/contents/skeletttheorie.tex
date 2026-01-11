@@ -78,18 +78,18 @@
         }{0}{0}{1}{0}
 
 % --- DRITTE REIHE: relativ zu A2
-\setlength{\rowheight}{50.5mm}
+\setlength{\rowheight}{48mm}
 
     % A3) Erste Kachel relativ zu A2
     \setlength{\cellwidth}{95mm}
     \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Auftriebsbeiwert}\\ \vspace{-2mm}
+            \titlebf{Auftriebsbeiwert}\\ \vspace{-3mm}
             \begin{equation*}
                 C_\text{a} = \frac{2}{U_\infty}\,\int\limits_0^1\,\gamma(X)\,\text{d}X = \int\limits_0^1\,\Delta C_\text{p}(X)\,\text{d}X
             \end{equation*}
-            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{1mm}
-            \titlebf{Momentenbeiwert}\\ \vspace{-2mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlebf{Momentenbeiwert}\\ \vspace{-3mm}
             \begin{equation*}
                 C_\text{m} = -\frac{2}{U_\infty}\,\int\limits_0^1\,\gamma(X)\,X\,\text{d}X = -\int\limits_0^1\,\Delta C_\text{p}(X)\,X\,\text{d}X
             \end{equation*}
@@ -99,7 +99,7 @@
     \setlength{\cellwidth}{95mm}
     \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Skelettlinie}\\ \vspace{2mm}
+            \titlebf{Skelettlinie}\\ \vspace{1mm}
             \begin{equation*}
                 Y_\text{s}(X) = \alpha\,X-\frac{1}{2\,\pi}\,\int\limits_0^1\,\frac{\gamma(X')}{U_\infty}\,\ln\left|\frac{X-X'}{X'}\right|\,\text{d}X'
             \end{equation*}
@@ -107,5 +107,114 @@
                 \alpha = \frac{1}{2\,\pi}\,\int\limits_0^1\,\frac{\gamma(X')}{U_\infty}\,\ln\left|\frac{1-X'}{X'}\right|\,\text{d}X'
             \end{equation*}
         }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: relativ zu A3
+\setlength{\rowheight}{50mm}
+
+    % X4) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{8mm}
+        {
+            \titlebf{Ansatz von Birnbaum-Ackermann und Glauert}
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel relativ zu X4
+    \setlength{\cellwidth}{74mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Zirkulationsverteilung}\\ \vspace{-2mm}
+            \begin{equation*}
+                \gamma(\varphi) = 2\,U_\infty\,\left(A_0\,\tan\left(\frac{\varphi}{2}\right)+\sum\limits_{n=1}^\infty\,A_n\,\sin(n\,\varphi)\right)
+            \end{equation*}
+            \begin{equation*}
+                A_0 = \alpha-\frac{1}{\pi}\,\int\limits_0^\pi\,\frac{\text{d}Y_\text{s}(X)}{\text{d}X}\,\text{d}\varphi
+            \end{equation*}
+            \begin{equation*}
+                A_n = -\frac{2}{\pi}\,\int\limits_0^\pi\,\frac{\text{d}Y_\text{s}(X)}{\text{d}X}\,\cos(n\,\varphi)\,\text{d}\varphi
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel relativ zu A4
+    \setlength{\cellwidth}{68mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Induzierte Geschwindigkeit}\\ \vspace{-1.5mm}
+            \begin{equation*}
+                \frac{v(\varphi)}{U_\infty} = -\left(A_0 + \sum\limits_{n=1}^N\,A_n\,\cos(n\,\varphi)\right)
+            \end{equation*}
+            \vspace{-1.5mm} \\
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Kinematische Strömungsbedingung}\\ \vspace{-1.5mm}
+            \begin{equation*}
+                \alpha-\frac{\text{d}Y_\text{s}(X)}{\text{d}X}=A_0+\sum\limits_{n=1}^N\,A_n\,\cos(n\,\varphi)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C4) Dritte Kachel relativ zu B4
+    \setlength{\cellwidth}{48mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Auftriebsbeiwert}\\ \vspace{1mm}
+            \begin{equation*}
+                C_\text{a} = \pi\,(2\,A_0 + A_1)
+            \end{equation*}
+            \vspace{-0.5mm} \\
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Momentenbeiwert}\\ \vspace{1mm}
+            \begin{equation*}
+                C_\text{m} = -\frac{\pi}{4}\,(2\,A_0+2\,A_1+A_2)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- FÜNFTE REIHE: relativ zu A4
+\setlength{\rowheight}{22mm}
+
+    % A5) Erste Kachel relativ zu A4
+    \setlength{\cellwidth}{55mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Druckpunktlage}\\ \vspace{-1mm}
+            \begin{equation*}
+                \frac{x_\text{A}}{l} = -\frac{C_\text{m}}{C_\text{a}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel relativ zu A5
+    \setlength{\cellwidth}{135mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Überlagerung}\\ \vspace{2mm}
+            \begin{tabularx}{\cellwidth-4mm}{Z|c}
+                 & \\[-1.0ex]
+                $\displaystyle \frac{U}{U_\infty} = 1+\left(\frac{U_1}{U_\infty}-1\right)+\left(\frac{U_2}{U_\infty}-1\right)+\left(\frac{U_3}{U_\infty}-1\right)$ & \qquad Bed.: $\dfrac{\alpha}{\pi}$, $\dfrac{f}{l}$, $\dfrac{d}{l} \ll 1$ \qquad \\[-0.8ex] ~
+            \end{tabularx}
+        }{0}{0}{1}{0}
+
+% --- SECHSTE REIHE: relativ zu A5
+\setlength{\rowheight}{38mm}
+
+    % A6) Erste Kachel relativ zu A5
+    \setlength{\cellwidth}{64mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Skelettlinie}\\ \vspace{4.7mm}
+            \begin{equation*}
+                Y_\text{s} = \alpha\,X-A_0\,X-\int\limits_0^X\,A_0\,\cos(n\,\varphi)\,\text{d}X
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+    % B6) Zweite Kachel relativ zu A6
+    \setlength{\cellwidth}{86mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Transformation}\\ \vspace{4mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c Z}
+                $\displaystyle X=\frac{1}{2}\,(1+\cos(\varphi))$ & \begin{minipage}{0.47\cellwidth}
+                    \includegraphics[height=26mm]{birnbaum-transformation.pdf}
+                \end{minipage}
+            \end{tabularx}
+        }{0}{1}{0}{0}
 
 \end{tikzpicture}
