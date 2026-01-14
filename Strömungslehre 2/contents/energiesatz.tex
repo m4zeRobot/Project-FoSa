@@ -1,0 +1,294 @@
+% ### Erste Seite des Energiesatzes ###
+\begin{center}
+    \section*{\underline{Energiesatz}}
+\end{center}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{20mm}
+
+    % A1) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{66mm}
+    \Tile{A1}{([xshift=10mm, yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlebf{Thermische Zustandsgleichung}\\ \vspace{2mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|Z}
+                 & \\[0.5ex]
+                $p\,V = m\,R\,T$ & $p = \rho\,R\,T$ \\[0.5ex]
+                 & 
+            \end{tabularx}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel relativ zu A1
+    \setlength{\cellwidth}{38mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlebf{Enthalpie}\\ \vspace{-0.1mm}
+            \begin{equation*}
+                h = e + p\,v = c_\text{p}\,T
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel relativ zu B1
+    \setlength{\cellwidth}{42mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlebf{Innere Energie}\\ \vspace{-0.1mm}
+            \begin{equation*}
+                e = c_\text{v}\, T
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D1) Dritte Kachel relativ zu C1
+    \setlength{\cellwidth}{44mm}
+    \Tile{D1}{(C1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlebf{Entropie}\\ \vspace{-0.1mm}
+            \begin{equation*}
+                \text{d}s = \frac{\text{d}q_\text{rev}}{T}+\text{d}s_\text{irrev}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{25mm}
+
+    % A2) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{44mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{1. Hauptsatz}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{d}e = \text{d}q + \text{d}w = T\,\text{d}s - p\,\text{d}v
+            \end{equation*}
+            \begin{equation*}
+                \text{d}q = \text{d}h - v\,\text{d}p
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel relativ zu A2
+    \setlength{\cellwidth}{39mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Maxwell-Beziehung}\\ \vspace{-0.1mm}
+            \begin{equation*}
+                \left.\frac{\partial e}{\partial v}\right|_T = T\,\left.\frac{\partial p}{\partial T}\right|_v - p
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C2) Dritte Kachel relativ zu B2
+    \setlength{\cellwidth}{107mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Spezifische Wärmekapazität}\\ \vspace{1mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|c|Z}
+                \titlerm{Konst. Volumen} & \titlerm{Konst. Druck} & \titlerm{Zusammenhang} \\[2.0ex]
+                $\displaystyle c_\text{v} = \left.\frac{\partial e}{\partial T}\right|_v = \frac{R}{\kappa - 1}$ & $\displaystyle c_\text{p} = \left.\frac{\partial h}{\partial T}\right|_p = R\,\frac{\kappa}{\kappa-1}$ & $R = c_\text{p} - c_\text{v}$ \\[1.0ex]
+                 &  & 
+            \end{tabularx}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{25mm}
+
+    % A3) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{50mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Isentropenexponent}\\ \vspace{1.5mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|r}
+                 & Einatomig: $\kappa=\dfrac{5}{3}$ \\[-1.2ex]
+                $\displaystyle\kappa=\frac{c_\text{p}}{c_\text{v}}$ & \\[-1.0ex]
+                 & Zweiatomig: $\kappa=\dfrac{7}{5}$ \\[-1.8ex]
+                 & 
+            \end{tabularx}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel relativ zu A3
+    \setlength{\cellwidth}{44mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Entropieänderung}
+            \begin{equation*}
+                \Delta s = R\,\ln\left(\frac{\rho_1}{\rho_2}\,\left(\frac{T_2}{T_1}\right)^{\frac{1}{\kappa-1}}\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C3) Dritte Kachel relativ zu B3
+    \setlength{\cellwidth}{96mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Isentropenbeziehungen}\\ \vspace{1.2mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|c|Z}
+                 &  &  \\[0.1ex]
+                $\dfrac{p}{\rho^\kappa} = \text{konst.}$ & $\dfrac{\rho_2}{\rho_1}=\left(\dfrac{T_2}{T_1}\right)^{\frac{1}{\kappa-1}}$ & $\dfrac{p_2}{p_1} = \left(\dfrac{\rho_2}{\rho_1}\right)^\kappa = \left(\dfrac{T_2}{T_1}\right)^{\frac{\kappa}{\kappa-1}}$ \\[0.9ex]
+                 &  & 
+            \end{tabularx}
+        }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{27mm}
+
+    % A4) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{190mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Energiegleichung}\\[1.0ex]
+            \titlerm{Nicht-Konservativ}\\[-1.8ex]
+            \tiny{
+            \begin{align*}
+                \rho\,\frac{\text{D}}{\text{D}t}\left(e + \frac{V^2}{2}\right) &= \rho\,\dot q + \frac{\partial}{\partial x}\left(k\,\frac{\partial T}{\partial x}\right) + \frac{\partial}{\partial y}\left(k\,\frac{\partial T}{\partial y}\right) + \frac{\partial}{\partial z}\left(k\,\frac{\partial T}{\partial z}\right) - \frac{\partial(u\,p)}{\partial x} - \frac{\partial(v\,p)}{\partial y} - \frac{\partial(w\,p)}{\partial z} \\
+                &+ \frac{\partial(u\,\tau_{xx})}{\partial x} + \frac{\partial(u\,\tau_{yx})}{\partial y} + \frac{\partial(u\,\tau_{zx})}{\partial z} + \frac{\partial(u\,\tau_{xy})}{\partial x} + \frac{\partial(u\,\tau_{yy})}{\partial y} + \frac{\partial(u\,\tau_{zy})}{\partial z} + \frac{\partial(u\,\tau_{xz})}{\partial x} + \frac{\partial(u\,\tau_{yz})}{\partial y} + \frac{\partial(u\,\tau_{zz})}{\partial z} + \rho\,\underline{f}\cdot\underline{V}
+            \end{align*}
+            }
+        }{0}{0}{1}{0}
+
+% --- FÜNFTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{21.5mm}
+
+    % A5) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{190mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Konservativ}\\[-1.8ex]
+            \tiny{
+            \begin{align*}
+                \frac{\partial}{\partial t}\left(\rho\,\left(e+\frac{V^2}{2}\right)\right)+\nabla\cdot\left(\rho\,\left(e+\frac{V^2}{2}\right)\,\underline{V}\right) &= \rho\,\dot q+\frac{\partial}{\partial x}\left(k\,\frac{\partial T}{\partial x}\right)+\frac{\partial}{\partial y}\left(k\,\frac{\partial T}{\partial y}\right)+\frac{\partial}{\partial z}\left(k\,\frac{\partial T}{\partial z}\right)-\frac{\partial(u\,p)}{\partial x}-\frac{\partial(v\,p)}{\partial y}-\frac{\partial(w\,p)}{\partial z} \\
+                &+ \frac{\partial(u\,\tau_{xx})}{\partial x} + \frac{\partial(u\,\tau_{yx})}{\partial y} + \frac{\partial(u\,\tau_{zx})}{\partial z} + \frac{\partial(u\,\tau_{xy})}{\partial x} + \frac{\partial(u\,\tau_{yy})}{\partial y} + \frac{\partial(u\,\tau_{zy})}{\partial z} + \frac{\partial(u\,\tau_{xz})}{\partial x} + \frac{\partial(u\,\tau_{yz})}{\partial y} + \frac{\partial(u\,\tau_{zz})}{\partial z} + \rho\,\underline{f}\cdot\underline{V}
+            \end{align*}
+            }
+        }{0}{0}{1}{0}
+
+% --- SECHSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{19.5mm}
+
+    % A6) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{190mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Energiegleichung der laminaren Grenzschicht}\\[-2.5ex]
+            \begin{equation*}
+                \text{\titlerm{Allgemein:}}\qquad\rho\,u\,\frac{\partial}{\partial x}\left(c_\text{p}\,T+\frac{u^2}{2}\right)+\rho\,v\,\frac{\partial}{\partial y}\left(c_\text{p}\,T+\frac{u^2}{2}\right)=\frac{\partial}{\partial y}\left(k\,\frac{\partial T}{\partial y}\right)+\frac{\partial}{\partial y}\left(\eta\,u\,\frac{\partial u}{\partial y}\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- SIEBTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{27mm}
+
+    % A7) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{190mm}
+    \Tile{A7}{(A6.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Für den Fall Pr = 1}\\ \vspace{2mm}
+            \footnotesize{
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|c|Z}
+                \titlerm{Definition} & ~~\titlerm{$\tfrac{\text{d}p}{\text{d}x} =$ beliebig}~~ & \titlerm{$\tfrac{\text{d}p}{\text{d}x} = 0$} \\[1.8ex]
+                \tiny{$\rho\,u\,\dfrac{\partial}{\partial x}\left(c_\text{p}\,T+\dfrac{u^2}{2}\right)+\rho\,v\,\dfrac{\partial}{\partial y}\left(c_\text{p}\,T+\dfrac{u^2}{2}\right)=\dfrac{\partial}{\partial y}\left(\eta\,\dfrac{\partial}{\partial y}\left(c_\text{p}\,T+\dfrac{u^2}{2}\right)\right)$} & $T+\dfrac{u^2}{2\,c_\text{p}}=T_{0\infty}$ & $T(u) = T_\text{W}+\dfrac{u}{u_\text{e}}\,\left(T_\text{0e}-T_\text{W}\right)-\underbrace{\dfrac{u_\text{e}^2}{2\,c_\text{p}}\,\left(\dfrac{u}{u_\text{e}}\right)^2}$ \\
+                 & $\Rightarrow r=1$ & \hspace{42mm}\tiny{$\approx 0$ für Ma $\ll 1$}
+            \end{tabularx}
+            }
+        }{0}{0}{1}{0}
+
+% --- ACHTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{22mm}
+
+    % A8) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{103mm}
+    \Tile{A8}{(A7.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Recovery-Faktor}
+            \begin{equation*}
+                r = \frac{2}{(\kappa-1)\,\text{Ma}_\text{e}^2}\,\left(\frac{T_\text{aW}}{T_\text{e}}-1\right)\approx
+                \begin{cases}
+                    \sqrt{\text{Pr}}\text{ für laminare Grenzschicht}\\
+                    \sqrt[3]{\text{Pr}}\text{ für turbulente Grenzschicht}
+                \end{cases}
+            \end{equation*}
+        }{0}{1}{1}{0}
+    
+    % B8) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{46mm}
+    \Tile{B8}{(A8.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Recovery-Temperatur}\\ \vspace{-2mm}
+            \begin{equation*}
+                T_\text{r} = T_\text{e} + r\,\frac{u_\text{e}^2}{2\,c_\text{p}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C8) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{41mm}
+    \Tile{C8}{(B8.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Prandtl-Zahl}\\ \vspace{-1mm}
+            \begin{equation*}
+                \text{Pr} = \frac{\eta\,c_\text{p}}{k}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- NEUNTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{22mm}
+
+    % X9) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{190mm}
+    \Tile{X9}{(A8.south west)}{\cellwidth}{8mm}
+        {
+            \titlerm{Reynolds-Analogie}
+        }{0}{0}{0}{0}
+
+    % A9) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{45mm}
+    \Tile{A9}{(X9.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Definition}\\ \vspace{-2.2mm}
+            \begin{equation*}
+                \dot q_\text{W} = c_\text{p}\,\frac{T_\text{r}-T_\text{W}}{u_\text{e}}\,\tau_\text{W}
+            \end{equation*}
+            {\color{NavyBlue}(8.89)}
+        }{0}{1}{1}{0}
+    
+    % B9) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{145mm}
+    \Tile{B9}{(A9.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Stanton-Zahl}\\ \vspace{0.8mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|Z|c}
+                 &  &  \\[-1.0ex]
+                $\text{St}=\dfrac{\dot q_\text{W}}{\rho_\text{e}\,u_\text{e}\,c_\text{p}\,(T_\text{r}-T_\text{W})}\approx\begin{cases}
+                    \tfrac{c_\text{f}}{2} &\text{für Pr}=1\\
+                    \tfrac{c_\text{f}}{2}\,\text{Pr}^{-\frac{2}{3}} &\text{für Pr}<0.5
+                \end{cases}$ & $c_\text{f}=\dfrac{2\,\tau_\text{W}}{\rho_\text{e}\,u_\text{e}^2}=\dfrac{0.664}{\sqrt{\text{Re}_x}}$ & \quad$\text{Re}_x = \dfrac{\rho\,u_\text{e}\,x}{\eta}$ \\[2.8ex]
+                \qquad\quad{\color{NavyBlue}(8.91)}\quad\qquad\qquad\qquad{\color{NavyBlue}(8.92)} / \vspace*{-4mm}{\color{NavyBlue}(8.93)} & \vspace{-2.8mm}\quad{\color{NavyBlue}(8.90)}\qquad{\color{NavyBlue}(8.94)} &
+            \end{tabularx}
+        }{0}{0}{1}{0}
+
+% --- ZEHNTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{35mm}
+
+    % A10) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{120mm}
+    \Tile{A10}{(A9.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Energiegleichung der turbulenten Grenzschicht (Ma $\ll 1$)}\\ \vspace{2mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|c}
+                \titlerm{Allgemein} & \titlerm{Lösung} \\[1.0ex]
+                $\rho\,\overline{u}\,\dfrac{\partial\overline{T}}{\partial x}-\rho\,\overline{v}\,\dfrac{\partial\overline{T}}{\partial y}=\dfrac{k}{c_\text{p}}\,\dfrac{\partial^2\overline{T}}{\partial y^2} - \rho\,\dfrac{\partial\left(\overline{v'\,T'}\right)}{\partial y}$ & \quad$\bar{T} = T_\text{W}+\left(T_\text{0e}-T_\text{W}\right)\,\dfrac{\overline{u}}{u_\text{e}}$\quad \\[2.0ex]
+                 & {\color{NavyBlue}(8.106)}
+            \end{tabularx}
+        }{0}{1}{0}{0}
+    
+    % B10) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{70mm}
+    \Tile{B10}{(A10.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Temperatur-Gradient}\\ \vspace{2mm}
+            \includegraphics[height=27mm]{temperatur-gradient.pdf}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
