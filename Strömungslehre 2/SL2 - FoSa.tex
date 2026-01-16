@@ -18,7 +18,7 @@
 \usepackage{setspace}                                            % Für kontrollierten Zeilenabstand
 \usepackage{stackengine}                                         % Für das Überlagern von Elementen
 \usepackage{xfrac}                                               % Für diagonale Brüche in Überschriften
-\usepackage{lmodern}
+\usepackage{lmodern}                                             % Für die komplette Latin Modern Font
 
 % ---- Voreinstellungen ---- %
 \contourlength{0.8pt}                                            % Abstand der Unterstreichungen zu herabhängenden Buchstaben einstellen
@@ -36,8 +36,8 @@
     \hspace*{10mm}\thepage
 }    
 \fancyfoot[C]{                                                   % Hinweis im Footer
-    \vspace*{-20mm}\\
-    \tiny Gleichungsnummern aus der Vorlesung von Prof.\ Dr.-Ing. Krämer {\color{NavyBlue}in Blau}. CAS-Programmaufrufe {\color{RedOrange}in Orange}.
+    \vspace*{-21.3mm}\\
+    \tiny Gleichungsnummern aus der Vorlesung von Prof.\ Dr.-Ing. Krämer {\color{NavyBlue}in Blau}.\\ CAS-Programmaufrufe und ggf. Nummer zur Formelwahl {\color{RedOrange}in Orange}.
 }
 \newcolumntype{Z}{>{\centering\arraybackslash}X}                 % Eigenen Spaltentyp in Tabellen definieren (Auto-Größe & zentriert)
 \renewcommand{\ULdepth}{1.8pt}                                   % Tiefe der Unterstreichungen anpassen
@@ -140,6 +140,8 @@
 \include{contents/skeletttheorie.tex}
 
 \include{contents/energiesatz.tex}
+
+\include{contents/gasdynamik.tex}
 
 \include{contents/diagramme.tex}
 
