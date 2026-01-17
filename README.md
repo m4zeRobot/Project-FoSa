@@ -11,3 +11,8 @@ If you want to contribute, just text me for repo access!
 - Useful notes have been added to each document, from CAS commands over simple page numbers to equation numbers, all in accordance with the respective lecture.
 - Giving the power to fix mistakes back to everyone!
 - Since the original documents are all in German, this project enables easy translation to other languages.
+
+## How the sheets are built
+Each sheet consists of a hard division into so called "Tiles", and a soft sub-division of these tiles, into either columns of a tabularx or multiple minipages.
+This makes the code look a bit messy here and there, but the results should always compile without any warnings.
+The hard division is setting a clear structure to work within, while any form of soft sub-division allows for more flexibility.
