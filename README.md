@@ -13,7 +13,7 @@ If you want to contribute, just text me for repo access!
 - Since the original documents are all in German, this project enables easy translation to other languages.
 
 ## How the sheets are built
-Each sheet consists of a hard division into so called "Tiles", and a soft sub-division of these tiles, into either columns of a tabularx or multiple minipages.
+Each sheet consists of a hard division into so called "Tiles", and a soft sub-division of these tiles, into either columns of a `tabularx` environment or multiple `minipage` environments.
 This makes the code look a bit messy here and there, but the results should always compile without any warnings.
 The hard division is setting a clear structure to work within, while any form of soft sub-division allows for more flexibility.
 
