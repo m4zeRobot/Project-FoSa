@@ -16,3 +16,10 @@ If you want to contribute, just text me for repo access!
 Each sheet consists of a hard division into so called "Tiles", and a soft sub-division of these tiles, into either columns of a tabularx or multiple minipages.
 This makes the code look a bit messy here and there, but the results should always compile without any warnings.
 The hard division is setting a clear structure to work within, while any form of soft sub-division allows for more flexibility.
+
+<hr/>
+
+## Some more things on the used nomenclature:
+- **Indexes** are generally written upright, since any italic letter is supposed to refer to a variable. This does of course not apply to indexes that are variables themselves, e.g. counters like *i*, *n* etc.
+- **Key Parameters** (such as the Mach or Laval numbers) are also written upright, even though they are technically variable per equation - this is just my personal preference.
+- **Multiplications** are generally shortened by simply using a half-space (`\,`) in between the factors, instead of the central dot (`\cdot`) as you may know it. This is meant to save space and avoid confusingly long equations.
