@@ -1,4 +1,4 @@
-% ### Erste Seite des Energiesatzes ###
+% ### Erste Seite der Gasdynamik ###
 \begin{center}
     \section*{\underline{Gasdynamik}}
 \end{center}
@@ -117,11 +117,11 @@
                 {\color{NavyBlue}(9.20a) \rotatebox[origin=c]{270}{$\Lsh$}} &  \\[2.0ex]
                 $\dfrac{\rho_0}{\rho}=\left(\dfrac{T_0}{T}\right)^\frac{1}{\kappa-1}=\left(1+\dfrac{\kappa-1}{2}\,\text{Ma}^2\right)^\frac{1}{\kappa-1}$ & $\dfrac{\rho^*}{\rho_0}=\left(\dfrac{2}{\kappa+1}\right)^\frac{1}{\kappa-1}$ \\[2.0ex]
                 {\color{NavyBlue}(9.20b) \rotatebox[origin=c]{270}{$\Lsh$}} & \vspace{1mm}{\color{NavyBlue}\rotatebox[origin=c]{90}{$\Lsh$} (9.26)} \\[2.0ex]
-                $h_0 = h+\dfrac{V^2}{2} \Leftrightarrow T_0 = T+\dfrac{V^2}{2\,c_\text{p}}$~~{\color{NavyBlue}(8.60)} & $\dfrac{A}{A^*}=\dfrac{1}{\text{Ma}}\left[\dfrac{2}{\kappa+1}\left(1+\dfrac{\kappa-1}{2}\text{Ma}^2\right)\right]^\frac{\kappa+1}{2\,(\kappa-1)}$ \\[1.0ex]
-                 & 
+                $h_0 = h+\dfrac{V^2}{2} \Leftrightarrow T_0 = T+\dfrac{V^2}{2\,c_\text{p}}$~~{\color{NavyBlue}(8.60)} & $\dfrac{A}{A^*}=\dfrac{1}{\text{Ma}}\left[\dfrac{2}{\kappa+1}\left(1+\dfrac{\kappa-1}{2}\text{Ma}^2\right)\right]^\frac{\kappa+1}{2\,(\kappa-1)}$ \\[3.0ex]%
             \end{tabularx}
+            \vspace{-2.5mm}\\
             \setlength{\TileSep}{2mm}
-            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt}\\
             \raggedright
             {\hspace{3mm}\color{RedOrange}mstr()}\\ \vspace{-6mm}
             \centering
@@ -134,8 +134,7 @@
                 \titlebf{Machzahl} & \vspace{-2.5mm}\hspace{6mm}{\color{RedOrange}la()}\hspace{6mm}\titlebf{Lavalzahl}\hspace{12mm}{\color{NavyBlue}(9.23b) \rotatebox[origin=c]{270}{$\Rsh$}} \\[3.0ex]
                 $\text{Ma} = \dfrac{V}{c}$ & \begin{tabular}{c|c}
                     $\text{La} = \dfrac{V}{c^*} = \sqrt{\dfrac{\kappa+1}{2+(\kappa-1)\,\text{Ma}^2}}\,\text{Ma}$ & $\text{La}_\text{max} = \sqrt{\dfrac{\kappa+1}{\kappa-1}}$ \\[2.5ex]
-                    {\color{NavyBlue}(9.23a) \rotatebox[origin=c]{270}{$\Lsh$}} & $\text{Luft: La}_\text{max} = 2,449$ \\[-1.5ex]
-                     & 
+                    {\color{NavyBlue}(9.23a) \rotatebox[origin=c]{270}{$\Lsh$}} & $\text{Luft: La}_\text{max} = 2,449$ \\[1.5ex]%
                  \end{tabular}
             \end{tabularx}
         }{0}{0}{1}{0}
@@ -225,5 +224,226 @@
             \includegraphics[width=46mm]{rayleigh-gerade.pdf}
         }{0}{0}{0}{0}
 
+\end{tikzpicture}
+
+\newpage
+% ### Zweite Seite der Gasdynamik ###
+\begin{center}
+    \section*{\underline{Gasdynamik}}
+\end{center}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{95mm}
+
+    % X1) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-14mm]current page.north west)}{190mm}{9mm}
+        {
+            \vspace{2mm}
+            \titlebf{Schräge Verdichtungsstöße}%
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel relativ zu X1
+    \setlength{\cellwidth}{108.5mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-1mm}
+            \hspace{14mm}\titlerm{Stoßbeziehungen}\hspace{9mm}{\color{RedOrange}sv()}\\ \vspace{1mm}
+            \begin{minipage}{0.42\cellwidth-\TileSep}
+                \centering
+                \vspace{1mm}%
+                \includegraphics[width=\textwidth-2\TileSep]{senkrechter-stoss.pdf}\\
+                \vspace{1mm}
+                {\color{NavyBlue}(9.43) \rotatebox[origin=c]{270}{$\Rsh$}}%
+                \vspace{-2mm}
+                \begin{align*}
+                    \text{Ma}_{1n} &= \text{Ma}_1\,\sin(\sigma) \\
+                    \text{Ma}_{2n} &= \text{Ma}_2\,\sin(\sigma-\vartheta)
+                \end{align*}
+            \end{minipage}%
+            \hspace{\TileSep}\vrule\hspace{\TileSep}
+            \begin{minipage}{0.52\cellwidth-\TileSep}
+                \centering
+                {\color{NavyBlue}(9.47a) \rotatebox[origin=c]{270}{$\Rsh$}}%
+                \vspace{-1.2mm}
+                \begin{equation*}
+                    \frac{p_2}{p_1}=1+\frac{2\,\kappa}{\kappa+1}\,\left(\text{Ma}_1^2\,\sin^2(\sigma)-1\right)
+                \end{equation*}
+                \begin{equation*}
+                    \frac{\rho_2}{\rho_1} = \frac{u_1}{u_2} = \frac{(\kappa+1)\,\text{Ma}_1^2\,\sin^2(\sigma)}{2+(\kappa-1)\,\text{Ma}_1^2\,\sin^2(\sigma)}
+                \end{equation*}
+                \\ \vspace{1mm}
+                {\color{NavyBlue}(9.44) \rotatebox[origin=c]{270}{$\Lsh$}}
+            \end{minipage}
+            \\ \vspace{1mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt}
+            \begin{equation*}
+                \frac{T_2}{T_1} = \frac{V_2^2}{V_1^2} = \frac{p_2}{p_1}\,\frac{\rho_1}{\rho_2} = \frac{(2\,\kappa\,\text{Ma}_1^2\,\sin^2(\sigma)-\kappa+1)\,(2+(\kappa-1)\,\text{Ma}_1^2\,\sin^2(\sigma))}{(\kappa+1)^2\,\text{Ma}_1^2\,\sin^2(\sigma)}
+            \end{equation*}%
+            \vspace{1mm}
+            \begin{equation*}
+                \frac{\text{Ma}_1}{\text{Ma}_2} = \left[\frac{1+\frac{2\,\kappa}{\kappa+1}\,(\text{Ma}_1^2\,\sin^2(\sigma)-1)}{1-\frac{2}{\kappa+1}\,\left(1-\frac{1}{\text{Ma}_1^2\,\sin^2(\sigma)}\right)}\right]^{\frac{1}{2}}\frac{\sin(\sigma-\vartheta)}{\sin(\sigma)}\quad\text{\color{NavyBlue}(9.59)}
+            \end{equation*}%
+            \vspace{2mm}
+            \begin{equation*}
+                \frac{p_{02}}{p_{01}} = \left[\frac{\left(\frac{\kappa+1}{2}\right)^{\kappa+1}\,\left(\text{Ma}_1\,\sin(\sigma)\right)^{2\kappa}}{\left(1+\frac{\kappa-1}{2}\,(\text{Ma}_1\,\sin(\sigma))^2\right)^\kappa\,\left(\kappa\,(\text{Ma}_1\,\sin(\sigma))^2-\frac{\kappa-1}{2}\right)}\right]^\frac{1}{\kappa-1}~~\text{\color{NavyBlue}(9.58)}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel relativ zu A1
+    \setlength{\cellwidth}{81.5mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-1mm}
+            \titlerm{Mach'sche Welle}\\ \vspace{2mm}
+            \begin{minipage}{0.41\cellwidth-\TileSep}
+                \centering
+                \vspace{-1mm}
+                {\color{NavyBlue}(9.67) \rotatebox[origin=c]{270}{$\Rsh$}}\hspace{18mm}~\\ \vspace{-6mm}
+                \begin{equation*}
+                    \mu = \arcsin\left(\frac{1}{\text{Ma}}\right)
+                \end{equation*}
+                \\ \vspace{1mm}
+                Es gilt: $\mu\leq\sigma\leq\frac{\pi}{2}$\\ \vspace{2mm}
+            \end{minipage}%
+            \hspace{0.5\TileSep}\vrule\hspace{0.5\TileSep}
+            \begin{minipage}{0.51\cellwidth-\TileSep}
+                \centering
+                \includegraphics[width=39.5mm]{schraeger-stoss.pdf}
+            \end{minipage}
+            \\ \vspace{1mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt}\\ \vspace{1mm}
+            \titlerm{Umlenkwinkel}
+            \begin{equation*}
+                \tan(\vartheta) = \cot(\sigma)\,\frac{\text{Ma}_1^2\,\sin^2(\sigma)-1}{1+(\frac{\kappa+1}{2}-\sin^2(\sigma))\,\text{Ma}_1^2}~~\text{\color{NavyBlue}(9.49)}
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt}\\ \vspace{1mm}
+            \titlerm{Entropiezunahme (Ideales Gas)}
+            \begin{equation*}
+                s_2-s_1 = c_\text{v}\,\ln\left(\frac{p_2}{p_1}\left(\frac{\rho_1}{\rho_2}\right)^\kappa\right)~~\text{\color{NavyBlue}(9.47c)}
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt}\\
+            \hspace{12mm}\titlebf{Schräge Stoßexpansion}\hspace{6mm}{\color{RedOrange}schs()}\\ \vspace{2mm}
+            \begin{minipage}{0.40\cellwidth-\TileSep}
+                \centering
+                \vspace{-1mm}
+                \begin{equation*}
+                    \frac{T_2}{T_1} = \frac{1+\frac{\kappa-1}{2}\,\text{Ma}_1^2}{1+\frac{\kappa-1}{2}\,\text{Ma}_2^2}
+                \end{equation*}
+                \\ \vspace{-1.5mm}
+                {\color{NavyBlue}(9.77a) \rotatebox[origin=c]{270}{$\Lsh$}}
+            \end{minipage}%
+            \hspace{0.5\TileSep}\vrule\hspace{0.5\TileSep}
+            \begin{minipage}{0.54\cellwidth-\TileSep}
+                \centering
+                \vspace{-1mm}
+                \begin{equation*}
+                    \frac{p2}{p_1} = \left(\frac{1+\frac{\kappa-1}{2}\,\text{Ma}_1^2}{1+\frac{\kappa-1}{2}\,\text{Ma}_2^2}\right)^\frac{\kappa}{\kappa-1}
+                \end{equation*}
+                \\ \vspace{-1.5mm}
+                {\color{NavyBlue}(9.77b) \rotatebox[origin=c]{270}{$\Lsh$}}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: relativ zu A1
+\setlength{\rowheight}{23mm}
+
+    % A2) Erste Kachel relativ zu A1
+    \setlength{\cellwidth}{40mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Öffnungskegel}\\ \vspace{-2.5mm}
+            \begin{equation*}
+                \delta = \mu_2 - \mu_1 + \Delta\vartheta_{12}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel relativ zu A2
+    \setlength{\cellwidth}{150mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \hspace{14mm}\titlerm{Prandtl-Meyer-Funktion}\hspace{7mm}{\color{RedOrange}pmf()}\\ \vspace{1mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|Z}
+                 & \\[-2.5ex]
+                $\nu(\text{Ma}_2) = \nu(\text{Ma}_1) + \vartheta_{12}$ & $\displaystyle\nu(\text{Ma}) = \sqrt{\frac{\kappa+1}{\kappa-1}}\,\arctan\left(\sqrt{\frac{\kappa-1}{\kappa+1}\,(\text{Ma}^2-1)}\right)-\arctan\left(\sqrt{\text{Ma}^2-1}\right)$ \\[-2.0ex]
+                {\color{NavyBlue}(9.75) \rotatebox[origin=c]{270}{$\Lsh$}} & {\color{NavyBlue}(9.74) \rotatebox[origin=c]{270}{$\Lsh$}}
+            \end{tabularx}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: relativ zu A2
+\setlength{\rowheight}{135mm}
+
+    % A3) Erste Kachel relativ zu A2
+    \setlength{\cellwidth}{110mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Instationäre eindimensionale Strömung}\\ \vspace{1mm}
+            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{Z|c}
+                \titlerm{Kolbengeschwindigkeit} & \titlerm{Machzahl} \\[2.0ex]
+                $\dfrac{V_\text{k}'}{c_1} = \dfrac{2}{\kappa+1}\,\dfrac{\text{Ma}_\text{s}^2-1}{\text{Ma}_\text{s}}$ & $\text{Ma}_{2}' = \dfrac{\text{Ma}_\text{s}^2-1}{\sqrt{(1+\frac{\kappa-1}{2}\,\text{Ma}_\text{s}^2)\,(\kappa\,\text{Ma}_\text{s}^2-\frac{\kappa-1}{2})}}$ \\[-1.5ex]
+                 & 
+            \end{tabularx}
+            \\ \vspace{1mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt}\\
+            \titlerm{Stoßbeziehungen}
+            \begin{equation*}
+                \frac{p_2'}{p_1'} = \frac{2\,\kappa\,\text{Ma}_\text{s}^2-\kappa+1}{\kappa+1}
+            \end{equation*}
+            \begin{equation*}
+                \frac{p_{02}'}{p_1'} = \left(\frac{\kappa+1}{2\,\kappa\,\text{Ma}_\text{s}^2-\kappa+1}\right)^\frac{1}{\kappa-1}\,\left(\text{Ma}_\text{s}^2\,\frac{2\,(\kappa-1)\,\text{Ma}_\text{s}^2+(3-\kappa)}{2+(\kappa-1)\,\text{Ma}_\text{s}^2}\right)^\frac{\kappa}{\kappa-1}
+            \end{equation*}%
+            \vspace{2mm}
+            \begin{equation*}
+                \frac{T_2'}{T_1'} = \frac{(2\,\kappa\,\text{Ma}_\text{s}^2-\kappa+1)\,(2+(\kappa-1)\,\text{Ma}_\text{s}^2)}{(\kappa+1)^2\,\text{Ma}_\text{s}^2}
+            \end{equation*}%
+            \vspace{2mm}
+            \begin{equation*}
+                \frac{T_{02}'}{T_1} = \frac{2}{\kappa+1}\,\left((\kappa-1)\,\text{Ma}_\text{s}^2+\frac{3-\kappa}{2}\right)
+            \end{equation*}
+            \\
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt}\\
+            \titlerm{$\text{Ma}_\text{s} > 7$}\\ \vspace{2mm}
+            \resizebox{\cellwidth-4.5mm}{!}{
+                \begin{tabularx}{\cellwidth+2mm}{Z|Z}
+                    $\text{Ma}_2 \approx \sqrt{\dfrac{\kappa-1}{2\,\kappa}}$ & $\text{Ma}_2' \approx \sqrt{\dfrac{2}{\kappa\,(\kappa-1)}}$ \\[3.0ex]
+                    $\dfrac{p_{02}}{p_{01}} \approx \left(\dfrac{\kappa+1}{2\,\kappa}\,\left(\dfrac{\kappa+1}{\kappa-1}\,\kappa\right)\,\dfrac{1}{\text{Ma}_\text{s}^2}\right)^\frac{1}{\kappa-1}$ & $\dfrac{p_{02}'}{p_{01}'} = \dfrac{p_{02}'}{p_1'} = \dfrac{p_{02}'}{p_1} \approx \left(\dfrac{\kappa+1}{\kappa}\right)^\frac{1}{\kappa-1}\text{Ma}_\text{s}^2$ \\[4.5ex]
+                    $\dfrac{T_2}{T_1} \approx 2\,\kappa\,\dfrac{(\kappa-1)}{(\kappa+1)^2}\,\text{Ma}_\text{s}^2$ & $\dfrac{T_{02}'}{T_{01}'} = \dfrac{T_{02}'}{T_1'} = \dfrac{T_{02}'}{T_1} \approx 2\,\dfrac{(\kappa-1)}{(\kappa+1)}\,\text{Ma}_\text{s}^2$ \\[-0.5ex]
+                     & 
+                \end{tabularx}
+            }
+            \\ \vspace{-1mm}
+            \begin{equation*}
+                \frac{p_2}{p_1} = \frac{p_2'}{p_1'} \approx \frac{2\,\kappa}{\kappa+1}\,\text{Ma}_\text{s}^2
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+    \setlength{\TileSep}{2mm}
+
+    % B3) Zweite Kachel relativ zu A3
+    \setlength{\cellwidth}{80mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Düsenströmung}\\ \vspace{4mm}
+            \setlength{\TileSep}{0mm}
+            \begin{minipage}{0.44\cellwidth}
+                \centering
+                \includegraphics[width=\textwidth]{duesenstroemung-beispiel.pdf}\\ \vspace{-5.15mm}
+                \includegraphics[width=\textwidth]{duesenstroemung-beispiel-druckdiagramm.pdf}\\ \vspace{-7.29mm}
+                \includegraphics[width=\textwidth]{duesenstroemung-beispiel-machdiagramm.pdf}
+            \end{minipage}%
+            \hspace{4mm}
+            \begin{minipage}{0.44\cellwidth}
+                \centering
+                \includegraphics[width=\textwidth]{duesenstroemung-fall-a.pdf}\\
+                \includegraphics[width=\textwidth]{duesenstroemung-fall-b.pdf}\\
+                \includegraphics[width=\textwidth]{duesenstroemung-fall-c.pdf}\\
+                \includegraphics[width=\textwidth]{duesenstroemung-fall-d.pdf}\\
+                \includegraphics[width=\textwidth]{duesenstroemung-fall-e.pdf}\\
+                \includegraphics[width=\textwidth]{duesenstroemung-fall-f.pdf}\\
+                \includegraphics[width=\textwidth]{duesenstroemung-fall-g.pdf}
+            \end{minipage}
+            \setlength{\TileSep}{2mm}
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
