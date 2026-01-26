@@ -1,25 +1,25 @@
 # Project-FoSa
-Recreating the source files to the equation cheat-sheets from FLURUS - the student council of the aerospace degree program at the University of Stuttgart, Germany.
+Neuerstellung der Quelldateien für die Formelsammlungen von FLURUS – der Fachschaft des Studiengangs Luft- und Raumfahrttechnik an der Universität Stuttgart, Deutschland.
 
-## Why does this project exist?
-From finally vectorizing all the images to enable sharp quality printouts to letting people fix obvious mistakes on their own, this project arose with the goal of improvement in mind.
-If you want to contribute, just text me for repo access!
+## Wieso existiert dieses Projekt?
+Von der endgültigen Vektorisierung aller Bilder, um scharfe Ausdrucke zu ermöglichen, bis hin zur Möglichkeit, offensichtliche Fehler selbst zu korrigieren – dieses Projekt entstand mit dem Ziel der Verbesserung.
+Wenn du einen Beitrag leisten möchten, schreib mir einfach, um kollaborativen Zugriff auf das Repository zu erhalten. Ansonsten können alle hier geteilten Inhalte natürlich frei verwendet werden!
 
-### Advantages
-- The whitespace of each document has been optimized to save the most precious thing when creating an Equation Cheat-Sheet: space.
-- Each graphic has been re-created as a vector graphic, letting you a) fix possible mistakes and b) making it crisp after printing, all while c) colorizing each image for easier recognition.
-- Useful notes have been added to each document, from CAS commands over simple page numbers to equation numbers, all in accordance with the respective lecture.
-- Giving the power to fix mistakes back to everyone!
-- Since the original documents are all in German, this project enables easy translation to other languages.
+### Vorteile
+- Der Leerraum jedes Dokuments wurde optimiert, um das Wertvollste bei der Erstellung einer Formelsammlung zu sparen: Platz.
+- Jede Grafik wurde als Vektorgrafik neu erstellt, sodass a) mögliche Fehler leichter korrigierbar sind und b) nach dem Drucken eine scharfe Darstellung gewährleistet ist, während c) jedes Bild zur leichteren Erkennung koloriert wurde.
+- Jedem Dokument wurden nützliche Anmerkungen hinzugefügt, von CAS-Befehlen über einfache Seitenzahlen bis hin zu Gleichungsnummern, alles in Übereinstimmung mit der jeweiligen Vorlesung.
+- Jedem wird hiermit die Möglichkeit gegeben, Fehler zu korrigieren oder eigene Formelsammlungen zu erstellen!
+- Da die Originaldokumente alle auf Deutsch sind, ermöglicht dieses Projekt eine einfache Übersetzung in andere Sprachen.
 
-## How the sheets are built
-Each sheet consists of a hard division into so called "Tiles", and a soft sub-division of these tiles, into either columns of a `tabularx` environment or multiple `minipage` environments.
-This makes the code look a bit messy here and there, but the results should always compile without any warnings.
-The hard division is setting a clear structure to work within, while any form of soft sub-division allows for more flexibility.
+## Wie die Formelsammlungen aufgebaut sind
+Jedes Blatt besteht aus einer harten Unterteilung in sogenannte „Kacheln“ und einer weichen Unterteilung dieser Kacheln entweder in Spalten einer `tabularx`-Umgebung oder in mehrere `minipage`-Umgebungen.
+Dadurch sieht der Code hier und da etwas unübersichtlich aus, aber die Ergebnisse sollten immer ohne Warnungen kompiliert werden können.
+Die harte Unterteilung legt eine klare Struktur fest, innerhalb derer gearbeitet werden muss, während jede Form der weichen Unterteilung mehr Flexibilität ermöglicht.
 
 <hr/>
 
-## Some more things on the used nomenclature:
-- **Indexes** are generally written upright, since any italic letter is supposed to refer to a variable. This does of course not apply to indexes that are variables themselves, e.g. counters like *i*, *n* etc.
-- **Key Parameters** (such as the Mach or Laval numbers) are also written upright, even though they are technically variable per equation - this is just my personal preference.
-- **Multiplications** are generally shortened by simply using a half-space (`\,`) in between the factors, instead of the central dot (`\cdot`) as you may know it. This is meant to save space and avoid confusingly long equations.
+## Einige weitere Anmerkungen zur verwendeten Nomenklatur
+- **Indizes** werden in der Regel aufrecht geschrieben, da kursive Buchstaben für Variablen stehen. Dies gilt natürlich nicht für Indizes, die selbst Variablen sind, z. B. Zähler wie *i*, *n* usw.
+- **Kennzahlen** wie bspw. die Machzahl werden ebenfalls aufrecht geschrieben, obwohl sie technisch gesehen je nach Gleichung variabel sind – das ist lediglich meine persönliche Präferenz.
+- **Multiplikationen** werden im Allgemeinen verkürzt, indem einfach ein Halbraum (`\,`) zwischen den Faktoren verwendet wird, anstatt des zentralen Punktes (`\cdot`), wie man ihn vielleicht kennt. Dies dient dazu, Platz zu sparen und verwirrend lange Gleichungen zu vermeiden.
