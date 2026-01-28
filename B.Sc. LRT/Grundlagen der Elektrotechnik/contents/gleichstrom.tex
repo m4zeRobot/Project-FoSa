@@ -4,6 +4,7 @@
 \end{center}
 
 \begin{tikzpicture}[remember picture, overlay]
+
 % ---- ERSTE REIHE: Am Seitenursprung starten
 \setlength{\rowheight}{22mm} % Erste Reihenhöhe: 22mm
 
@@ -26,7 +27,7 @@
     \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-2mm}
-            \titlerm{El. Stromstärke}\\ \vspace{1mm}
+            \titlerm{Elektrische Stromstärke}\\ \vspace{1mm}
             \begin{minipage}{0.44\cellwidth}
                 \centering
                 \begin{equation*}
@@ -49,21 +50,168 @@
     \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-2mm}
-            \titlerm{Stromdichte}\\ \vspace{-3mm}
+            \titlerm{Stromdichte}\\ \vspace{-1mm}
             \begin{equation*}
                 S = \frac{I}{A}
             \end{equation*}
-        }{0}{1}{1}{0} % Kante: unten
+        }{0}{1}{1}{0} % Kante: unten & rechts
     
     % D1) Vierte Kachel rechts anbauen
-    \setlength{\cellwidth}{32mm} % Breite einstellen (Summe aller Zellen sei 190mm!)
+    \setlength{\cellwidth}{36mm} % Breite einstellen
     \Tile{D1}{(C1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-2mm}
-            \titlerm{Ohm'sches Gesetz}\\ \vspace{-3mm}
-            \begin{equation*}
-                U = R\cdot I
-            \end{equation*}
+            \titlerm{Ohm'sches Gesetz}\\ \vspace{-2.5mm}
+            \begin{align*}
+                U &= R\cdot I \\
+                I &= G\cdot U
+            \end{align*}
+        }{0}{1}{1}{0} % Kante: unten & rechts
+
+    % E1) Fünfte Kachel rechts anbauen
+    \setlength{\cellwidth}{33mm} % Breite einstellen (Summe aller Zellen sei 190mm!)
+    \Tile{E1}{(D1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{El. Arbeit}\\ \vspace{-2.5mm}
+            \begin{align*}
+                W &= Q\cdot U \\
+                  &= U\cdot I\cdot t
+            \end{align*}
         }{0}{0}{1}{0} % Kante: unten
+
+% ---- ZWEITE REIHE: unten anbauen
+\setlength{\rowheight}{30mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{125mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Widerstand eines Leiters}\\ \vspace{1mm}
+            \begin{minipage}{0.47\cellwidth-\TileSep}
+                \centering
+                \titlerm{Widerstand \& Temperatur}
+                \begin{equation*}
+                R = \rho\cdot\frac{l}{A}
+                \end{equation*}
+                \begin{equation*}
+                    \rho(\vartheta) = \rho_{20^\circ\text{C}}\cdot \left(1+\alpha_{20^\circ\text{C}}\cdot(\vartheta-20\,\text{K})\right)
+                \end{equation*}%
+                \vspace{-2mm}
+            \end{minipage}%
+            \hfill\vline\hfill
+            \begin{minipage}{0.22\cellwidth-\TileSep}
+                \centering
+                \titlerm{Leitwert}\\ \vspace{-1mm}
+                \begin{equation*}
+                G = \frac{1}{R}
+                \end{equation*}%
+                \vspace{2.5mm}
+            \end{minipage}
+            \hfill\vline\hfill
+            \begin{minipage}{0.27\cellwidth-\TileSep}
+                \centering
+                \titlerm{Spez. Leitfähigkeit}\\ \vspace{-1mm}
+                \begin{equation*}
+                \sigma = \frac{1}{\rho}
+                \end{equation*}%
+                \vspace{2.5mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Elektrische Leistung}\\ \vspace{1mm}
+            \begin{equation*}
+                P = U\cdot I = R\cdot I^2 = \frac{W}{t} = \frac{Q\cdot U}{t}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: unten anbauen
+\setlength{\rowheight}{58mm}
+
+    % X3) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{8mm}
+        {
+            \vspace{1mm}
+            \titlebf{Kirschhoff'sche Regeln}\\
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Knotenregel}\\ \vspace{1mm}
+            Die vorzeichenrichtige Summe aller \textbf{Ströme}\\ in einem Stromknoten ist null.\\ \vspace{2mm}
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \begin{equation*}
+                    \sum\limits_{n=0}^k I_n = 0
+                \end{equation*}
+                Positiv: Strom fließt auf den Knoten \textbf{zu}!\\ \vspace{1mm}
+                Bsp.: ${\color{Red}I_1} + {\color{Red}I_2} + {\color{Red}I_3} - {\color{Red}I_4} = 0$
+            \end{minipage}%
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=30mm]{images/kirchhoff-knotenregel.pdf}
+            \end{minipage} \\
+            \vspace{2.5mm}
+            $k$: Anzahl der Knoten in einem Netzwerk,\\ beschrieben durch $k - 1$ Gleichungen.
+        }{0}{1}{0}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Maschenregel}\\ \vspace{1mm}
+            Die vorzeichenrichtige Summe aller \textbf{Spannungen}\\ in einem Stromkreis ist null.\\ \vspace{2mm}
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \begin{equation*}
+                    \sum\limits_{n=0}^m U_n = 0
+                \end{equation*}
+                Positiv: wählbar, muss \textbf{konsistent} sein!\\ \vspace{1mm}
+                Bsp.: ${\color{NavyBlue}U_1} - {\color{NavyBlue}U_2} - {\color{NavyBlue}U_3} + {\color{NavyBlue}U_4} = 0$
+            \end{minipage}%
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \vspace{1mm}
+                \includegraphics[height=28mm]{images/kirchhoff-maschenregel.pdf}
+                \vspace{1mm}
+            \end{minipage} \\
+            \vspace{2.5mm}
+            $m$: Anzahl der Maschen in einem Netzwerk,\\ beschrieben durch $m$ Gleichungen.
+        }{0}{0}{0}{0}
+
+% ---- VIERTE REIHE: unten anbauen
+\setlength{\rowheight}{8mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{1mm}
+            $p$: Gesamtzahl unabhängiger Gleichungen. Es gilt: $p = m + k - 1$ .
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: unten anbauen
+\setlength{\rowheight}{64mm}
+
+    % X5) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X5}{(A4.south west)}{190mm}{8mm}
+        {
+            \vspace{1mm}
+            \titlebf{Ersatzspannungsquelle}\\
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{title}
+
+        }{0}{0}{1}{0}
 
 \end{tikzpicture}
