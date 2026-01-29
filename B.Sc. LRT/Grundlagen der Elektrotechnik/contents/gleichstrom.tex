@@ -147,10 +147,11 @@
             Die vorzeichenrichtige Summe aller \textbf{Ströme}\\ in einem Stromknoten ist null.\\ \vspace{2mm}
             \begin{minipage}{0.48\cellwidth-\TileSep}
                 \centering
+                \vspace{-4mm}
                 \begin{equation*}
                     \sum\limits_{n=0}^k I_n = 0
                 \end{equation*}
-                Positiv: Strom fließt auf den Knoten \textbf{zu}!\\ \vspace{1mm}
+                Positive Richtung: Strom fließt auf den Knoten \textbf{zu}!\\ \vspace{1mm}
                 Bsp.: ${\color{Red}I_1} + {\color{Red}I_2} + {\color{Red}I_3} - {\color{Red}I_4} = 0$
             \end{minipage}%
             \begin{minipage}{0.48\cellwidth-\TileSep}
@@ -169,10 +170,11 @@
             Die vorzeichenrichtige Summe aller \textbf{Spannungen}\\ in einem Stromkreis ist null.\\ \vspace{2mm}
             \begin{minipage}{0.48\cellwidth-\TileSep}
                 \centering
+                \vspace{-4mm}
                 \begin{equation*}
                     \sum\limits_{n=0}^m U_n = 0
                 \end{equation*}
-                Positiv: wählbar, muss \textbf{konsistent} sein!\\ \vspace{1mm}
+                Positive Richtung: wählbar, muss \textbf{konsistent} sein!\\ \vspace{1mm}
                 Bsp.: ${\color{NavyBlue}U_1} - {\color{NavyBlue}U_2} - {\color{NavyBlue}U_3} + {\color{NavyBlue}U_4} = 0$
             \end{minipage}%
             \begin{minipage}{0.48\cellwidth-\TileSep}
@@ -197,10 +199,62 @@
         }{0}{0}{1}{0}
 
 % ---- FÜNFTE REIHE: unten anbauen
-\setlength{\rowheight}{64mm}
+\setlength{\rowheight}{35mm}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Reihenschaltung}
+            \begin{align*}
+                \text{Widerstände: }&R_\text{ges.} = R_1 + R_2 \dots \\
+                \text{Spannungen: }&U_\text{ges.} = U_1 + U_2 \dots \\
+                \text{Strom: }&I = \text{konst.} \\
+                \text{Leitwerte: }&\frac{1}{G_\text{ges.}} = \frac{1}{G_1} + \frac{1}{G_2} \dots
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel unten anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Parallelschaltung}
+            \begin{align*}
+                \text{Widerstände: }&\frac{1}{R_\text{ges.}} = \frac{1}{R_1} + \frac{1}{R_2} \dots \\
+                \text{Spannung: }&U = \text{konst.} \\
+                \text{Ströme: }&I_\text{ges.} = I_1 + I_2 \dots \\
+                \text{Leitwerte: }&G_\text{ges.} = G_1 + G_2 \dots
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % C5) Zweite Kachel unten anbauen
+    \setlength{\cellwidth}{70mm}
+    \Tile{C5}{(B5.north east)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.53\cellwidth-\TileSep}
+                \centering
+                \titlerm{Spannungsteilerregel}\\ \vspace{3mm}
+                \begin{equation*}
+                    \frac{U_1}{U_2} = \frac{R_1}{R_2} = \frac{G_2}{G_1}
+                \end{equation*}
+                \vspace{7.5mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.47\cellwidth-\TileSep}
+                \centering
+                \titlerm{Stromteilerregel}\\ \vspace{3mm}
+                \begin{equation*}
+                    \frac{I_1}{I_2} = \frac{R_2}{R_1} = \frac{G_1}{G_2}
+                \end{equation*}
+                \vspace{7.5mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- SECHSTE REIHE: unten anbauen
+\setlength{\rowheight}{50mm}
 
     % X5) EIGENES FELD für die Zeilen-Überschrift
-    \Tile{X5}{(A4.south west)}{190mm}{8mm}
+    \Tile{X6}{(A5.south west)}{190mm}{8mm}
         {
             \vspace{1mm}
             \titlebf{Ersatzspannungsquelle}\\
@@ -208,10 +262,45 @@
 
     % A5) Erste Kachel unten anbauen
     \setlength{\cellwidth}{190mm}
-    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
+    \Tile{A6}{(X6.south west)}{\cellwidth}{\rowheight}
         {
-            \titlerm{title}
-
+            \hspace{-4mm}
+            \begin{minipage}{0.27\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=39.5mm]{images/ersatzquelle-ausgangsschaltung.pdf}\\
+                a) Ausgangsschaltung
+            \end{minipage}%
+            $\Rightarrow$
+            \begin{minipage}{0.22\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=40mm]{images/ersatzquelle-schritt-1.pdf}\\
+                b) Schritt 1
+            \end{minipage}%
+            \begin{minipage}{0.22\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=40mm]{images/ersatzquelle-schritt-2.pdf}\\
+                c) Schritt 2
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.285\cellwidth-\TileSep}
+                \centering
+                \vspace{-2mm}
+                \begin{equation*}
+                    U_\text{q}' = U_\text{q}\cdot\frac{R_1}{R_1 + R_\text{i}}
+                \end{equation*}
+                \begin{equation*}
+                    I_\text{k}' = \frac{U_\text{q}}{R_\text{i}}\,;\quad I_2 = \frac{U_\text{q}'}{R_\text{i}' + R}
+                \end{equation*}\\
+                \vspace{-2mm}
+                \begin{equation*}
+                    R_\text{i}' = \frac{U_\text{q}'}{I_\text{k}'} = \frac{R_\text{i}\cdot R_1}{R_\text{i} + R_1}
+                \end{equation*}\\
+                \rule{\dimexpr\textwidth-2\TileSep}{0.5pt} \\
+                \vspace{-5mm}
+                \begin{equation*}
+                    P_\text{q} = U_\text{q} \cdot I = \frac{U_\text{q}^2}{R_\text{i} + \frac{R_1\cdot R}{R_1 + R}}
+                \end{equation*}
+            \end{minipage}%
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
