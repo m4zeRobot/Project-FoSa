@@ -1,0 +1,82 @@
+\begin{center}
+    \section*{\underline{Gleichstrom}}
+\end{center}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{22mm} % Erste Reihenhöhe: 22mm
+
+    % A1) Erste Kachel absolut platzieren (vom Seiten-Nordwest-Anker aus)
+    \setlength{\cellwidth}{30mm} % Breite einstellen
+    \Tile{A1}{([xshift=10mm,yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{El. Feldstärke}\\ \vspace{-3mm}
+            \begin{equation*}
+                \vec{F} = Q\cdot E
+            \end{equation*}
+            \begin{equation*}
+                U = F\cdot L
+            \end{equation*}
+        }{0}{1}{1}{0} % Kanten: unten & rechts
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{65mm} % Breite einstellen
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Elektrische Stromstärke}\\ \vspace{1mm}
+            \begin{minipage}{0.44\cellwidth}
+                \centering
+                \begin{equation*}
+                    I = \frac{Q}{t}
+                \end{equation*}
+                (Bei stat. Strom)
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.49\cellwidth}
+                \centering
+                \begin{equation*}
+                    i = \frac{\text{d}q(t)}{\text{d}t}
+                \end{equation*}
+                (Bei instat. Strom)
+            \end{minipage}
+        }{0}{1}{1}{0} % Kanten: unten & rechts
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{26mm} % Breite einstellen
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Stromdichte}\\ \vspace{-1mm}
+            \begin{equation*}
+                S = \frac{I}{A}
+            \end{equation*}
+        }{0}{1}{1}{0} % Kante: unten & rechts
+    
+    % D1) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{36mm} % Breite einstellen
+    \Tile{D1}{(C1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{Ohm'sches Gesetz}\\ \vspace{-2.5mm}
+            \begin{align*}
+                U &= R\cdot I \\
+                I &= G\cdot U
+            \end{align*}
+        }{0}{1}{1}{0} % Kante: unten & rechts
+
+    % E1) Fünfte Kachel rechts anbauen
+    \setlength{\cellwidth}{33mm} % Breite einstellen (Summe aller Zellen sei 190mm!)
+    \Tile{E1}{(D1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlerm{El. Arbeit}\\ \vspace{-2.5mm}
+            \begin{align*}
+                W &= Q\cdot U \\
+                  &= U\cdot I\cdot t
+            \end{align*}
+        }{0}{0}{1}{0} % Kante: unten
+
+\end{tikzpicture}
