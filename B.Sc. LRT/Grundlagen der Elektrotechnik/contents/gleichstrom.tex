@@ -1,4 +1,3 @@
-\setcounter{page}{1}
 \begin{center}
     \section*{\underline{Gleichstrom}}
 \end{center}
@@ -253,14 +252,14 @@
 % ---- SECHSTE REIHE: unten anbauen
 \setlength{\rowheight}{50mm}
 
-    % X5) EIGENES FELD für die Zeilen-Überschrift
+    % X6) EIGENES FELD für die Zeilen-Überschrift
     \Tile{X6}{(A5.south west)}{190mm}{8mm}
         {
             \vspace{1mm}
             \titlebf{Ersatzspannungsquelle}\\
         }{0}{0}{0}{0}
 
-    % A5) Erste Kachel unten anbauen
+    % A6) Erste Kachel unten anbauen
     \setlength{\cellwidth}{190mm}
     \Tile{A6}{(X6.south west)}{\cellwidth}{\rowheight}
         {
@@ -302,5 +301,38 @@
                 \end{equation*}
             \end{minipage}%
         }{0}{0}{1}{0}
+
+% ---- SIEBTE REIHE: unten anbauen
+\setlength{\rowheight}{30mm}
+
+    % X7) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X7}{(A6.south west)}{190mm}{8mm}
+        {
+            \vspace{1mm}
+            \titlebf{Charakterisierung realer Spannungsquellen}\\
+        }{0}{0}{0}{0}
+
+    % A7) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A7}{(X7.south west)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.25\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=\rowheight-4mm]{images/reale-spannungsquelle.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.25\cellwidth-\TileSep}
+                \centering
+                \begin{equation*}
+                    R_\text{i} = \frac{U_\text{q}}{I_\text{k}} = \frac{\Delta U}{\Delta I}
+                \end{equation*}
+                \begin{equation*}
+                    \text{Klemmspannung: } U = U_\text{q} - R_\text{i} \cdot I
+                \end{equation*}
+            \end{minipage}
+            \begin{minipage}{0.30\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=\rowheight-4mm]{images/reale-spannungsquelle-kennlinie.pdf}
+            \end{minipage}
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
