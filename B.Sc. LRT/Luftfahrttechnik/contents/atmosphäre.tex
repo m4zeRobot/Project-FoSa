@@ -10,14 +10,14 @@
     % X1) EIGENES FELD für die Zeilen-Überschrift
     \Tile{X1}{([xshift=10mm,yshift=-16mm]current page.north west)}{190mm}{8mm}
         {
-            \titlebf{Troposhphäre}
+            \titlebf{Troposhphäre}\\
         }{0}{0}{0}{0} % Kanten: unten & rechts
 
     % A1) Erste Kachel unten anbauen
     \setlength{\cellwidth}{24mm} % Breite einstellen
     \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
         {
-            \vspace{-2mm}
+            \vspace{-\TileSep}
             \titlerm{Schall}\\ \vspace{-1mm}
             \begin{equation*}
                 c_\text{s} = \sqrt{\kappa\,R\,T}
@@ -28,7 +28,7 @@
     \setlength{\cellwidth}{60mm} % Breite einstellen
     \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
         {
-            \vspace{-2mm}
+            \vspace{-\TileSep}
             \titlerm{Druck}\\ \vspace{-2mm}
             \begin{equation*}
                 \frac{p}{p_0} = \left(1-\frac{n-1}{n}\,\frac{g}{R\,T_0}\,\left(H-H_0\right)\right)^\frac{n}{n-1}
@@ -39,7 +39,7 @@
     \setlength{\cellwidth}{60mm} % Breite einstellen
     \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
         {
-            \vspace{-2mm}
+            \vspace{-\TileSep}
             \titlerm{Dichte}\\ \vspace{-2mm}
             \begin{equation*}
                 \frac{\rho}{\rho_0} = \left(1-\frac{n-1}{n}\,\frac{g}{R\,T_0}\,\left(H-H_0\right)\right)^\frac{1}{n-1}
@@ -50,7 +50,7 @@
     \setlength{\cellwidth}{46mm} % Breite einstellen
     \Tile{D1}{(C1.north east)}{\cellwidth}{\rowheight}
         {
-            \vspace{-2mm}
+            \vspace{-\TileSep}
             \titlerm{Temperatur}\\ \vspace{-1mm}
             \begin{equation*}
                 T = T_0-\frac{n-1}{n}\,\frac{g}{R}\,\left(H-H_0\right)
@@ -132,3 +132,5 @@
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
+
+\input{contents/flugzeugmaße.tex}
