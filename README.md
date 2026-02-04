@@ -17,6 +17,13 @@ Jedes Blatt besteht aus einer harten Unterteilung in sogenannte „Kacheln“ un
 Dadurch sieht der Code hier und da etwas unübersichtlich aus, aber die Ergebnisse sollten immer ohne Warnungen kompiliert werden können.
 Die harte Unterteilung legt eine klare Struktur fest, innerhalb derer gearbeitet werden muss, während jede Form der weichen Unterteilung mehr Flexibilität ermöglicht.
 
+## Tipps zum kompilieren der LaTeX-Dateien
+Ich empfehle die Installation von [TeX-Live auf Windows](https://tug.org/texlive/windows.html) und Visual Studio Code als Editor (PowerShell: `winget install Microsoft.VisualStudioCode`, oder manuell downloaden). Für VSCode empfehle ich die Folgenden Extensions:
+- [LaTeX Language Support](https://marketplace.visualstudio.com/items?itemName=torn4dom4n.latex-support) von Long Nhat Nguyen
+- [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) von James Yu
+- [LaTeX Utilities](https://marketplace.visualstudio.com/items?itemName=tecosaur.latex-utilities) von tecosaur
+- Optional: [LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex) von Julian Valentin (Rechtschreib-Korrektur, bei Formelsammlungen eher überflüssig)
+
 <hr/>
 
 ## Einige weitere Anmerkungen zur verwendeten Nomenklatur
