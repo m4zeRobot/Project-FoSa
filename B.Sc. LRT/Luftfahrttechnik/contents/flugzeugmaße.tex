@@ -65,14 +65,16 @@
 \setlength{\rowheight}{60mm}
 
     % A2) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{66mm}
+    \setlength{\cellwidth}{64mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
-            bild
+            \centering
+            \vspace{0.8mm}
+            \includegraphics[height=\rowheight-3\TileSep]{images/flugzeug-draufsicht.pdf}
         }{0}{1}{1}{0}
 
     % B2) Zweite Kachel rechts anbauen
-    \setlength{\cellwidth}{42mm}
+    \setlength{\cellwidth}{44mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
             \titlerm{Auftriebsgradient}\\ \vspace{-2mm}
@@ -139,8 +141,9 @@
                 C_\text{W0} = C_\text{W}\left(C_\text{A}=0\right)
             \end{equation*}
             \vspace{-5mm}
-            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
-            bild
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{2mm}
+            \titlebf{Flügelprofil}\\ \vspace{4mm}
+            \includegraphics[width=\cellwidth-3\TileSep]{images/profil.pdf}
         }{0}{0}{0}{0}
 
 \end{tikzpicture}
@@ -154,12 +157,65 @@
 \begin{tikzpicture}[remember picture, overlay]
 
     % ---- VIERTE REIHE: Am Seitenursprung starten
-    \setlength{\rowheight}{100mm}
+    \setlength{\rowheight}{44mm}
 
         % X1) EIGENEs FELD für Zeilenüberschrift
         \Tile{X1}{([xshift=10mm,yshift=-16mm]current page.north west)}{190mm}{8mm}
             {
                 \titlebf{NACA-Profile}\\
             }{0}{0}{0}{0}
+
+        % A1) Erste Kachel unten anbauen
+        \setlength{\cellwidth}{58mm}
+        \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+            {
+                \vspace{-\TileSep}
+                \titlerm{4-Stellig}\\ \vspace{4mm}
+                NACA A B CD\\ \vspace{2mm}
+                \footnotesize
+                \begin{itemize} \setstretch{0.9}
+                    \item[A:] Wölbung [\%]
+                    \item[B:] Wölbungsrücklage [10\,\% der Tiefe]
+                    \item[CD:] Relative Dicke [\%] (= $\delta$)
+                \end{itemize}\vspace{2mm}
+
+                Dickenrücklage: immer 30\,\%
+            }{0}{1}{1}{0}
+
+        % B1) Erste Kachel rechts anbauen
+        \setlength{\cellwidth}{63mm}
+        \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+            {
+                \vspace{-\TileSep}
+                \titlerm{5-Stellig}\\ \vspace{4mm}
+                NACA A B C DE\\ \vspace{2mm}
+                \footnotesize
+                \begin{itemize} \setstretch{0.9}
+                    \item[A:] Entwurfs-Auftriebsbeiwert [$\cdot\,0,15$]
+                    \item[B:] $\sfrac{1}{5}$ Wölbungsrücklage [10\,\% der Tiefe]
+                    \item[C:] Skelettlinie (1: WP, 2: kein WP)*
+                    \item[DE:] Relative Dicke [\%]
+                \end{itemize}
+                \vspace{2mm}
+                *WP = Wendepunkt in der Skelettlinie
+            }{0}{1}{1}{0}
+
+        % C1) Erste Kachel rechts anbauen
+        \setlength{\cellwidth}{69mm}
+        \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+            {
+                \vspace{-\TileSep}
+                \titlerm{6-Stellig}\\ \vspace{4mm}
+                NACA A B C - D EF G\\ \vspace{2mm}
+                \footnotesize
+                \begin{itemize} \setstretch{0.9}
+                    \item[A:] Serienbezeichnung (= 6)
+                    \item[B:] Lage des min. Druckes in 10\,\% der Tiefe
+                    \item[C:] Halber Bereich der Laminardelle $\in\pm 0,1\,\text{C}$
+                    \item[D:] $10~\cdot$ Entwurfs-Auftriebsbeiwert
+                    \item[EF:] Maximale Dicke [\%]
+                    \item[G:] $10~\cdot$ Bereich konst. Übergeschwindigkeit
+                \end{itemize}
+            }{0}{0}{1}{0}
 
 \end{tikzpicture}

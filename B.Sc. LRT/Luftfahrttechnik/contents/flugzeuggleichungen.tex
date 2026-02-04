@@ -1,0 +1,276 @@
+\vspace{48mm}
+\section*{\underline{Flugzeuggleichungen}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{26mm}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A1}{([xshift=10mm,yshift=-80mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Widerstandsgleichung}\\ \vspace{-3mm}
+            \begin{align*}
+                W &= G\,\frac{C_\text{W}}{C_\text{A}} = \frac{\rho}{2}\,v^2\,C_\text{W}\,S \\[1.0ex]
+                  &= F~\text{(stat. Horizontalflug)}
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Gleitzahl}\\ \vspace{-3mm}
+            \begin{align*}
+                \varepsilon &= -\frac{F}{G}\,\tan(\gamma) = \frac{C_\text{W}}{C_\text{A}} \\[1.0ex]
+                            &= \frac{C_\text{W0}}{C_\text{A}}+\frac{C_\text{A}}{\pi\,\Lambda\,e}
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Lastvielfaches}\\ \vspace{-3mm}
+            \begin{equation*}
+                n_z = \frac{A}{G} = \cos(\gamma) + \frac{v^2}{g\,r}
+            \end{equation*}
+            $\rightarrow n_{z\text{,max}}$ bei $\gamma = 0^\circ$
+        }{0}{1}{1}{0}
+    
+    % D1) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{D1}{(C1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Reichweite}\\ \vspace{1mm}
+            \begin{equation*}
+                R_\text{max} = \frac{H}{\varepsilon_\text{min}}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{24mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Auftriebsgleichung}\\ \vspace{-1mm}
+            \begin{equation*}
+                A = \frac{\rho}{2}\,v^2\,C_\text{A}\,S
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Bestes Gleiten}\\ \vspace{-3mm}
+            \begin{align*}
+                C_{\text{A}\,\varepsilon\text{,min}} &= \sqrt{C_\text{W0}\,\pi\,\Lambda\,e} \\[1.0ex]
+                C_{\text{W}\,\varepsilon\text{,min}} &= 2\,C_\text{W0}
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % C2) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Reynoldszahl}\\ \vspace{-1mm}
+            \begin{equation*}
+                \text{Re} = \frac{v\,l}{\nu} = \frac{\rho\,v\,l}{\mu}
+            \end{equation*}
+        }{0}{1}{1}{0}
+    
+    % D2) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{D2}{(C2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Geringstes Sinken}\\ \vspace{-3mm}
+            \begin{align*}
+                C_{\text{A}\,v_\text{v}\text{,min}} &= \sqrt{3\,C_\text{W0}\,\pi\,\Lambda\,e} \\[1.0ex]
+                C_{\text{W}\,v_\text{v}\text{,min}} &= 4\,C_\text{W0}
+            \end{align*}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: unten anbauen
+\setlength{\rowheight}{28mm}
+
+    % X3) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{8mm}
+        {
+            \titlebf{Geschwindigkeiten (Gleitflug)}\\
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Bahngeschwindigkeit}\\ \vspace{-2mm}
+            \begin{equation*}
+                v = \frac{\sqrt{\dfrac{2\,G}{\rho\,S}}}{\sqrt[4]{C_\text{A}^2+C_\text{W}^2}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Vertikalkomponente}\\ \vspace{-2mm}
+            \begin{equation*}
+                v_\text{v} = \frac{C_\text{W}\,\sqrt{\dfrac{2\,G}{\rho\,S}}}{\sqrt[4]{(C_\text{A}^2+C_\text{W}^2)^3}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C3) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Hoizontalkomponente}\\ \vspace{-4mm}
+            \begin{equation*}
+                v_\text{h} = \frac{C_\text{A}\,\sqrt{\dfrac{2\,G}{\rho\,S}}{\color{RedOrange}\,\cdot\,\sqrt{n_z}}}{\sqrt[4]{(C_\text{A}^2+C_\text{W}^2)^3}}
+            \end{equation*}
+            {\footnotesize\color{RedOrange}* Nur im Kurvenflug relevant}
+        }{0}{1}{1}{0}
+    
+    % D3) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{D3}{(C3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Sturzflug}\\ \vspace{2mm}
+            \begin{equation*}
+                v_\text{max} = \sqrt{\frac{2\,G}{\rho\,S\,C_\text{W0}}}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: unten anbauen
+\setlength{\rowheight}{25mm}
+
+    % X4) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{8mm}
+        {
+            \titlebf{Horizontalflug}\\
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Erforderlicher Schub}\\ \vspace{2mm}
+            \hspace*{-4mm}
+            \begin{minipage}{0.485\cellwidth}
+                \centering
+                \titlerm{Düsenantrieb}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \frac{F}{G} = C_\text{W0}\,\frac{\rho\,S}{2\,G}\,v^2 + \frac{2\,G}{\pi\,\Lambda\,e\,\rho\,v^2\,S}
+                \end{equation*}%
+                \vspace{0.1mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.505\cellwidth}
+                \centering
+                \titlerm{Propellerantrieb}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \frac{P}{G}\,\eta = C_\text{W0}\,\frac{\rho\,S}{2\,G}\,v^3 + \frac{2\,G}{\pi\,\Lambda\,e\,\rho\,v^2\,S}
+                \end{equation*}%
+                \vspace{0.1mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{80mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Minimale Geschwindigkeit}\\ \vspace{-3mm}
+            \begin{align*}
+                v_\text{min} &= 1,3\cdot v_\text{stall} \\
+                             &= 1,3\cdot\sqrt{\frac{2}{\rho\,S\,C_\text{A,max}}\,\left(G-F\,\sin(\alpha+\sigma)\right)}
+            \end{align*}
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: unten anbauen
+\setlength{\rowheight}{40mm}
+
+    % X5) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X5}{(A4.south west)}{190mm}{8mm}
+        {
+            \titlebf{Steigflug}\\
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Maximale Startgeschwindigkeit}\\ \vspace{2mm}
+            \hspace*{-3mm}
+            \begin{minipage}{0.635\cellwidth}
+                \centering
+                \titlerm{Düsenantrieb}\\ \vspace{-3mm}
+                \begin{equation*}
+                    v_\text{st} = \sqrt{\frac{2\,G}{\rho\,S}}\,\left(\frac{F}{G\,\sqrt{C_\text{A}}}-\frac{C_\text{W0}}{\sqrt{C_\text{A}^3}}-\frac{\sqrt{C_\text{A}}}{\pi\,\Lambda\,e}\right)
+                \end{equation*}
+                \begin{equation*}
+                    C_\text{A,opt} = \frac{F_\text{max}\,\pi\,\Lambda\,e}{2\,G}\,\left(\sqrt{1+\frac{12\,G^2\,C_\text{W0}}{F_\text{max}^2\,\pi\,\Lambda\,e}}-1\right)
+                \end{equation*}%
+                \vspace{0.1mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.345\cellwidth}
+                \centering
+                \titlerm{Propellerantrieb}\\ \vspace{-3mm}
+                \begin{equation*}
+                    v_\text{st} = \frac{P}{G}\,\eta - \sqrt{\frac{2\,G\,C_\text{W}^2}{\rho\,S\,C_\text{A}^2}}
+                \end{equation*}%
+                \vspace{2mm}
+                \begin{equation*}
+                    C_\text{A,opt} = \sqrt{3\,C_\text{W0}\,\pi\,\Lambda\,e}
+                \end{equation*}%
+                \vspace{0.1mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{32mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Steilstes Steigen}\\ \vspace{2mm}
+            \begin{equation*}
+                C_\text{A} = \sqrt{C_\text{W0}\,\pi\,\Lambda\,e}
+            \end{equation*}%
+            \vspace{-1mm}
+            \begin{equation*}
+                v_\text{B} = \sqrt{\frac{2\,G}{\rho\,S\,C_\text{A}}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{48mm}
+    \Tile{C5}{(B5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Steiggeschwindigkeit}\\ \vspace{0.5mm}
+            \titlerm{\footnotesize Düsenantrieb}\\ \vspace{-3.5mm}
+            \begin{equation*}
+                v_\text{v} = v\,\sin(\gamma) = v\,\left(\frac{F}{G}-\varepsilon\right)
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{\footnotesize Propellerantrieb}\\ \vspace{-3.5mm}
+            \begin{equation*}
+                v_\text{v} = v\,\sin(\gamma) = \frac{\eta\,P}{G} - \varepsilon\,v
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
