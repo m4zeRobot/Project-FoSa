@@ -116,14 +116,14 @@
         }{0}{0}{1}{0}
 
 % ---- DRITTE REIHE: unten anbauen
-\setlength{\rowheight}{100mm}
+\setlength{\rowheight}{90mm}
 
     % A3) Erste Kachel unten anbauen
     \setlength{\cellwidth}{120mm}
     \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Profilpolaren-Diagramm}\\ \vspace{1mm}
-            bild
+            \titlebf{Profilpolaren-Diagramm}\\ \vspace{2mm}
+            \includegraphics[width=\cellwidth-2\TileSep]{images/profilpolaren-diagramm.pdf}
         }{0}{1}{0}{0}
 
     % B3) Zweite Kachel rechts anbauen
@@ -142,8 +142,8 @@
             \end{equation*}
             \vspace{-5mm}
             \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{2mm}
-            \titlebf{Flügelprofil}\\ \vspace{4mm}
-            \includegraphics[width=\cellwidth-3\TileSep]{images/profil.pdf}
+            \titlebf{Flügelprofil}\\ \vspace{3mm}
+            \includegraphics[width=\cellwidth-4\TileSep]{images/profil.pdf}
         }{0}{0}{0}{0}
 
 \end{tikzpicture}

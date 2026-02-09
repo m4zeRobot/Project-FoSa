@@ -671,7 +671,7 @@
         }{0}{0}{1}{0}
 
 % ---- FÜNFTE REIHE: unten anbauen
-\setlength{\rowheight}{38mm}
+\setlength{\rowheight}{45mm}
 
     % A5) Erste Kachel unten anbauen
     \setlength{\cellwidth}{95mm}
@@ -706,8 +706,9 @@
     \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
         {
             \titlerm{Einfluss der Reibung}\\ \vspace{1mm}
-            \begin{minipage}{0.55\cellwidth-\TileSep}
+            \begin{minipage}{0.53\cellwidth-\TileSep}
                 \centering
+                \vspace{-4mm}
                 \begin{equation*}
                     e = \frac{1}{1 + \delta + k_\text{p}\,\pi\,\Lambda}
                 \end{equation*}
@@ -715,9 +716,11 @@
                     C_\text{W} = C_\text{W0} + k_\text{p}\,C_\text{A}^2 + \frac{C_\text{A}^2\,(1 + \delta)}{\pi\,\Lambda}
                 \end{equation*}
             \end{minipage}%
-            \begin{minipage}{0.45\cellwidth-\TileSep}
+            \hspace{1mm}
+            \begin{minipage}{0.44\cellwidth-\TileSep}
                 \centering
-                bild
+                \vspace{1mm}
+                \includegraphics[width=\textwidth]{images/reibung.pdf}
             \end{minipage}
         }{0}{0}{0}{0}
 
