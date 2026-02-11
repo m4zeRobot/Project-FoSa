@@ -47,11 +47,11 @@
                 \centering
                 \titlerm{Ohm'sches Gesetz}\\ \vspace{-3mm}
                 \begin{equation*}
-                    u_R(t) = R\cdot i_R(t)
+                    u_\text{R}(t) = R\cdot i_R(t)
                 \end{equation*}
                 \vspace{-4mm}
                 \begin{equation*}
-                    \hat U_R = R\cdot\hat I_R
+                    \hat U_\text{R} = R\cdot\hat I_R
                 \end{equation*}
                 \vspace{-1mm}
             \end{minipage}%
@@ -71,7 +71,7 @@
             \vrule
             \begin{minipage}{0.30\cellwidth-\TileSep}
                 \centering
-                \includegraphics[width=0.65\textwidth]{images/phase-ohmscher-widerstand.pdf}
+                \includegraphics[width=0.67\textwidth]{images/phase-ohmscher-widerstand.pdf}
             \end{minipage}
         }{0}{0}{1}{0}
 
@@ -235,7 +235,11 @@
     \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Spule}
+            \titlerm{Spule}\\
+            \hspace{1mm}
+            \includegraphics[height=33mm]{images/zeiger-diagramm-spule.pdf}
+            \hspace{-8.15mm}
+            \includegraphics[height=33mm]{images/zeiger-ebene-spule.pdf}
         }{0}{1}{1}{0}
 
     % C4) Dritte Kachel rechts anbauen
@@ -243,7 +247,11 @@
     \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Kondensator}
+            \titlerm{Kondensator}\\
+            \hspace{1mm}
+            \includegraphics[height=33mm]{images/zeiger-diagramm-kondensator.pdf}
+            \hspace{-8.35mm}
+            \includegraphics[height=33mm]{images/zeiger-ebene-kondensator.pdf}
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
