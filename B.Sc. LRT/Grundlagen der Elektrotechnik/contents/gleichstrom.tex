@@ -129,10 +129,10 @@
         }{0}{0}{1}{0}
 
 % ---- DRITTE REIHE: unten anbauen
-\setlength{\rowheight}{58mm}
+\setlength{\rowheight}{56mm}
 
     % X3) EIGENES FELD für die Zeilen-Überschrift
-    \Tile{X3}{(A2.south west)}{190mm}{8mm}
+    \Tile{X3}{(A2.south west)}{190mm}{9mm}
         {
             \vspace{1mm}
             \titlebf{Kirschhoff'sche Regeln}\\
@@ -142,6 +142,7 @@
     \setlength{\cellwidth}{95mm}
     \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
         {
+            \vspace{-\TileSep}
             \titlerm{Knotenregel}\\ \vspace{1mm}
             Die vorzeichenrichtige Summe aller \textbf{Ströme}\\ in einem Stromknoten ist null.\\ \vspace{2mm}
             \begin{minipage}{0.48\cellwidth-\TileSep}
@@ -165,6 +166,7 @@
     \setlength{\cellwidth}{95mm}
     \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
         {
+            \vspace{-\TileSep}
             \titlerm{Maschenregel}\\ \vspace{1mm}
             Die vorzeichenrichtige Summe aller \textbf{Spannungen}\\ in einem Stromkreis ist null.\\ \vspace{2mm}
             \begin{minipage}{0.48\cellwidth-\TileSep}
@@ -320,7 +322,7 @@
                 \centering
                 \includegraphics[height=\rowheight-4mm]{images/reale-spannungsquelle.pdf}
             \end{minipage}%
-            \begin{minipage}{0.25\cellwidth-\TileSep}
+            \begin{minipage}{0.30\cellwidth-\TileSep}
                 \centering
                 \begin{equation*}
                     R_\text{i} = \frac{U_\text{q}}{I_\text{k}} = \frac{\Delta U}{\Delta I}
