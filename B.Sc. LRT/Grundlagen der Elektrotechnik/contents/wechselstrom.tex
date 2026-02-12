@@ -182,11 +182,11 @@
                 \vspace{-4mm}
                 \begin{align*}
                     P &= U\cdot I\cdot\cos(\varphi) \\
-                    Q_\text{L} &= U\cdot I\cdot\sin(\varphi)
+                    \mathbf{Q}_\text{L} &= U\cdot I\cdot\sin(\varphi)
                 \end{align*}%
                 \vspace{-4mm}
                 \begin{equation*}
-                    S = U\cdot I = \sqrt{P^2+Q_\text{L}^2}
+                    \mathbf{S} = U\cdot I = \sqrt{P^2+\mathbf{Q}_\text{L}^2}
                 \end{equation*}
             \end{minipage}%
             \vrule
@@ -358,11 +358,11 @@
                 \vspace{-4mm}
                 \begin{align*}
                     P &= U\cdot I\cdot\cos(\varphi) \\
-                    Q_\text{C} &= U\cdot I\cdot\sin(\varphi)
+                    \mathbf{Q}_\text{C} &= U\cdot I\cdot\sin(\varphi)
                 \end{align*}%
                 \vspace{-4mm}
                 \begin{equation*}
-                    S = U\cdot I = \sqrt{P^2+Q_\text{C}^2}
+                    \mathbf{S} = U\cdot I = \sqrt{P^2+\mathbf{Q}_\text{C}^2}
                 \end{equation*}
             \end{minipage}%
             \vrule
@@ -480,14 +480,30 @@
 \begin{tikzpicture}[remember picture, overlay]
 
 % ---- ERSTE REIHE: Am Seitenursprung starten
-\setlength{\rowheight}{28mm}
+\setlength{\rowheight}{36mm}
 
     % A1) Erste Kachel absolut platzieren
-    \setlength{\cellwidth}{40mm}
+    \setlength{\cellwidth}{50mm}
     \Tile{A1}{([xshift=10mm,yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Text}
+            \titlerm{Elektrische Arbeit}\\ \vspace{-4mm}
+            \begin{equation*}
+                W = U\cdot I\cdot\cos(\varphi)\cdot t = P\cdot t
+            \end{equation*}%
+            \\ \vspace{4mm}
+            \titlerm{Blindleistungs-Anteil}\\ \vspace{-4mm}
+            \begin{equation*}
+                W_\text{q} = U\cdot I\cdot\sin(\varphi)\cdot t = \mathbf{Q}\cdot t
+            \end{equation*}
         }{0}{1}{1}{0}
+
+    % B1) Erste Kachel absolut platzieren
+    \setlength{\cellwidth}{140mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Darstellung in der komplexen Ebene}
+        }{0}{0}{1}{0}
 
 \end{tikzpicture}
