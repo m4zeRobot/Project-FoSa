@@ -64,7 +64,7 @@
                 \end{equation*}
                 \vspace{-4mm}
                 \begin{equation*}
-                    \varphi_\text{L} = \Delta\varphi = \varphi_u-\varphi_i = 0^\circ
+                    \varphi_\text{R} = \Delta\varphi = \varphi_u-\varphi_i = 0^\circ
                 \end{equation*}
                 \vspace{-1mm}
             \end{minipage}%
@@ -79,10 +79,10 @@
 \setlength{\rowheight}{24mm}
 
     % X2) EIGENES FELD für Zeilenüberschrift
-    \Tile{X2}{(A1.south west)}{190mm}{8mm}
+    \Tile{X2}{(A1.south west)}{190mm}{9mm}
         {
             \vspace{1mm}
-            \titlebf{Induktivität einer Spule}
+            \titlebf{Spulen}
         }{0}{0}{0}{0}
 
     % A2) Erste Kachel unten anbauen
@@ -90,7 +90,7 @@
     \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Ideale Spule}\\ \vspace{-4mm}
+            \titlerm{Induktivität}\\ \vspace{-4mm}
             \begin{equation*}
                 L \approx \mu_0\cdot\mu_\text{r}\cdot N^2\cdot\frac{A}{l}
             \end{equation*}
@@ -139,26 +139,134 @@
                     \varphi_u = \varphi_i + \tfrac{\pi}{2}
                 \end{equation*}
                 \begin{equation*}
-                    \varphi_\text{L} = \Delta\varphi = \varphi_u - \varphi_i = 90^\circ
+                    \varphi_\text{L} = \Delta\varphi = \varphi_u - \varphi_i = \tfrac{\pi}{2}
                 \end{equation*}
         }{0}{0}{1}{0}
 
 % ---- DRITTE REIHE: unten anbauen
-\setlength{\rowheight}{24mm}
-
-    % X3) EIGENES FELD für Zeilenüberschrift
-    \Tile{X3}{(A2.south west)}{190mm}{8mm}
-        {
-            \vspace{1mm}
-            \titlebf{Kapazität eines Kondensators}
-        }{0}{0}{0}{0}
+\setlength{\rowheight}{29mm}
 
     % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Induktiver Blindwiderstand}\\ \vspace{-2mm}
+            \begin{equation*}
+                X_\text{L} = 2\cdot\pi\cdot f\cdot L = \omega\cdot L
+            \end{equation*}
+            \begin{equation*}
+                \text{Blindleitwert: }Y_\text{L} = \frac{1}{X_\text{L}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{36mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Ohm'sches Gesetz}\\ \vspace{-2mm}
+            \begin{equation*}
+                \hat u_\text{L} = X_\text{L}\cdot\hat i_\text{L}
+            \end{equation*}
+            \begin{equation*}
+                \hat i_\text{L} = Y_\text{L}\cdot\hat u_\text{L}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C3) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{104mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Leistung}\\ \vspace{1mm}
+            \begin{minipage}{0.4\cellwidth-\TileSep}
+                \centering
+                \vspace{-4mm}
+                \begin{align*}
+                    P &= U\cdot I\cdot\cos(\varphi) \\
+                    Q_\text{L} &= U\cdot I\cdot\sin(\varphi)
+                \end{align*}%
+                \vspace{-4mm}
+                \begin{equation*}
+                    S = U\cdot I = \sqrt{P^2+Q_\text{L}^2}
+                \end{equation*}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.6\cellwidth-\TileSep}
+                \centering
+                \titlerm{\scriptsize Pulsierender Anteil}\\ \vspace{-5mm}
+                \begin{align*}
+                    P_{2f}(t) &= \frac{\hat i^2\cdot\omega\cdot L}{2}\cdot\sin\left(2\cdot(\omega\cdot t + \varphi_i)\right) \\
+                              &= -\frac{\hat u^2}{2\cdot\omega\cdot L}\cdot\sin\left(2\cdot(\omega\cdot t + \varphi_u)\right)
+                \end{align*}
+                \vspace{-3.5mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: unten anbauen
+\setlength{\rowheight}{30mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Reihenschaltung von $R$ und $L$}\\ \vspace{1.5mm}
+            \begin{minipage}{0.38\cellwidth-\TileSep}
+                \centering
+                \vspace{-5mm}
+                \begin{align*}
+                    Z &= \frac{U}{I} = \sqrt{R^2+X_\text{L}^2} \\
+                    R &= Z\cdot\cos(\varphi) \\
+                    X_\text{L} &= Z\cdot\sin(\varphi)
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.60\cellwidth-\TileSep}
+                \centering
+                \hspace{4.5mm}
+                \includegraphics[height=20mm]{images/zeiger-ebene-r-l.pdf}
+                \hspace{3mm}
+                \includegraphics[height=20mm]{images/zeiger-ebene-r-l-widerstände.pdf}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Parallelschaltung von $R$ und $L$}\\ \vspace{2mm}
+            \begin{minipage}{0.38\cellwidth-\TileSep}
+                \centering
+                \vspace{-4.5mm}
+                \begin{align*}
+                    \frac{1}{Z} &= \frac{I}{U} = \sqrt{\frac{1}{R^2}+\frac{1}{X_\text{L}^2}} \\
+                    R &= Z\cdot\tfrac{1}{\cos(\varphi)} \\
+                    X_\text{L} &= Z\cdot\tfrac{1}{\sin(\varphi)}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.60\cellwidth-\TileSep}
+                \centering
+                \hspace{5mm}
+                \includegraphics[height=20mm]{images/zeiger-ebene-parallel-r-l.pdf}
+                \hspace{1mm}
+                \includegraphics[height=20mm]{images/zeiger-ebene-parallel-r-l-widerstände.pdf}
+            \end{minipage}
+        }{0}{0}{1}{0}
+        
+
+% ---- FÜNFTE REIHE: unten anbauen
+\setlength{\rowheight}{24mm}
+
+    % X5) EIGENES FELD für Zeilenüberschrift
+    \Tile{X5}{(A4.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Kondensatoren}
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel unten anbauen
     \setlength{\cellwidth}{34mm}
-    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Kondensator}\\ \vspace{-4mm}
+            \titlerm{Kapazität}\\ \vspace{-4mm}
             \begin{equation*}
                 C \approx \epsilon_0 \cdot \epsilon_\text{r} \cdot\frac{A}{d}
             \end{equation*}
@@ -167,9 +275,9 @@
             \end{equation*}
         }{0}{1}{1}{0}
 
-    % B3) Zweite Kachel rechts anbauen
+    % B5) Zweite Kachel rechts anbauen
     \setlength{\cellwidth}{48mm}
-    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
             \titlerm{In Reihe- \& Parallel}\\ \vspace{-3.5mm}
@@ -181,9 +289,9 @@
             \end{equation*}
         }{0}{1}{1}{0}
 
-    % C3) Dritte Kachel rechts anbauen
+    % C5) Dritte Kachel rechts anbauen
     \setlength{\cellwidth}{64mm}
-    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+    \Tile{C5}{(B5.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
             \titlerm{Spannung \& Strom}\\ \vspace{-4mm}
@@ -197,9 +305,9 @@
                 \end{equation*}
         }{0}{1}{1}{0}
 
-    % D3) Vierte Kachel rechts anbauen
+    % D5) Vierte Kachel rechts anbauen
     \setlength{\cellwidth}{44mm}
-    \Tile{D3}{(C3.north east)}{\cellwidth}{\rowheight}
+    \Tile{D5}{(C5.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
             \titlerm{Phasenwinkel}\\ \vspace{-3mm}
@@ -207,32 +315,139 @@
                     \varphi_u = \varphi_i - \tfrac{\pi}{2}
                 \end{equation*}
                 \begin{equation*}
-                    \varphi_\text{C} = \Delta\varphi = \varphi_u - \varphi_i = -90^\circ
+                    \varphi_\text{C} = \Delta\varphi = \varphi_u - \varphi_i = -\tfrac{\pi}{2}
                 \end{equation*}
         }{0}{0}{1}{0}
 
-% ---- VIERTE REIHE: unten anbauen
+% ---- SECHSTE REIHE: unten anbauen
+\setlength{\rowheight}{29mm}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Kapazitiver Blindwiderstand}\\ \vspace{-3mm}
+            \begin{equation*}
+                X_\text{C} = \frac{1}{2\cdot\pi\cdot f\cdot C} = \frac{1}{\omega\cdot C}
+            \end{equation*}
+            \begin{equation*}
+                \text{Blindleitwert: }Y_\text{C} = \frac{1}{X_\text{C}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B6) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{36mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Ohm'sches Gesetz}\\ \vspace{-2mm}
+            \begin{equation*}
+                \hat u_\text{C} = X_\text{C}\cdot\hat i_\text{C}
+            \end{equation*}
+            \begin{equation*}
+                \hat i_\text{C} = Y_\text{C}\cdot\hat u_\text{C}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C6) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{104mm}
+    \Tile{C6}{(B6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Leistung}\\ \vspace{1mm}
+            \begin{minipage}{0.4\cellwidth-\TileSep}
+                \centering
+                \vspace{-4mm}
+                \begin{align*}
+                    P &= U\cdot I\cdot\cos(\varphi) \\
+                    Q_\text{C} &= U\cdot I\cdot\sin(\varphi)
+                \end{align*}%
+                \vspace{-4mm}
+                \begin{equation*}
+                    S = U\cdot I = \sqrt{P^2+Q_\text{C}^2}
+                \end{equation*}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.6\cellwidth-\TileSep}
+                \centering
+                \titlerm{\scriptsize Pulsierender Anteil}\\ \vspace{-5mm}
+                \begin{align*}
+                    P_{2f}(t) &= -\frac{\hat i^2}{2\cdot\omega\cdot C}\cdot\sin\left(2\cdot(\omega\cdot t + \varphi_i)\right) \\
+                              &= \frac{\hat u^2\cdot\omega\cdot C}{2}\cdot\sin\left(2\cdot(\omega\cdot t + \varphi_u)\right)
+                \end{align*}
+                \vspace{-3.5mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- SIEBTE REIHE: unten anbauen
+\setlength{\rowheight}{30mm}
+
+    % A7) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A7}{(A6.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Reihenschaltung von $R$ und $C$}\\ \vspace{1.5mm}
+            \begin{minipage}{0.38\cellwidth-\TileSep}
+                \centering
+                \vspace{-5mm}
+                \begin{align*}
+                    Z &= \frac{U}{I} = \sqrt{R^2+X_\text{C}^2} \\
+                    R &= Z\cdot\cos(\varphi) \\
+                    X_\text{C} &= Z\cdot\sin(\varphi)
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.60\cellwidth-\TileSep}
+                \centering
+                \hspace{4mm}
+                \includegraphics[height=20mm]{images/zeiger-ebene-r-c.pdf}
+                \hspace{1mm}
+                \includegraphics[height=20mm]{images/zeiger-ebene-r-c-widerstände.pdf}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B7) Erste Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B7}{(A7.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Parallelschaltung von $R$ und $C$}\\ \vspace{2mm}
+            \begin{minipage}{0.39\cellwidth-\TileSep}
+                \centering
+                \vspace{-4.5mm}
+                \begin{align*}
+                    \frac{1}{Z} &= \frac{I}{U} = \sqrt{\frac{1}{R^2}+\frac{1}{X_\text{C}^2}} \\
+                    R &= Z\cdot\tfrac{1}{\cos(\varphi)} \\
+                    X_\text{C} &= Z\cdot\tfrac{1}{\sin(\varphi)}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.60\cellwidth-\TileSep}
+                \centering
+                \hspace{3mm}
+                \includegraphics[height=20mm]{images/zeiger-ebene-parallel-r-c.pdf}
+                \hspace{2mm}
+                \includegraphics[height=20mm]{images/zeiger-ebene-parallel-r-c-widerstände.pdf}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- ACHTE REIHE: unten anbauen
 \setlength{\rowheight}{38mm}
 
-    % X4) EIGENES FELD für Zeilenüberschrift
-    \Tile{X4}{(A3.south west)}{190mm}{8mm}
+    % X8) EIGENES FELD für Zeilenüberschrift
+    \Tile{X8}{(A7.south west)}{190mm}{10mm}
         {
-            \vspace{1mm}
+            \vspace{2mm}
             \titlebf{Zeigerdiagramme}
         }{0}{0}{0}{0}
 
-    % A4) Erste Kachel unten anbauen
+    % A8) Erste Kachel unten anbauen
     \setlength{\cellwidth}{46mm}
-    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+    \Tile{A8}{(X8.south west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
             \titlerm{Aufbau}\\ \vspace{2mm}
             \includegraphics[width=\cellwidth-3\TileSep]{images/zeiger-aufbau.pdf}
-        }{0}{1}{1}{0}
+        }{0}{0}{0}{0}
 
-    % B4) Zweite Kachel rechts anbauen
+    % B8) Zweite Kachel rechts anbauen
     \setlength{\cellwidth}{72mm}
-    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+    \Tile{B8}{(A8.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
             \titlerm{Spule}\\
@@ -240,11 +455,11 @@
             \includegraphics[height=33mm]{images/zeiger-diagramm-spule.pdf}
             \hspace{-8.15mm}
             \includegraphics[height=33mm]{images/zeiger-ebene-spule.pdf}
-        }{0}{1}{1}{0}
+        }{0}{0}{0}{0}
 
-    % C4) Dritte Kachel rechts anbauen
+    % C8) Dritte Kachel rechts anbauen
     \setlength{\cellwidth}{72mm}
-    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+    \Tile{C8}{(B8.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
             \titlerm{Kondensator}\\
@@ -252,6 +467,27 @@
             \includegraphics[height=33mm]{images/zeiger-diagramm-kondensator.pdf}
             \hspace{-8.35mm}
             \includegraphics[height=33mm]{images/zeiger-ebene-kondensator.pdf}
-        }{0}{0}{1}{0}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+\newpage
+
+\begin{center}
+    \section*{\underline{Wechselstrom}}
+\end{center}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{28mm}
+
+    % A1) Erste Kachel absolut platzieren
+    \setlength{\cellwidth}{40mm}
+    \Tile{A1}{([xshift=10mm,yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Text}
+        }{0}{1}{1}{0}
 
 \end{tikzpicture}
