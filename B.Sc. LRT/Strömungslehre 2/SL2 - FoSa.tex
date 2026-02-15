@@ -74,11 +74,13 @@
     \cr}
 \makeatother
 
-% ---- Kanten-Helfer erstellen
-\newcommand{\topedge}[1]{\draw[line width=0.6pt]   (#1.north west)--(#1.north east);}
-\newcommand{\bottomedge}[1]{\draw[line width=0.6pt](#1.south west)--(#1.south east);}
-\newcommand{\leftedge}[1]{\draw[line width=0.6pt]  (#1.north west)--(#1.south west);}
-\newcommand{\rightedge}[1]{\draw[line width=0.6pt] (#1.north east)--(#1.south east);}
+% ---- Linienbreite anlegen & Kanten-Helfer erstellen
+\newlength{\SepWidth}
+\setlength{\SepWidth}{0.6pt}
+\newcommand{\topedge}[1]{\draw[line width=\SepWidth, line cap=round]   (#1.north west)--(#1.north east);}
+\newcommand{\bottomedge}[1]{\draw[line width=\SepWidth, line cap=round](#1.south west)--(#1.south east);}
+\newcommand{\leftedge}[1]{\draw[line width=\SepWidth, line cap=round]  (#1.north west)--(#1.south west);}
+\newcommand{\rightedge}[1]{\draw[line width=\SepWidth, line cap=round] (#1.north east)--(#1.south east);}
 
 % ---- Abstand der Inhalte zur Tile-Wand als Länge anlegen
 \newlength{\TileSep}
