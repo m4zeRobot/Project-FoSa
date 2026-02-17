@@ -480,14 +480,14 @@
 \begin{tikzpicture}[remember picture, overlay]
 
 % ---- ERSTE REIHE: Am Seitenursprung starten
-\setlength{\rowheight}{16mm}
+\setlength{\rowheight}{15mm}
 
     % A1) Erste Kachel absolut platzieren
     \setlength{\cellwidth}{60mm}
     \Tile{A1}{([xshift=10mm,yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Elektrische Arbeit}\\ \vspace{-3mm}
+            \titlerm{Elektrische Arbeit}\\ \vspace{-4mm}
             \begin{equation*}
                 W = U\cdot I\cdot\cos(\varphi)\cdot t = P\cdot t
             \end{equation*}
@@ -498,7 +498,7 @@
     \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Blindleistungs-Anteil}\\ \vspace{-3mm}
+            \titlerm{Blindleistungs-Anteil}\\ \vspace{-4mm}
             \begin{equation*}
                 W_\text{q} = U\cdot I\cdot\sin(\varphi)\cdot t = \mathbf{Q}\cdot t
             \end{equation*}
@@ -509,7 +509,7 @@
     \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Wirkungsgrad}\\ \vspace{-3mm}
+            \titlerm{Wirkungsgrad}\\ \vspace{-4mm}
             \begin{equation*}
                 \eta = \frac{E_\text{Nutz}}{E_\text{Zu}}\quad\text{(angegeben in \%)}
             \end{equation*}
@@ -585,23 +585,147 @@
         }{0}{0}{1}{0}
 
 % ---- DRITTE REIHE: Unten anbauen
-\setlength{\rowheight}{80mm}
+\setlength{\rowheight}{64mm}
 
     % A3) Erste Kachel unten anbauen
     \setlength{\cellwidth}{190mm}
     \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
         {
             \titlebf{Ladevorgang eines Kondensators}\\ \vspace{2mm}
-            \begin{minipage}{0.49\cellwidth}
+            \begin{minipage}{0.28\cellwidth}
                 \centering
-                \titlerm{Aufladen}\\ \vspace{1mm}
-                \includegraphics[height=\rowheight-16mm]{images/Ladekurve.pdf}
+                \titlerm{Aufladekurve}\\ \vspace{1mm}
+                \hspace{-5mm}
+                \includegraphics[height=50mm]{images/kondensator-ladekurve.pdf}
             \end{minipage}%
-            \begin{minipage}{0.49\cellwidth}
+            \hspace{2mm}
+            \begin{minipage}{0.28\cellwidth}
                 \centering
                 \titlerm{Entladekurve}\\ \vspace{1mm}
-                \includegraphics[height=\rowheight-16mm]{images/Entladekurve.pdf}
+                \hspace{-5mm}
+                \includegraphics[height=50mm]{images/kondensator-entladekurve.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.38\cellwidth}
+                \centering
+                \titlerm{Aufladen von $C$ über Widerstand $R$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    u_\text{C}(t) = \hat{u} \cdot \left(1-\mathbf{e}^{-\tfrac{t}{\tau}}\right)~;\quad i_\text{C}(t) = \frac{\hat u}{R}\cdot \mathbf{e}^{-\tfrac{t}{\tau}}
+                \end{equation*}%
+                \vspace{0mm}
+                \begin{equation*}
+                    \tau = R\cdot C
+                \end{equation*}%
+                \vspace{2mm} \\
+                \titlerm{Entladen von $C$ über Widerstand $R$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    u_\text{C}(t) = \hat{u} \cdot \mathbf{e}^{-\tfrac{t}{\tau}}~;\quad i_\text{C}(t) = -\frac{\hat u}{R}\cdot \mathbf{e}^{-\tfrac{t}{\tau}}
+                \end{equation*}
             \end{minipage}
         }{0}{0}{1}{0}
 
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{36mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{120mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Verhalten beim Aufladen}\\ \vspace{3mm}
+            {\setstretch{1.4}
+            \begin{tabular}{|c|c|c|c|} \hline
+                \textbf{Zeit}        & \textbf{Kondensator wirkt wie} & $\boldsymbol{u}_\textbf{C}\boldsymbol{(t)}$                          & $\boldsymbol{i}_\textbf{C}\boldsymbol{(t)}$                       \\ \hline
+                $t = 0$              & Kurzschluss                    & $u_\text{C}(0) = 0$                                                  & $i_\text{C}(0) = \tfrac{\hat u}{R}$                               \\ \hline
+                $t = \tau$           & --                             & $u_\text{C}(\tau) = \left(1-\tfrac{1}{\mathbf{e}}\right)\cdot\hat u$ & $i_\text{C}(\tau) = \tfrac{\hat u}{R}\cdot \tfrac{1}{\mathbf{e}}$ \\ \hline
+                $t\rightarrow\infty$ & Leerlaufverhalten              & $u_\text{C}(\infty) = \hat u$                                        & $i_\text{C}(\infty) = 0$                                          \\ \hline
+            \end{tabular}}
+        }{0}{1}{1}{0}
+    
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{70mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.47\cellwidth}
+                \centering
+                \titlerm{Aufladen}\\ \vspace{1mm}
+                \includegraphics[height=27mm]{images/schaltbild-c-aufladen.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.47\cellwidth}
+                \centering
+                \titlerm{Entladen}\\ \vspace{1mm}
+                \includegraphics[height=27mm]{images/schaltbild-c-entladen.pdf}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{64mm}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Einschaltvorgang einer Spule}\\ \vspace{2mm}
+            \begin{minipage}{0.28\cellwidth}
+                \centering
+                \titlerm{Einschaltvorgang}\\ \vspace{1mm}
+                \hspace{-5mm}
+                \includegraphics[height=50mm]{images/spule-einschaltvorgang.pdf}
+            \end{minipage}%
+            \hspace{2mm}
+            \begin{minipage}{0.28\cellwidth}
+                \centering
+                \titlerm{Ausschaltvorgang}\\ \vspace{1mm}
+                \hspace{-4mm}
+                \includegraphics[height=50mm]{images/spule-ausschaltvorgang.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.38\cellwidth}
+                \centering
+                \titlerm{Einschalten von $L$ neben Widerstand $R$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    u_\text{L}(t) = \hat{u} \cdot \mathbf{e}^{-\tfrac{t}{\tau}}~;\quad i_\text{L}(t) = \frac{\hat u}{R}\cdot \left(1 - \mathbf{e}^{-\tfrac{t}{\tau}}\right)
+                \end{equation*}%
+                \vspace{-1mm}
+                \begin{equation*}
+                    \tau = \frac{L}{R}
+                \end{equation*}%
+                \vspace{2mm} \\
+                \titlerm{Ausschalten von $L$ neben Widerstand $R$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    u_\text{L}(t) = \hat{u} \cdot \left(1 - \mathbf{e}^{-\tfrac{t}{\tau}}\right)~;\quad i_\text{L}(t) = \frac{\hat u}{R}\cdot \mathbf{e}^{-\tfrac{t}{\tau}}
+                \end{equation*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- SECHSTE REIHE: Unten anbauen
+\setlength{\rowheight}{32mm}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Verhalten beim Aufladen}\\ \vspace{2mm}
+            {\setstretch{1.4}
+            \begin{tabular}{|c|c|c|c|} \hline
+                \textbf{Zeit}        & \textbf{Spule wirkt wie}    & $\boldsymbol{u}_\textbf{C}\boldsymbol{(t)}$                        & $\boldsymbol{i}_\textbf{C}\boldsymbol{(t)}$                                     \\ \hline
+                $t = 0$              & Leerlauf                    & $u_\text{L}(0) = \hat u$                                           & $i_\text{L}(0) = 0$                                                             \\ \hline
+                $t = \tau$           & --                          & $u_\text{L}(\tau) = \left(\tfrac{1}{\mathbf{e}}\right)\cdot\hat u$ & $i_\text{L}(\tau) = \tfrac{\hat u}{R}\cdot\left(1-\tfrac{1}{\mathbf{e}}\right)$ \\ \hline
+                $t\rightarrow\infty$ & Kurzschluss                 & $u_\text{L}(\infty) = 0$                                           & $i_\text{L}(\infty) = \tfrac{\hat u}{R}$                                        \\ \hline
+            \end{tabular}}
+        }{0}{1}{0}{0}
+    
+    % B6) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{80mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.47\cellwidth}
+                \centering
+                \titlerm{Einschalten}\\ \vspace{1.5mm}
+                \includegraphics[height=24mm]{images/schaltbild-l-einschalten.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.47\cellwidth}
+                \centering
+                \titlerm{Ausschalten}\\ \vspace{1.5mm}
+                \includegraphics[height=24mm]{images/schaltbild-l-ausschalten.pdf}
+            \end{minipage}
+        }{0}{0}{0}{0}
+    
 \end{tikzpicture}

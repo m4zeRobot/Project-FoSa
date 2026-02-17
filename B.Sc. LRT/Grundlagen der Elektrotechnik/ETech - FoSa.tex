@@ -22,8 +22,10 @@
 \usepackage{xfrac}                                               % Für diagonale Brüche in Überschriften
 \usepackage{lmodern}                                             % Für die komplette Latin Modern Font
 \usepackage[german=quotes]{csquotes}                             % Fügt eine einfache Funktion für Gänsefüßchen hinzu
+\usepackage{cellspace}                                           % Ermöglicht veränderte Abstände am oberen/unteren Rand in Tabellen
 
 % ---- Voreinstellungen ---- %
+\cellspacetoplimit=1.5mm \cellspacebottomlimit=1.5mm             % Abstand oben/unten in Tabellen mit Hilfe des Zusatz-Operators "S" erhöhen
 \contourlength{0.8pt}                                            % Abstand der Unterstreichungen zu herabhängenden Buchstaben einstellen
 \graphicspath{{./images/}}                                       % Pfad für Bilder
 \usetikzlibrary{calc}                                            % Für ([xshift=..]node.anchor)
