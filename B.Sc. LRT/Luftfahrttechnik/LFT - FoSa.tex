@@ -38,10 +38,6 @@
     \vspace*{-22mm}\\
     \hspace*{10mm}\thepage
 }    
-\fancyfoot[C]{                                                   % Hinweis im Footer
-    \vspace*{-21.3mm}\\
-    \tiny Gleichungsnummern aus der Vorlesung von Prof.\ Dr.-Ing. Krämer {\color{NavyBlue}in Blau}.\\ CAS-Programmaufrufe und ggf. Nummer zur Formelwahl {\color{RedOrange}in Orange}.
-}
 \newcolumntype{Z}{>{\centering\arraybackslash}X}                 % Eigenen Spaltentyp in Tabellen definieren (Auto-Größe & zentriert)
 \renewcommand{\ULdepth}{1.8pt}                                   % Tiefe der Unterstreichungen anpassen
 
@@ -119,7 +115,7 @@
 
 % Titel der Formelsammlung hier ändern (bis zu zwei Zeilen möglich):
 \newcommand{\thetitle}{\textbf{
-    Strömungslehre II
+    Luftfahrttechnik
 }}
 
 % ---------------------------------------------------------------------------- %
@@ -132,24 +128,14 @@
 
 % ---- Ab hier beginnt die eigentliche Formelsammlung
 
-\include{contents/theoretische_grundlagen.tex}
 \restoregeometry
+\include{contents/symbolverzeichnis.tex}
 
 \setcounter{page}{1}
-\include{contents/wirbeltheorie.tex}
+\include{contents/atmosphäre.tex}
 
-\include{contents/potentialtheorie.tex}
+%\include{contents/flugzeugmaße.tex} <- in "contents/atmosphäre.tex" enthalten
 
-\include{contents/tropfentheorie.tex}
-
-\include{contents/skeletttheorie.tex}
-
-\include{contents/energiesatz.tex}
-
-\include{contents/gasdynamik.tex}
-
-\include{contents/tabellen.tex}
-
-\include{contents/diagramme.tex}
+%\include{contents/flugzeuggleichungen.tex} <- in "contents/atmosphäre.tex" enthalten
 
 \end{document}

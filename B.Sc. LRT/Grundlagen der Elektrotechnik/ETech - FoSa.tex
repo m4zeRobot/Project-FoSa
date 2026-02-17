@@ -22,8 +22,10 @@
 \usepackage{xfrac}                                               % Für diagonale Brüche in Überschriften
 \usepackage{lmodern}                                             % Für die komplette Latin Modern Font
 \usepackage[german=quotes]{csquotes}                             % Fügt eine einfache Funktion für Gänsefüßchen hinzu
+\usepackage{cellspace}                                           % Ermöglicht veränderte Abstände am oberen/unteren Rand in Tabellen
 
 % ---- Voreinstellungen ---- %
+\cellspacetoplimit=1.5mm \cellspacebottomlimit=1.5mm             % Abstand oben/unten in Tabellen mit Hilfe des Zusatz-Operators "S" erhöhen
 \contourlength{0.8pt}                                            % Abstand der Unterstreichungen zu herabhängenden Buchstaben einstellen
 \graphicspath{{./images/}}                                       % Pfad für Bilder
 \usetikzlibrary{calc}                                            % Für ([xshift=..]node.anchor)
@@ -38,10 +40,6 @@
     \vspace*{-22mm}\\
     \hspace*{10mm}\thepage
 }    
-\fancyfoot[C]{                                                   % Hinweis im Footer
-    \vspace*{-21.3mm}\\
-    \tiny Gleichungsnummern aus der Vorlesung von Prof.\ Dr.-Ing. Krämer {\color{NavyBlue}in Blau}.\\ CAS-Programmaufrufe und ggf. Nummer zur Formelwahl {\color{RedOrange}in Orange}.
-}
 \newcolumntype{Z}{>{\centering\arraybackslash}X}                 % Eigenen Spaltentyp in Tabellen definieren (Auto-Größe & zentriert)
 \renewcommand{\ULdepth}{1.8pt}                                   % Tiefe der Unterstreichungen anpassen
 
@@ -91,7 +89,7 @@
 \newlength{\cellwidth}
 
 % ---- Funktion "Tile": eine Kachel in einem Rutsch anlegen & optionale Kanten
-% Nutzung: \Tile{Name}{Koordinate}{Breite}{Höhe}{Inhalt}{Top}{Right}{Bottom}{Left}  (0/1-Schalter)
+% Nutzung: \Tile{Name}{Koordinate}{Breite}{Höhe}{Inhalt}{Oben*}{Rechts*}{Unten*}{Links*}  *(0/1-Schalter für Linien)
 \newcommand{\Tile}[9]{%
     \node[
         anchor=north west, inner sep=\TileSep, minimum width=#3, minimum height=#4
@@ -119,7 +117,7 @@
 
 % Titel der Formelsammlung hier ändern (bis zu zwei Zeilen möglich):
 \newcommand{\thetitle}{\textbf{
-    Strömungslehre II
+    Grundlagen der Elektrotechnik
 }}
 
 % ---------------------------------------------------------------------------- %
@@ -132,24 +130,12 @@
 
 % ---- Ab hier beginnt die eigentliche Formelsammlung
 
-\include{contents/theoretische_grundlagen.tex}
 \restoregeometry
+\include{contents/symbolverzeichnis.tex}
 
 \setcounter{page}{1}
-\include{contents/wirbeltheorie.tex}
+\include{contents/gleichstrom.tex}
 
-\include{contents/potentialtheorie.tex}
-
-\include{contents/tropfentheorie.tex}
-
-\include{contents/skeletttheorie.tex}
-
-\include{contents/energiesatz.tex}
-
-\include{contents/gasdynamik.tex}
-
-\include{contents/tabellen.tex}
-
-\include{contents/diagramme.tex}
+\include{contents/wechselstrom.tex}
 
 \end{document}
