@@ -34,8 +34,13 @@
             \titlebf{Definition des Raumwinkels} \\ \vspace{3mm}
             \begin{minipage}{0.50\cellwidth-\TileSep}
                 \centering
+                \myul{Differenziell}
                 \begin{equation*}
                     \text{d}\Omega = \frac{\text{d}A}{r^2} = \sin(\vartheta)\,\text{d}\vartheta\,\text{d}\varphi
+                \end{equation*}
+                \myul{Angenähert $\left(\Omega < \text{0,2}\right)$}
+                \begin{equation*}
+                    \Omega \approx \frac{A}{r^2}
                 \end{equation*}
             \end{minipage}%
             \begin{minipage}{0.48\cellwidth-\TileSep}
@@ -92,7 +97,7 @@
                     \Omega_j \approx \frac{A_j}{r_{ij}^2} \stackrel{!}{<} \text{0,2}
                 \end{equation*}
                 \vspace{-5.5mm} \\
-                \hspace{45mm}{\color{RedOrange}sfn()} \\
+                \hspace{38mm}{\color{RedOrange}sfn()} \\
                 \vspace{-5.5mm}
                 \begin{equation*}
                     F_{i\rightarrow j} = \frac{\Omega_j}{\pi} \approx \frac{A_j}{\pi\,r_{ij}^2}
@@ -139,7 +144,7 @@
         }{0}{0}{1}{0}
 
 % ---- VIERTE REIHE: Unten anbauen
-\setlength{\rowheight}{50mm}
+\setlength{\rowheight}{46mm}
 
     % X4) EIGENES FELD für die Zeilen-Überschrift
     \Tile{X4}{(A3.south west)}{190mm}{9mm}
@@ -156,31 +161,219 @@
             \titlerm{Flächenspezifische Strahlungsleistung}\\ \vspace{2mm}
             \begin{minipage}{0.5\cellwidth-\TileSep}
                 \centering
-                Allgemein:
+                \myul{Allgemein}
                 \begin{equation*}
                     M = \frac{\text{d}\Phi}{\text{d}A_1} = L\,\int\cos(\vartheta)\,\text{d}\Omega
                 \end{equation*}
                 konst. $\Rightarrow$ homogen
                 \rule{\dimexpr\textwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
-                Kirchhoff I:
+                {\color{Purple}\myul{Kirchhoff I:}} \\ \vspace{-4mm}
                 \begin{equation*}
                     M_\text{S} = \frac{M_i}{\alpha_i} = \text{konst.}
                 \end{equation*}
+                \vspace{-2.5mm}
             \end{minipage}%
             \vline
             \begin{minipage}{0.5\cellwidth-\TileSep}
                 \centering
-                Lambert'scher Strahler:
+                \myul{Lambert'scher Strahler}
+                \begin{minipage}[t]{0.5\textwidth}
+                    \centering
+                    \vspace{0pt}%
+                    \myul{Ungerichtet}
+                    \begin{equation*}
+                        M = \pi\,L
+                    \end{equation*}
+                \end{minipage}%
+                \vrule
+                \begin{minipage}[t]{0.5\textwidth}
+                    \centering
+                    \vspace{0pt}%
+                    \myul{Gerichtet}
+                    \begin{equation*}
+                        M = \Omega\,L
+                    \end{equation*}
+                    \begin{equation*}
+                        \vartheta_1 = \vartheta_2 = 0
+                    \end{equation*}
+                    \vspace{-1.5mm}%
+                    \begin{equation*}
+                        \Omega < \text{0,2}
+                    \end{equation*}
+                    \vspace{-1mm}
+                \end{minipage}
+                \vspace{4.7mm}
             \end{minipage}
         }{0}{1}{1}{0}
 
-    % B4) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{95mm}
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
     \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Flächenspezifische Strahlungsleistung}\\ \vspace{2mm}
-            
+            \hspace*{7.4mm}\titlerm{Strahlungsfluss}\quad{\color{RedOrange}sf()} \\ \vspace{-4mm}
+            \begin{equation*}
+                \Phi = M\,A = F_{i\rightarrow j}\,\varepsilon\,\sigma\,T_i^4\,A_i
+            \end{equation*}%
+            \vspace{-6mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Übertragene Wärme} \\ \vspace{-4mm}
+            \begin{equation*}
+                \dot{Q} = \Phi_{12} = \Phi_\text{em.} - \Phi_\text{abs.}
+            \end{equation*}
+            \vspace{-6mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Flächen-Helligkeit} \\ \vspace{-4mm}
+            \begin{equation*}
+                K_i = H_i\,A_i = \Phi_i + \rho_i\,\Phi_{\text{ein,}i}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C4) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{45mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Energiebilanz}\\ \vspace{-4mm}
+            \begin{equation*}
+                E = \int_{t_1}^{t_2} \Phi(t)\,\text{d}t
+            \end{equation*}
+            \begin{equation*}
+                \Phi_\alpha + \Phi_\rho + \Phi_\tau = \Phi
+            \end{equation*}
+            \vspace{-2mm}
+            \begin{equation*}
+                \alpha + \rho + \tau = 1
+            \end{equation*}
+            \vspace{-1mm} \\
+            {\color{Purple}\myul{Kirchhoff II:}} \\ \vspace{-5mm}
+            \begin{equation*}
+                \alpha = \varepsilon\text{, wenn }\alpha, \varepsilon\neq f(\lambda)
+            \end{equation*}
         }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{20mm}
+
+    % X5) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X5}{(A4.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Planck'sches Strahlungsgesetz \& Spektrale Strahlung} \\
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{75mm}
+    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Spektrale Spezifische Ausstrahlung}\\ \vspace{-3.5mm}
+            \begin{equation*}
+                \qquad M_{\lambda\text{S}} = \frac{\text{d}M_\text{S}}{\text{d}\lambda} = \varepsilon\,\frac{2\,\pi\,h\,c^2}{\lambda^5\,\left(\mathbf{e}^\frac{h\,c}{k\,T\,\lambda}-1\right)}\quad{\color{RedOrange}\text{ssa()}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B5) Erste Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Spektrale Strahldichte}\\ \vspace{-3mm}
+            \begin{equation*}
+                L_\lambda = \frac{\partial L}{\partial\lambda}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C5) Erste Kachel rechts anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{C5}{(B5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Spektrale Strahldichte}\\ \vspace{-3mm}
+            \begin{equation*}
+                T\,\lambda_\text{max} = 2898\,\upmu\text{m\,K}
+            \end{equation*}
+            {\color{RedOrange}$\rightarrow$ Teil von ssa()}
+        }{0}{0}{1}{0}
+
+% ---- SECHSTE REIHE: Unten anbauen
+\setlength{\rowheight}{22mm}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{48mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Rayleigh-Jeans-Näherung}\\ \vspace{-3mm}
+            \begin{equation*}
+                M_{\lambda\text{S}} = \varepsilon\,\frac{2\,\pi\,c\,k\,T}{\lambda^4}\quad\left(\mathbf{e}^x\ll 1\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B6) Erste Kachel rechts anbauen
+    \setlength{\cellwidth}{54mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Stefan-Boltzmann-Gesetz}\\ \vspace{-3mm}
+            \begin{equation*}
+                M_\text{S} = \int_0^\infty M_{\lambda\text{S}}\,\text{d}\lambda = \underbrace{\frac{2\,\pi^5\,k^4}{15\,h^3\,c^2}}_{=\sigma}\,T^4
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C6) Erste Kachel rechts anbauen
+    \setlength{\cellwidth}{45mm}
+    \Tile{C6}{(B6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Anteil von 0 bis $\lambda^*$}\\ \vspace{-3mm}
+            \begin{equation*}
+                \int_0^{\lambda^*} M_{\lambda\text{S}}\,\text{d}\lambda = (1-y)\,M_\text{S}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D6) Erste Kachel rechts anbauen
+    \setlength{\cellwidth}{43mm}
+    \Tile{D6}{(C6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Lambert'sches Gesetz}\\ \vspace{-1.5mm}
+            \begin{equation*}
+                M_\lambda = \pi\,L_\lambda
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- SIEBTE REIHE: Unten anbauen
+\setlength{\rowheight}{22mm}
+
+    % A7) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A7}{(A6.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Wien'sche Näherung}\\ \vspace{2mm}
+            \begin{minipage}{0.34\cellwidth-\TileSep}
+                \centering
+                \vspace{-2mm}%
+                \begin{equation*}
+                    M_{\lambda\text{S}} = \varepsilon\,\frac{2\,\pi\,h\,c^2}{\lambda^5}\,\mathbf{e}^\frac{-h\,c}{k\,T\,\lambda}\quad\left(\mathbf{e}^x \gg 1\right)
+                \end{equation*}
+                \vspace{0.5mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.50\cellwidth}
+                \centering
+                \vspace{-2mm}%
+                \begin{equation*}
+                    \int_{\lambda_1}^{\lambda_2} M_{\lambda\text{S}}\,\text{d}\lambda = \frac{2\,\pi\,\left(k\,T\right)^4}{h^3\,c^2}\,\left[\left(x^3+3\,x^2+6\,x+6\right)\,\mathbf{e}^{-x}\right]_{\lambda_1}^{\lambda_2}
+                \end{equation*}
+                \vspace{-4mm} \\
+                {\color{RedOrange}yyy()}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.15\cellwidth-\TileSep}
+                \centering
+                \vspace{-2mm}%
+                \begin{equation*}
+                    x = \frac{h\,c}{k\,T\,\lambda}
+                \end{equation*}
+                \vspace{0mm}
+            \end{minipage}
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
