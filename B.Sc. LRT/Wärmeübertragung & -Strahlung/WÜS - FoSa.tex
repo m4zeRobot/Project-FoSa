@@ -50,7 +50,7 @@
 
 % ---- Eigene Unterstreichungen definieren
 % Nutzung: \myul{<Text hier einfügen>}
-\newcommand{\myul}[1]{
+\newcommand{\myul}[1]{%
     \uline{\phantom{#1}}%
     \llap{\contour{white}{#1}}%
 }
@@ -58,7 +58,7 @@
 % ---- Eigene Zeilenhöhe in Tabellen einstellen
 % Nutzung: \xrowht[()]{<Zeilenhöhe als dimexpr>}
 \newcommand{\xrowht}[2][0]{
-    \hspace{-6pt}\addstackgap[0.5\dimexpr#2\relax]{\vphantom{#1}}
+    \hspace{-6pt}\addstackgap[0.5\dimexpr#2\relax]{\vphantom{#1}}%
 }
 
 % ---- Eigene Tabellenlinie mit variabler Dicke definieren
@@ -143,6 +143,6 @@
 
 \include{contents/planckverteilung.tex}
 
-%\include{contents/flugzeuggleichungen.tex} <- in "contents/atmosphäre.tex" enthalten
+\include{contents/wärmeübertragung.tex}
 
 \end{document}

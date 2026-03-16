@@ -18,7 +18,7 @@
                 \begin{equation*}
                     \dot W + \dot Q + \Phi = \dot U
                 \end{equation*}
-                \vspace{-1.5mm}
+                \vspace{-2mm}
             \end{minipage}%
             \vrule
             \begin{minipage}{0.59\cellwidth-\TileSep}
@@ -27,7 +27,7 @@
                 \begin{equation*}
                     \dot Q_{12} = \alpha\,A\,(T_1 - T_2)
                 \end{equation*}
-                \vspace{-1.5mm}
+                \vspace{-1mm}
             \end{minipage}%
             \vspace{1mm}
             \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
@@ -46,7 +46,7 @@
             \begin{minipage}{0.48\cellwidth-\TileSep}
                 \centering
                 \vspace{1mm}
-                \includegraphics[height=32mm]{images/raumwinkel.pdf}
+                \includegraphics[height=32mm]{raumwinkel.pdf}
             \end{minipage}
         }{0}{1}{1}{0} % Kanten: unten & rechts
 
@@ -124,7 +124,7 @@
         {
             \titlerm{Gekreuzte Fäden}\\ \vspace{-2mm}
             \begin{equation*}
-                F_{1\rightarrow 2} = \frac{\sum L_\text{(Gekreuzte Fäden)} - \sum L_\text{(Ungekreuzte Fäden)}}{\sum L_\text{(Emittierende Linie)}}
+                F_{1\rightarrow 2} = \frac{\sum l_\text{(Gekreuzte Fäden)} - \sum l_\text{(Ungekreuzte Fäden)}}{\sum l_\text{(Emittierende Linie)}}
             \end{equation*}
         }{0}{0}{1}{0}
 
@@ -291,7 +291,7 @@
             \vspace{-\TileSep}
             \titlerm{Spektrale Strahldichte}\\ \vspace{-3mm}
             \begin{equation*}
-                T\,\lambda_\text{max} = 2898\,\upmu\text{m\,K}
+                T\,\lambda_\text{max} = 2898\,\upmu\text{m\,K}~(= \text{konst.})
             \end{equation*}
             {\color{RedOrange}$\rightarrow$ Teil von ssa()}
         }{0}{0}{1}{0}
@@ -373,6 +373,400 @@
                     x = \frac{h\,c}{k\,T\,\lambda}
                 \end{equation*}
                 \vspace{0mm}
+            \end{minipage}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+\newpage
+\begin{center}
+    \section*{\myul{Wärmestrahlung}}
+\end{center}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{19mm}
+
+    % X1) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X1}{([xshift=10mm,yshift=-14mm]current page.north west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Realer Strahler} \\
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel am Seitenursprung ausrichten
+    \setlength{\cellwidth}{70mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Stefan-Boltzmann-Gesetz}\\ \vspace{2mm}
+            \begin{minipage}{0.4\cellwidth-\TileSep}
+                \centering
+                \begin{equation*}
+                    M_\text{G} = \varepsilon\,\sigma\,T^4
+                \end{equation*}
+                \vspace{-2mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.6\cellwidth-\TileSep}
+                \centering
+                \begin{equation*}
+                    \sigma = \text{5,67}\cdot 10^{-8}\,\tfrac{\text{W}}{\text{m}^2\,\text{K}^4}
+                \end{equation*}
+                \vspace{-2mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Integraler Emissionsgrad}\\ \vspace{-2mm}
+            \begin{equation*}
+                \bar{\varepsilon} = \frac{M_\text{G}}{M_\text{S}} = \int_0^\infty \varepsilon(\lambda)\,\text{d}\lambda
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Spektraler Emissionsgrad}\\ \vspace{-2mm}
+            \begin{equation*}
+                \varepsilon(\lambda) = \frac{M_{\lambda\text{G}}}{M_{\lambda\text{S}}}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{28mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{88mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Energiedichte}\\ \vspace{2mm}
+            \titlerm{Allgemein}\\ \vspace{-2mm}
+            \begin{equation*}
+                e_\text{S} = \frac{E}{V} = \frac{W}{V} = \frac{\Phi_0}{A\,c_0} = \frac{S}{c_0} = \frac{M}{c_0} = \frac{L}{c_0}\,\int_\omega \text{d}\omega
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{102mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Strahlungsdruck}\\ \vspace{2mm}
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \titlerm{Allgemein}\\ \vspace{-2mm}
+                \begin{equation*}
+                    p_\text{S} = \frac{\dot{N}\,h\,v}{A\,c_0}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Reflexion}\\ \vspace{-1.5mm}
+                \begin{equation*}
+                    p_\text{S,ref} = (1 + \rho)\,p_\text{S,abs}
+                \end{equation*}
+                \vspace{-0.8mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{25mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{88mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Diffuse Strahlung}\\ \vspace{-2mm}
+                \begin{equation*}
+                    e_\text{S} = 4\,\frac{M_\text{S}}{c_0} = 4\,\frac{\sigma\,T^4}{c_0}
+                \end{equation*}
+                \vspace{1mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Gerichtete Strahlung}\\ \vspace{-2mm}
+                \begin{equation*}
+                    e_\text{S} = \frac{M_\text{S}}{c_0} = \frac{\sigma\,T^4}{c_0}
+                \end{equation*}
+                \vspace{1mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{102mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \titlerm{Diffuse Strahlung ($\alpha = 1$)}\\ \vspace{-2mm}
+                \begin{equation*}
+                    p_\text{S} = \frac{1}{3}\,e_\text{S} = \underbrace{\frac{4}{3}\,\frac{M_\text{S}}{c_0} = \frac{4}{3}\,\frac{\sigma\,T^4}{c_0}}_\text{Hohlraum}
+                \end{equation*}
+                \vspace{-2mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Gerichtete Strahlung ($\alpha = 1$)}\\ \vspace{-2mm}
+                \begin{equation*}
+                    p_\text{S} = e_\text{S} = \frac{M_\text{S}}{c_0} = \frac{\sigma\,T^4}{c_0}
+                \end{equation*}
+                \vspace{1mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{22mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{88mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Schwarzer Hohlraum}\\ \vspace{-2mm}
+                \begin{equation*}
+                    e_\text{S} = 4\,\frac{M}{c_0} = 4\,\frac{\sigma\,T^4}{c_0} = 4\,\frac{\pi\,L}{c_0}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{In Austrittsöffnung}\\ \vspace{-2mm}
+                \begin{equation*}
+                    e_\text{S} = 2\,\frac{M}{c_0} = 2\,\frac{\sigma\,T^4}{c_0} = 2\,\frac{\pi\,L}{c_0}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{102mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \titlerm{Kraft}\\ \vspace{-2mm}
+                \begin{equation*}
+                    F = A\,p_\text{S,ref}
+                \end{equation*}
+                \vspace{-0.5mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Erde}\\ \vspace{-2mm}
+                \begin{equation*}
+                    e_\text{S,Erde} = \frac{S_0}{c_0} = \text{4,67}\,\tfrac{\text{\textmu N}}{\text{m}^2}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{20mm}
+
+    % X5) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X5}{(A4.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Enthalpie \& Entropie} \\
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Enthalpiedichte}\\ \vspace{-3.5mm}
+            \begin{equation*}
+                \frac{H}{V} = e_\text{S} + p = \underbrace{\frac{16}{3}\,\frac{\sigma\,T^4}{c_0}}_\text{Hohlraum}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Entropiedichte}\\ \vspace{-2mm}
+            \begin{equation*}
+                \frac{S}{V} = \frac{16}{3}\,\frac{M_\text{S}}{T\,c_0}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C5) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{C5}{(B5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Entropiestrom}\\ \vspace{-2mm}
+            \begin{equation*}
+                \dot{S} = \frac{4}{3}\,\frac{M_\text{S}}{T}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- SECHSTE REIHE: Unten anbauen
+\setlength{\rowheight}{16mm}
+
+    % X6) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X6}{(A5.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Gasstrahlung} \\
+        }{0}{0}{0}{0}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{49mm}
+    \Tile{A6}{(X6.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Intensitäts-Schwächung}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{d}M_\lambda = -\delta_\lambda\,M_\lambda\,\text{d}n
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B6) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{47mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Absorbtionszahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \alpha_{\lambda,n} = \varepsilon_{\lambda,n} = 1-\mathbf{e}^{-\delta_\lambda\,n}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C6) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{47mm}
+    \Tile{C6}{(B6.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Mit Partialdruck}\\ \vspace{-3mm}
+            \begin{equation*}
+                M_\lambda = M_{\lambda,0}~\mathbf{e}^{-\delta_\lambda\,\frac{p}{p_0}\,n}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D6) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{47mm}
+    \Tile{D6}{(C6.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Emissionsverhältnis}\\ \vspace{-3mm}
+            \begin{equation*}
+                \varepsilon_\lambda = 1-\mathbf{e}^{-\delta_\lambda\,\frac{p}{p_0}\,n}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- SIEBTE REIHE: Unten anbauen
+\setlength{\rowheight}{28mm}
+
+    % A7) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{55mm}
+    \Tile{A7}{(A6.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Gesamtemissionskoeffizient}\\ \vspace{0.5mm}
+            \begin{equation*}
+                \varepsilon_\text{ges} = \frac{1}{\sigma\,T^4}\,\int_0^\infty \varepsilon_\lambda\,M_{\lambda,\text{S}}\,\text{d}\lambda
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B7) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{135mm}
+    \Tile{B7}{(A7.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Gase}\\ \vspace{1mm}
+            \begin{minipage}{0.27\cellwidth-\TileSep}
+                \centering
+                \titlerm{Kinetische Energie}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \bar{\varepsilon}_\text{kin} = \frac{f}{2\,k_\text{B}\,T}
+                \end{equation*}
+                \vspace{0.5mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.35\cellwidth}
+                \centering
+                \titlerm{Kinetische Energiedichte}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \bar{E}_\text{kin} = \frac{f}{2}\,n\,k_\text{B}\,T = \frac{f}{2}\,p \mathrel{\widehat{=}} e_\text{S}
+                \end{equation*}
+                \vspace{0.5mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.18\cellwidth}
+                \centering
+                \titlerm{Einatomig}\\ \vspace{-4mm}
+                \begin{equation*}
+                    f = 3
+                \end{equation*}
+                \begin{equation*}
+                    \kappa = \text{1,66}
+                \end{equation*}
+                \vspace{-2mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.18\cellwidth-\TileSep}
+                \centering
+                \titlerm{Zweiatomig}\\ \vspace{-4mm}
+                \begin{equation*}
+                    f = 5
+                \end{equation*}
+                \begin{equation*}
+                    \kappa = \text{1,4}
+                \end{equation*}
+                \vspace{-2mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- ACHTE REIHE: Unten anbauen
+\setlength{\rowheight}{21mm}
+
+    % A8) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A8}{(A7.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Flächenspezifischer Wärmestrom}\\ \vspace{-2mm}
+            \begin{equation*}
+                \dot{q}_{12}~=~\frac{\sigma}{\frac{1}{\varepsilon_1} + \frac{1}{\varepsilon_2} - 1}\,\left(T_1^4-T_2^4\right)~=~\frac{\sigma}{\frac{1}{\varepsilon_1} + \frac{1}{\varepsilon_2} - 1 + n\,\left(\frac{2}{\varepsilon'}-1\right)}~=~\frac{\sigma}{\frac{1}{\varepsilon}+ n\,\left(\frac{2}{\varepsilon}-1\right)}\,T_1^4
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- NEUNTE REIHE: Unten anbauen
+\setlength{\rowheight}{50mm}
+
+    % A9) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A9}{(A8.south west)}{\cellwidth}{\rowheight}
+        {
+            \hspace{62mm}\titlebf{Sichtfaktor Rechteckfläche}\hspace{10mm}{\color{RedOrange}sfrf() $\rightarrow$ CAS muss auf RAD stehen!}\\ \vspace{-2mm}
+            {\scriptsize
+            \begin{equation*}
+                F_{1\rightarrow 2} = \frac{2}{\pi\,A\,B}\,\left[\ln\!\left(\sqrt{\frac{\left(1+A^2\right)\,\left(1+B^2\right)}{1+A^2+B^2}}\right) + A\,\sqrt{1+B^2}\,\arctan\!\left(\frac{A}{\sqrt{1+B^2}}\right) - A\,\arctan\!\left(A\right) + B\,\sqrt{1+A^2}\,\arctan\!\left(\frac{B}{\sqrt{1+A^2}}\right) - B\,\arctan\!\left(B\right)\right]
+            \end{equation*}}
+            \\
+            \begin{minipage}{50mm}
+                \centering
+                \includegraphics[height=34mm]{sichtfaktor-rechteck.pdf}
+            \end{minipage}%
+            \begin{minipage}{70mm}
+                \centering
+                mit:\qquad $\displaystyle A=\frac{a}{c}\,,\qquad B=\frac{b}{c}\,,\qquad A_1 = A_2\,;$
             \end{minipage}
         }{0}{0}{0}{0}
 
