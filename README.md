@@ -27,6 +27,10 @@ Ich empfehle die Installation von [TeX-Live auf Windows](https://tug.org/texlive
 <hr/>
 
 ## Einige weitere Anmerkungen zur verwendeten Nomenklatur
+Alle Zeichen entsprechen den Richtlinien für mathematische Darstellungen nach der **DIN 1338**. Das bedeutet:
+- **Variablen** werden stets kursiv geschrieben.
 - **Indizes** werden in der Regel aufrecht geschrieben, da kursive Buchstaben für Variablen stehen. Dies gilt natürlich nicht für Indizes, die selbst Variablen sind, z. B. Zähler wie *i*, *n* usw.
+- **Einheiten** werden stets aufrecht und mit einem Halbraum (`\,`) von der Zahl getrennt geschrieben. Sollte eine Einheit ohne Zahlenwert angegeben werden, so wird diese in eckige Klammern geschrieben.
+Doe folgenden, weiteren Nomenklaturregeln wurden eigens festgelegt:
 - **Kennzahlen** wie bspw. die Machzahl werden ebenfalls aufrecht geschrieben, obwohl sie technisch gesehen je nach Gleichung variabel sind – das ist lediglich meine persönliche Präferenz.
 - **Multiplikationen** werden im Allgemeinen verkürzt, indem einfach ein Halbraum (`\,`) zwischen den Faktoren verwendet wird, anstatt des zentralen Punktes (`\cdot`), wie man ihn vielleicht kennt. Dies dient dazu, Platz zu sparen und verwirrend lange Gleichungen zu vermeiden.
