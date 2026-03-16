@@ -31,6 +31,7 @@ Alle Zeichen entsprechen den Richtlinien für mathematische Darstellungen nach d
 - **Variablen** werden stets kursiv geschrieben.
 - **Indizes** werden in der Regel aufrecht geschrieben, da kursive Buchstaben für Variablen stehen. Dies gilt natürlich nicht für Indizes, die selbst Variablen sind, z. B. Zähler wie *i*, *n* usw.
 - **Einheiten** werden stets aufrecht und mit einem Halbraum (`\,`) von der Zahl getrennt geschrieben. Sollte eine Einheit ohne Zahlenwert angegeben werden, so wird diese in eckige Klammern geschrieben.
+- **Mathematische Konstanten** werden stets aufrecht geschrieben (bspw. Pi, die Euler'sche Zahl etc.)
 
 Die folgenden, weiteren Nomenklaturregeln wurden eigens festgelegt:
 - **Kennzahlen** wie bspw. die Machzahl werden ebenfalls aufrecht geschrieben, obwohl sie technisch gesehen je nach Gleichung variabel sind – das ist lediglich meine persönliche Präferenz.
