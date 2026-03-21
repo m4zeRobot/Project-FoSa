@@ -18,7 +18,8 @@ Dadurch sieht der Code hier und da etwas unübersichtlich aus, aber die Ergebnis
 Die harte Unterteilung legt eine klare Struktur fest, innerhalb derer gearbeitet werden muss, während jede Form der weichen Unterteilung mehr Flexibilität ermöglicht.
 
 ## Tipps zum kompilieren der LaTeX-Dateien
-Ich empfehle die Installation von [TeX-Live auf Windows](https://tug.org/texlive/windows.html) und Visual Studio Code als Editor (PowerShell: `winget install Microsoft.VisualStudioCode`, oder manuell downloaden). Für VSCode empfehle ich die folgenden Extensions:
+Ich empfehle die Installation von [TeX-Live auf Windows](https://tug.org/texlive/windows.html) und Visual Studio Code als Editor
+(PowerShell: `winget install Microsoft.VisualStudioCode`, oder manuell downloaden). Für VSCode empfehle ich die folgenden Extensions:
 - [LaTeX Language Support](https://marketplace.visualstudio.com/items?itemName=torn4dom4n.latex-support) von Long Nhat Nguyen
 - [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) von James Yu
 - [LaTeX Utilities](https://marketplace.visualstudio.com/items?itemName=tecosaur.latex-utilities) von tecosaur
@@ -30,3 +31,7 @@ Ich empfehle die Installation von [TeX-Live auf Windows](https://tug.org/texlive
 - **Indizes** werden in der Regel aufrecht geschrieben, da kursive Buchstaben für Variablen stehen. Dies gilt natürlich nicht für Indizes, die selbst Variablen sind, z. B. Zähler wie *i*, *n* usw.
 - **Kennzahlen** wie bspw. die Machzahl werden ebenfalls aufrecht geschrieben, obwohl sie technisch gesehen je nach Gleichung variabel sind – das ist lediglich meine persönliche Präferenz.
 - **Multiplikationen** werden im Allgemeinen verkürzt, indem einfach ein Halbraum (`\,`) zwischen den Faktoren verwendet wird, anstatt des zentralen Punktes (`\cdot`), wie man ihn vielleicht kennt. Dies dient dazu, Platz zu sparen und verwirrend lange Gleichungen zu vermeiden.
+
+## Danksagung
+Dieses Projekt wäre ohne die großartige Vorarbeit vieler vorangegangener Studierender niemals möglich gewesen.
+Ich möchte den folgenden Personen explizit Dank aussprechen: R. John, F. Frank, L. Kuhn, M. Höller, P. Weig, R. Reitze, L. Habermalz.
