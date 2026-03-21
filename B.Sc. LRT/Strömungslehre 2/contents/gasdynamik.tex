@@ -396,11 +396,25 @@
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
             \hspace{14mm}\titlerm{Prandtl-Meyer-Funktion}\hspace{7mm}{\color{RedOrange}pmf()}\\ \vspace{1mm}
-            \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|Z}
-                 & \\[-2.5ex]
-                $\nu(\text{Ma}_2) = \nu(\text{Ma}_1) + \vartheta_{12}$ & $\displaystyle\nu(\text{Ma}) = \sqrt{\frac{\kappa+1}{\kappa-1}}\,\arctan\left(\sqrt{\frac{\kappa-1}{\kappa+1}\,(\text{Ma}^2-1)}\right)-\arctan\left(\sqrt{\text{Ma}^2-1}\right)$ \\[-2.0ex]
-                {\color{NavyBlue}(9.75) \rotatebox[origin=c]{270}{$\Lsh$}} & {\color{NavyBlue}(9.74) \rotatebox[origin=c]{270}{$\Lsh$}}
-            \end{tabularx}
+            \begin{minipage}{0.28\cellwidth-\TileSep}
+                \centering
+                \vspace{-2.5mm}
+                \begin{equation*}
+                    \nu(\text{Ma}_2) = \nu(\text{Ma}_1) + \vartheta_{12}
+                \end{equation*}
+                \vspace{-2mm}
+                {\color{NavyBlue}(9.75) \rotatebox[origin=c]{270}{$\Lsh$}}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.72\cellwidth-\TileSep}
+                \centering
+                \vspace{-2.5mm}
+                \begin{equation*}
+                    \nu(\text{Ma}) = \sqrt{\frac{\kappa+1}{\kappa-1}}\,\arctan\left(\sqrt{\frac{\kappa-1}{\kappa+1}\,(\text{Ma}^2-1)}\right)-\arctan\left(\sqrt{\text{Ma}^2-1}\right)
+                \end{equation*}
+                \vspace{-4.5mm} \\
+                \hspace{40mm} {\color{NavyBlue}(9.74) \rotatebox[origin=c]{270}{$\Lsh$}} \hspace*{10mm} {\color{Black!70}$\left(\nu_\text{max} = \text{130,454}^\circ\right)$}
+            \end{minipage}
         }{0}{0}{1}{0}
 
 % --- DRITTE REIHE: relativ zu A2
