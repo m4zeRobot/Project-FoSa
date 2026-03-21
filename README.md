@@ -2,7 +2,7 @@
 Neuerstellung der Quelldateien für die Formelsammlungen von FLURUS – der Fachschaft des Studiengangs Luft- und Raumfahrttechnik an der Universität Stuttgart, Deutschland.
 
 ## Wieso existiert dieses Projekt?
-Von der endgültigen Vektorisierung aller Bilder, um scharfe Ausdrucke zu ermöglichen, bis hin zur Möglichkeit, offensichtliche Fehler selbst zu korrigieren – dieses Projekt entstand mit dem Ziel der Verbesserung.
+Von der endgültigen Vektorisierung aller Bilder, um scharfe Papier-Ausdrucke zu ermöglichen, bis hin zur Möglichkeit, offensichtliche Fehler selbst zu korrigieren – dieses Projekt entstand mit dem Ziel der Verbesserung.
 Wenn du einen Beitrag leisten möchten, schreib mir einfach, um kollaborativen Zugriff auf das Repository zu erhalten. Ansonsten können alle hier geteilten Inhalte natürlich frei verwendet werden!
 
 ### Vorteile
