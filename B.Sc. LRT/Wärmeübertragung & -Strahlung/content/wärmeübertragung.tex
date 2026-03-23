@@ -1,0 +1,1375 @@
+\centering
+\section*{\myul{Wärmeübertragung}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{17mm}
+
+    % X1) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X1}{([xshift=10mm,yshift=-14mm]current page.north west)}{190mm}{15mm}
+        {
+            \vspace{1mm}
+            \titlebf{Eindimensional \& Stationär}\\ \vspace{2mm}
+            \titlebf{Wärmeleitung - Ebene Wand}\\
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmestrom}\\ \vspace{-3mm}
+            \begin{equation*}
+                \dot{Q} = \dot{q}\,A = \frac{1}{R}\,\left(T_1 - T_2\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{70mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmestromdichte}\\ \vspace{-3mm}
+            \begin{equation*}
+                \dot{q} = -\lambda\,\frac{\partial T}{\partial x} = \lambda\,\frac{T_1 - T_2}{d} = \alpha\,\left(T_1-T_2\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{70mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmeleitwiderstand}\\ \vspace{2mm}
+            \begin{minipage}{0.62\cellwidth-\TileSep}
+                \centering
+                \vspace{-2mm}
+                \begin{equation*}
+                    R_\lambda = \frac{T_1 - T_2}{\dot{Q}} = \frac{d}{\lambda\,A}
+                \end{equation*}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.38\cellwidth-\TileSep}
+                \centering
+                \vspace{-2.8mm}
+                \begin{equation*}
+                    R_\alpha = \frac{1}{A\,\alpha}
+                \end{equation*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{40mm}
+
+    % X2) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Reihenschaltung mehrerer Materialien}\\
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{54mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \hspace{-1mm}\includegraphics[height=\rowheight-2\TileSep]{übertragung-reihenschaltung.pdf}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{54mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{0.496\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmedurchgangskoeffizient}\\ \vspace{-3mm}
+            \begin{equation*}
+                \frac{1}{k} = \frac{1}{\alpha_1} + \sum_{i=1}^n \frac{d_i}{\lambda_i} + \frac{1}{\alpha_2}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C2) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{43mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{0.496\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmestromdichte}\\ \vspace{-1mm}
+            \begin{equation*}
+                \dot{Q} = k\,\left(T_1 - T_2\right) = \text{konst.}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D2) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{39mm}
+    \Tile{D2}{(C2.north east)}{\cellwidth}{0.496\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmeleitfähigkeit}\\ \vspace{-3mm}
+            \begin{equation*}
+                \frac{d_\text{ges}}{\lambda_\text{R}} = \sum_{i=1}^n \frac{d_i}{\lambda_i}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+    % E2) Fünfte Kachel unter B2 anbauen
+    \setlength{\cellwidth}{136mm}
+    \Tile{E2}{(B2.south west)}{\cellwidth}{0.5\rowheight}
+        {
+            \titlerm{Wärmedurchgangswiderstand}\\ \vspace{-5mm}
+            \begin{equation*}
+                R_\text{d} = \frac{T_{1,\text{u}}-T_{2,\text{u}}}{\dot{Q}} = R_{\alpha_1} + \sum_{i=1}^n R_{\lambda_i} + R_{\alpha_2} = \frac{1}{A}\,\left[\frac{1}{\alpha_1}+\sum_{i=1}^n \frac{d_i}{\lambda_i} + \frac{1}{\alpha_2}\right]
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{40mm}
+
+    % X3) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Parallelschaltung mehrerer Materialien}\\
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{54mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \hspace{4mm}\includegraphics[height=\rowheight-2\TileSep]{übertragung-parallelschaltung.pdf}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{68mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{0.446\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmestromdichte}\\ \vspace{-3mm}
+            \begin{equation*}
+                \dot{q} = \frac{\lambda_\text{P}}{l}\,\left(T_1 - T_2\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C3) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{68mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{0.446\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmestrom}\\ \vspace{-4mm}
+            \begin{equation*}
+                \dot{Q} = \left(T_1 - T_2\right)\,\frac{b}{l}\,\sum_{i=1}^n \left(\lambda_i\,d_i\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+    % D3) Vierte Kachel unter B3 anbauen
+    \setlength{\cellwidth}{68mm}
+    \Tile{D3}{(B3.south west)}{\cellwidth}{0.55\rowheight}
+        {
+            \titlerm{Wärmeleitfähigkeit}\\ \vspace{-3mm}
+            \begin{equation*}
+                \lambda_\text{P} = \frac{1}{d}\,\sum_{i=1}^n d_i\,\lambda_i
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % E3) Fünfte Kachel rechts anbauen
+    \setlength{\cellwidth}{68mm}
+    \Tile{E3}{(D3.north east)}{\cellwidth}{0.55\rowheight}
+        {
+            \titlerm{Wärmeleitwiderstand}\\ \vspace{-3mm}
+            \begin{equation*}
+                \frac{1}{R_{\lambda_\text{P}}} = \sum_{i=1}^n \frac{1}{R_{\lambda_i}} = \frac{b}{l}\,\sum_{i=1}^n d_i\,\lambda_i
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{66mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{111mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Rohre \& Zylinder}\\ \vspace{2mm}
+            \titlerm{Wärmestrom}\\ \vspace{-3mm}
+            \begin{equation*}
+                \dot{Q} = \dot{q}_i\,A_i = 2\,\pi\,l\,r\,k^*\,\left(T_\text{i} - T_\text{a}\right) = \text{konst.}
+            \end{equation*}
+            \\ \vspace{-2mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \titlerm{Wärmedurchgangswiderstand}\\ \vspace{-3mm}
+            \begin{equation*}
+                R_\text{d} = R_{\alpha_\text{i}} + \sum_{i=1}^n R_{\lambda_i} + R_{\alpha_\text{a}} = \frac{1}{2\,\pi\,l}\,\left[\frac{1}{\alpha_\text{i}\,r_\text{i}} + \sum_{i=1}^n \left(\frac{1}{\lambda_i}\,\ln\!\left(\frac{r_{i+1}}{r_i}\right)\right) + \frac{1}{\alpha_\text{a}\,r_\text{a}}\right]
+            \end{equation*}
+            \\ \vspace{-0.5mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \titlerm{Wärmedurchgangskoeffizient}\\ \vspace{-3mm}
+            \begin{equation*}
+                \frac{1}{r_i\,k^*} = \frac{1}{r_\text{i}\,\alpha_\text{i}} + \sum_{i=1}^n \left(\frac{1}{\lambda_i}\,\ln\!\left(\frac{r_{i+1}}{r_i}\right)\right) + \frac{1}{r_\text{a}\,\alpha_\text{a}}
+            \end{equation*}
+            \\ \vspace{-10.5mm}\hspace{-90mm}{\color{RedOrange}wdkrz()}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{79mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Hohlkugel}\\ \vspace{2mm}
+            \titlerm{Wärmestrom}\\ \vspace{-3mm}
+            \begin{equation*}
+                \dot{Q} = \dot{q}_i\,A_i = 4\,\pi\,r^2\,k^*\,\left(T_\text{i} - T_\text{a}\right) = \text{konst.}
+            \end{equation*}
+            \\ \vspace{-2mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \titlerm{Wärmeleitwiderstand}\\ \vspace{-3mm}
+            \begin{equation*}
+                R_\lambda = \frac{1}{4\,\pi\,\lambda}\,\sum_{i=1}^n \left(\frac{1}{r_i}-\frac{1}{r_{i+1}}\right)
+            \end{equation*}
+            \\ \vspace{0mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \titlerm{Wärmedurchgangskoeffizient}\\ \vspace{-3mm}
+            \begin{equation*}
+                \frac{1}{r_i^2\,k^*} = \frac{1}{r_\text{i}^2\,\alpha_\text{i}} + \sum_{i=1}^n \left(\frac{1}{\lambda_i}\,\left(\frac{1}{r_i}-\frac{1}{r_{i+1}}\right)\right) + \frac{1}{r_\text{a}^2\,\alpha_\text{a}}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{18mm}
+
+    % X5) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X5}{(A4.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Wärmeleitung}\\
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{63mm}
+    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Fourier-Gleichung}\\ \vspace{-2.5mm}
+            \begin{equation*}
+                \frac{\partial T}{\partial t} = a~\Delta T + \frac{\dot{q}_i}{\rho\,c}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{64mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Spezifische Ergiebigkeit}\\ \vspace{-2mm}
+            \begin{equation*}
+                \dot{q}_\text{i} = r_\text{e}\,i_\text{e}^2
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C5) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{63mm}
+    \Tile{C5}{(B5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Temperaturleitzahl}\\ \vspace{-2.5mm}
+            \begin{equation*}
+                a = \frac{\lambda}{\rho\,c}\quad\left[\tfrac{\text{m}^2}{\text{s}}\right]
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- SECHSTE REIHE: Unten anbauen
+\setlength{\rowheight}{30mm}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{78mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Laplace-Gleichung}\\ \vspace{2mm}
+            \begin{minipage}{0.3\cellwidth-\TileSep}
+                \centering
+                \titlerm{Kartesisch}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \Delta = \frac{\partial^2}{\partial x^2}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.7\cellwidth-\TileSep}
+                \centering
+                \titlerm{Zylinderkoordinaten}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \Delta = \frac{\partial^2}{\partial r^2} + \frac{1}{r}\,\frac{\partial}{\partial r} + \frac{1}{r^2}\,\frac{\partial^2}{\partial \varphi^2} + \frac{\partial^2}{\partial z^2}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}
+        }{0}{1}{0}{0}
+
+    % B6) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{112mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Anfangs- \& Randbedingungen}\\ \vspace{2mm}
+            \begin{minipage}{0.24\cellwidth-\TileSep}
+                \centering
+                \titlerm{1. Art}\\ \vspace{-1.5mm}
+                \begin{equation*}
+                    T_\text{Rand} = T_\text{W}(t)
+                \end{equation*}
+                \vspace{-0.75mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.31\cellwidth}
+                \centering
+                \titlerm{2. Art}\\ \vspace{-2mm}
+                \begin{equation*}
+                    -\lambda\,\left.\frac{\partial T}{\partial x}\right|_\text{Rand} = \dot{q}_\text{Rand}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.44\cellwidth-\TileSep}
+                \centering
+                \titlerm{3. Art}\\ \vspace{-2mm}
+                \begin{equation*}
+                    -\lambda \left.\frac{\partial T}{\partial x}\right|_\text{Rand} = \alpha\,\left(T_\text{Rand}-T_\text{F}\right)
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+\newpage
+\centering
+\section*{\myul{Wärmeübertragung}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{17mm}
+
+    % X1) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X1}{([xshift=10mm,yshift=-14mm]current page.north west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Eindimensional \& Instationär}\\
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Fourier-Gleichung}\\ \vspace{-3.5mm}
+            \begin{equation*}
+                \frac{\partial T}{\partial t} = a\,\frac{\partial^2 T}{\partial x^2} + \frac{\dot{q}}{\rho\, c}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Fourier-Zahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{Fo} = \frac{a\,t}{l^2} = \tau
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{45mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Biot-Zahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{Bi} = \frac{\alpha\,l}{\lambda}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D1) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{45mm}
+    \Tile{D1}{(C1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Temperatur}\\ \vspace{-3mm}
+            \begin{equation*}
+                \Theta = \frac{T - T_\infty}{T_\text{i} - T_\infty}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{14mm}
+
+    % X2) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlerm{Abgegebene Wärmemenge}\\
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-1mm}
+            \begin{equation*}
+                Q_\text{i} = \Delta U = \rho\,V\,c\,\left(T_\text{i} - T_\infty\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-1mm}
+            \begin{equation*}
+                Q(t) = \rho\,V\,c\,\left(T_\text{i} - T_\text{m}(t)\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C2) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{90mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \begin{equation*}
+                \frac{Q(t)}{Q_\text{i}} = \frac{T_\text{i} - T_\text{m}(t)}{T_\text{i} - T_\infty} = 1 - \frac{T_\text{m}(t) - T_\infty}{T_\text{i} - T_\infty} = 1 - \Phi_\text{m}(\tau)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{17mm}
+
+    % X3) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Konvektiver Wärmeübergang}\\
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Prandtl-Zahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{Pr} = \frac{c_p\,\eta}{\lambda} = \frac{c_p\,\nu\,\rho}{\lambda} = \frac{\nu}{a}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Reynolds-Zahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{Re}_x = \frac{v_\infty\,\rho\,x}{\eta} = \frac{v_\infty\,x}{\nu}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C3) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{45mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Eckert-Zahl}\\ \vspace{-4.2mm}
+            \begin{equation*}
+                \text{Ec} = \frac{u_\infty^2}{c_p\,\left(T_0 - T_\text{W}\right)}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D3) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{45mm}
+    \Tile{D3}{(C3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Grashof-Zahl}\\ \vspace{-4.2mm}
+            \begin{equation*}
+                \text{Gr}_L = \beta\,\left|T_\infty - T_\text{W}\right|\,\frac{g\,L^3}{\nu^2}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{18mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{54mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Nußelt-Zahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{Nu} = \frac{\alpha\,x}{\lambda}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{80mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Mittlere Nußelt-Zahl}\\ \vspace{-3.7mm}
+            \begin{equation*}
+                \text{Nu}_\text{m} = \frac{\alpha_\text{m}\,l}{\lambda}\quad\Leftrightarrow\quad\alpha_\text{m} = \frac{\lambda}{l}\,\text{Nu}_\text{m}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C4) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{56mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Kinematische Viskosität}\\ \vspace{-3mm}
+            \begin{equation*}
+                \nu = \frac{\eta}{\rho}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{21mm}
+
+    % X5) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X5}{(A4.south west)}{190mm}{14mm}
+        {
+            \vspace{1mm}
+            \titlebf{Erzwungene Konvektion}\\ \vspace{1mm}
+            \titlerm{Längs angeströmte ebene Platte}\\
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Laminare Grenzschicht}\\ \vspace{1.5mm}
+            \titlerm{Lokale Nußelt-Zahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{Nu}_x = \text{0,332}\,\sqrt[3]{\text{Pr}}\,\sqrt{\text{Re}_x}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{130mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Turbulente Grenzschicht}\\ \vspace{1.5mm}
+            \titlerm{Lokale Nußelt-Zahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{Nu}_x = \text{0,0296}\,\sqrt[3]{\text{Pr}}\,\sqrt[5]{\text{Re}_x^4}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- SECHSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{37mm}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Mittlere Nußelt-Zahl}\\ \vspace{-0.9mm}
+            \begin{equation*}
+                \text{Nu}_\text{m} = \text{0,664}\,\sqrt[3]{\text{Pr}}\,\sqrt{\text{Re}_l}
+            \end{equation*}
+            \vspace{1.8mm}
+            \begin{equation*}
+                \text{Re} < \text{Re}_\text{krit} = 5\cdot 10^5
+            \end{equation*}
+            \begin{equation*}
+                \text{0,6} \leq \text{Pr} \leq 2000
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B6) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{130mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Mittlere Nußelt-Zahl}\\ \vspace{2mm}
+            \begin{minipage}{0.4\cellwidth-\TileSep}
+                \centering
+                \begin{equation*}
+                    \text{Nu}_\text{m} = \text{0,037}\,\sqrt[3]{\text{Pr}}\,\sqrt[5]{\text{Re}_l^4}
+                \end{equation*}
+                \vspace{1.8mm}
+                \begin{equation*}
+                    5\cdot 10^5 \leq \text{Re}_l \leq 10^7
+                \end{equation*}
+                \begin{equation*}
+                    \text{0,6} \leq \text{Pr} \leq 60
+                \end{equation*}
+                \vspace{-2.5mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.6\cellwidth-\TileSep}
+                \centering
+                \vspace{-2mm}
+                \begin{equation*}
+                    \text{Nu}_\text{m} = \frac{\text{0,037}\,\sqrt[5]{\text{Re}_l^4}\,\text{Pr}}{1 + \text{2,443}\,\text{Re}_l^{-\text{0,1}}\,\left(\sqrt[3]{\text{Pr}^2} - 1\right)}
+                \end{equation*}
+                \vspace{-1mm}
+                \begin{equation*}
+                    5\cdot 10^5 \leq \text{Re}_l \leq 10^7
+                \end{equation*}
+                \begin{equation*}
+                    \text{0,6} \leq \text{Pr} \leq 60
+                \end{equation*}
+                \vspace{-2.5mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- SIEBTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{22mm}
+
+    % X7) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X7}{(A6.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlerm{Quer angeströmter Kreiszylinder}\\
+        }{0}{0}{0}{0}
+
+    % A7) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{90mm}
+    \Tile{A7}{(X7.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Mittlere Nußelt-Zahl}\\ \vspace{2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \vspace{-6mm}
+                \begin{equation*}
+                    \text{Nu}_\text{m} = C\,\text{Re}_d^m\,\text{Pr}^n\,\left(\frac{\text{Pr}}{\text{Pr}_\text{W}}\right)^p
+                \end{equation*}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \vspace{-1.5mm}
+                \begin{align*}
+                    \text{Fluiderwärmung: } &p = \text{0,25} \\
+                    \text{Fluidabkühlung: } &p = \text{0,2} \\
+                \end{align*}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B7) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{100mm}
+    \Tile{B7}{(A7.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+
+            \begin{minipage}{0.65\cellwidth-\TileSep}
+                \centering
+                \begin{tabular}{c|c|c|c}
+                    $\text{Re}_d$        & $C$   & $m$ & $n$  \\ \hline
+                    $1 - 40$             & 0,76  & 0,4 & 0,37 \\
+                    $40 - 10^3$          & 0,52  & 0,5 & 0,37 \\
+                    $10^3 - 2\cdot 10^5$ & 0,26  & 0,6 & 0,37 \\
+                    $2\cdot 10^5 - 10^7$ & 0,023 & 0,8 & 0,4
+                \end{tabular}
+            \end{minipage}%
+            \begin{minipage}{0.35\cellwidth-\TileSep}
+                \centering
+                Gültig für:\\[2.0ex]
+                $1 \leq \text{Re}_d \leq 10^7$\\[1.0ex]
+                $\text{0,7} \leq \text{Pr} \leq 600$
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- ACHTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{18mm}
+
+    % X8) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X8}{(A7.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlerm{Quer angeströmtes Rohrbündel}\\
+        }{0}{0}{0}{0}
+
+    % A8) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A8}{(X8.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Mittlere Nußelt-Zahl}\\ \vspace{2mm}
+            \begin{minipage}{0.29\cellwidth-\TileSep}
+                \centering
+                \begin{equation*}
+                    \text{Nu}_\text{m} = \frac{\alpha_\text{m}\,d}{\lambda} = \text{0,294}\,\xi\,\sqrt[5]{\text{Re}_d^3}
+                \end{equation*}
+            \end{minipage}%
+            \begin{minipage}{0.38\cellwidth-\TileSep}
+                \centering
+                \begin{tabular}{c|c|c|c|c|c|c}
+                    $n$   & 2   & 4   & 6    & 8    & 10  & $>\!10$ \\ \hline
+                    $\xi$ & 0,8 & 0,9 & 0,94 & 0,98 & 1,0 & 1,0
+                \end{tabular}
+            \end{minipage}%
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                Gilt für: $\text{Pr} \approx \text{0,7}$\\[1.0ex]
+                Abstand zwischen den Rippen $\approx 3\,d$
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- NEUNTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{34mm}
+
+    % A9) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{45mm}
+    \Tile{A9}{(A8.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Grenzschichtdicke}\\ \vspace{1mm}
+            (Laminar)
+            \begin{equation*}
+                \delta_S \approx \frac{5\,x}{\sqrt{\text{Re}_x}}
+            \end{equation*}
+            \begin{equation*}
+                \delta_T \approx \frac{5\,x}{\sqrt{\text{Re}_x\,\text{Pr}}}
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+    % B9) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{145mm}
+    \Tile{B9}{(A9.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Rippe}\\ \vspace{2mm}
+            \begin{minipage}{0.34\cellwidth-\TileSep}
+                \centering
+                \titlerm{Rippenwirkungsgrad}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \eta_\text{R} = \frac{\dot{Q}_\text{R}}{\dot{Q}_\text{max}} = \frac{\tanh(m\,L)}{m\,L}
+                \end{equation*}
+                \begin{equation*}
+                    \dot{Q}_\text{R} = \eta_\text{R}\,A\,\alpha_\text{m}\,\left(T_\text{R}-T_\infty\right)
+                \end{equation*}
+                \vspace{-1.5mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.30\cellwidth-\TileSep}
+                \centering
+                \titlerm{Parameter}\\ \vspace{-0.7mm}
+                \begin{equation*}
+                    m = \underbrace{\sqrt{\frac{4\,\alpha}{\lambda\,D}}}_\text{Zylindisch} = \underbrace{\sqrt{\frac{\alpha\,U}{\lambda\,A}}}_\text{Allgemein}
+                \end{equation*}
+                \vspace{-0.4mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.36\cellwidth-\TileSep}
+                \centering
+                \titlerm{Temperaturverteilung}\\ \vspace{1mm}
+                \begin{equation*}
+                    \frac{T(x) - T_\infty}{T_\text{W} - T_\infty} = \frac{\cosh(m\,(L-x))}{\cosh(m\,L)}
+                \end{equation*}
+                \vspace{3.5mm}
+            \end{minipage}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+\newpage
+\centering
+\section*{\myul{Wärmeübertragung}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{30mm}
+
+    % X1) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X1}{([xshift=10mm,yshift=-14mm]current page.north west)}{190mm}{14mm}
+        {
+            \vspace{1mm}
+            \titlebf{Rohrströmung}\\ \vspace{1mm}
+            \titlerm{Turbulent ($\text{Re}_d > 3000$)}\\
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{140mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Anlaufbereich}\\ \vspace{-3.5mm}
+            \begin{equation*}
+                \text{Nu}_\text{m} = \text{0,0235}\,\left(\sqrt[5]{\text{Re}_d^4}-230\right)\,\left(\text{1,8}\,\text{Pr}^\text{0,3}-\text{0,8}\right)\,\left(1+\sqrt[3]{\left(\frac{d}{l}\right)^2}\right)\,\left(\frac{\eta}{\eta_\text{W}}\right)^\text{0,14}
+            \end{equation*}
+            \\ \vspace{-0.5mm}
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                $3000 \leq \text{Re}_d \leq 10^6$
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                \vspace{3mm}
+                $\text{0,6} \leq \text{Pr} \leq 500$\\
+                \vspace{3mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                $\displaystyle 1 \leq \frac{L}{d} \leq \infty$
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Übertragene Wärme}\\ \vspace{2mm}
+            \begin{equation*}
+                \dot{Q} = \dot{m}\,c_p\,\left(T_\text{ein} - T_\text{aus}\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{17mm}
+
+    % X2) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlerm{Dittus-Boelter-Näherung}\\
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{55mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2.5mm}
+            \begin{align*}
+                &T_\text{W} > T_{\text{m,}\,\text{Fluid}}: n = \text{0,4} \\
+                &T_\text{W} < T_{\text{m,}\,\text{Fluid}}: n = \text{0,3}
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{55mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \begin{equation*}
+                \text{Nu}_\text{m} = \text{0,023}\,\sqrt[5]{\text{Re}_d^4}\,\text{Pr}^n
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-3.5mm}
+            \begin{equation*}
+                d_\text{gl} = 4\,\frac{A}{U}
+            \end{equation*}
+            \begin{equation*}
+                \text{0,7} \leq \text{Pr} \leq 160
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{D2}{(C2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-3.5mm}
+            \begin{equation*}
+                10 \leq \frac{L}{d} \leq \infty
+            \end{equation*}
+            \begin{equation*}
+                10^4 \leq \text{Re}_d
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{54mm}
+
+    % X1) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlerm{Laminar ($\text{Re}_d < 3000$)}\\
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{131mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Thermischer Anlauf}\\ \vspace{2mm}
+            \begin{minipage}{0.54\cellwidth-\TileSep}
+                \centering
+                \titlerm{$T_\text{W}$ = konstant}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \text{Nu}_\text{m} =
+                    \begin{cases}
+                        \dfrac{\text{1,615}}{\sqrt[3]{\bar{x}}} - \text{0,7}    & \bar{x} \leq \text{0,005}                  \\[2.5ex]
+                        \dfrac{\text{1,615}}{\sqrt[3]{\bar{x}}} - \text{0,2}    & \text{0,005} \leq \bar{x} \leq \text{0,03} \\[2.5ex]
+                        \dfrac{\text{0,0499}}{\sqrt[3]{\bar{x}}} + \text{3,657} & \bar{x} \geq \text{0,03}
+                    \end{cases}
+                \end{equation*}
+                \\ \vspace{1mm}
+                Voll ausgebildet: $\text{Nu}_\text{m} = \text{3,657}$\\ \vspace{2mm}
+                $L_\text{th} = \text{0,0335}~d~\text{Re}_d~\text{Pr}$\\ \vspace{1mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.46\cellwidth-\TileSep}
+                \centering
+                \titlerm{$\dot{q}_\text{W} =$ konstant}
+                \vspace{5mm}
+                \begin{equation*}
+                    \text{Nu}_\text{m} =
+                    \begin{cases}
+                        \dfrac{\text{1,953}}{\sqrt[3]{\bar{x}}}       & \bar{x} \leq \text{0,03} \\[3.0ex]
+                        \dfrac{\text{0,0722}}{\bar{x}} + \text{4,364} & \bar{x} \geq \text{0,03}
+                    \end{cases}
+                \end{equation*}
+                \\ \vspace{6mm}
+                Voll ausgebildet: $\text{Nu}_\text{m} = \text{4,364}$\\ \vspace{2mm}
+                $L_\text{th} = \text{0,0431}~d~\text{Re}_d~\text{Pr}$\\ \vspace{1mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{59mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Hydrodyn. \& Therm. Anlauf}\\ \vspace{3mm}
+            \resizebox{\cellwidth-2\TileSep}{!}{
+            \begin{minipage}{57mm}
+                \begin{equation*}
+                    \text{Nu}_\text{m} = \text{3,657} + \frac{\text{0,05565}\,\bar{x}^\text{1,3335}}{1 + \text{0,8386}~\text{Pr}^\text{0,2}~\bar{x}^{-\text{0,8559}}}
+                \end{equation*}
+            \end{minipage}
+            } \\ \vspace{8mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{1mm}
+            \titlerm{Faktor $\bar{x}$}\\ \vspace{1mm}
+            \begin{equation*}
+                \bar{x} = \frac{x}{d~\text{Re}_d~\text{Pr}}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{16mm}
+
+    % X4) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Turbulente Strömung - Reynoldsanalogie}\\
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{42mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wandschubspannung}\\ \vspace{-3mm}
+            \begin{equation*}
+                \tau_\text{W} = \frac{c_F}{2}\,\rho\,\bar{u}^2_\text{m}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{42mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wärmeübergangszahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \alpha = \frac{c_F}{2}\,\rho\,c_p\,\bar{u}_\text{m}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{42mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Stantonzahl ($\text{Pr} \approx 1$)}\\ \vspace{-4mm}
+            \begin{equation*}
+                \text{St} = \frac{c_F}{2} = \frac{\text{Nu}}{\text{Re}_d\,\text{Pr}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{64mm}
+    \Tile{D4}{(C4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Colburn-Analogie ($\text{0,6} \leq \text{Pr} \leq 60$)}\\ \vspace{-3.65mm}
+            \begin{equation*}
+                \text{St}\,\sqrt[3]{\text{Pr}^2} = \frac{c_F}{2}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{26mm}
+
+    % X5) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X5}{(A4.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Freie Konvektion - Senkrecht Stehende Platte}\\
+        }{0}{0}{0}{0}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{20mm}
+    \Tile{A5}{(X5.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Länge}\\ \vspace{1mm}
+            \begin{equation*}
+                L = H
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Laminare Strömung ($\text{Gr}\,\text{Pr} < 10^9$)}\\ \vspace{2mm}
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \titlerm{Lokale Nußeltzahl}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \text{Nu}_x = \text{0,508}\,\sqrt{\text{Pr}}\,\sqrt[4]{\frac{\text{Gr}_x}{\text{0,952} + \text{Pr}}}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Mittlere Nußeltzahl}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \text{Nu}_\text{m} = \frac{4}{3}\,\text{0,508}\,\sqrt{\text{Pr}}\,\sqrt[4]{\frac{\text{Gr}_H}{\text{0,952} + \text{Pr}}}
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % C5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{C5}{(B5.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Turbulente Strömung ($\text{Gr}\,\text{Pr} > 10^9$)}\\ \vspace{2mm}
+            \titlerm{Mittlere Nußeltzahl}\\ \vspace{-1mm}
+                \begin{equation*}
+                    \text{Nu}_\text{m} = \text{0,135}\,\sqrt[3]{\text{Gr}_H\,\text{Pr}}
+                \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- SECHSTE REIHE: Unten anbauen
+\setlength{\rowheight}{68mm}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{80mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Freie Konvektion - Horizontaler Zylinder}\\ \vspace{2mm}
+            \titlerm{Charakteristische Länge}\\ \vspace{-3.6mm}
+            \begin{equation*}
+                L = D
+            \end{equation*}
+            \vspace{-5mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \titlerm{Mittlere Nußeltzahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{Nu}_\text{m} = C\,\left(\text{Gr}_d\,\text{Pr}\right)^n
+            \end{equation*}
+            \vspace{-1mm}
+            {\setstretch{1.4}
+            \begin{tabular}{c|c|c}
+                $\text{Gr}_d\,\text{Pr}$    & $C$  & $n$             \\ \hline
+                $< 10^{-3}$                 & 0,5  & 0               \\
+                $10^{-3} - 5\cdot 10^2$     & 1,18 & $\sfrac{1}{8}$  \\
+                $5\cdot 10^2 - 2\cdot 10^7$ & 0,54 & $\sfrac{1}{4}$  \\
+                $2\cdot 10^7 - 10^{13}$     & 0,135 & $\sfrac{1}{3}$
+            \end{tabular}
+            }
+        }{0}{1}{0}{0}
+
+    % B6) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Freie Konvektion - Ebene Horizontale Platte}\\ \vspace{2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Charakteristische Länge}\\ \vspace{-3.5mm}
+                \begin{equation*}
+                    L = \frac{A}{U}
+                \end{equation*}
+                \vspace{-3mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Rayleighzahl}\\ \vspace{-2.7mm}
+                \begin{equation*}
+                    \text{Ra}_L = \text{Gr}_L\,\text{Pr}
+                \end{equation*}
+                \vspace{-3.2mm}
+            \end{minipage}
+            \\ \vspace{1mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \titlerm{{\color{Red}Oberseite Warm} - {\color{NavyBlue}Unterseite Kalt}}\\ \vspace{-3mm}
+            \begin{align*}
+                \text{Laminar: }\text{Nu}_\text{m}   &= \text{0,54}\,\sqrt[4]{\text{Ra}_L}\text{ für }10^4 \leq \text{Ra}_L \leq 10^7    \\
+                \text{Turbulent: }\text{Nu}_\text{m} &= \text{0,15}\,\sqrt[3]{\text{Ra}_L}\text{ für }10^7 \leq \text{Ra}_L \leq 10^{11}
+            \end{align*}
+            \\ \vspace{-1mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\
+            \titlerm{{\color{NavyBlue}Oberseite Kalt} - {\color{Red}Unterseite Warm}}\\ \vspace{-2mm}
+            \begin{equation*}
+                \text{Nu}_\text{m} = \text{0,27}\,\sqrt[4]{\text{Ra}_L}\text{ für }10^5 \leq \text{Ra}_L \leq 10^{10}
+            \end{equation*}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+\newpage
+\centering
+\section*{\myul{Wärmeübertragung}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{16mm}
+
+    % X1) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X1}{([xshift=10mm,yshift=-14mm]current page.north west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Freie Konvektion - Horizontaler Ringspalt}\\ \vspace{1mm}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{80mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Charakteristische Länge}\\ \vspace{-3mm}
+            \begin{equation*}
+                s = \frac{D - d}{2}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Mittlere Nußeltzahl}\\ \vspace{-3.2mm}
+            \begin{equation*}
+                \text{Nu}_\text{m} = \frac{\alpha_\text{m}\,s}{\lambda} = \text{0,332}~\text{Gr}_s^\text{0,27}\,\left(2\,\frac{s}{d}\right)^\text{0,517}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{18mm}
+
+    % X2) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Filmkondensation}\\ \vspace{1mm}
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Grenzschichtdicke}\\ \vspace{-4mm}
+            \begin{equation*}
+                \delta(x) = \sqrt[4]{\frac{4\,\eta_\text{F}\,\lambda_\text{F}\,\left(T_\text{S} - T_\text{W}\right)}{r\,\rho_\text{F}\,\left(\rho_\text{R}-\rho_\text{D}\right)\,g}\,x}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Mittlere Geschwindigkeit}\\ \vspace{-3mm}
+            \begin{equation*}
+                \bar{u} = \frac{\left(\rho_\text{R}-\rho_\text{D}\right)\,g}{3\,\eta_\text{F}}\,\delta^2
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{20mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Wärmestromdichte}\\ \vspace{-3mm}
+            \begin{equation*}
+                \dot{q}_\text{W} = \frac{\lambda_\text{F}}{\delta}\,\left(T_\text{S} - T_\text{W}\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Geschwindigkeitsprofil}\\ \vspace{-3mm}
+            \begin{equation*}
+                u(x,y) = \frac{\left(\rho_\text{F} - \rho_\text{D}\right)\,g}{\eta_\text{F}}\,y\,\left(\delta(x) - \frac{y}{2}\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{20mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Wärmeübergangszahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \alpha(x) = \frac{\lambda_\text{F}}{\delta}\,\left(T_\text{S} - T_\text{W}\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Lokaler Massenstrom}\\ \vspace{-3mm}
+            \begin{equation*}
+                \dot{m}_\text{F} = \rho_\text{F}\,\delta\,\bar{u}\,B = \frac{\rho_\text{F}\,\left(\rho_\text{F} - \rho_\text{D}\right)\,g}{\eta_\text{F}}\,B\,\frac{\delta^3}{3}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{22mm}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Mittlerer Wärmestrom}\\ \vspace{-4mm}
+            \begin{equation*}
+                \dot{Q}_\text{m} = \frac{4}{3}\,B\,\sqrt[4]{\frac{r\,g\,\lambda_\text{F}^3\,\rho_\text{F}\,\left(\rho_\text{F} - \rho_\text{D}\right)\,\left(T_\text{S} - T_\text{W}\right)^3\,H^3}{4\,\eta_\text{F}}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Mittlere Übergangszahl}\\ \vspace{-1.7mm}
+            \begin{equation*}
+                \alpha_\text{m} = \frac{4}{3}\,\alpha(H)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- SECHSTE REIHE: Unten anbauen
+\setlength{\rowheight}{32mm}
+
+    % X6) EIGENES FELD für die Zeilen-Überschrift
+    \Tile{X6}{(A5.south west)}{190mm}{9mm}
+        {
+            \vspace{1mm}
+            \titlebf{Wärmeübertrager}\\ \vspace{1mm}
+        }{0}{0}{0}{0}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A6}{(X6.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Gleichstrom-Wärmeübertrager}\\ \vspace{-3mm}
+            \begin{equation*}
+                \Phi_\text{gl} = \frac{T_1' - T_1''}{T_1' - T_2'} = \frac{1-\exp\!\left[-\left(1+\frac{W_1}{W_2}\right)\,\frac{k_\text{B}\,A_0}{W_1}\right]}{1+\frac{W_1}{W_2}}
+            \end{equation*}
+            \begin{equation*}
+                \frac{T_2'' - T_2'}{T_1' - T_2'} = \frac{W_1}{W_2}\,\Phi_\text{gl}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B6) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B6}{(A6.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Gegenstrom-Wärmeübertrager}\\ \vspace{-3mm}
+            \begin{equation*}
+                \Phi_\text{gn} = \frac{T_1' - T_1''}{T_1' - T_2'} = \frac{1-\exp\!\left[-\left(1+\frac{W_1}{W_2}\right)\,\frac{k_\text{B}\,A_0}{W_1}\right]}{1-\frac{W_1}{W_2}\,\exp\!\left[-\left(1+\frac{W_1}{W_2}\right)\,\frac{k_\text{B}\,A_0}{W_1}\right]}
+            \end{equation*}
+            \begin{equation*}
+                \frac{T_2'' - T_2'}{T_1' - T_2'} = \frac{W_1}{W_2}\,\Phi_\text{gn}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- SIEBTE REIHE: Unten anbauen
+\setlength{\rowheight}{22mm}
+
+    % A7) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A7}{(A6.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Kreuzstrom-Wärmeübertrager}\\ \vspace{-2mm}
+            \begin{equation*}
+                \Phi_\text{K} = \frac{T_1' - T_1''}{T_1' - T_2'} = \frac{T_2'' - T_2'}{T_1' - T_2'}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B7) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B7}{(A7.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Kondensatoren \& Verdampfer}\\ \vspace{-2mm}
+            \begin{equation*}
+                \frac{T_1' - T_1''}{T_1' - T_2'} = 1 - \exp\!\left[-\frac{k_\text{B}\,A_0}{W_1}\right] = \Phi_\text{gn} = \Phi_\text{gl}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ACHTE REIHE: Unten anbauen
+\setlength{\rowheight}{22mm}
+
+    % A8) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A8}{(A7.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Mittlere Logarithmische Temperaturdifferenz}\\ \vspace{-2mm}
+            \begin{equation*}
+                \Delta T_\text{m} = \frac{\dot{Q}}{k_\text{B}\,A_0} = W_1\,\left(T_1' - T_2'\right) \,\frac{\Phi}{k_\text{B}\,A_0} = W_1\,\left(T_1' - T_1''\right)\,\frac{1}{k_\text{B}\,A_0}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B8) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B8}{(A8.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Wärmewirkungsgrad}\\ \vspace{2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \vspace{-1mm}
+                \begin{equation*}
+                    \varepsilon = \frac{\dot{Q}}{\dot{Q}_\infty} = \frac{T_1' - T_1''}{T_1' - T_2'} = \Phi
+                \end{equation*}
+                \vspace{-2mm}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \vspace{-1.5mm}
+                \begin{equation*}
+                    \dot{Q}_\infty = W_1\,\left(T_1' - T_2'\right)
+                \end{equation*}
+                \vspace{-3.8mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- NEUNTE REIHE: Unten anbauen
+\setlength{\rowheight}{22mm}
+
+    % A9) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A9}{(A8.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Wärmestrom}\\ \vspace{-3mm}
+            \begin{equation*}
+                \dot{Q} = W_1\,\left(T_1'' - T_2''\right)\,\frac{\Phi}{1-\left(1+\frac{W_1}{W_2}\right)\,\Phi} = W_1\,\left(T_1'' - T_2'\right)\,\frac{\Phi}{1-\Phi} = W_1\,\left(T_1' - T_2''\right)\,\frac{\Phi}{1-\frac{W_1}{W_2}\,\Phi}
+            \end{equation*}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}

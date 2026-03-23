@@ -1,16 +1,16 @@
 \setcounter{page}{1}
-\begin{center}
-    \section*{\myul{Wirbeltheorie}}
-\end{center}
+\centering
+\section*{\myul{Wirbeltheorie}}
 
 \begin{tikzpicture}[remember picture, overlay]
 % ---- ERSTE REIHE: Am Seitenursprung starten
-\setlength{\rowheight}{54mm} % Erste Reihenhöhe: 54mm
+\setlength{\rowheight}{52mm} % Erste Reihenhöhe: 54mm
 
     % A1) Erste Kachel absolut platzieren (vom Seiten-Nordwest-Anker aus)
     \setlength{\cellwidth}{62mm} % Breite einstellen
     \Tile{A1}{([xshift=10mm,yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
         {
+            \vspace{-\TileSep}
             \titlebf{Drehungsfrei}
             \begin{equation*}
                 \text{rot}(\underline{v}_1) = 0\ \ |\ \ \text{div}(\rho\,\underline{v}_1) \neq 0\ \ |\ \ \underline{v}_1 = \nabla(\phi)
@@ -30,6 +30,7 @@
     \setlength{\cellwidth}{68mm} % Breite einstellen
     \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
         {
+            \vspace{-\TileSep}
             \titlebf{Drehungsbehaftet}
             \begin{equation*}
                 \text{rot}(\underline{v}_2) \neq 0\ \ |\ \ \text{div}(\rho\,\underline{v}_2) = 0\ \ |\ \ \rho\,\underline{v}_2 = \rho_\text{b}\,\text{rot}(\psi)
@@ -52,6 +53,7 @@
     \setlength{\cellwidth}{60mm} % Breite einstellen (Summe aller Zellen sei 190mm!)
     \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
         {
+            \vspace{-\TileSep}
             \titlebf{Zirkulation} {\normalsize(positiv: $\mathrlap{\circlearrowleft}\hspace*{0.88mm}\cdot$ )}
             \begin{align}
                 \Gamma &= \oint_S \underline{v}\cdot \text{d}\underline{s} = \oint_S v \cos(\alpha)\text{d}s \tag*{\color{NavyBlue}(7.20a)}\\
@@ -85,9 +87,9 @@
     \setlength{\cellwidth}{35mm} % Breite einstellen
     \Tile{A2}{([yshift=-10mm]A1.south west)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Allgemein} \\[-1.5ex]
+            \titlerm{Allgemein} \\[-1.5ex]
             \begin{equation*}
-                \underline{\omega} = 2\,\underline{\omega} = \text{rot}(\underline{v})
+                \underline{\Omega} = 2\,\underline{\omega} = \text{rot}(\underline{v})
             \end{equation*}
             {\color{NavyBlue}(7.11) \rotatebox[origin=c]{270}{$\Lsh$}}
         }{0}{1}{1}{0} % Kanten: unten & rechts
@@ -96,10 +98,10 @@
     \setlength{\cellwidth}{65mm} % Breite einstellen
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Dichtebeständig} \\[3.0ex]
+            \titlerm{Dichtebeständig} \\[3.0ex]
             \begin{tabularx}{\dimexpr\cellwidth-2\TileSep}{c|c} % Breite der tabularx = (Zellenbreite - 2 * Tile-Randabstand)
                 \centering
-                \begin{tabular}[c]{@{}c@{}}\underline{Allgemein}\\[3.0ex]$\underline{\Omega} = \nabla(\text{div}(\underline{\psi})) - \Delta(\underline{\psi})$\\[3.0ex]\end{tabular} & \begin{tabular}[c]{@{}c@{}}\underline{Ebene Platte}\\[3.0ex]$\Omega_z = -\Delta(\psi_z)$\\[3.0ex]\end{tabular}
+                \begin{tabular}[c]{@{}c@{}}\myul{Allgemein}\\[3.0ex]$\underline{\Omega} = \nabla(\text{div}(\underline{\psi})) - \Delta(\underline{\psi})$\\[3.0ex]\end{tabular} & \begin{tabular}[c]{@{}c@{}}\myul{Ebene Platte}\\[3.0ex]$\Omega_z = -\Delta(\psi_z)$\\[3.0ex]\end{tabular}
             \end{tabularx}
         }{0}{1}{1}{0} % Kanten: unten & rechts
 
@@ -107,7 +109,7 @@
     \setlength{\cellwidth}{40mm} % Breite einstellen
     \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Kartesisch} \\[-2.0ex]
+            \titlerm{Kartesisch} \\[-2.0ex]
             \begin{equation*}
                 \underline{\Omega} =
                 \begin{pmatrix}
@@ -122,7 +124,7 @@
     \setlength{\cellwidth}{50mm} % Breite einstellen
     \Tile{D2}{(C2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Zylindrisch} \\[-2.5ex]
+            \titlerm{Zylindrisch} \\[-2.5ex]
             \begin{equation*}
                 \underline{\Omega} =
                 \begin{pmatrix}

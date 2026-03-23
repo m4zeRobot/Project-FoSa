@@ -3,52 +3,52 @@
 \thispagestyle{empty}
 
 % Überschrift der Seite, zentriert
-\begin{center}
-    \section*{\underline{Symbolverzeichnis}}
-\end{center}
+\centering
+\section*{\underline{Symbolverzeichnis}}%
+\vspace{-5mm}
 
 \begin{raggedright}
 \begin{table}[H]
-    \resizebox{165mm}{!}{
+    \resizebox{148mm}{!}{
     \begin{tabular}{Sl Sc Sc Sl}
-        \textbf{Symbol} & \textbf{Einheit} & \textbf{(SI-Einheit)} & \textbf{Bedeutung} \\[1.0ex]
-        $A$                        & $\left[\text{m}^2\right]$                        &                                                             & Fläche (Querschnitt oder Plattenfläche) \\
-        $C$                        & $\left[\text{F}\right]$                          & $\left[\frac{\text{A}\cdot\text{s}}{\text{V}}\right]$       & Kapazität eines Kondensators \\
-        $d$                        & $\left[\text{m}\right]$                          &                                                             & Durchmesser (einer Spule oder eines Leiters) \\
-        $E$                        & $\left[\text{J}\right]$                          & $\left[\tfrac{\text{kg}\cdot\text{m}^2}{\text{s}^2}\right]$ & Elektrische Energie \\
-        $\varepsilon_\text{r}$     & $\left[-\right]$                                 &                                                             & Dielektrizitätszahl des Elektrolyts eines Kondensators \\
-        $\vec{F}$                  & $\left[\tfrac{\text{V}}{\text{m}}\right]$        &                                                             & Elektrische Feldstärke (oftmals auch $\vec{E}$) \\
-        $f$                        & $\left[\tfrac{1}{\text{s}}\right]$               &                                                             & Frequenz (bei Wechselstrom) \\
-        $G$                        & $\left[\tfrac{1}{\mathrm{\Omega}}\right]$        &                                                             & Elektrischer Leitwert (Kehrwert zum elektrischen Widerstand)\\
-        $I$, $i(t)$                & $\left[\text{A}\right]$                          &                                                             & Stromstärke (kleines $i$: zeitabhängig, bspw. bei Wechselstrom) \\
-        $j$                        & $\left[-\right]$                                 &                                                             & Komplexe Zahl $j = \sqrt{-1}$~~(da $i$ bereits verwendet wird) \\
-        $k$                        & $\left[-\right]$                                 &                                                             & Anzahl der Knoten in einem elektrischen Netzwerk \\
-        $L$                        & $\left[\text{H}\right]$                          & $\left[\tfrac{\text{V}\cdot\text{s}}{\text{A}}\right]$      & Induktivität \\
-        $l$                        & $\left[\text{m}\right]$                          &                                                             & Länge einer Spule \\
-        $m$                        & $\left[-\right]$                                 &                                                             & Anzahl der Maschen in einem elektrischen Netzwerk \\
-        $\mu_\text{r}$             & $\left[-\right]$                                 &                                                             & Permeabilitätszahl einer Spule \\
-        $N$                        & $\left[-\right]$                                 &                                                             & Windungs-Anzahl einer Spule \\
-        $n$                        & $\left[-\right]$                                 &                                                             & (Nur als Zähler-Variable genutzt) \\
-        $\omega$                   & $\left[\tfrac{1}{\text{s}}\right]$               &                                                             & Kreisfrequenz (Wechselstrom) \\
-        $P$                        & $\left[\text{W}\right]$                          & $\left[\tfrac{\text{kg}\cdot\text{m}^2}{\text{s}^3}\right]$ & Elektrische Leistung \\
-        $\varphi$                  & $\left[-\right]$                                 &                                                             & Allg. Phasenwinkel (Wechselstrom) \\
-        $Q$                        & $\left[\text{C}\right]$                          & $\left[\text{A}\cdot\text{s}\right]$                        & Elektrische Ladung \\
-        $\mathbf{Q}$               & $\left[\text{var}\right]$                        & $\left[\tfrac{\text{kg}\cdot\text{m}^2}{\text{s}^3}\right]$ & Blindleistung an einer Spule $L$ / einem Kondensator $C$ \\
-        $r$                        & $\left[\text{m}\right]$                          &                                                             & Radius (einer Spule oder eines elektrischen Leiters) \\
-        $R$                        & $\left[\mathrm{\Omega}\right]$                   &                                                             & Elektrischer Widerstand (Bei Wechselstrom auch: Wirkwiderstand) \\
-        $\rho$                     & $\left[\tfrac{\mathrm{\Omega}}{\text{m}}\right]$ &                                                             & Spezifischer Widerstand (pro Länge) \\
-        $S$                        & $\left[\tfrac{\text{A}}{\text{m}^2}\right]$      &                                                             & Stromdichte \\
-        $\mathbf{S}$               & $\left[\text{V}\cdot\text{A}\right]$             &                                                             & Scheinleistung einer Spule $L$ / eines Kondensators $C$ \\
-        $\sigma$                   & $\left[\tfrac{\text{m}}{\mathrm{\Omega}}\right]$ &                                                             & Spezifische Leitfähigkeit (Kehrwert zum spez. Widerstand) \\
-        $t$                        & $\left[\text{s}\right]$                          &                                                             & Zeit \\
-        $\tau$                     & $\left[\text{s}\right]$                          &                                                             & Zeitkonstante eines Kondensators \\
-        $\vartheta$                & $\left[^\circ\text{C}\right]$                    & $\left[\text{K}\right]$                                     & Temperatur \\
-        $U$, $u(t)$                & $\left[\text{V}\right]$                          &                                                             & Elektrische Spannung (kleines $u$: zeitabhängig, bspw. bei Wechselspannung) \\
-        $X_\text{L}$, $X_\text{C}$ & $\left[\Omega\right]$                            &                                                             & Blindwiderstand einer Spule $L$ / eines Kondensators $C$ \\
-        $Y_\text{L}$, $Y_\text{C}$ & $\left[\Omega\right]$                            &                                                             & Blindleitwert einer Spule $L$ / eines Kondensators $C$ \\
-        $Y$                        & $\left[\frac{1}{\Omega}\right]$                  &                                                             & Admittanz (Kehrwert der Impedanz $Z$) \\
-        $\eta$                     & $\left[-\right]$                                 &                                                             & Wirkungsgrad \\
-        $Z$                        & $\left[\Omega\right]$                            &                                                             & Scheinwiderstand / Impedanz
+        \xrowht[()]{2mm} \textbf{Symbol} & \textbf{Einheit} & \textbf{(SI-Einheit)} & \textbf{Bedeutung} \\[1.0ex]
+        \xrowht[()]{2mm} $A$                        & $\left[\text{m}^2\right]$                        &                                                             & Fläche (Querschnitt oder Plattenfläche) \\
+        \xrowht[()]{2mm} $C$                        & $\left[\text{F}\right]$                          & $\left[\frac{\text{A}\cdot\text{s}}{\text{V}}\right]$       & Kapazität eines Kondensators \\
+        \xrowht[()]{2mm} $d$                        & $\left[\text{m}\right]$                          &                                                             & Durchmesser (einer Spule oder eines Leiters) \\
+        \xrowht[()]{2mm} $E$                        & $\left[\text{J}\right]$                          & $\left[\tfrac{\text{kg}\cdot\text{m}^2}{\text{s}^2}\right]$ & Elektrische Energie \\
+        \xrowht[()]{2mm} $\varepsilon_\text{r}$     & $\left[-\right]$                                 &                                                             & Dielektrizitätszahl des Elektrolyts eines Kondensators \\
+        \xrowht[()]{2mm} $\vec{F}$                  & $\left[\tfrac{\text{V}}{\text{m}}\right]$        &                                                             & Elektrische Feldstärke (oftmals auch $\vec{E}$) \\
+        \xrowht[()]{2mm} $f$                        & $\left[\tfrac{1}{\text{s}}\right]$               &                                                             & Frequenz (bei Wechselstrom) \\
+        \xrowht[()]{2mm} $G$                        & $\left[\tfrac{1}{\mathrm{\Omega}}\right]$        &                                                             & Elektrischer Leitwert (Kehrwert zum elektrischen Widerstand)\\
+        \xrowht[()]{2mm} $I$, $i(t)$                & $\left[\text{A}\right]$                          &                                                             & Stromstärke (kleines $i$: zeitabhängig, bspw. bei Wechselstrom) \\
+        \xrowht[()]{2mm} $j$                        & $\left[-\right]$                                 &                                                             & Komplexe Zahl $j = \sqrt{-1}$~~(da $i$ bereits verwendet wird) \\
+        \xrowht[()]{2mm} $k$                        & $\left[-\right]$                                 &                                                             & Anzahl der Knoten in einem elektrischen Netzwerk \\
+        \xrowht[()]{2mm} $L$                        & $\left[\text{H}\right]$                          & $\left[\tfrac{\text{V}\cdot\text{s}}{\text{A}}\right]$      & Induktivität \\
+        \xrowht[()]{2mm} $l$                        & $\left[\text{m}\right]$                          &                                                             & Länge einer Spule \\
+        \xrowht[()]{2mm} $m$                        & $\left[-\right]$                                 &                                                             & Anzahl der Maschen in einem elektrischen Netzwerk \\
+        \xrowht[()]{2mm} $\mu_\text{r}$             & $\left[-\right]$                                 &                                                             & Permeabilitätszahl einer Spule \\
+        \xrowht[()]{2mm} $N$                        & $\left[-\right]$                                 &                                                             & Windungs-Anzahl einer Spule \\
+        \xrowht[()]{2mm} $n$                        & $\left[-\right]$                                 &                                                             & (Nur als Zähler-Variable genutzt) \\
+        \xrowht[()]{2mm} $\omega$                   & $\left[\tfrac{1}{\text{s}}\right]$               &                                                             & Kreisfrequenz (Wechselstrom) \\
+        \xrowht[()]{2mm} $P$                        & $\left[\text{W}\right]$                          & $\left[\tfrac{\text{kg}\cdot\text{m}^2}{\text{s}^3}\right]$ & Elektrische Leistung \\
+        \xrowht[()]{2mm} $\varphi$                  & $\left[-\right]$                                 &                                                             & Allg. Phasenwinkel (Wechselstrom) \\
+        \xrowht[()]{2mm} $Q$                        & $\left[\text{C}\right]$                          & $\left[\text{A}\cdot\text{s}\right]$                        & Elektrische Ladung \\
+        \xrowht[()]{2mm} $\mathbf{Q}$               & $\left[\text{var}\right]$                        & $\left[\tfrac{\text{kg}\cdot\text{m}^2}{\text{s}^3}\right]$ & Blindleistung an einer Spule $L$ / einem Kondensator $C$ \\
+        \xrowht[()]{2mm} $r$                        & $\left[\text{m}\right]$                          &                                                             & Radius (einer Spule oder eines elektrischen Leiters) \\
+        \xrowht[()]{2mm} $R$                        & $\left[\mathrm{\Omega}\right]$                   &                                                             & Elektrischer Widerstand (Bei Wechselstrom auch: Wirkwiderstand) \\
+        \xrowht[()]{2mm} $\rho$                     & $\left[\tfrac{\mathrm{\Omega}}{\text{m}}\right]$ &                                                             & Spezifischer Widerstand (pro Länge) \\
+        \xrowht[()]{2mm} $S$                        & $\left[\tfrac{\text{A}}{\text{m}^2}\right]$      &                                                             & Stromdichte \\
+        \xrowht[()]{2mm} $\mathbf{S}$               & $\left[\text{V}\cdot\text{A}\right]$             &                                                             & Scheinleistung einer Spule $L$ / eines Kondensators $C$ \\
+        \xrowht[()]{2mm} $\sigma$                   & $\left[\tfrac{\text{m}}{\mathrm{\Omega}}\right]$ &                                                             & Spezifische Leitfähigkeit (Kehrwert zum spez. Widerstand) \\
+        \xrowht[()]{2mm} $t$                        & $\left[\text{s}\right]$                          &                                                             & Zeit \\
+        \xrowht[()]{2mm} $\tau$                     & $\left[\text{s}\right]$                          &                                                             & Zeitkonstante eines Kondensators \\
+        \xrowht[()]{2mm} $\vartheta$                & $\left[^\circ\text{C}\right]$                    & $\left[\text{K}\right]$                                     & Temperatur \\
+        \xrowht[()]{2mm} $U$, $u(t)$                & $\left[\text{V}\right]$                          &                                                             & Elektrische Spannung (kleines $u$: zeitabhängig, bspw. bei Wechselspannung) \\
+        \xrowht[()]{2mm} $X_\text{L}$, $X_\text{C}$ & $\left[\Omega\right]$                            &                                                             & Blindwiderstand einer Spule $L$ / eines Kondensators $C$ \\
+        \xrowht[()]{2mm} $Y_\text{L}$, $Y_\text{C}$ & $\left[\Omega\right]$                            &                                                             & Blindleitwert einer Spule $L$ / eines Kondensators $C$ \\
+        \xrowht[()]{2mm} $Y$                        & $\left[\frac{1}{\Omega}\right]$                  &                                                             & Admittanz (Kehrwert der Impedanz $Z$) \\
+        \xrowht[()]{2mm} $\eta$                     & $\left[-\right]$                                 &                                                             & Wirkungsgrad \\
+        \xrowht[()]{2mm} $Z$                        & $\left[\Omega\right]$                            &                                                             & Scheinwiderstand / Impedanz
     \end{tabular}
     }
 \end{table}

@@ -1,0 +1,110 @@
+\centering
+\section*{\myul{Buckingham-Theorem}}
+
+\small
+
+\titlebf{Formale Methode}%
+\begin{equation*}
+    \textbf{Ausgangslage:} \quad A\,k = 0 \quad \Rightarrow \quad \text{z.B. in der Form: } \underbrace{\left(
+    \begin{matrix}
+        1 & 1 & 1 & 1 & 1 \\
+        1 & 1 & 1 & 1 & 0 \\
+        1 & 1 & 1 & 0 & 0
+    \end{matrix}\right)}_A
+    \,
+    \underbrace{\left(\begin{matrix}
+        k_1 \\
+        k_2 \\
+        k_3 \\
+        k_4 \\
+        k_5
+    \end{matrix}\right)}_k
+    = 0
+\end{equation*}
+\vspace{-3mm}
+\begin{align*}
+    1.~&\text{Aufteilen der Matrix }A\text{ und des Vektors }k: \quad \underbrace{\left[\,{\color{RedOrange}B}\,|\,{\color{NavyBlue}C}\,\right]}_{=A}\,\underbrace{\left[\frac{y}{z}\right]}_{=k} = 0 \\
+       &\text{Beachte: } {\color{NavyBlue}C} \text{ sei eine quadratische Untermatrix!}\\
+       &\text{Sie muss invertierbar sein }\rightarrow\text{ regulär! voller Rang! Determinante }\neq\text{ 0 !}\\[2.0ex]
+    2.~&\text{Umstellen:} \quad {\color{RedOrange}B}\,y + {\color{NavyBlue}C}\,z = 0 \\
+       &\hspace{11.2mm}\Leftrightarrow\hspace{11mm} {\color{NavyBlue}C}\,z = -{\color{RedOrange}B}\,y\\[2.0ex]
+    3.~&\text{Inverse }{\color{ForestGreen}C^{-1}}\text{ aus }{\color{NavyBlue}C}\text{ bilden und an beide Seiten multiplizieren:} \quad {\color{ForestGreen}C^{-1}}\,{\color{NavyBlue}C}\,z = -{\color{ForestGreen}C^{-1}}\,{\color{RedOrange}B}\,y \\[2.0ex]
+    4.~&\text{Umformen \& Lösen:} \quad {\color{ForestGreen}C^{-1}}\,{\color{NavyBlue}C}\,z = -{\color{ForestGreen}C^{-1}}\,{\color{RedOrange}B}\,y\\
+       &\hspace{24.6mm}\Leftrightarrow\hspace{12mm} z = -{\color{ForestGreen}C^{-1}}\,{\color{RedOrange}B}\,y\\[1.5ex]
+       &\text{mit: } z = \text{berechnet, } y = \text{frei wählbar.}
+\end{align*}
+\vspace{3mm}
+
+\titlebf{Praktische Methode} \\ \vspace{2mm}
+\titlerm{Vorgehen} \\ \vspace{3mm}
+\begin{tabular}{l l l}
+    1. Dimensionsmatrix aufstellen \qquad & 3. & \hspace{-4mm} Anzahl der dimensionslosen Größen bestimmen \\[1.0ex]
+    2. Rang bestimmen                     & 4. & \hspace{-4mm} Praktische Methode durchführen:             \\[1.0ex]
+                                          &    & \hspace{-4mm} Das Vielfache einer Spalte zu einer anderen \\
+                                          &    & \hspace{-4mm} Spalte addieren/subtrahieren.               \\
+                                          &    & \hspace{-4mm} $\rightarrow$ Ziel: Spalten, die nur Nullen enthalten.
+\end{tabular}
+\vspace{5mm}
+
+\titlerm{Regeln} \\ \vspace{3mm}
+\begin{minipage}{0.11\textwidth}
+    \centering
+    \setstretch{1.4}
+    \begin{tabular}{c|c}
+                   & $p_1$ \\ \hline
+        \textbf{L} & $a$   \\
+        \textbf{M} & $b$   \\
+        \textbf{T} & $c$
+    \end{tabular}
+\end{minipage}%
+\begin{minipage}{0.11\textwidth}
+    \centering
+    \setstretch{1.4}
+    \begin{tabular}{c|c}
+                   & ${p_1}^{\color{RubineRed}2}$ \\ \hline
+        \textbf{L} & {\color{RubineRed}2}\,$a$    \\
+        \textbf{M} & {\color{RubineRed}2}\,$b$    \\
+        \textbf{T} & {\color{RubineRed}2}\,$c$
+    \end{tabular}
+\end{minipage}%
+\begin{minipage}{0.11\textwidth}
+    \centering
+    \setstretch{1.4}
+    \begin{tabular}{c|c}
+                   & ${\color{ForestGreen}\sqrt{\color{Black}p_1}}$ \\ \hline
+        \textbf{L} & \sfrac{$a$}{\color{ForestGreen}2}              \\
+        \textbf{M} & \sfrac{$b$}{\color{ForestGreen}2}              \\
+        \textbf{T} & \sfrac{$c$}{\color{ForestGreen}2}
+    \end{tabular}
+\end{minipage}%
+\hspace{10mm}
+\begin{minipage}{0.13\textwidth}
+    \centering
+    \setstretch{1.4}
+    \begin{tabular}{c|c c}
+                   & $p_1$ & $p_2$ \\ \hline
+        \textbf{L} & $a$   & $d$   \\
+        \textbf{M} & $b$   & $e$   \\
+        \textbf{T} & $c$   & $f$
+    \end{tabular}
+\end{minipage}%
+\begin{minipage}{0.13\textwidth}
+    \centering
+    \setstretch{1.4}
+    \begin{tabular}{c|c}
+                   & $p_1\,{\color{Red}\cdot}\,p_2$ \\ \hline
+        \textbf{L} & $a\,{\color{Red}+}\,d$         \\
+        \textbf{M} & $b\,{\color{Red}+}\,e$         \\
+        \textbf{T} & $c\,{\color{Red}+}\,f$
+    \end{tabular}
+\end{minipage}%
+\begin{minipage}{0.13\textwidth}
+    \centering
+    \setstretch{1.4}
+    \begin{tabular}{c|c}
+                   & ${\color{NavyBlue}\sfrac{\color{Black}p_1}{\color{Black}p_2}}$ \\ \hline
+        \textbf{L} & $a\,{\color{NavyBlue}-}\,d$                                   \\
+        \textbf{M} & $b\,{\color{NavyBlue}-}\,e$                                   \\
+        \textbf{T} & $c\,{\color{NavyBlue}-}\,f$
+    \end{tabular}
+\end{minipage}
