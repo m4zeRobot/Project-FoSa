@@ -38,5 +38,7 @@ Die folgenden, weiteren Nomenklaturregeln wurden eigens festgelegt:
 - **Multiplikationen** werden im Allgemeinen verkürzt, indem einfach ein Halbraum (`\,`) zwischen den Faktoren verwendet wird, anstatt des zentralen Punktes (`\cdot`), wie man ihn vielleicht kennt. Dies dient dazu, Platz zu sparen und verwirrend lange Gleichungen zu vermeiden.
 
 ## Danksagung
-Dieses Projekt wäre ohne die großartige Vorarbeit vieler vorangegangener Studierender niemals möglich gewesen.
-Ich möchte den folgenden Personen explizit Dank aussprechen: R. John, F. Frank, L. Kuhn, M. Höller, P. Weig, R. Reitze, L. Habermalz.
+Dieses Projekt wäre ohne die großartige Vorarbeit vieler vorangegangener Studierender niemals möglich gewesen.<br>
+Ich möchte den folgenden Personen explizit Dank aussprechen:
+
+R. John, F. Frank, L. Kuhn, M. Höller, P. Weig, R. Reitze, L. Habermalz.
