@@ -5,25 +5,25 @@
 
 \titlebf{Formale Methode}%
 \begin{equation*}
-    \textbf{Ausgangslage:} \quad A\,k = 0 \quad \Rightarrow \quad \text{z.B. in der Form: } \underbrace{\left(
+    \textbf{Ausgangslage:} \quad a_{ij}\cdot k_j = 0 \quad \Rightarrow \quad \text{z.B. in der Form: } \underbrace{\left(
     \begin{matrix}
         1 & 1 & 1 & 1 & 1 \\
         1 & 1 & 1 & 1 & 0 \\
         1 & 1 & 1 & 0 & 0
-    \end{matrix}\right)}_A
-    \,
+    \end{matrix}\right)}_{=\,a_{ij}~\text{(Dim.-Matrix)}}
+    \cdot
     \underbrace{\left(\begin{matrix}
         k_1 \\
         k_2 \\
         k_3 \\
         k_4 \\
         k_5
-    \end{matrix}\right)}_k
+    \end{matrix}\right)}_{=\,k_j}
     = 0
 \end{equation*}
 \vspace{-3mm}
 \begin{align*}
-    1.~&\text{Aufteilen der Matrix }A\text{ und des Vektors }k: \quad \underbrace{\left[\,{\color{RedOrange}B}\,|\,{\color{NavyBlue}C}\,\right]}_{=A}\,\underbrace{\left[\frac{y}{z}\right]}_{=k} = 0 \\
+    1.~&\text{Aufteilen der Matrix }A\text{ und des Vektors }k: \quad \underbrace{\left[\,{\color{RedOrange}B}\,|\,{\color{NavyBlue}C}\,\right]}_{=\,a_{ij}}\cdot\underbrace{\left[\frac{y}{z}\right]}_{=\,k_j} = 0 \\
        &\text{Beachte: } {\color{NavyBlue}C} \text{ sei eine quadratische Untermatrix!}\\
        &\text{Sie muss invertierbar sein }\rightarrow\text{ regulär! voller Rang! Determinante }\neq\text{ 0 !}\\[2.0ex]
     2.~&\text{Umstellen:} \quad {\color{RedOrange}B}\,y + {\color{NavyBlue}C}\,z = 0 \\
@@ -31,9 +31,27 @@
     3.~&\text{Inverse }{\color{ForestGreen}C^{-1}}\text{ aus }{\color{NavyBlue}C}\text{ bilden und an beide Seiten multiplizieren:} \quad {\color{ForestGreen}C^{-1}}\,{\color{NavyBlue}C}\,z = -{\color{ForestGreen}C^{-1}}\,{\color{RedOrange}B}\,y \\[2.0ex]
     4.~&\text{Umformen \& Lösen:} \quad {\color{ForestGreen}C^{-1}}\,{\color{NavyBlue}C}\,z = -{\color{ForestGreen}C^{-1}}\,{\color{RedOrange}B}\,y\\
        &\hspace{24.6mm}\Leftrightarrow\hspace{12mm} z = -{\color{ForestGreen}C^{-1}}\,{\color{RedOrange}B}\,y\\[1.5ex]
-       &\text{mit: } z = \text{berechnet, } y = \text{frei wählbar.}
+       &\text{mit: } z = \text{berechnet, } y \in \left\{y_1, y_2,\,\cdots, y_d\right\} \rightarrow~\text{Einheitsvektoren!} \\[2.0ex]
+    5.~&\text{Aufstellen der finalen Form:}\\
+       &\begin{array}{c|c c c|c c c}
+                   & p_1 & \cdots & p_d & p_{d+1} & \cdots                                                           & p_n \\ \hline
+            \Pi_1  &  |  &        &  |  &         &                                                                  &     \\[-1.0ex]
+            \vdots & y_1 & \cdots & y_d &         & (-{\color{ForestGreen}C^{-1}}\cdot{\color{RedOrange}B})^\text{T} &     \\[0.5ex]
+            \Pi_d  &  |  &        &  |  &         &                                                                  &     
+        \end{array}
+        \hspace{6mm}
+        \left(
+        \text{Bsp.:} \hspace{2mm}
+        \begin{array}{c|c c c|c c c}
+                  & p_1 & p_2 & p_3 & p_4    & p_5    & p_6    \\ \hline
+            \Pi_1 & 1   & 0   & 0   & x_{11} & x_{21} & x_{31} \\
+            \Pi_2 & 0   & 1   & 0   & x_{12} & x_{22} & x_{32} \\
+            \Pi_3 & 0   & 0   & 1   & x_{13} & x_{23} & x_{33} 
+        \end{array}\right)\\[2.0ex]
+    6.~&\text{Ableiten der dimensionslosen Koeffizienten aus jeder Zeile}\\[1.0ex]
+       &\left(\text{Aus dem Bsp.: } \Pi_1 = p_1^1\cdot p_4^{x_{11}} \cdot p_5^{x_{21}} \cdot p_6^{x_{31}}\,,\,\dots\right)
 \end{align*}
-\vspace{3mm}
+\vspace{5mm}
 
 \titlebf{Praktische Methode} \\ \vspace{2mm}
 \titlerm{Vorgehen} \\ \vspace{3mm}
