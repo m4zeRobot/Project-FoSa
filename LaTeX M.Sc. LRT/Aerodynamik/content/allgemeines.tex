@@ -1,0 +1,106 @@
+\centering
+\section*{\underline{Allgemein}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{30mm}
+
+    % A1) Erste Kachel oben links
+    \setlength{\cellwidth}{48mm}
+    \Tile{A1}{([xshift=10mm,yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Kräfte, Nickmoment}\\ \vspace{-2mm}
+            \begin{align*}
+                A &= \frac{\rho_\infty}{2}\,U_\infty^2\,S\,c_A \\
+                W &= \frac{\rho_\infty}{2}\,U_\infty^2\,S\,c_W \\
+                M &= \frac{\rho_\infty}{2}\,U_\infty^2\,S\,c_M\,t
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Beiwerte}\\ \vspace{-2mm}
+            \begin{align*}
+                c_a &= \left(\frac{\text{d}c_a}{\text{d}\alpha}\right)_\text{2D}\,\alpha_e \\[1.0ex]
+                c_p &= \frac{p - p_\infty}{\frac{\rho_\infty}{2}\,U_\infty^2}
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{55mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Flügelmaße}\\ \vspace{-2mm}
+            \begin{align*}
+                \Lambda = \frac{b^2}{S} = \frac{2\,b}{l_\text{i}+l_\text{a}}\qquad \lambda = \frac{l_\text{a}}{l_\text{i}} \\[1.0ex]
+                \text{Trapezflügel:}\ \ S = b\,\frac{l_\text{i}+l_\text{a}}{2}~
+            \end{align*}
+        }{0}{1}{1}{0}
+    
+    % D1) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{47mm}
+    \Tile{D1}{(C1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Mach-Zahl}\\ \vspace{-2mm}
+            \begin{equation*}
+                \text{Ma}_\infty = \frac{U_\infty}{\sqrt{\kappa\,R\,T_\infty}}
+            \end{equation*}
+            \begin{equation*}
+                \kappa = \text{1,4}\qquad R = \text{287,1}\,\tfrac{\text{J}}{\text{kg}\cdot\text{K}}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{52mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{88mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Krit. Mach-Zahl / Druckbeiwert}\\[1.0ex]
+            $\text{Ma}^*_\infty$ ist die Anströmmachzahl, bei der lokal erstmals $\text{Ma}^*_\text{lokal} \geq 1$ auftritt. Mit Bernoulli:\\
+            $\text{Ma}_\text{\,lokal,\,max}$ an der Stelle von $c^*_{p\,\text{lokal,\,min}}$
+            \begin{align*}
+                c_{p,\text{min}} = c^*_p = \frac{2}{\kappa\,\text{Ma}^2_\infty}\,\left[\left(\frac{2}{\kappa+1}+\frac{\kappa-1}{\kappa+1}\,\text{Ma}^2_\infty\right)^\frac{\kappa}{\kappa-1}-1\right]
+            \end{align*}
+            Näherung für dünne Profile (schwach angestellt):
+            \begin{equation*}
+                c_{p,\text{min}} = c^*_p \approx \frac{2}{\kappa+1}\,\frac{\text{Ma}^2_\infty-1}{\text{Ma}_\infty^*}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{102mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Winkel am Flügelprofil}\\ \vspace{-1mm}
+            \begin{minipage}{0.55\cellwidth-\TileSep}
+                \centering
+                \includegraphics[width=0.9\textwidth]{images/profilwinkel.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.45\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    \alpha &= \alpha_\text{e} + \alpha_\text{i} + \alpha_\text{A=0} \\
+                    \alpha_\text{e} &= \alpha_\text{g} - \alpha_\text{i}
+                \end{align*}
+                \begin{align*}
+                    \alpha            &= \text{Anstellwinkel}       \\
+                    \alpha_\text{A=0} &= \text{Nullauftriebswinkel} \\
+                    \alpha_\text{e}   &= \text{Effektiver AW}       \\
+                    \alpha_\text{g}   &= \text{Geometrischer AW}    \\
+                    \alpha_\text{i}   &= \text{Induzierter AW}
+                \end{align*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
+
+\input{content/skeletttheorie.tex}
