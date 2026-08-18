@@ -56,7 +56,7 @@
             \end{equation*}
         }{0}{0}{1}{0}
 
-% ---- ZWEITE REIHE: Am Seitenursprung starten
+% ---- ZWEITE REIHE: Unten anbauen
 \setlength{\rowheight}{38mm}
 
     % A2) Erste Kachel unten anbauen
@@ -64,21 +64,21 @@
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
             \titlerm{Beiwerte}\\ \vspace{3mm}
-            \begin{minipage}{0.47\cellwidth-\TileSep}
+            \begin{minipage}{0.46\cellwidth-\TileSep}
                 \centering
                 \vspace{-3mm}
                 \begin{align*}
-                    c_a &= \pi\,\left(2\,A_0 + A_1\right)\\
+                    C_\text{A} &= \pi\,\left(2\,A_0 + A_1\right)\\
                     \Delta c_p &= c_{p,\text{u}} - c_{p,\text{o}} = 2\,\frac{\gamma(\bar{x})}{U_\infty}
                 \end{align*}
             \end{minipage}%
             \vline
-            \begin{minipage}{0.53\cellwidth-\TileSep}
+            \begin{minipage}{0.54\cellwidth-\TileSep}
                 \centering
                 \vspace{-3mm}
                 \begin{align*}
-                    c_{m,\text{VK}} &= -\frac{\pi}{4}\,\left(2\,A_0 + 2\,A_1 + A_2\right) \\
-                    c_{m,\sfrac{t}{4}} &= c_{m,\text{VK}} + \frac{c_a}{4}
+                    C_{\text{M,VK}} &= -\frac{\pi}{4}\left(2\,A_0 + 2\,A_1 + A_2\right) \\
+                    C_{\text{M},\sfrac{t}{4}} &= C_{\text{M,VK}} + \frac{C_\text{A}}{4}
                 \end{align*}
             \end{minipage}
             \begin{equation*}
@@ -91,7 +91,7 @@
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
             \titlebf{Nullauftrieb und -moment}\\ \vspace{2mm}
-            \begin{minipage}{0.46\cellwidth-\TileSep}
+            \begin{minipage}{0.45\cellwidth-\TileSep}
                 \centering
                 \begin{align*}
                     \alpha_{A=0,\text{Skel}} &= -\frac{A_1}{2} - \frac{A_2}{3}\\
@@ -101,15 +101,115 @@
                 \vspace{-2mm}
             \end{minipage}%
             \vline
-            \begin{minipage}{0.54\cellwidth-\TileSep}
+            \begin{minipage}{0.55\cellwidth-\TileSep}
                 \centering
                 \titlerm{Nullauftriebswinkel}\\ \vspace{-5mm}
                 \begin{equation*}
-                    c_a = 0\quad \Rightarrow A_0 = -\frac{A_1}{2}
+                    C_\text{A} = 0\qquad \Rightarrow A_0 = -\frac{A_1}{2}
                 \end{equation*}
                 \titlerm{Nullmoment}\\ \vspace{-5mm}
                 \begin{equation*}
-                    c_{,A=0} = -\pi\,\frac{f}{t} = -\frac{\pi}{4}\,\left(A_1 + A_2\right)
+                    C_{\text{M,A}=0} = -\pi\frac{f}{t} = -\frac{\pi}{4}\left(A_1 + A_2\right)
+                \end{equation*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{32mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Auftrieb}\\ \vspace{-3mm}
+            \begin{align*}
+                c_{a0} &= 2\,\pi\,A_0 = 2\,\pi\,\left(\alpha_0 + \alpha^*\right) \\
+                c_{a1} &= \pi\,A_1 = 4\,\pi\,\frac{f}{t} \\
+                c_{a2} &= 0
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Moment bezüglich VK}\\ \vspace{-3.5mm}
+            \begin{align*}
+                C_\text{M0,VK} &= -\frac{\pi}{2}\,A_0 = -\frac{\pi}{2}\,\left(\alpha_0+\alpha^*\right) \\
+                C_\text{M1,VK} &= -\frac{\pi}{2}\,A_1 = -2\,\pi\,\frac{f}{t} \\
+                C_\text{M2,VK} &= -\frac{\pi}{4}\,A_2 = \frac{3\,\pi}{4}\,\alpha_2
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % C3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Relative Pos. der max. Wölbung}\\ \vspace{-2mm}
+            \begin{equation*}
+                \frac{\text{d}\bar{z}}{\text{d}\bar{x}} = 0\quad \left(\text{Maximum von }\bar{z}(\bar{x})\right)
+            \end{equation*}
+            \begin{equation*}
+                \frac{f}{t} = \frac{A_1}{4}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{32mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{53mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Druckpunkt}\\ \vspace{-3mm}
+            \begin{equation*}
+                C_\text{M} = 0
+            \end{equation*}
+            \begin{equation*}
+                \frac{x_\text{A}}{t} = -\frac{C_\text{M,VK}}{C_\text{A}} = \frac{x_\text{N}}{t} - \frac{C_{\text{M,A}=0}}{C_\text{A}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{31mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Neutralpunkt}\\ \vspace{-3mm}
+            \begin{equation*}
+                \frac{\partial C_\text{M}}{\partial C_\text{A}} = 0
+            \end{equation*}
+            \begin{equation*}
+                \frac{x_\text{N}}{t} = -\frac{\text{d}C_\text{M,VK}}{\text{d}C_\text{A}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{104mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.68\cellwidth-\TileSep}
+                \centering
+                \titlerm{Zusammenhang}\\ \vspace{2mm}
+                \begin{tabular}{c|c|c}
+                    \xrowht[()]{2.0mm}$i$ & Druckpunkt $\tfrac{x_{\text{A},i}}{t}$ & Neutralpunkt $\tfrac{x_{\text{N},i}}{t}$ \\ \hline
+                    \xrowht[()]{1.4mm}0   & \sfrac{1}{4}                           & \sfrac{1}{4}                             \\
+                    \xrowht[()]{1.4mm}1   & \sfrac{1}{2}                           & \sfrac{1}{4}                             \\
+                    \xrowht[()]{1.4mm}2   & $\pm\infty$                            & \sfrac{1}{4}                             
+                \end{tabular}
+            \end{minipage}%
+            \begin{minipage}{0.32\cellwidth-\TileSep}
+                \centering
+                \titlerm{Druckpunktfeste}\\ 
+                \titlerm{Profile}\\ \vspace{-4mm}
+                \begin{equation*}
+                    C_{\text{M,A}=0} = 0
+                \end{equation*}%
+                \vspace{-5mm}
+                \begin{equation*}
+                    \Rightarrow A_2 = -A_1
+                \end{equation*}
+                \begin{equation*}
+                    \frac{x_\text{A}}{t} = \frac{x_\text{N}}{t} = \frac{1}{4}
                 \end{equation*}
             \end{minipage}
         }{0}{0}{1}{0}
