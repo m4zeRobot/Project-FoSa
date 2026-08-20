@@ -57,7 +57,7 @@
         }{0}{0}{1}{0}
 
 % ---- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{38mm}
+\setlength{\rowheight}{36mm}
 
     % A2) Erste Kachel unten anbauen
     \setlength{\cellwidth}{95mm}
@@ -106,7 +106,8 @@
                 \titlerm{Nullauftriebswinkel}\\ \vspace{-5mm}
                 \begin{equation*}
                     C_\text{A} = 0\qquad \Rightarrow A_0 = -\frac{A_1}{2}
-                \end{equation*}
+                \end{equation*}%
+                \vspace{-4mm}\\
                 \titlerm{Nullmoment}\\ \vspace{-5mm}
                 \begin{equation*}
                     C_{\text{M,A}=0} = -\pi\frac{f}{t} = -\frac{\pi}{4}\left(A_1 + A_2\right)
@@ -164,7 +165,8 @@
             \titlerm{Druckpunkt}\\ \vspace{-3mm}
             \begin{equation*}
                 C_\text{M} = 0
-            \end{equation*}
+            \end{equation*}%
+            \vspace{-2mm}
             \begin{equation*}
                 \frac{x_\text{A}}{t} = -\frac{C_\text{M,VK}}{C_\text{A}} = \frac{x_\text{N}}{t} - \frac{C_{\text{M,A}=0}}{C_\text{A}}
             \end{equation*}
@@ -177,41 +179,114 @@
             \titlerm{Neutralpunkt}\\ \vspace{-3mm}
             \begin{equation*}
                 \frac{\partial C_\text{M}}{\partial C_\text{A}} = 0
-            \end{equation*}
+            \end{equation*}%
+            \vspace{-2mm}
             \begin{equation*}
                 \frac{x_\text{N}}{t} = -\frac{\text{d}C_\text{M,VK}}{\text{d}C_\text{A}}
             \end{equation*}
         }{0}{1}{1}{0}
 
     % C4) Zweite Kachel rechts anbauen
-    \setlength{\cellwidth}{104mm}
+    \setlength{\cellwidth}{106mm}
     \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
         {
             \begin{minipage}{0.68\cellwidth-\TileSep}
                 \centering
-                \titlerm{Zusammenhang}\\ \vspace{2mm}
+                \titlerm{Zusammenhang}\\ \vspace{3mm}
                 \begin{tabular}{c|c|c}
-                    \xrowht[()]{2.0mm}$i$ & Druckpunkt $\tfrac{x_{\text{A},i}}{t}$ & Neutralpunkt $\tfrac{x_{\text{N},i}}{t}$ \\ \hline
+                    \xrowht[()]{2.0mm}$i$ & Druckpunkt $\tfrac{x_{\text{A}_i}}{t}$ & Neutralpunkt $\tfrac{x_{\text{N}_i}}{t}$ \\ \hline
                     \xrowht[()]{1.4mm}0   & \sfrac{1}{4}                           & \sfrac{1}{4}                             \\
                     \xrowht[()]{1.4mm}1   & \sfrac{1}{2}                           & \sfrac{1}{4}                             \\
                     \xrowht[()]{1.4mm}2   & $\pm\infty$                            & \sfrac{1}{4}                             
-                \end{tabular}
+                \end{tabular}%
+                \vspace{2mm}
             \end{minipage}%
             \begin{minipage}{0.32\cellwidth-\TileSep}
                 \centering
                 \titlerm{Druckpunktfeste}\\ 
-                \titlerm{Profile}\\ \vspace{-4mm}
+                \titlerm{Profile}\\ \vspace{-5mm}
                 \begin{equation*}
                     C_{\text{M,A}=0} = 0
                 \end{equation*}%
-                \vspace{-5mm}
+                \vspace{-6mm}
                 \begin{equation*}
                     \Rightarrow A_2 = -A_1
-                \end{equation*}
+                \end{equation*}%
+                \vspace{-2mm}
                 \begin{equation*}
                     \frac{x_\text{A}}{t} = \frac{x_\text{N}}{t} = \frac{1}{4}
-                \end{equation*}
+                \end{equation*}%
+                \vspace{-2mm}
             \end{minipage}
         }{0}{0}{1}{0}
 
+% ---- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{40mm}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{54mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Stabilität}\\
+            {\scriptsize
+            \begin{equation*}
+                \text{SP} \left\{
+                \begin{matrix}
+                    \text{vor} \\
+                    \text{im} \\
+                    \text{hinter}
+                \end{matrix}%
+                \right\} \text{NP} \Rightarrow \left\{
+                \begin{matrix}
+                    \text{statisch stabil} \\
+                    \text{indifferent} \\
+                    \text{statisch instabil}
+                \end{matrix}%
+                \right.
+            \end{equation*}}%
+            \vspace{-3mm}
+            \begin{align*}
+                \text{SP } &= \text{ Staupunkt,} \\
+                \text{NP } &= \text{ Neutralpunkt}
+            \end{align*}
+        }{0}{1}{0}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{136mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Hauptaufgabe}\\ \vspace{1mm}
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \titlerm{Entwurfsproblem}\\ \vspace{-5mm}
+                \begin{align*}
+                    \textbf{Gegeben: } &\gamma(x),\ u(x) \text{ oder } c_p(x) \\[-0.5ex]
+                    \textbf{Gesucht: } &z(x) \text{ (Form der Skelettlinie)}
+                \end{align*}%
+                \vspace{0.8mm}
+                {\scriptsize
+                \begin{equation*}
+                    \bar{z}(\bar{x}) = \alpha^*\,\bar{x} - \frac{1}{2\,\pi}\,{\mathrlap{\int_0^1}\hspace{0.3mm}C\hspace{1.5mm}}\,\frac{\gamma(\bar{x}')}{U_\infty}\,\ln\!\left(\frac{\bar{x}-\bar{x}'}{\bar{x}'}\right)\,\text{d}\bar{x}'
+                \end{equation*}}%
+                \vspace{4mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Nachrechenaufgabe}\\ \vspace{-5mm}
+                \begin{align*}
+                    \textbf{Gegeben: } &z(x) \\[-0.5ex]
+                    \textbf{Gesucht: } &\gamma(x),\ u(x) \text{ oder } c_p(x)
+                \end{align*}%
+                {\scriptsize
+                    $z = z(x)$ analytisch, $A_n$ aus Fourieranalyse oder Koeffizientenvergleich bestimmbar.Direkt $C_\text{A}$, $C_\text{M}$ berechenbar.
+                    
+                    $z$ an diskreten Punkten, $A_n$ durch LGS bestimmen. \\[-0.9ex]
+                    Kontur aus Birnbaum-NV. Achtung: $\alpha^*$ in 1. NV!
+                }%
+                \vspace{1mm}
+            \end{minipage}
+        }{0}{0}{0}{0}
+
 \end{tikzpicture}
+
