@@ -246,7 +246,7 @@
             \end{equation*}}%
             \vspace{-3mm}
             \begin{align*}
-                \text{SP } &= \text{ Staupunkt,} \\
+                \text{SP } &= \text{ Staupunkt} \\
                 \text{NP } &= \text{ Neutralpunkt}
             \end{align*}
         }{0}{1}{0}{0}
@@ -281,7 +281,7 @@
                 {\scriptsize
                     $z = z(x)$ analytisch, $A_n$ aus Fourieranalyse oder Koeffizientenvergleich bestimmbar.Direkt $C_\text{A}$, $C_\text{M}$ berechenbar.
                     
-                    $z$ an diskreten Punkten, $A_n$ durch LGS bestimmen. \\[-0.9ex]
+                    $z$ an diskreten Punkten, $A_n$ durch LGS bestimmen. \\[-1.0ex]
                     Kontur aus Birnbaum-NV. Achtung: $\alpha^*$ in 1. NV!
                 }%
                 \vspace{1mm}
@@ -290,3 +290,93 @@
 
 \end{tikzpicture}
 
+\newpage
+
+\vspace{78mm}
+\centering
+\section*{\underline{Skeletttheorie}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{27mm}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A1}{([xshift=10mm,yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wirbelverteilung}\\ \vspace{-4mm}
+            \begin{equation*}
+                \gamma(\Phi) = 2\,U_\infty\,\left(A_0\,\tan\!\left(\frac{\Phi}{2}\right) + \sum_{n=1}^\infty\,A_n\,\sin\!\left(n\,\Phi\right)\right)
+            \end{equation*}%
+            \vspace{-2mm}
+            \begin{equation*}
+                \Phi = \arccos\!\left(2\,\bar{x} - 1\right)\ \Leftrightarrow\ \bar{x} = \frac{\cos\!\left(\Phi\right)+1}{2}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Winkel zwischen Skelettlinie und Sehne}\\ \vspace{1mm}
+            \begin{equation*}
+                \tan\!\left(\varphi\right) = \frac{\text{d}\bar{z}}{\text{d}\bar{x}}\ \ \rightarrow\ \ \varphi = \arctan\!\left(\frac{\text{d}\bar{z}}{\text{d}\bar{x}}\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{111mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Kontur}\\ \vspace{-4mm}
+            \begin{align*}
+                \bar{z}_0(\bar{x}) &= \left(A_0 - \alpha^*\right)\,\left(1 - \bar{x}\right) \\
+                \bar{z}_1(\bar{x}) &= A_1\,\bar{x}\,\left(1 - \bar{x}\right) \\
+                \bar{z}_2(\bar{x}) &= -A_2\,\bar{x}\left(1 - 4\,\bar{x}+\frac{8}{3}\,\bar{x}^2\right)
+            \end{align*}%
+            \vspace{-6mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-5mm}
+            \begin{align*}
+                \bar{z}_0(\Phi) &= -\frac{1}{2}\,\left(\cos\!\left(\Phi\right)-1\right)\,\left(A_0-\alpha^*\right) \\
+                \bar{z}_1(\Phi) &= -\frac{A_1}{4}\,\left(\cos\!\left(\Phi\right)-1\right)\,\left(1 + \cos\!\left(\Phi\right)\right) \\
+                \bar{z}_2(\Phi) &= -\frac{A_2}{6}\left(\cos\!\left(\Phi\right)+1\right)\left(2\cos^2\!\left(\Phi\right)-2\cos\!\left(\Phi\right)-1\right)
+            \end{align*}%
+            \vspace{-6mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-4mm}
+            \begin{equation*}
+                \tfrac{\text{d}\bar{z}(\bar{x})}{\text{d}\bar{x}} = -8A_2\bar{x}^2 +\left(8A_2-2A_1\right)\bar{x}-\left(A_0-A_1+A_2-\alpha^*\right)
+            \end{equation*}%
+            \vspace{-6mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{2mm}
+            \includegraphics[width=0.7\cellwidth]{images/kontur.pdf}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Zirkulation}\\ \vspace{-3mm}
+            \begin{align*}
+                \frac{\gamma_0}{U_\infty}(\bar{x}) &= 2\,A_0\,\sqrt{\frac{1-\bar{x}}{\bar{x}}} \\
+                \frac{\gamma_1}{U_\infty}(\bar{x}) &= 4\,A_1\,\sqrt{\bar{x}\,(1-\bar{x})} \\
+                \frac{\gamma_2}{U_\infty}(\bar{x}) &= 8\,A_2\,\left(2\,\bar{x}-1\right)\sqrt{\bar{x}\,(1-\bar{x})}
+            \end{align*}%
+            \vspace{-5mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-4mm}
+            \begin{align*}
+                \frac{\gamma_0}{U_\infty}(\Phi) &= 2\,\sqrt{-\tfrac{\left(\cos\!\left(\Phi\right)-1\right)}{\cos\!\left(\Phi\right)+1}} \\
+                \frac{\gamma_1}{U_\infty}(\Phi) &= 2\,A_1\,\sqrt{-\left(\cos\!\left(\Phi\right)-1\right)\left(\cos\!\left(\Phi\right)+1\right)} \\
+                \frac{\gamma_2}{U_\infty}(\Phi) &= 4\,A_2\,\cos\!\left(\Phi\right)\,\sqrt{-\left(\cos\!\left(\Phi\right)-1\right)\left(\cos\!\left(\Phi\right)+1\right)} \\
+            \end{align*}%
+            \vspace{-11mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{4.15mm}
+            \includegraphics[width=0.65\cellwidth]{images/zirkulation.pdf}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
