@@ -379,4 +379,49 @@
             \includegraphics[width=0.65\cellwidth]{images/zirkulation.pdf}
         }{0}{0}{1}{0}
 
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{50mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Störgeschwindigkeit}\\ \vspace{3mm}
+            \begin{minipage}{0.56\cellwidth-\TileSep}
+                \centering
+                \begin{minipage}{0.28\cellwidth-\TileSep}
+                    \centering
+                    \vspace{-2mm}
+                    \begin{align*}
+                        \frac{w_0}{U_\infty}(\bar{x}) &= -A_0 \\
+                        \frac{w_1}{U_\infty}(\bar{x}) &= A_1\,\left(1-2\,\bar{x}\right) \\
+                        \frac{w_2}{U_\infty}(\bar{x}) &= -A_2\,\left(1+8\,\bar{x}\left(\bar{x}-1\right)\right) \\
+                    \end{align*}
+                    \vspace{-7mm}
+                \end{minipage}%
+                \vline
+                \begin{minipage}{0.28\cellwidth-\TileSep}
+                    \centering
+                    \vspace{-6mm}
+                    \begin{align*}
+                        \frac{w_0}{U_\infty}(\Phi) &= -A_0 \\
+                        \frac{w_1}{U_\infty}(\Phi) &= -A_1\,\cos\!\left(\Phi\right) \\
+                        \frac{w_2}{U_\infty}(\Phi) &= A_2\,\left(2\,\sin^2\!\left(\Phi\right)-1\right)
+                    \end{align*}
+                    \vspace{-7mm}
+                \end{minipage}%
+                \vspace{1mm}
+                \rule{\dimexpr0.56\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-5mm}
+                \begin{equation*}
+                    \frac{w}{U_\infty} = \frac{\text{d}\bar{z}}{\text{d}\bar{x}} - \alpha^* \approx -\left(A_0 + \sum_{n=1}^{N}A_n\,\cos\!\left(n\,\Phi\right)\right)
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}
+            \vline
+            \begin{minipage}{0.42\cellwidth-\TileSep}
+                \centering
+                \includegraphics[width=0.34\cellwidth]{images/störgeschwindigkeit.pdf}
+            \end{minipage}
+        }{0}{0}{0}{0}
+
 \end{tikzpicture}
