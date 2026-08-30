@@ -1,0 +1,440 @@
+\vspace{78mm}
+\centering
+\section*{\underline{Skeletttheorie}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{30mm}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{98mm}
+    \Tile{A1}{([xshift=10mm,yshift=-112mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Koeffizienten}\\ \vspace{-3mm}
+            \begin{minipage}{0.42\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    A_0 &= \alpha^* + \alpha_0 \\
+                    A_1 &= 2\,\left(\alpha_2 - \alpha\right) = 4\,\frac{f}{t} \\
+                    A_2 &= -3\,\alpha_2
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.58\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    A_0 &= \alpha^* + \alpha_0 = \alpha^* - \frac{1}{\pi}\,\int\limits_0^\pi \frac{\text{d}z}{\text{d}x}\,\text{d}\Phi \\
+                    A_n &= -\frac{2}{\pi}\,\int\limits_0^\pi\frac{\text{d}z}{\text{d}x}\,\cos\left(n\,\Phi\right)\,\text{d}\Phi
+                \end{align*}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Kräfte}\\ \vspace{-3mm}
+            \begin{align*}
+                A &= G = \frac{\pi}{4}\,b\,\rho\,U_\infty\,A_1 \\[1.5ex]
+                W_\text{i} &= \frac{\pi}{8}\,\rho\,\sum\limits_{n=1}^M\left(n\,A_n^2\right)
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{52mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Position der max. Wölbung}\\ \vspace{-2mm}
+            \begin{equation*}
+                \frac{\text{d}\bar{z}}{\text{d}\bar{x}} = 0~(\text{maximum von }\bar{z}(\bar{x}))
+            \end{equation*}
+            \begin{equation*}
+                \frac{f}{t} = \frac{A_1}{4}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{36mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Beiwerte}\\ \vspace{3mm}
+            \begin{minipage}{0.46\cellwidth-\TileSep}
+                \centering
+                \vspace{-3mm}
+                \begin{align*}
+                    C_\text{A} &= \pi\,\left(2\,A_0 + A_1\right)\\
+                    \Delta c_p &= c_{p,\text{u}} - c_{p,\text{o}} = 2\,\frac{\gamma(\bar{x})}{U_\infty}
+                \end{align*}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.54\cellwidth-\TileSep}
+                \centering
+                \vspace{-3mm}
+                \begin{align*}
+                    C_{\text{M,VK}} &= -\frac{\pi}{4}\left(2\,A_0 + 2\,A_1 + A_2\right) \\
+                    C_{\text{M},\sfrac{t}{4}} &= C_{\text{M,VK}} + \frac{C_\text{A}}{4}
+                \end{align*}
+            \end{minipage}
+            \begin{equation*}
+                \frac{\text{d}c_a}{\text{d}\alpha} = 2\,\pi~;\quad \frac{\text{d}c_m}{\text{d}\alpha} = 0
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Nullauftrieb und -moment}\\ \vspace{2mm}
+            \begin{minipage}{0.45\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    \alpha_{A=0,\text{Skel}} &= -\frac{A_1}{2} - \frac{A_2}{3}\\
+                    &= \alpha_{A=0,\text{Prof}} + \alpha_0 \\[1.0ex]
+                    c_{a,\alpha=0} &= 4\,\pi\,\frac{f}{t}
+                \end{align*}
+                \vspace{-2mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.55\cellwidth-\TileSep}
+                \centering
+                \titlerm{Nullauftriebswinkel}\\ \vspace{-5mm}
+                \begin{equation*}
+                    C_\text{A} = 0\qquad \Rightarrow A_0 = -\frac{A_1}{2}
+                \end{equation*}%
+                \vspace{-4mm}\\
+                \titlerm{Nullmoment}\\ \vspace{-5mm}
+                \begin{equation*}
+                    C_{\text{M,A}=0} = -\pi\frac{f}{t} = -\frac{\pi}{4}\left(A_1 + A_2\right)
+                \end{equation*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{32mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Auftrieb}\\ \vspace{-3mm}
+            \begin{align*}
+                c_{a0} &= 2\,\pi\,A_0 = 2\,\pi\,\left(\alpha_0 + \alpha^*\right) \\
+                c_{a1} &= \pi\,A_1 = 4\,\pi\,\frac{f}{t} \\
+                c_{a2} &= 0
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Moment bezüglich VK}\\ \vspace{-3.5mm}
+            \begin{align*}
+                C_\text{M0,VK} &= -\frac{\pi}{2}\,A_0 = -\frac{\pi}{2}\,\left(\alpha_0+\alpha^*\right) \\
+                C_\text{M1,VK} &= -\frac{\pi}{2}\,A_1 = -2\,\pi\,\frac{f}{t} \\
+                C_\text{M2,VK} &= -\frac{\pi}{4}\,A_2 = \frac{3\,\pi}{4}\,\alpha_2
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % C3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Relative Pos. der max. Wölbung}\\ \vspace{-2mm}
+            \begin{equation*}
+                \frac{\text{d}\bar{z}}{\text{d}\bar{x}} = 0\quad \left(\text{Maximum von }\bar{z}(\bar{x})\right)
+            \end{equation*}
+            \begin{equation*}
+                \frac{f}{t} = \frac{A_1}{4}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{32mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{53mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Druckpunkt}\\ \vspace{-3mm}
+            \begin{equation*}
+                C_\text{M} = 0
+            \end{equation*}%
+            \vspace{-2mm}
+            \begin{equation*}
+                \frac{x_\text{A}}{t} = -\frac{C_\text{M,VK}}{C_\text{A}} = \frac{x_\text{N}}{t} - \frac{C_{\text{M,A}=0}}{C_\text{A}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{31mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Neutralpunkt}\\ \vspace{-3mm}
+            \begin{equation*}
+                \frac{\partial C_\text{M}}{\partial C_\text{A}} = 0
+            \end{equation*}%
+            \vspace{-2mm}
+            \begin{equation*}
+                \frac{x_\text{N}}{t} = -\frac{\text{d}C_\text{M,VK}}{\text{d}C_\text{A}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{106mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.68\cellwidth-\TileSep}
+                \centering
+                \titlerm{Zusammenhang}\\ \vspace{3mm}
+                \begin{tabular}{c|c|c}
+                    \xrowht[()]{2.0mm}$i$ & Druckpunkt $\tfrac{x_{\text{A}_i}}{t}$ & Neutralpunkt $\tfrac{x_{\text{N}_i}}{t}$ \\ \hline
+                    \xrowht[()]{1.4mm}0   & \sfrac{1}{4}                           & \sfrac{1}{4}                             \\
+                    \xrowht[()]{1.4mm}1   & \sfrac{1}{2}                           & \sfrac{1}{4}                             \\
+                    \xrowht[()]{1.4mm}2   & $\pm\infty$                            & \sfrac{1}{4}                             
+                \end{tabular}%
+                \vspace{2mm}
+            \end{minipage}%
+            \begin{minipage}{0.32\cellwidth-\TileSep}
+                \centering
+                \titlerm{Druckpunktfeste}\\ 
+                \titlerm{Profile}\\ \vspace{-5mm}
+                \begin{equation*}
+                    C_{\text{M,A}=0} = 0
+                \end{equation*}%
+                \vspace{-6mm}
+                \begin{equation*}
+                    \Rightarrow A_2 = -A_1
+                \end{equation*}%
+                \vspace{-2mm}
+                \begin{equation*}
+                    \frac{x_\text{A}}{t} = \frac{x_\text{N}}{t} = \frac{1}{4}
+                \end{equation*}%
+                \vspace{-2mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{40mm}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{54mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Stabilität}\\
+            {\scriptsize
+            \begin{equation*}
+                \text{SP} \left\{
+                \begin{matrix}
+                    \text{vor} \\
+                    \text{im} \\
+                    \text{hinter}
+                \end{matrix}%
+                \right\} \text{NP} \Rightarrow \left\{
+                \begin{matrix}
+                    \text{statisch stabil} \\
+                    \text{indifferent} \\
+                    \text{statisch instabil}
+                \end{matrix}%
+                \right.
+            \end{equation*}}%
+            \vspace{-3mm}
+            \begin{align*}
+                \text{SP } &= \text{ Staupunkt} \\
+                \text{NP } &= \text{ Neutralpunkt}
+            \end{align*}
+        }{0}{1}{0}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{136mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Hauptaufgabe}\\ \vspace{1mm}
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \titlerm{Entwurfsproblem}\\ \vspace{-5mm}
+                \begin{align*}
+                    \textbf{Gegeben: } &\gamma(x),\ u(x) \text{ oder } c_p(x) \\[-0.5ex]
+                    \textbf{Gesucht: } &z(x) \text{ (Form der Skelettlinie)}
+                \end{align*}%
+                \vspace{0.8mm}
+                {\scriptsize
+                \begin{equation*}
+                    \bar{z}(\bar{x}) = \alpha^*\,\bar{x} - \frac{1}{2\,\pi}\,{\mathrlap{\int_0^1}\hspace{0.3mm}C\hspace{1.5mm}}\,\frac{\gamma(\bar{x}')}{U_\infty}\,\ln\!\left(\frac{\bar{x}-\bar{x}'}{\bar{x}'}\right)\,\text{d}\bar{x}'
+                \end{equation*}}%
+                \vspace{4mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Nachrechenaufgabe}\\ \vspace{-5mm}
+                \begin{align*}
+                    \textbf{Gegeben: } &z(x) \\[-0.5ex]
+                    \textbf{Gesucht: } &\gamma(x),\ u(x) \text{ oder } c_p(x)
+                \end{align*}%
+                {\scriptsize
+                    $z = z(x)$ analytisch, $A_n$ aus Fourieranalyse oder Koeffizientenvergleich bestimmbar.Direkt $C_\text{A}$, $C_\text{M}$ berechenbar.
+                    
+                    $z$ an diskreten Punkten, $A_n$ durch LGS bestimmen. \\[-1.0ex]
+                    Kontur aus Birnbaum-NV. Achtung: $\alpha^*$ in 1. NV!
+                }%
+                \vspace{1mm}
+            \end{minipage}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+\newpage
+
+\vspace{78mm}
+\centering
+\section*{\underline{Skeletttheorie}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{27mm}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A1}{([xshift=10mm,yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Wirbelverteilung}\\ \vspace{-4mm}
+            \begin{equation*}
+                \gamma(\Phi) = 2\,U_\infty\,\left(A_0\,\tan\!\left(\frac{\Phi}{2}\right) + \sum_{n=1}^\infty\,A_n\,\sin\!\left(n\,\Phi\right)\right)
+            \end{equation*}%
+            \vspace{-2mm}
+            \begin{equation*}
+                \Phi = \arccos\!\left(2\,\bar{x} - 1\right)\ \Leftrightarrow\ \bar{x} = \frac{\cos\!\left(\Phi\right)+1}{2}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Winkel zwischen Skelettlinie und Sehne}\\ \vspace{1mm}
+            \begin{equation*}
+                \tan\!\left(\varphi\right) = \frac{\text{d}\bar{z}}{\text{d}\bar{x}}\ \ \rightarrow\ \ \varphi = \arctan\!\left(\frac{\text{d}\bar{z}}{\text{d}\bar{x}}\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{111mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Kontur}\\ \vspace{-4mm}
+            \begin{align*}
+                \bar{z}_0(\bar{x}) &= \left(A_0 - \alpha^*\right)\,\left(1 - \bar{x}\right) \\
+                \bar{z}_1(\bar{x}) &= A_1\,\bar{x}\,\left(1 - \bar{x}\right) \\
+                \bar{z}_2(\bar{x}) &= -A_2\,\bar{x}\left(1 - 4\,\bar{x}+\frac{8}{3}\,\bar{x}^2\right)
+            \end{align*}%
+            \vspace{-6mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-5mm}
+            \begin{align*}
+                \bar{z}_0(\Phi) &= -\frac{1}{2}\,\left(\cos\!\left(\Phi\right)-1\right)\,\left(A_0-\alpha^*\right) \\
+                \bar{z}_1(\Phi) &= -\frac{A_1}{4}\,\left(\cos\!\left(\Phi\right)-1\right)\,\left(1 + \cos\!\left(\Phi\right)\right) \\
+                \bar{z}_2(\Phi) &= -\frac{A_2}{6}\left(\cos\!\left(\Phi\right)+1\right)\left(2\cos^2\!\left(\Phi\right)-2\cos\!\left(\Phi\right)-1\right)
+            \end{align*}%
+            \vspace{-6mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-4mm}
+            \begin{equation*}
+                \tfrac{\text{d}\bar{z}(\bar{x})}{\text{d}\bar{x}} = -8A_2\bar{x}^2 +\left(8A_2-2A_1\right)\bar{x}-\left(A_0-A_1+A_2-\alpha^*\right)
+            \end{equation*}%
+            \vspace{-6mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{2mm}
+            \includegraphics[width=0.7\cellwidth]{images/kontur.pdf}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Zirkulation}\\ \vspace{-3mm}
+            \begin{align*}
+                \frac{\gamma_0}{U_\infty}(\bar{x}) &= 2\,A_0\,\sqrt{\frac{1-\bar{x}}{\bar{x}}} \\
+                \frac{\gamma_1}{U_\infty}(\bar{x}) &= 4\,A_1\,\sqrt{\bar{x}\,(1-\bar{x})} \\
+                \frac{\gamma_2}{U_\infty}(\bar{x}) &= 8\,A_2\,\left(2\,\bar{x}-1\right)\sqrt{\bar{x}\,(1-\bar{x})}
+            \end{align*}%
+            \vspace{-5mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-4mm}
+            \begin{align*}
+                \frac{\gamma_0}{U_\infty}(\Phi) &= 2\,\sqrt{-\tfrac{\left(\cos\!\left(\Phi\right)-1\right)}{\cos\!\left(\Phi\right)+1}} \\
+                \frac{\gamma_1}{U_\infty}(\Phi) &= 2\,A_1\,\sqrt{-\left(\cos\!\left(\Phi\right)-1\right)\left(\cos\!\left(\Phi\right)+1\right)} \\
+                \frac{\gamma_2}{U_\infty}(\Phi) &= 4\,A_2\,\cos\!\left(\Phi\right)\,\sqrt{-\left(\cos\!\left(\Phi\right)-1\right)\left(\cos\!\left(\Phi\right)+1\right)} \\
+            \end{align*}%
+            \vspace{-11mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{4.15mm}
+            \includegraphics[width=0.65\cellwidth]{images/zirkulation.pdf}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{53mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Störgeschwindigkeit}\\ \vspace{3mm}
+            \begin{minipage}{0.56\cellwidth-\TileSep}
+                \centering
+                \begin{minipage}{0.28\cellwidth-\TileSep}
+                    \centering
+                    \vspace{-2mm}
+                    \begin{align*}
+                        \frac{w_0}{U_\infty}(\bar{x}) &= -A_0 \\
+                        \frac{w_1}{U_\infty}(\bar{x}) &= A_1\,\left(1-2\,\bar{x}\right) \\
+                        \frac{w_2}{U_\infty}(\bar{x}) &= -A_2\,\left(1+8\,\bar{x}\left(\bar{x}-1\right)\right) \\
+                    \end{align*}
+                    \vspace{-7mm}
+                \end{minipage}%
+                \vline
+                \begin{minipage}{0.28\cellwidth-\TileSep}
+                    \centering
+                    \vspace{-6mm}
+                    \begin{align*}
+                        \frac{w_0}{U_\infty}(\Phi) &= -A_0 \\
+                        \frac{w_1}{U_\infty}(\Phi) &= -A_1\,\cos\!\left(\Phi\right) \\
+                        \frac{w_2}{U_\infty}(\Phi) &= A_2\,\left(2\,\sin^2\!\left(\Phi\right)-1\right)
+                    \end{align*}
+                    \vspace{-7mm}
+                \end{minipage}%
+                \vspace{1mm}
+                \rule{\dimexpr0.55\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-5mm}
+                \begin{equation*}
+                    \frac{w}{U_\infty} = \frac{\text{d}\bar{z}}{\text{d}\bar{x}} - \alpha^* \approx -\left(A_0 + \sum_{n=1}^{N}A_n\,\cos\!\left(n\,\Phi\right)\right)
+                \end{equation*}
+                \vspace{-1mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.42\cellwidth-\TileSep}
+                \centering
+                \includegraphics[width=0.34\cellwidth]{images/störgeschwindigkeit.pdf}
+            \end{minipage}%
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{20mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{74mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Linearisierte Potenzialgleichung}\\ \vspace{-3mm}
+            \begin{equation*}
+                c_p = \mp\frac{2\,u}{U_\infty}\qquad u = \frac{\pm\gamma}{2}\qquad \Delta c_p = \frac{2\,\gamma\left(\bar{x}\right)}{U_\infty}
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+\end{tikzpicture}

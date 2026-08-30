@@ -1,0 +1,93 @@
+\centering
+\section*{\underline{Ähnlichkeitstransformation}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{40mm}
+
+    % A1) Erste Kachel oben links
+    \setlength{\cellwidth}{43mm}
+    \Tile{A1}{([xshift=10mm,yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Bedingungen}\\ \vspace{-1mm}
+            \begin{equation*}
+                \text{Ma} \stackrel{!}{>} \text{0,3}
+            \end{equation*}
+            {\scriptsize Keine Gültigkeit für den transsonischen und hypersonischen Bereich\\
+            bzw. ab Ma $>$ 0,8}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{147mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Göthert-Regel (3D)}\\ \vspace{2mm}
+            \begin{minipage}{0.4\cellwidth-\TileSep}
+                \centering
+                \titlerm{Allgemein}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \beta =
+                    \begin{cases}
+                        \sqrt{1 - \text{Ma}^2_\infty}     & \text{für Ma} < 1 \\
+                        \sqrt{\text{Ma}^2_\infty - 1} = B & \text{für Ma} > 1
+                    \end{cases}
+                \end{equation*}%
+                \vspace{-2mm}\\
+                {\scriptsize Vergleichsströmung\dots \\[0.8ex]
+                \dots \textbf{subsonisch} $ik$ bei Ma$_\infty = 0$ \\
+                \dots \textbf{supersonisch} $ik$ bei Ma$_\infty = \sqrt{2}$ \\}
+                \vspace{2mm}
+            \end{minipage}%
+            \begin{minipage}{0.6\cellwidth-\TileSep}
+                \centering
+                \titlerm{Transformation}\\ \vspace{-5.5mm}
+                \begin{align*}
+                    \left\{x\right\}_{ik} &\Leftrightarrow \left\{x\right\} \\
+                    \left\{y, z, f, \alpha, \delta, \lambda\right\}_{ik} &\Leftrightarrow \beta\cdot\left\{y, z, f, \alpha, \delta, \lambda\right\} \\
+                    \left\{C_\text{A}, C_\text{M}, c_p\right\}_{ik} &\Leftrightarrow \beta^2\cdot\left\{C_\text{A}, C_\text{M}, c_p\right\} \\[0.8ex]
+                    \left\{x,y,z,\alpha,f,\delta,\Delta\right\}_{ik} &\Leftrightarrow {\underbrace{\tfrac{1}{\beta^2}}_{\mathclap{\text{Rück-Trafo}}}}\,c_{p,ik}\,\{x,{\underbrace{\beta y,\beta z,\beta\alpha,\beta f,\beta\delta,\beta\Delta}_\text{Hin-Trafo}}\}
+                \end{align*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{39mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Prandtl-Glauert-Regel (2D)}\\ \vspace{1mm}
+            {\color{Purple}\titlerm{Unveränderte Geometrie, gut für die Nachrechnung}}\\ \vspace{-1mm}
+            \begin{equation*}
+                \left\{C_\text{A}, C_\text{M}, c_p\right\}_{ik} \Leftrightarrow \beta\cdot\left\{C_\text{A}, C_\text{M}, c_p\right\}
+            \end{equation*}%
+            Gesamt-Trafo:\\
+            \vspace{-5mm}
+            \begin{equation*}
+                c_p\!\left(x, z, \alpha, f, \delta\right) = \frac{1}{\beta}\,c_{p,ik}\!\left(x, z, \alpha, f, \delta\right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Prandtl-Glauert-Regel (2D)}\\ \vspace{1mm}
+            {\color{NavyBlue}\titlerm{Unveränderte Druckverteilung, gut für den Entwurf}}\\ \vspace{-2mm}
+            \begin{equation*}
+                \left\{z, f, \alpha, \delta\right\}_{ik} \Leftrightarrow \frac{1}{\beta}\cdot\left\{z, f, \alpha, \delta\right\}
+            \end{equation*}%
+            Gesamt-Trafo:\\
+            \vspace{-5mm}
+            \begin{equation*}
+                c_p\!\left(x, z, \alpha, f, \delta\right) = c_{p,ik}\!\left(x, \frac{1}{\beta}z, \frac{1}{\beta}\alpha, \frac{1}{\beta}f, \frac{1}{\beta}\delta\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
+
+\input{content/profilumströmung-überschall.tex}
