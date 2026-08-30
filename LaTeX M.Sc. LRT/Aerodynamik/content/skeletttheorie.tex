@@ -380,7 +380,7 @@
         }{0}{0}{1}{0}
 
 % ---- DRITTE REIHE: Unten anbauen
-\setlength{\rowheight}{50mm}
+\setlength{\rowheight}{53mm}
 
     % A3) Erste Kachel unten anbauen
     \setlength{\cellwidth}{190mm}
@@ -411,17 +411,30 @@
                     \vspace{-7mm}
                 \end{minipage}%
                 \vspace{1mm}
-                \rule{\dimexpr0.56\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-5mm}
+                \rule{\dimexpr0.55\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-5mm}
                 \begin{equation*}
                     \frac{w}{U_\infty} = \frac{\text{d}\bar{z}}{\text{d}\bar{x}} - \alpha^* \approx -\left(A_0 + \sum_{n=1}^{N}A_n\,\cos\!\left(n\,\Phi\right)\right)
                 \end{equation*}
                 \vspace{-1mm}
-            \end{minipage}
+            \end{minipage}%
             \vline
             \begin{minipage}{0.42\cellwidth-\TileSep}
                 \centering
                 \includegraphics[width=0.34\cellwidth]{images/störgeschwindigkeit.pdf}
-            \end{minipage}
-        }{0}{0}{0}{0}
+            \end{minipage}%
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{20mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{74mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Linearisierte Potenzialgleichung}\\ \vspace{-3mm}
+            \begin{equation*}
+                c_p = \mp\frac{2\,u}{U_\infty}\qquad u = \frac{\pm\gamma}{2}\qquad \Delta c_p = \frac{2\,\gamma\left(\bar{x}\right)}{U_\infty}
+            \end{equation*}
+        }{0}{1}{0}{0}
 
 \end{tikzpicture}

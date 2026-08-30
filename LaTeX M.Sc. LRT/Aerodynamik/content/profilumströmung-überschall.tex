@@ -1,0 +1,75 @@
+\centering
+\vspace{74mm}
+\section*{\underline{Profilumströmung Überschall}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{50mm}
+
+    % A1) Erste Kachel oben links
+    \setlength{\cellwidth}{74mm}
+    \Tile{A1}{([xshift=10mm,yshift=-111mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Annahmen}\\ \vspace{1mm}
+            \titlerm{Wegen Linearisierung:}\\ \vspace{-1mm}
+            \begin{itemize}[leftmargin=5mm]
+                \item Alle Stöße sind isentrope Verdichtungs-\\ wellen
+                \item Alle Charakteristiken haben den gleichen\\ Winkel ($\mu_\infty$)
+                \item Keine Nachlaufdelle, keine Drosselung
+            \end{itemize}
+            \begin{align*}
+                \text{\titlerm{Skelettlinie:}}\quad &\bar{z}_\text{o} = \bar{z}_\text{u} \\
+                \text{\titlerm{Profiltropfen:}}\quad &\alpha^* = 0\,;~\bar{z} = \tfrac{1}{2}d(\bar{x})\,;~\bar{z}_\text{o} = -\bar{z}_\text{u}
+            \end{align*}
+            \\ \vspace{-1mm}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{116mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Beiwerte am Profil}\\ \vspace{-3mm}
+            \begin{align*}
+                C_\text{A} &= \frac{4}{\sqrt{\text{Ma}^2_\infty - 1}}\,\int_0^1 \alpha\,\text{d}\bar{x} = \frac{4}{\sqrt{\text{Ma}^2_\infty - 1}}\,\int_0^1 \alpha^* - \frac{\text{d}\bar{z}}{\text{d}\bar{x}}\,\text{d}\bar{x} \\
+                C_\text{M} &= -\frac{4}{\sqrt{\text{Ma}^2_\infty - 1}}\,\left(\frac{\alpha^*}{2} - \int_0^1 \frac{\text{d}\bar{z}(\bar{x})}{\text{d}\bar{x}}\,\bar{x}\,\text{d}\bar{x}\right) \\
+                C_\text{W,W} &= \frac{4}{\sqrt{\text{Ma}^2_\infty - 1}}\,\left({\alpha^*}^2 + \frac{1}{2}\,\int_0^1\left(\frac{\text{d}\bar{z}_\text{o}}{\text{d}\bar{x}}\right)^2 + \left(\frac{\text{d}\bar{z}_\text{u}}{\text{d}\bar{x}}\right)^2\,\text{d}\bar{x}\right)
+            \end{align*}
+            \begin{equation*}
+                c_p = \frac{4}{B}\left(\alpha^* - \frac{\partial\bar{z}}{\partial\bar{x}}\right)\,; \qquad \frac{\text{d}C_\text{A}}{\text{d}\alpha} = \frac{4}{B} = \text{const.}\,; \qquad \varepsilon = \frac{W_\text{W}}{A} = \frac{C_\text{W,W}}{C_\text{A}} = \alpha
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{40mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{80mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Beiwerte der ebenen Platte}\\ \vspace{2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \begin{align*}
+                    C_\text{A} &= \frac{4}{\sqrt{\text{Ma}_\infty^2 - 1}} \\
+                    C_\text{W,W} &= \frac{4\,\alpha^2}{\sqrt{\text{Ma}_\infty^2 - 1}}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \begin{align*}
+                    C_\text{M} &= -\frac{C_\text{A}}{2} + C_\text{M,A=0} \\
+                    c_p &= \frac{\mp2\,\alpha}{\sqrt{\text{Ma}_\infty^2 - 1}}
+                \end{align*}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Beiwerte am Profil}\\ \vspace{2mm}
+
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
