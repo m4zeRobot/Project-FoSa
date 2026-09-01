@@ -1,0 +1,69 @@
+\centering
+\section*{\underline{Traglinientheorie}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{40mm}
+
+    % A1) Erste Kachel oben links
+    \setlength{\cellwidth}{60mm}
+    \Tile{A1}{([xshift=10mm,yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Hauptaufgaben}\\ \vspace{4mm}
+            \textbf{Entwurf:}\\ Berechnen der Geometrie ($\alpha_\text{g}$ bzw. $t(\Theta)$) bei bekannter $\Gamma(y)$-Verteilung\\[3.0ex]
+            \textbf{Nachrechnung:}\\ Multhopp-Quadratur (gegeben ist die Geometrie)
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{130mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Zirkulationsverteilung}\\ \vspace{1mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                Nachlauf-Zirkulationsfeld:\\ \vspace{-5mm}
+                \begin{align*}
+                    \gamma(y) = \frac{\partial\Gamma(y)}{\partial y}
+                \end{align*}
+                Kutta-Jukowski:\\ \vspace{-5mm}
+                \begin{align*}
+                    \text{d}A = \rho\,U_\infty\,\Gamma(y)\,\text{d}y = C_\text{A}(y)\,\frac{\rho\,U_\infty^2}{2}\,t(y)\,\text{d}y
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    &\Rightarrow \Gamma(y)\,\frac{U_\infty}{2}\,C_\text{A}(y)\,t(y) \\
+                    &\Rightarrow C_\text{A}(y) = \frac{2\,\Gamma(y)}{U_\infty\,t(y)} \propto \frac{\Gamma(y)}{t(y)} \\[0.5ex]
+                    &\Rightarrow C_\text{A}(\Theta) = \frac{2\,\Gamma(\Theta)}{U_\infty\,t(\Theta)}
+                \end{align*}%
+                \vspace{1mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{50mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Zirkulation}\\ \vspace{2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    \Gamma(\Theta) &= \sum_{n=1}^M A_n\,\sin\!\left(n\,\Theta\right) \\
+                    \frac{\Gamma(\Theta)}{b\,U_\infty} &= \gamma(\Theta) = \sum_{n=1}^M a_n\,\sin\!\left(n\,\Theta\right) \\
+                    \frac{A_n}{b\,U_\infty} &= a_n = \frac{2}{\pi}\,\int_0^\pi \gamma(\Theta)\,\sin\!\left(\Theta\right)\,\text{d}\Theta
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                ttt
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
