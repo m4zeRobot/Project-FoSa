@@ -48,22 +48,72 @@
 \setlength{\rowheight}{50mm}
 
     % A2) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{190mm}
+    \setlength{\cellwidth}{126mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Zirkulation}\\ \vspace{2mm}
+            \titlebf{Zirkulation}\\ \vspace{2mm}
             \begin{minipage}{0.5\cellwidth-\TileSep}
                 \centering
+                \titlerm{Allgemein}\\ \vspace{-4mm}
                 \begin{align*}
                     \Gamma(\Theta) &= \sum_{n=1}^M A_n\,\sin\!\left(n\,\Theta\right) \\
                     \frac{\Gamma(\Theta)}{b\,U_\infty} &= \gamma(\Theta) = \sum_{n=1}^M a_n\,\sin\!\left(n\,\Theta\right) \\
                     \frac{A_n}{b\,U_\infty} &= a_n = \frac{2}{\pi}\,\int_0^\pi \gamma(\Theta)\,\sin\!\left(\Theta\right)\,\text{d}\Theta
-                \end{align*}
+                \end{align*}%
+                \vspace{-3.2mm}
             \end{minipage}%
             \begin{minipage}{0.5\cellwidth-\TileSep}
                 \centering
-                ttt
-            \end{minipage}
+                \titlerm{Elliptische Zirkulationsverteilung}\\ \vspace{-4mm}
+                \begin{align*}
+                    \Gamma(y)      &= \Gamma_\text{max}\cdot\sqrt{1-\left(\tfrac{2\,y}{b}\right)^2} \\
+                    \Gamma(\eta)   &= \Gamma_\text{max}\cdot\sqrt{1-\eta^2} \\[1.0ex]
+                    \Gamma(\Theta) &= \Gamma_\text{max}\cdot\sin\!\left(\Theta\right)
+                \end{align*}
+                \titlerm{Tiefenverteilung bei Trapezflügel}\\ \vspace{-4mm}
+                \begin{equation*}
+                    t(\Theta) = t_\text{i} + \left(t_\text{a} - t_\text{i}\right)\,\cos\!\left(\Theta\right)
+                \end{equation*}
+            \end{minipage}%
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{64mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{$k$-Faktor}\\ \vspace{2mm}
+            \begin{align*}
+                k &= \frac{C_{\text{W},i}}{C_{\text{W},i\text{ ell.}}} \\
+                  &= 1 + \frac{1}{A_1^2}\,\sum_{n=2}^M n\,A_n^2
+            \end{align*}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{90mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{98mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Prandtl'sche Integralgleichung}\\ \vspace{2mm}
+            Dimensionsbehaftet:\\ \vspace{-4mm}
+            \begin{equation*}
+                \alpha_\text{g}(y) = \frac{2\,\Gamma(y)}{U_\infty\,\left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}\,t(y)} + \frac{1}{4\,\pi\,U_\infty}\,\int_{-\frac{b}{2}}^{\frac{b}{2}} \frac{\partial\Gamma(y')}{\partial y'}\,\frac{\text{d}y'}{y-y'}
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            Dimensionslos:\\ \vspace{-4mm}
+            \begin{equation*}
+                \alpha_\text{g}(\eta) = \underbrace{f(\eta)\cdot\gamma(\eta)}_{\alpha_\text{e}(\eta)} + \underbrace{\frac{1}{2\,\pi}\,\int_{-1}^1 \frac{\partial\gamma(\eta')}{\partial\eta'}\,\frac{\partial\eta'}{\eta-\eta'}}_{\alpha_\text{i}(\eta)}
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{92mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Beiwerte}\\ \vspace{2mm}
+
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
