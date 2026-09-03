@@ -18,9 +18,9 @@
 \vspace{4mm}
 
 \begin{tabular}{|b{111.4mm-17\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|} \hline
-    \xrowht[()]{4mm} Bezeichnung & \rotatebox{90}{Diffusionskoeffizient} & \rotatebox{90}{Druck} & \rotatebox{90}{Energie} & \rotatebox{90}{Frequenz} & \rotatebox{90}{Impuls} & \rotatebox{90}{kinem. Viskosität} & \rotatebox{90}{Kraft} & \rotatebox{90}{Leistung} & \rotatebox{90}{Oberflächenspannung} & \rotatebox{90}{Schubspannung} & \rotatebox{90}{Temperaturleitzahl} & \rotatebox{90}{Widerstandskraft} & \rotatebox{90}{Winkelgeschwindigkeit~~} & \rotatebox{90}{Gravitationskonstante} & \rotatebox{90}{Elastizitätsmodul} & \rotatebox{90}{Wärmekapazität} & \rotatebox{90}{Längungskoeffizient} \\
+    \xrowht[()]{4mm} Bezeichnung & \rotatebox{90}{Diffusionskoeffizient} & \rotatebox{90}{Druck} & \rotatebox{90}{Energie} & \rotatebox{90}{Frequenz} & \rotatebox{90}{Impuls} & \rotatebox{90}{kinem. Viskosität} & \rotatebox{90}{Kraft} & \rotatebox{90}{Leistung} & \rotatebox{90}{Oberflächenspannung} & \rotatebox{90}{Schubspannung} & \rotatebox{90}{Temperaturleitzahl} & \rotatebox{90}{Widerstandskraft} & \rotatebox{90}{Winkelgeschwindigkeit~~} & \rotatebox{90}{Gravitationskonstante} & \rotatebox{90}{Elastizitätsmodul} & \rotatebox{90}{Wärmekapazität} & \rotatebox{90}{\scriptsize Wärmeausdehnungskoeff.} \\
     \hline
-    \rowcolor{Gray!50} \xrowht[()]{4mm} Symbol & $D$  & $p$  & $E$  & $f$  & $I$  & $\nu$ & $F$  & $P$  & $\sigma$ & $\tau$ & $\alpha$ & $W$  & $\omega$  & $G$  & $E$  & $C$  & $\alpha_\text{L}$  \\ \hline
+    \rowcolor{Gray!50} \xrowht[()]{4mm} Symbol & $D$  & $p$  & $E$  & $f$  & $I$  & $\nu$ & $F$  & $P$  & $\sigma$ & $\tau$ & $\alpha$ & $W$  & $\omega$  & $G$  & $E$  & $C$  & $\alpha$  \\ \hline
     \xrowht[()]{4mm} L $[\text{m}]$            & $2$  & $-1$ & $2$  & $0$  & $1$  & $2$   & $1$  & $2$  & $0$      & $-1$   & $2$      & $1$  & $0$       & $3$  & $-1$ & $2$  & $0$   \\ \hline
     \xrowht[()]{4mm} M $[\text{kg}]$           & $0$  & $1$  & $1$  & $0$  & $1$  & $0$   & $1$  & $1$  & $1$      & $1$    & $0$      & $1$  & $0$       & $-1$ & $1$  & $1$  & $0$   \\ \hline
     \xrowht[()]{4mm} T $[\text{s}]$            & $-1$ & $-2$ & $-2$ & $-1$ & $-1$ & $-1$  & $-2$ & $-3$ & $-2$     & $-2$   & $-1$     & $-2$ & $-1$      & $-2$ & $-2$ & $-2$ & $0$   \\ \hline
@@ -31,14 +31,14 @@
 \vspace{4mm}
 
 \raggedright \hspace{8.4mm}
-\begin{tabular}{|b{111.4mm-17\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|} \hline
-    \xrowht[()]{4mm} Bezeichnung & \rotatebox{90}{Drehmoment} & \rotatebox{90}{\textit{dim.-lose Konstante}~~} & \rotatebox{90}{Druckgradient} & \rotatebox{90}{Fläche} \\
+\begin{tabular}{|b{111.4mm-17\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|a{\cellwidth}|} \hline
+    \xrowht[()]{4mm} Bezeichnung & \rotatebox{90}{Drehmoment} & \rotatebox{90}{\textit{dim.-lose Konstante}~~} & \rotatebox{90}{Druckgradient} & \rotatebox{90}{Fläche} & \rotatebox{90}{\scriptsize E-Modul $\times$ Trägheitsmom.~~} \\
     \hline
-    \rowcolor{Gray!50} \xrowht[()]{4mm} Symbol & $M$  & $C$ & $K$  & $A$ \\ \hline
-    \xrowht[()]{4mm} L $[\text{m}]$            & $2$  & $0$ & $-2$ & $2$ \\ \hline
-    \xrowht[()]{4mm} M $[\text{kg}]$           & $1$  & $0$ & $1$  & $0$ \\ \hline
-    \xrowht[()]{4mm} T $[\text{s}]$            & $-2$ & $0$ & $-2$ & $0$ \\ \hline
-    \xrowht[()]{4mm} $\Theta$ $[\text{K}]$     & $0$  & $0$ & $0$  & $0$ \\
+    \rowcolor{Gray!50} \xrowht[()]{4mm} Symbol & $M$  & $C$ & $K$  & $A$ & $E\cdot I$ \\ \hline
+    \xrowht[()]{4mm} L $[\text{m}]$            & $2$  & $0$ & $-2$ & $2$ & $3$        \\ \hline
+    \xrowht[()]{4mm} M $[\text{kg}]$           & $1$  & $0$ & $1$  & $0$ & $1$        \\ \hline
+    \xrowht[()]{4mm} T $[\text{s}]$            & $-2$ & $0$ & $-2$ & $0$ & $-2$       \\ \hline
+    \xrowht[()]{4mm} $\Theta$ $[\text{K}]$     & $0$  & $0$ & $0$  & $0$ & $0$        \\
     \hline
-    \rowcolor{Gray!50} \xrowht[()]{4mm} SI-Einheit & \resizebox{\cellwidth}{!}{$\left[\text{N}\,\text{m}\right]$} & $\left[-\right]$ & \resizebox{\cellwidth}{!}{$\left[\tfrac{\text{Pa}}{\text{m}}\right]$} & \resizebox{\cellwidth}{!}{$\left[\text{m}^2\right]$} \\ \hline
+    \rowcolor{Gray!50} \xrowht[()]{4mm} SI-Einheit & \resizebox{\cellwidth}{!}{$\left[\text{N}\,\text{m}\right]$} & $\left[-\right]$ & \resizebox{\cellwidth}{!}{$\left[\tfrac{\text{Pa}}{\text{m}}\right]$} & \resizebox{\cellwidth}{!}{$\left[\text{m}^2\right]$} & \resizebox{\cellwidth}{!}{$\left[\frac{\text{kg}\,\text{m}^3}{\text{s}^2}\right]$} \\ \hline
 \end{tabular}
