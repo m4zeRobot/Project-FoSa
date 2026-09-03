@@ -43,33 +43,48 @@
         }{0}{0}{1}{0}
 
 % ---- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{40mm}
+\setlength{\rowheight}{34mm}
 
     % A2) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{80mm}
+    \setlength{\cellwidth}{90mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
             \titlerm{Beiwerte der ebenen Platte}\\ \vspace{2mm}
             \begin{minipage}{0.5\cellwidth-\TileSep}
                 \begin{align*}
-                    C_\text{A} &= \frac{4}{\sqrt{\text{Ma}_\infty^2 - 1}} \\
+                    C_\text{A} &= \frac{4}{\sqrt{\text{Ma}_\infty^2 - 1}} \\[0.5ex]
                     C_\text{W,W} &= \frac{4\,\alpha^2}{\sqrt{\text{Ma}_\infty^2 - 1}}
                 \end{align*}
             \end{minipage}%
             \begin{minipage}{0.5\cellwidth-\TileSep}
                 \begin{align*}
-                    C_\text{M} &= -\frac{C_\text{A}}{2} + C_\text{M,A=0} \\
+                    C_\text{M} &= -\frac{C_\text{A}}{2} + C_\text{M,A=0} \\[0.5ex]
                     c_p &= \frac{\mp2\,\alpha}{\sqrt{\text{Ma}_\infty^2 - 1}}
                 \end{align*}
             \end{minipage}
-        }{0}{1}{1}{0}
+        }{0}{1}{0}{0}
 
     % B2) Zweite Kachel rechts anbauen
-    \setlength{\cellwidth}{110mm}
+    \setlength{\cellwidth}{100mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Beiwerte am Profil}\\ \vspace{2mm}
-
-        }{0}{0}{1}{0}
+            \titlebf{Druckpunkt / Neutralpunkt}\\ \vspace{2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Relative Druckpunktlage}
+                \begin{align*}
+                    \frac{x_\text{A}}{t} &= -\frac{C_\text{M}}{C_\text{A}} \\[0.5ex]
+                                         &= \frac{1}{2} - \frac{C_\text{M,A=0}}{C_\text{A}}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Relative Neutralpunktlage}
+                \begin{align*}
+                    \frac{x_\text{N}}{t} &= -\frac{\text{d}C_\text{M,VK}}{\text{d}C_\text{A}} \\[0.5ex]
+                                         &= \frac{1}{2}
+                \end{align*}
+            \end{minipage}
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}

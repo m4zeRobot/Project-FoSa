@@ -1,0 +1,147 @@
+\centering
+\section*{\underline{Traglinientheorie}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{40mm}
+
+    % A1) Erste Kachel oben links
+    \setlength{\cellwidth}{60mm}
+    \Tile{A1}{([xshift=10mm,yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Hauptaufgaben}\\ \vspace{4mm}
+            \textbf{Entwurf:}\\ Berechnen der Geometrie ($\alpha_\text{g}$ bzw. $t(\theta)$) bei bekannter $\Gamma(y)$-Verteilung\\[3.0ex]
+            \textbf{Nachrechnung:}\\ Multhopp-Quadratur (gegeben ist die Geometrie)
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{130mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Zirkulationsverteilung}\\ \vspace{1mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                Nachlauf-Zirkulationsfeld:\\ \vspace{-5mm}
+                \begin{align*}
+                    \gamma(y) = \frac{\partial\Gamma(y)}{\partial y}
+                \end{align*}
+                Kutta-Jukowski:\\ \vspace{-5mm}
+                \begin{align*}
+                    \text{d}A = \rho\,U_\infty\,\Gamma(y)\,\text{d}y = C_\text{A}(y)\,\frac{\rho\,U_\infty^2}{2}\,t(y)\,\text{d}y
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    &\Rightarrow \Gamma(y)\,\frac{U_\infty}{2}\,C_\text{A}(y)\,t(y) \\
+                    &\Rightarrow C_\text{A}(y) = \frac{2\,\Gamma(y)}{U_\infty\,t(y)} \propto \frac{\Gamma(y)}{t(y)} \\[0.5ex]
+                    &\Rightarrow C_\text{A}(\theta) = \frac{2\,\Gamma(\theta)}{U_\infty\,t(\theta)}
+                \end{align*}%
+                \vspace{1mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% ---- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{50mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{126mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Zirkulation}\\ \vspace{2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Allgemein}\\ \vspace{-4mm}
+                \begin{align*}
+                    \Gamma(\theta) &= \sum_{n=1}^M A_n\,\sin\!\left(n\,\theta\right) \\
+                    \frac{\Gamma(\theta)}{b\,U_\infty} &= \gamma(\theta) = \sum_{n=1}^M a_n\,\sin\!\left(n\,\theta\right) \\
+                    \frac{A_n}{b\,U_\infty} &= a_n = \frac{2}{\pi}\,\int_0^\pi \gamma(\theta)\,\sin\!\left(\theta\right)\,\text{d}\theta
+                \end{align*}%
+                \vspace{-3.2mm}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Elliptische Zirkulationsverteilung}\\ \vspace{-4mm}
+                \begin{align*}
+                    \Gamma(y)      &= \Gamma_\text{max}\cdot\sqrt{1-\left(\tfrac{2\,y}{b}\right)^2} \\
+                    \Gamma(\eta)   &= \Gamma_\text{max}\cdot\sqrt{1-\eta^2} \\[1.0ex]
+                    \Gamma(\theta) &= \Gamma_\text{max}\cdot\sin\!\left(\theta\right)
+                \end{align*}
+                \titlerm{Tiefenverteilung bei Trapezflügel}\\ \vspace{-4mm}
+                \begin{equation*}
+                    t(\theta) = t_\text{i} + \left(t_\text{a} - t_\text{i}\right)\,\cos\!\left(\theta\right)
+                \end{equation*}
+            \end{minipage}%
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{64mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{$k$-Faktor}\\ \vspace{2mm}
+            \begin{align*}
+                k &= \frac{C_{\text{W\!,i}}}{C_{\text{W\!,i\,ell.}}} \\
+                  &= 1 + \frac{1}{A_1^2}\,\sum_{n=2}^M n\,A_n^2
+            \end{align*}
+        }{0}{0}{1}{0}
+
+% ---- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{97mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Prandtl'sche Integralgleichung}\\ \vspace{2mm}
+            \titlerm{Dimensionsbehaftet}\\ \vspace{-4mm}
+            \begin{equation*}
+                \alpha_\text{g}(y) = \frac{2\,\Gamma(y)}{U_\infty\,\left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}\,t(y)} + \frac{1}{4\,\pi\,U_\infty}\,\int_{-\frac{b}{2}}^{\frac{b}{2}} \frac{\partial\Gamma(y')}{\partial y'}\,\frac{\text{d}y'}{y-y'}
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Dimensionslos}\\ \vspace{-4mm}
+            \begin{equation*}
+                \alpha_\text{g}(\eta) = \underbrace{f(\eta)\cdot\gamma(\eta)}_{\alpha_\text{e}(\eta)} + \underbrace{\frac{1}{2\,\pi}\,\int_{-1}^1 \frac{\partial\gamma(\eta')}{\partial\eta'}\,\frac{\partial\eta'}{\eta-\eta'}}_{\alpha_\text{i}(\eta)}
+            \end{equation*}
+            \titlerm{Mit dimensionslosen Variablen}\\ \vspace{-4mm}
+            \begin{equation*}
+                f(\eta) = \frac{2\,b}{\left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}\,t(\eta)} \quad\vline\quad \gamma(\eta) = \frac{\Gamma(\eta)}{b\,U_\infty} \quad\vline\quad \eta = \frac{2\,y}{b}
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{-4mm}
+            \begin{equation*}
+                \alpha_\text{g} = \underbrace{f(\theta)\cdot\gamma(\theta)}_{\alpha_\text{e}(\theta)} + \underbrace{\frac{1}{2\,\pi}\,\int_{-1}^1 \frac{\partial\gamma(\theta')}{\partial\theta'}\,\frac{\partial\theta'}{\theta-\theta'}}_{\alpha_\text{i}(\theta)}
+            \end{equation*}
+            \begin{equation*}
+                \cos\!\left(\theta\right) = \eta = \frac{2\,y}{b}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Beiwerte}\\ \vspace{-3mm}
+            \begin{equation*}
+                C_\text{A} = \frac{\pi\,\Lambda\,A_1}{2\,b\,U_\infty} \quad\vline\quad \frac{\text{d}C_\text{A}}{\text{d}\alpha} = \frac{2\,\pi\,\Lambda}{\Lambda + 2} \quad\vline\quad \Lambda = \frac{b^2}{S}
+            \end{equation*}
+            \begin{equation*}
+                C_\text{W\!,i} = \frac{C_\text{A}^2}{\pi\,\Lambda}\,\underbrace{\left(1 + \frac{1}{A_1^2}\,\sum_{n=2}^M n\,A_n^2\right)}_{k} = k\cdot C_\text{W\!,i\,ell.}
+            \end{equation*}%
+            \vspace{-2mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{1.5mm}
+            \titlerm{Elliptische Zirkulationsverteilung}\\ \vspace{-4mm}
+            \begin{align*}
+                C_\text{A,\,ell.}  &= \frac{\pi\,b\,\Gamma_\text{max}}{2\,U_\infty\,F} = \frac{\pi\,\Lambda\,\Gamma_\text{max}}{2\,b\,U_\infty} \\[0.5ex]
+                C_\text{W\!,i\,ell.} &= \frac{C_\text{A}^2}{\pi\,\Lambda}
+            \end{align*}%
+            \vspace{-1mm} \\
+            \titlerm{Wenn ungeschränkt $\Gamma(y) \propto t(y)$}\\ \vspace{-4mm}
+            \begin{align*}
+                C_\text{A,\,ell.}  &= \frac{\left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}\,\pi\,\Lambda}{\pi\,\Lambda + \left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}}\cdot\alpha_\text{g} \\[0.5ex]
+                \left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D} &= 2\,\pi
+            \end{align*}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
