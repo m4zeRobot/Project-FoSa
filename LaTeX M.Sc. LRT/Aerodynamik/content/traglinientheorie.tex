@@ -81,7 +81,7 @@
     \setlength{\cellwidth}{64mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{$k$-Faktor}\\ \vspace{2mm}
+            \titlerm{$k$-Faktor}\\ \vspace{3mm}
             \begin{align*}
                 k &= \frac{C_{\text{W\!,i}}}{C_{\text{W\!,i\,ell.}}} \\
                   &= 1 + \frac{1}{A_1^2}\,\sum_{n=2}^M n\,A_n^2
@@ -142,6 +142,116 @@
                 C_\text{A,\,ell.}  &= \frac{\left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}\,\pi\,\Lambda}{\pi\,\Lambda + \left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}}\cdot\alpha_\text{g} \\[0.5ex]
                 \left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D} &= 2\,\pi
             \end{align*}
+        }{0}{0}{1}{0}
+
+% ---- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{73mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{105mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Geometrischer Anstellwinkel}\\ \vspace{-4mm}
+            \begin{align*}
+                \alpha_\text{g} &= \frac{1}{\sin\!\left(\theta\right)}\,\sum_{n=1}^M a_n\,\sin\!\left(n\,\theta\right)\,\left[2\,\sin\!\left(n\,\theta\right)\,f(\theta) + n\right] \\
+                                &= \frac{1}{\sin\!\left(\theta\right)}\,\sum_{n=1}^M \frac{A_n}{b\,U_\infty}\,\sin\!\left(n\,\theta\right)\left[\frac{4\,b\,\sin\!\left(\theta\right)}{\left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}\,t(\theta)} + n\right]
+            \end{align*}%
+            \vspace{-2mm}
+            \begin{minipage}{0.46\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    \alpha_\text{g}(y)      &= \alpha_\text{g,i} - \frac{\omega_x\,y}{U_\infty} \\
+                    \alpha_\text{g}(\theta) &= \alpha_\text{g,i} - \frac{\omega_x\,b\,\cos\!\left(\theta\right)}{2\,U_\infty}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.54\cellwidth-\TileSep}
+                \centering
+                \begin{align*}
+                    \alpha_\text{g,i} &= \alpha_\text{g}\text{ in der Flügelmitte} \\
+                    \omega_x          &= \text{Rollrate }\sfrac{1}{\text{s}}
+                \end{align*}
+            \end{minipage}%
+            \vspace{3mm} \\
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Elliptische Zirkulationsverteilung}\\ \vspace{-4mm}
+            \begin{equation*}
+                \alpha_\text{g,\,ell.}(y) = \frac{2\,\Gamma(y)}{U_\infty\,\left(\frac{\partial C_\text{A}}{\partial\alpha}\right)_\text{2D}\,t(y)} + \frac{\Gamma_\text{max}}{2\,b\,U_\infty}
+            \end{equation*}
+        }{0}{1}{0}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{85mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Induzierter Anstellwinkel}\\ \vspace{-3.5mm}
+            \begin{align*}
+                \alpha_\text{i}(y)      &= \frac{1}{4\,\pi\,U_\infty}\,\int_{-\frac{b}{2}}^\frac{b}{2} \frac{\partial\Gamma(y')}{\partial y'}\,\frac{\text{d}y'}{y-y'} \\[0.8ex]
+                \alpha_\text{i}(\eta)   &= \frac{1}{2\,\pi}\,\int_{-1}^1 \frac{\partial\gamma(\eta')}{\partial\eta'}\,\frac{\partial\eta'}{\eta-\eta'} \\[0.8ex]
+                \alpha_\text{i}(\theta) &= \frac{1}{2\,\pi}\,\int_0^\pi \frac{\partial\gamma(\theta')}{\partial\theta'}\,\frac{\partial\theta'}{\theta-\theta'} \\
+                                        &= \frac{1}{2\,\sin\!\left(\theta\right)}\,\sum_{n=1}^M \frac{n\,A_n}{b\,U_\infty}\,\sin\!\left(n\,\theta\right)
+            \end{align*}%
+            \vspace{-4mm}\\
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Elliptische Zirkulationsverteilung}\\ \vspace{-4mm}
+            \begin{equation*}
+                \alpha_\text{i,\,ell.} = \frac{\gamma_\text{max}}{2} = \frac{C_\text{A}}{\pi\,\Lambda} = \frac{\Gamma_\text{max}}{2\,b\,U_\infty} = \text{const.}
+            \end{equation*}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+\newpage
+\centering
+\section*{\underline{Traglinientheorie}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% ---- ERSTE REIHE: Am Seitenursprung starten
+\setlength{\rowheight}{34mm}
+
+    % A1) Erste Kachel oben links
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{([xshift=10mm,yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \begin{minipage}{0.215\cellwidth-\TileSep}
+                \centering
+                \vspace{-1mm}
+                \includegraphics[width=36mm]{kräfte-richtungen.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.21\cellwidth-\TileSep}
+                \centering
+                \titlerm{Kräfte}\\ \vspace{-2mm}
+                \begin{align*}
+                    A &= \frac{\pi}{4}\,b\,\rho\,U_\infty\,A_1 \\
+                    W_\text{i} &= \frac{\pi}{8}\,\rho\,\sum_{n=1}^M n\,A_n^2 \\
+                \end{align*}%
+                \vspace{-4.6mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.33\cellwidth}
+                \centering
+                \titlerm{Rollmoment um die $x$-Achse}\\ \vspace{-4mm}
+                \begin{equation*}
+                    M_x = \frac{\pi}{16}\,b^2\,\rho\,U_\infty\,A_2
+                \end{equation*}%
+                \vspace{-2mm}\\
+                \titlerm{Giermoment um die $z$-Achse}\\ \vspace{-4mm}
+                \begin{equation*}
+                    M_z = \frac{\pi}{32}\,b\,\rho\,\sum_{n=1}^M \left[\left(2\,n + 1\right)\,A_n\,A_{n+1}\right]
+                \end{equation*}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.24\cellwidth}
+                \centering
+                \titlerm{Elliptische}\\
+                \titlerm{Zirkulationsverteilung}\\ \vspace{-2mm}
+                \begin{align*}
+                    A_\text{ell.}     &= \frac{\pi}{4}\,b\,\rho\,U_\infty\,\Gamma_\text{max} \\[0.5ex]
+                    W_\text{i,\,ell.} &\approx \alpha_\text{i}\,A = \frac{\pi}{8}\,\rho\,\Gamma_\text{max}^2 \\
+                                      &= \frac{\pi}{8}\,\rho\,A_1^2
+                \end{align*}
+            \end{minipage}            
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
