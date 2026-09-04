@@ -1,0 +1,52 @@
+\centering
+\section*{\myul{Grundlagen}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{114mm}
+
+    % A1) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{([xshift=10mm, yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-2mm}
+            \titlebf{Koordinatensysteme}\\ \vspace{2mm}
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                \titlerm{Kartesische Koordinaten}\\ \vspace{-4mm}
+                \begin{equation*}
+                    v_x = u \qquad v_y = v \qquad v_z = w
+                \end{equation*}%
+                \\ \vspace{1mm}
+                \includegraphics[width=40mm]{images/koordinaten-kartesisch.pdf}\\ \vspace{-2mm}
+                \begin{equation*}
+                    h_1 = 1 \qquad h_2 = 1 \qquad h_3 = 1
+                \end{equation*}
+                \vspace{-2mm}
+                \begin{equation*}
+                    \nabla = \underline{e}_x\,\frac{\partial}{\partial x} + \underline{e}_y\,\frac{\partial}{\partial y} + \underline{e}_z\,\frac{\partial}{\partial z}
+                \end{equation*}
+                \begin{equation*}
+                    \nabla\cdot\underline{v} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z}
+                \end{equation*}
+                \begin{align*}
+                    \left(\nabla\cdot\underline{v}\right)_x &= \frac{\partial w}{\partial y} - \frac{\partial v}{\partial z} \\
+                    \left(\nabla\cdot\underline{v}\right)_y &= \frac{\partial u}{\partial z} - \frac{\partial w}{\partial x} \\
+                    \left(\nabla\cdot\underline{v}\right)_z &= \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}
+                \end{align*}
+                \vspace{-2mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.33\cellwidth}
+                \centering
+                \titlerm{Zylinderkoordinaten}\\ \vspace{2mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                \titlerm{Kugelkoordinaten}\\ \vspace{2mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
