@@ -188,7 +188,7 @@
     \setlength{\cellwidth}{80mm}
     \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Gradient eines Vektors}\vspace{-2mm}
+            \titlerm{Gradient eines Vektors}\vspace{-1.5mm}
             \begin{equation*}
                 \text{grad}\!\left(\underline{v}\right) = \nabla\otimes\underline{v} = \left(
                 \begin{matrix}
@@ -198,5 +198,44 @@
                 \end{matrix}\right)
             \end{equation*}
         }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{22mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Divergenz}\vspace{1mm}
+            \begin{equation*}
+                \text{div}\!\left(\underline{a}\right) = \nabla\cdot\underline{a} = \frac{1}{h_1\,h_2\,h_3}\,\left[\frac{\partial}{\partial x_1}\left(h_2\,h_3\,a_1\right) + \frac{\partial}{\partial x_2}\left(h_3\,h_1\,a_2\right) + \frac{\partial}{\partial x_3}\left(h_1\,h_2\,a_3\right)\right]
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{24mm}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Rotation}\vspace{2mm}
+            \begin{equation*}
+                \text{rot}\!\left(\underline{a}\right) = \nabla\times\underline{a} = \frac{1}{h_1\,h_2\,h_3}\,\left[h_1\left(\frac{\partial\left(h_3\,a_3\right)}{\partial x_2} - \frac{\partial\left(h_2\,a_2\right)}{\partial x_3}\right)\,\underline{e}_1 + h_2\left(\frac{\partial\left(h_1\,a_1\right)}{\partial x_3} - \frac{\partial\left(h_3\,a_3\right)}{\partial x_1}\right)\,\underline{e}_2 + h_3\left(\frac{\partial\left(h_2\,a_2\right)}{\partial x_1} - \frac{\partial\left(h_1\,a_1\right)}{\partial x_2}\right)\,\underline{e}_3\right]
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- SECHSTE REIHE: Unten anbauen
+\setlength{\rowheight}{24mm}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Laplace-Operator}\vspace{2mm}
+            \begin{equation*}
+                \nabla^2\!\left(f\right) = \Delta\!\left(f\right) = \frac{1}{h_1\,h_2\,h_3}\,\left[\frac{\partial}{\partial x_1}\left(\frac{h_2\,h_3}{h_1}\,\frac{\partial f}{\partial x_1}\right) + \frac{\partial}{\partial x_2}\left(\frac{h_3\,h_1}{h_2}\,\frac{\partial f}{\partial x_2}\right) + \frac{\partial}{\partial x_3}\left(\frac{h_1\,h_2}{h_3}\,\frac{\partial f}{\partial x_3}\right)\right]
+            \end{equation*}
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
