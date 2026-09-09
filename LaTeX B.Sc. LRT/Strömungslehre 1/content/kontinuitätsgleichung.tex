@@ -1,0 +1,91 @@
+\centering
+\section*{\myul{Kontinuitätsgleichung}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{50mm}
+
+    % A1) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{60mm}
+    \Tile{A1}{([xshift=10mm, yshift=-18mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Integralform (Konservativ)}\\ \vspace{-3mm}
+            \begin{equation*}
+                \frac{\partial}{\partial t}\,\iiint_V \rho\,\text{d}V + \oiint_S \rho\,\underline{v}\cdot\text{d}S = 0
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Stromröhre}\\ \vspace{-4mm}
+            \begin{equation*}
+                \dot{m} = \rho\,v\,S = \text{konst.}
+            \end{equation*}%
+            \vspace{-5mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.25mm}
+            \begin{minipage}[t]{0.45\cellwidth-\TileSep}
+                \centering
+                \titlerm{Stationär}\\ \vspace{-5mm}
+                \begin{equation*}
+                    \text{div}\!\left(\rho\,\underline{v}\right) = 0
+                \end{equation*}
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.55\cellwidth-\TileSep}
+                \centering
+                \titlerm{Inkompressibel}\\ \vspace{-5mm}
+                \begin{equation*}
+                    \text{div}\!\left(\underline{v}\right) = 0
+                \end{equation*}%
+                \vspace{-3mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{130mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Differentialform}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Konservativ}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \frac{\partial\rho}{\partial t} + \text{div}\!\left(\rho\,\underline{v}\right) = \frac{\partial\rho}{\partial t} + \nabla\cdot\left(\rho\,\underline{v}\right) = 0
+                \end{equation*}
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Nicht-Konservativ}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \frac{\text{D}\rho}{\text{D} t} + \rho\,\text{div}\!\left(\underline{v}\right) = \frac{\text{D}\rho}{\text{D} t} + \rho\,\nabla\cdot\underline{v} = 0
+                \end{equation*}%
+                \vspace{-1mm}
+            \end{minipage}%
+            \vspace{1.75mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \begin{minipage}[t]{0.41\cellwidth-\TileSep}
+                \centering
+                \titlerm{Zylinderkoordinaten}\\ \vspace{-1mm}
+                \begin{equation*}
+                    \resizebox{0.92\textwidth}{!}{$ \displaystyle
+                        \frac{\partial\rho}{\partial t} + \left[\frac{1}{r}\frac{\partial}{\partial r}\left(r\rho u\right) + \frac{1}{r}\frac{\partial}{\partial\varphi}\left(\rho v\right) + \frac{\partial}{\partial z}\left(\rho w\right)\right]
+                    $}
+                \end{equation*}
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.59\cellwidth-\TileSep}
+                \centering
+                \titlerm{Kugelkoordinaten}\\ \vspace{-1mm}
+                \begin{equation*}
+                    \resizebox{0.93\textwidth}{!}{$ \displaystyle
+                        \frac{\partial\rho}{\partial t} + \frac{1}{r^2}\frac{\partial\left(r^2\rho u\right)}{\partial r} + \frac{1}{r\,\sin\!\left(\vartheta\right)}\frac{\partial\left(\rho v\sin\!\left(\vartheta\right)\right)}{\partial\vartheta} + \frac{1}{r\,\sin\!\left(\vartheta\right)}\frac{\partial\left(\rho w\right)}{\partial \varphi} = 0
+                    $}
+                \end{equation*}%
+                \vspace{2.75mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
+
+\input{content/impulssatz.tex}
