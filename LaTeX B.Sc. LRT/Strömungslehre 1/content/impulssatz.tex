@@ -5,7 +5,7 @@
 \begin{tikzpicture}[remember picture, overlay]
 
 % --- ERSTE REIHE: Am Seitenursprung anfangen
-\setlength{\rowheight}{50mm}
+\setlength{\rowheight}{44mm}
 
     % X1) Eigene Zeile für die Überschrift
     \setlength{\cellwidth}{190mm}
@@ -20,7 +20,7 @@
     \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Konservativ}\\ \vspace{-1mm}
+            \titlerm{Konservativ}\\ \vspace{7.5mm}
             \begin{align*}
                 \frac{\partial(\rho u)}{\partial t} + \nabla\cdot(\rho\,u\,\underline{v}) &= -\frac{\partial p}{\partial x} + \frac{\partial\tau_{xx}}{\partial x} + \frac{\partial\tau_{yx}}{\partial y} + \frac{\partial\tau_{zx}}{\partial z} + \rho\, f_x \\
                 \frac{\partial(\rho v)}{\partial t} + \nabla\cdot(\rho\,u\,\underline{v}) &= -\frac{\partial p}{\partial y} + \frac{\partial\tau_{xy}}{\partial x} + \frac{\partial\tau_{yy}}{\partial y} + \frac{\partial\tau_{zy}}{\partial z} + \rho\, f_y \\
@@ -33,15 +33,112 @@
     \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Konservativ}\\ \vspace{-1mm}
+            \titlerm{Nicht-Konservativ}\\ \vspace{-3mm}
             \begin{equation*}
                 \rho\,\frac{\text{D}\underline{v}}{\text{D}t} = \text{div}\!\left(\underline{\underline{\sigma}}\right) + \rho\,\underline{f}
-            \end{equation*}
+            \end{equation*}%
+            \vspace{-4mm}
             \begin{align*}
                 \rho\,\frac{\text{D}(\rho u)}{\text{D} t} &= -\frac{\partial p}{\partial x} + \frac{\partial\tau_{xx}}{\partial x} + \frac{\partial\tau_{yx}}{\partial y} + \frac{\partial\tau_{zx}}{\partial z} + \rho\, f_x \\
                 \rho\,\frac{\text{D}(\rho v)}{\text{D} t} &= -\frac{\partial p}{\partial y} + \frac{\partial\tau_{xy}}{\partial x} + \frac{\partial\tau_{yy}}{\partial y} + \frac{\partial\tau_{zy}}{\partial z} + \rho\, f_y \\
                 \rho\,\frac{\text{D}(\rho w)}{\text{D} t} &= -\frac{\partial p}{\partial x} + \frac{\partial\tau_{xz}}{\partial x} + \frac{\partial\tau_{yz}}{\partial y} + \frac{\partial\tau_{zz}}{\partial z} + \rho\, f_z
             \end{align*}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{37mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Integralform}\\ \vspace{-4mm}
+            \begin{equation*}
+                \iiint_V \frac{\partial\left(\rho\,\underline{v}\right)}{\partial t}\,\text{d}V + \oiint_S \rho\,\underline{v}\left(\underline{v}\cdot\underline{n}\right)\,\text{d}S = \iiint_V \rho\,\underline{f}\,\text{d}V + \oiint_S \underline{\underline{\sigma}}\cdot\underline{\text{d}S}
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Stationär}\\ \vspace{-4mm}
+            \begin{equation*}
+                \frac{\text{d}\underline{I}}{\text{d}t} = \oiint_S \rho\,\underline{v}\left(\underline{v}\cdot\underline{n}\right)\,\text{d}S
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Reynold'sches Transporttheorem}\\ \vspace{-1mm}
+            \begin{align*}
+                \frac{\text{D}B}{\text{D}t} &= \frac{\text{D}}{\text{D}t}\,\iiint_{V(t)} b(t)\,\text{d}V = \iiint_{V_0} \frac{\partial b}{\partial t}\,\text{d}V + \iiint_{V_0} \text{div}\!\left(b\,\underline{v}\right)\,\text{d}V \\[2.0ex]
+                \frac{\text{D}\underline{B}}{\text{D}t} &= \frac{\text{D}}{\text{D}t}\,\iiint_{V(t)} \underline{b}(t)\,\text{d}V = \iiint_{V_0} \frac{\partial\underline{b}}{\partial t}\,\text{d}V + \oiint_S \underline{b}\left(\underline{v}\cdot\underline{n}\right)\,\text{d}S
+            \end{align*}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{80mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{66mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Praktischer Einsatz}\\ \vspace{3mm}
+            \begin{tikzpicture}[node distance=8mm, >=Stealth]
+                \node[draw, align=center, rounded corners, minimum width=1cm, minimum height=8mm] (A) {
+                    Wahl des Koordinatensystems
+                };
+                \node[draw, align=center, rounded corners, minimum width=1cm, minimum height=8mm, below=of A] (B) {
+                    Wahl des Kontrollvolumens (KV)
+                };
+                \node[draw, align=center, rounded corners, minimum width=1cm, minimum height=8mm, below=of B] (C) {
+                    Zusammenstellung der Kräfte \\
+                    $\underline{F} = \underline{F}_p + \underline{F}_f + \underline{F}_\text{K} + \underline{F}_\text{R}$
+                };
+                \node[draw, align=center, rounded corners, minimum width=1cm, minimum height=8mm, below=of C] (D) {
+                    Lösung der Gleichung\\[1.0ex]
+                    $\displaystyle\iiint_V \frac{\partial\left(\rho\,\underline{v}\right)}{\partial t}\,\text{d}V + \oiint_S \rho\,\underline{v}\left(\underline{v}\cdot\underline{n}\right)\,\text{d}S = \underline{F} $
+                };
+                \draw[->] (A) -- (B);
+                \draw[->] (B) -- (C);
+                \draw[->] (C) -- (D);
+            \end{tikzpicture}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Druckkräfte $F_p$}\\ \vspace{-3mm}
+            \begin{equation*}
+                \text{d}\underline{F}_p = -p\cdot\underline{n}\,\text{d}S
+            \end{equation*}
+            \begin{equation*}
+                \underline{F}_p = -\oiint_S p\,\underline{n}\,\text{d}S
+            \end{equation*}%
+            \vspace{-1mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlebf{Volumenkräfte $F_f$}\\ \vspace{-3mm}
+            \begin{equation*}
+                \underline{F}_\text{f} = \iiint_V \rho\,\underline{f}\,\text{d}V
+            \end{equation*}%
+            \vspace{1mm}\\
+            \titlerm{Schwerefeld}\\ \vspace{-4mm}
+            \begin{equation*}
+                \text{d}\underline{F}_f = \rho\,\underline{g}\,\text{d}V
+            \end{equation*}
+            \begin{equation*}
+                \underline{F}_f = \iiint_V \rho\,\underline{g}\,\text{d}V
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C3) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{84mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Körperkräfte $F_\mathrm{K}$}\\ \vspace{2mm}
+            \includegraphics[width=\cellwidth-15mm]{images/körperkräfte.pdf}\\ \vspace{-1mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlebf{Reibungskräfte $F_\mathrm{R}$}\\ \vspace{2mm}
+            \includegraphics[width=\cellwidth-15mm]{images/reibungskräfte.pdf}
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
