@@ -1,0 +1,47 @@
+\centering
+\vspace{44mm}
+\section*{\myul{Impulssatz}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{50mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \setlength{\cellwidth}{190mm}
+    \Tile{X1}{([xshift=10mm, yshift=-81mm]current page.north west)}{\cellwidth}{6mm}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Differentialform}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Konservativ}\\ \vspace{-1mm}
+            \begin{align*}
+                \frac{\partial(\rho u)}{\partial t} + \nabla\cdot(\rho\,u\,\underline{v}) &= -\frac{\partial p}{\partial x} + \frac{\partial\tau_{xx}}{\partial x} + \frac{\partial\tau_{yx}}{\partial y} + \frac{\partial\tau_{zx}}{\partial z} + \rho\, f_x \\
+                \frac{\partial(\rho v)}{\partial t} + \nabla\cdot(\rho\,u\,\underline{v}) &= -\frac{\partial p}{\partial y} + \frac{\partial\tau_{xy}}{\partial x} + \frac{\partial\tau_{yy}}{\partial y} + \frac{\partial\tau_{zy}}{\partial z} + \rho\, f_y \\
+                \frac{\partial(\rho w)}{\partial t} + \nabla\cdot(\rho\,u\,\underline{v}) &= -\frac{\partial p}{\partial x} + \frac{\partial\tau_{xz}}{\partial x} + \frac{\partial\tau_{yz}}{\partial y} + \frac{\partial\tau_{zz}}{\partial z} + \rho\, f_z
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{80mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Konservativ}\\ \vspace{-1mm}
+            \begin{equation*}
+                \rho\,\frac{\text{D}\underline{v}}{\text{D}t} = \text{div}\!\left(\underline{\underline{\sigma}}\right) + \rho\,\underline{f}
+            \end{equation*}
+            \begin{align*}
+                \rho\,\frac{\text{D}(\rho u)}{\text{D} t} &= -\frac{\partial p}{\partial x} + \frac{\partial\tau_{xx}}{\partial x} + \frac{\partial\tau_{yx}}{\partial y} + \frac{\partial\tau_{zx}}{\partial z} + \rho\, f_x \\
+                \rho\,\frac{\text{D}(\rho v)}{\text{D} t} &= -\frac{\partial p}{\partial y} + \frac{\partial\tau_{xy}}{\partial x} + \frac{\partial\tau_{yy}}{\partial y} + \frac{\partial\tau_{zy}}{\partial z} + \rho\, f_y \\
+                \rho\,\frac{\text{D}(\rho w)}{\text{D} t} &= -\frac{\partial p}{\partial x} + \frac{\partial\tau_{xz}}{\partial x} + \frac{\partial\tau_{yz}}{\partial y} + \frac{\partial\tau_{zz}}{\partial z} + \rho\, f_z
+            \end{align*}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
