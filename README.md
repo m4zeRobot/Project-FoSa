@@ -43,4 +43,4 @@ Ich möchte den folgenden Personen explizit Dank aussprechen:
 
 R. John, F. Frank, L. Kuhn, M. Höller, P. Weig, R. Reitze, L. Habermalz.
 
-# Es wurde keine generative KI bei der Erstellung dieses Projektes verwendet.
+### Es wurde keine generative KI bei der Erstellung dieses Projektes verwendet.
