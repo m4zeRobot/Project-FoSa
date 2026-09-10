@@ -27,7 +27,7 @@ Ich empfehle die Installation von [TeX-Live auf Windows](https://tug.org/texlive
 <hr/>
 
 ## Einige weitere Anmerkungen zur verwendeten Nomenklatur
-Alle Zeichen entsprechen den Richtlinien für mathematische Darstellungen nach der **DIN 1338**. Das bedeutet:
+Alle Zeichen entsprechen den Richtlinien für mathematische Darstellungen nach der **DIN 1338** / **DIN EN ISO 80000-1:2013**. Das bedeutet:
 - **Variablen** werden stets kursiv geschrieben.
 - **Indizes** werden in der Regel aufrecht geschrieben, da kursive Buchstaben für Variablen stehen. Dies gilt natürlich nicht für Indizes, die selbst Variablen sind, z. B. Zähler wie *i*, *n* usw.
 - **Einheiten** werden stets aufrecht und mit einem Halbraum (`\,`) von der Zahl getrennt geschrieben. Sollte eine Einheit ohne Zahlenwert angegeben werden, so wird diese in eckige Klammern geschrieben.
@@ -42,5 +42,7 @@ Dieses Projekt wäre ohne die großartige Vorarbeit vieler vorangegangener Studi
 Ich möchte den folgenden Personen explizit Dank aussprechen:
 
 R. John, F. Frank, L. Kuhn, M. Höller, P. Weig, R. Reitze, L. Habermalz.
+
+<hr/>
 
 ### Es wurde keine generative KI bei der Erstellung dieses Projektes verwendet.
