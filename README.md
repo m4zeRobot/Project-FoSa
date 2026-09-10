@@ -42,3 +42,5 @@ Dieses Projekt wäre ohne die großartige Vorarbeit vieler vorangegangener Studi
 Ich möchte den folgenden Personen explizit Dank aussprechen:
 
 R. John, F. Frank, L. Kuhn, M. Höller, P. Weig, R. Reitze, L. Habermalz.
+
+# Es wurde keine generative KI bei der Erstellung dieses Projektes verwendet.
