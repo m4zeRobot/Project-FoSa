@@ -1,3 +1,4 @@
+% ### Erste Seite des Impulssatzes ###
 \centering
 \vspace{44mm}
 \section*{\myul{Impulssatz}}
@@ -52,7 +53,7 @@
     \setlength{\cellwidth}{95mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Integralform}\\ \vspace{-4mm}
+            \titlebf{Integralform}\\ \vspace{-4mm}
             \begin{equation*}
                 \iiint_V \frac{\partial\left(\rho\,\underline{v}\right)}{\partial t}\,\text{d}V + \oiint_S \rho\,\underline{v}\left(\underline{v}\cdot\underline{n}\right)\,\text{d}S = \iiint_V \rho\,\underline{f}\,\text{d}V + \oiint_S \underline{\underline{\sigma}}\cdot\underline{\text{d}S}
             \end{equation*}
@@ -67,7 +68,7 @@
     \setlength{\cellwidth}{95mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Reynold'sches Transporttheorem}\\ \vspace{-1mm}
+            \titlebf{Reynold'sches Transporttheorem}\\ \vspace{-1mm}
             \begin{align*}
                 \frac{\text{D}B}{\text{D}t} &= \frac{\text{D}}{\text{D}t}\,\iiint_{V(t)} b(t)\,\text{d}V = \iiint_{V_0} \frac{\partial b}{\partial t}\,\text{d}V + \iiint_{V_0} \text{div}\!\left(b\,\underline{v}\right)\,\text{d}V \\[2.0ex]
                 \frac{\text{D}\underline{B}}{\text{D}t} &= \frac{\text{D}}{\text{D}t}\,\iiint_{V(t)} \underline{b}(t)\,\text{d}V = \iiint_{V_0} \frac{\partial\underline{b}}{\partial t}\,\text{d}V + \oiint_S \underline{b}\left(\underline{v}\cdot\underline{n}\right)\,\text{d}S
@@ -138,7 +139,176 @@
             \includegraphics[width=\cellwidth-15mm]{images/körperkräfte.pdf}\\ \vspace{-1mm}
             \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
             \titlebf{Reibungskräfte $F_\mathrm{R}$}\\ \vspace{2mm}
-            \includegraphics[width=\cellwidth-15mm]{images/reibungskräfte.pdf}
+            \includegraphics[width=\cellwidth-15.5mm]{images/reibungskräfte.pdf}
+        }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{24mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{90mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Carnot-Diffusor}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Druckdifferenz}\\ \vspace{-4mm}
+                \begin{equation*}
+                    \Delta p_v = \frac{\rho}{2}\,u_1^2\left(1-\frac{u_2}{u_1}\right)^2
+                \end{equation*}
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Druckverlustbeiwert}\\ \vspace{-4mm}
+                \begin{equation*}
+                    \zeta = \frac{2\,\Delta p_v}{\rho\,u_1^2} = \left(1-\frac{A_1}{A_2}\right)^2
+                \end{equation*}%
+                \vspace{-2mm}
+            \end{minipage}
+        }{0}{1}{0}{0}
+
+\end{tikzpicture}
+
+% ### Zweite Seite des Impulssatzes ###
+\newpage
+\centering
+\section*{\myul{Impulssatz}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{45mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Eulergleichungen}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Konservativ}\\ \vspace{-4mm}
+            \begin{equation*}
+                \frac{\partial(p\,\underline{v})}{\partial t} + \text{div}\!\left(\rho\cdot\underline{v}\otimes\underline{v}\right) = -\nabla(p) + \rho\,\underline{f}
+            \end{equation*}%
+            \vspace{-4mm}
+            \begin{align*}
+                \frac{\partial(\rho\,u)}{\partial t} + \frac{\partial(\rho\,u^2)}{\partial x} + \frac{\partial(\rho\,u\,v)}{\partial y} + \frac{\partial(\rho\,u\,w)}{\partial z} &= -\frac{\partial p}{\partial x} + \rho\,f_x \\[0.5ex]
+                \frac{\partial(\rho\,v)}{\partial t} + \frac{\partial(\rho\,v\,u)}{\partial x} + \frac{\partial(\rho\,v^2)}{\partial y} + \frac{\partial(\rho\,v\,w)}{\partial z} &= -\frac{\partial p}{\partial y} + \rho\,f_y \\[0.5ex]
+                \frac{\partial(\rho\,w)}{\partial t} + \frac{\partial(\rho\,w\,u)}{\partial x} + \frac{\partial(\rho\,w\,v)}{\partial y} + \frac{\partial(\rho\,w^2)}{\partial z} &= -\frac{\partial p}{\partial z} + \rho\,f_z
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Nicht-Konservativ}\\ \vspace{-3.75mm}
+            \begin{equation*}
+                \rho\,\frac{\text{D}\underline{v}}{\text{D} t} = \rho\left[\frac{\partial\underline{v}}{\partial t} + \underline{v}\cdot\nabla(\underline{v})\right] = -\nabla(p) + \rho\,\underline{f}
+            \end{equation*}%
+            \vspace{-3.5mm}
+            \begin{align*}
+                \rho\,\frac{\partial u}{\partial t} + \rho\,u\,\frac{\partial u}{\partial x} + \rho\,v\,\frac{\partial u}{\partial y} + \rho\,w\,\frac{\partial u}{\partial z} &= -\frac{\partial p}{\partial x} + \rho\,f_x \\[0.5ex]
+                \rho\,\frac{\partial v}{\partial t} + \rho\,u\,\frac{\partial v}{\partial x} + \rho\,v\,\frac{\partial v}{\partial y} + \rho\,w\,\frac{\partial v}{\partial z} &= -\frac{\partial p}{\partial x} + \rho\,f_x \\[0.5ex]
+                \rho\,\frac{\partial w}{\partial t} + \rho\,u\,\frac{\partial w}{\partial x} + \rho\,v\,\frac{\partial w}{\partial y} + \rho\,w\,\frac{\partial w}{\partial z} &= -\frac{\partial p}{\partial x} + \rho\,f_x
+            \end{align*}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{17mm}
+
+    % X2) Eigene Zeile für die Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{14mm}
+        {
+            \titlebf{Bernoulligleichungen}\\ \vspace{2mm}
+            \titlerm{Stationär, Inkompressibel, Reibungsfrei}
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{48mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Allgemein}\\ \vspace{-4mm}
+            \begin{equation*}
+                \rho_0\,\frac{v^2}{2} + p + \rho_0\,U = \text{konst.}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{48mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Energieform}\\ \vspace{-4mm}
+            \begin{equation*}
+                \frac{v^2}{2} + \frac{p}{\rho} + g\,z = \text{konst.}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{47mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Druckform}\\ \vspace{-2.75mm}
+            \begin{equation*}
+                \frac{\rho}{2}\,v^2 + p + \rho\,g\,z = \text{konst.}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{47mm}
+    \Tile{D2}{(C2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Höhenform}\\ \vspace{-4mm}
+            \begin{equation*}
+                \frac{v^2}{2\,g} + \frac{p}{\rho\,g} + z = \text{konst.}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{25mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{123mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{{\color{Mulberry}Instationär}, Inkompressibel, Reibungsfrei}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.61\cellwidth-\TileSep}
+                \centering
+                \titlerm{Allgemein}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \int_1^2 \frac{\partial v}{\partial t}\,\text{d}s + \frac{v_2^2 - v_1^2}{2} + \frac{p_2 - p_1}{\rho} + g\left(z_2 - z_1\right) = 0
+                \end{equation*}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}[t]{0.39\cellwidth-\TileSep}
+                \centering
+                \titlerm{Querdruckgleichung}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \frac{\partial v_n}{\partial t} - \frac{v^2}{r} + \frac{1}{\rho}\,\frac{\partial p}{\partial n} + g\,\frac{\partial z}{\partial n} = 0
+                \end{equation*}%
+                \vspace{-2mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{67mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{{\color{Mulberry}Instationär}, {\color{Mulberry}Kompressibel}, Reibungsfrei}\\ \vspace{1mm}
+            \titlerm{Allgemein}\\ \vspace{-3mm}
+            \begin{equation*}
+                \int_1^2 \frac{\partial v}{\partial t}\,\text{d}s + \frac{v_2^2 - v_1^2}{2} + \int_1^2 \frac{\text{d}p}{\rho} + U_2 - U_1 = 0
+            \end{equation*}
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
