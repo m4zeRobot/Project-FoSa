@@ -1,0 +1,59 @@
+% ### Erste Seite der Navier-Stokes-Gleichungen ###
+\centering
+\section*{\myul{Navier-Stokes-Gleichungen}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{37mm}
+
+    % A1) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{95mm}
+    \Tile{A1}{([xshift=10mm, yshift=-20mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Scherraten-Tensor}\\ \vspace{-4mm}
+            \begin{equation*}
+                \underline{\underline{D}} = 
+                \left(
+                \begin{matrix}
+                    \dfrac{\partial u}{\partial x} & \dfrac{1}{2}\left(\dfrac{\partial u}{\partial y}+\dfrac{\partial v}{\partial x}\right) & \dfrac{1}{2}\left(\dfrac{\partial u}{\partial z}+\dfrac{\partial w}{\partial x}\right) \\[2.5ex]
+                    \dfrac{1}{2}\left(\dfrac{\partial u}{\partial y}+\dfrac{\partial v}{\partial x}\right) & \dfrac{\partial v}{\partial y} & \dfrac{1}{2}\left(\dfrac{\partial v}{\partial z}+\dfrac{\partial w}{\partial y}\right) \\[2.5ex]
+                    \dfrac{1}{2}\left(\dfrac{\partial u}{\partial z}+\dfrac{\partial w}{\partial x}\right) & \dfrac{1}{2}\left(\dfrac{\partial v}{\partial z}+\dfrac{\partial w}{\partial y}\right) & \dfrac{\partial w}{\partial z}
+                \end{matrix}
+                \right)
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Drehgeschwindigkeits-Tensor}\\ \vspace{-4mm}
+            \begin{equation*}
+                \underline{\underline{W}} = 
+                \left(
+                \begin{matrix}
+                    0 & \dfrac{1}{2}\left(\dfrac{\partial u}{\partial y}-\dfrac{\partial v}{\partial x}\right) & \dfrac{1}{2}\left(\dfrac{\partial u}{\partial z}-\dfrac{\partial w}{\partial x}\right) \\[2.5ex]
+                    \dfrac{1}{2}\left(\dfrac{\partial v}{\partial x}-\dfrac{\partial u}{\partial y}\right) & 0 & \dfrac{1}{2}\left(\dfrac{\partial v}{\partial z}-\dfrac{\partial w}{\partial y}\right) \\[2.5ex]
+                    \dfrac{1}{2}\left(\dfrac{\partial w}{\partial x}-\dfrac{\partial u}{\partial z}\right) & \dfrac{1}{2}\left(\dfrac{\partial w}{\partial y}-\dfrac{\partial v}{\partial z}\right) & 0
+                \end{matrix}
+                \right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{37mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Spannungs-Tensor}\\ \vspace{-4mm}
+            \begin{equation*}
+                ttt
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
