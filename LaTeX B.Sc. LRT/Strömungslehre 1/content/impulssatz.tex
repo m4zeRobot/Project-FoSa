@@ -227,7 +227,7 @@
     \Tile{X2}{(A1.south west)}{190mm}{14mm}
         {
             \titlebf{Bernoulligleichungen}\\ \vspace{2mm}
-            \titlerm{Stationär, Inkompressibel, Reibungsfrei}
+            \titlerm{{\color{PineGreen}Stationär}, {\color{PineGreen}Inkompressibel}, {\color{PineGreen}Reibungsfrei}}
         }{0}{0}{0}{0}
 
     % A2) Erste Kachel unten anbauen
@@ -281,7 +281,7 @@
     \setlength{\cellwidth}{123mm}
     \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
         {
-            \titlerm{{\color{Mulberry}Instationär}, Inkompressibel, Reibungsfrei}\\ \vspace{1mm}
+            \titlerm{{\color{Mulberry}Instationär}, {\color{PineGreen}Inkompressibel}, {\color{PineGreen}Reibungsfrei}}\\ \vspace{1mm}
             \begin{minipage}[t]{0.61\cellwidth-\TileSep}
                 \centering
                 \titlerm{Allgemein}\\ \vspace{-3mm}
@@ -304,11 +304,145 @@
     \setlength{\cellwidth}{67mm}
     \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{{\color{Mulberry}Instationär}, {\color{Mulberry}Kompressibel}, Reibungsfrei}\\ \vspace{1mm}
+            \titlerm{{\color{Mulberry}Instationär}, {\color{Mulberry}Kompressibel}, {\color{PineGreen}Reibungsfrei}}\\ \vspace{1mm}
             \titlerm{Allgemein}\\ \vspace{-3mm}
             \begin{equation*}
                 \int_1^2 \frac{\partial v}{\partial t}\,\text{d}s + \frac{v_2^2 - v_1^2}{2} + \int_1^2 \frac{\text{d}p}{\rho} + U_2 - U_1 = 0
             \end{equation*}
         }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{25mm}
+
+    % X4) Eigene Zeile für die Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{8mm}
+        {
+            \titlebf{Anwendungen}
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Venturi-Rohr}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Druckdifferenz}\\ \vspace{-4.5mm}
+                \begin{equation*}
+                    \Delta p = \frac{\rho}{2}\,v_1^2\left[1 - \left(\frac{A_1}{A_2}\right)^2\right]
+                \end{equation*}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Massenstrom}\\ \vspace{-4.5mm}
+                \begin{equation*}
+                    \dot{m} = A_1\,A_2\,\sqrt{\frac{2\,\rho\,\Delta p}{A_2^2 - A_1^2}}
+                \end{equation*}%
+                \vspace{-1.5mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Ausströmen aus Gefäß}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Konstanter Spiegel}\\ \vspace{-4.5mm}
+                \begin{equation*}
+                    v_2 = \sqrt{\frac{2}{\rho}\left(p_1 - p_2\right) + 2\,g\,h}
+                \end{equation*}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Mit Spiegelabsenkung}\\ \vspace{-4.5mm}
+                \begin{equation*}
+                    \Delta t = \frac{A_1}{A_2}\,\sqrt{\frac{2}{g}}\left(\sqrt{z_1}-\sqrt{z_2}\right)
+                \end{equation*}%
+                \vspace{-1.5mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{60mm}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{115mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Prandtl-Rohr}\\ \vspace{1mm}
+            \titlerm{Inkompressibel}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Druckdifferenz}\\ \vspace{-2.5mm}
+                \begin{equation*}
+                    \Delta p = p_0 - p_\infty = \rho_\text{F}\,g\,\Delta z
+                \end{equation*}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Anströmgeschwindigkeit}\\ \vspace{-4.5mm}
+                \begin{equation*}
+                    v_\infty = \sqrt{\frac{2\,\Delta p}{\rho}} = \sqrt{2\,\frac{\rho_\text{F}}{\rho}\,g\,\Delta z}
+                \end{equation*}%
+                \vspace{-1mm}
+            \end{minipage}%
+            \vspace{1.75mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Kompressibel}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.45\cellwidth-\TileSep}
+                \centering
+                \titlerm{Fehlerabschätzung}\\ \vspace{-4.5mm}
+                \begin{equation*}
+                    \frac{v_{\infty\text{,\,komp.}}}{v_{\infty\text{,\,inkomp.}}} \approx \sqrt{1 - \frac{\mathrm{Ma}^2_\infty}{4}}
+                \end{equation*}
+            \end{minipage}%
+            \vrule
+            \begin{minipage}[t]{0.55\cellwidth-\TileSep}
+                \centering
+                \titlerm{Anströmgeschwindigkeit}\\ \vspace{-4.5mm}
+                \begin{equation*}
+                    v_\infty = \sqrt{\frac{2\,\kappa}{\kappa - 1}\,\frac{p_\infty}{\rho_\infty}\left[\left(\frac{p_0}{p_\infty}\right)^{\frac{\kappa-1}{\kappa}}-1\right]}
+                \end{equation*}%
+                \vspace{-1mm}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B5) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{75mm}
+    \Tile{B5}{(A5.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Schwingende Säule}\\ \vspace{-3mm}
+            \begin{equation*}
+                x = x_0\,\cos\!\left(\omega\,t\right)
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlebf{Bewegung auf konzentrischen Bahnen}\\ \vspace{-3mm}
+            \begin{equation*}
+                p(r) = p_1 + \frac{\rho}{2}\,v_1^2\left(1-\frac{r_1^2}{r_2^2}\right)
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- SECHSTE REIHE: Unten anbauen
+\setlength{\rowheight}{100mm}
+
+    % A6) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A6}{(A5.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{2mm}
+            \begin{tabular}{l|c|c|c|c}
+                \xrowht[()]{5mm}                   & \cellcolor{Gray!40}Symbol          & \cellcolor{Gray!40}Inkompressibel & \cellcolor{Gray!40}Kompressibel $\left(\mathrm{Ma} \leq 1\right)$ & \cellcolor{Gray!40}Kompressibel $\left(\mathrm{Ma} > 1\right)$ \\ \hline
+                \xrowht[()]{5mm} \cellcolor{Gray!40}Statischer Druck  & $p$, $p_\text{s}$, $p_\text{stat}$  & $p$                             & $p$                                            & $p$                                         \\ \hline
+                \xrowht[()]{5mm} \cellcolor{Gray!40}Dynamischer Druck & $p_\text{dyn}$                      & $p$                             & $p$                                            & $p$                                         \\ \hline
+                \xrowht[()]{5mm} \cellcolor{Gray!40}Dynamischer Druck & $p_0$, $p_\text{t}$, $p_\text{ges}$ & $p_0 = p + \frac{\rho}{2}\,v^2$ & \multicolumn{2}{c}{$p_0 = p + \frac{\rho}{2}\,v^2 + \Delta p_\text{komp.} = p\left(1 + \frac{\kappa-1}{2}\,\mathrm{Ma}^2\right)^{\frac{\kappa-1}{\kappa}}$} \\ \hline
+                \xrowht[()]{5mm} \cellcolor{Gray!40}Pitotdruck        & $p_\text{pitot}$                    & $p_\text{pitot} = p_0$          & $p_\text{pitot} = p_0$                         & $p_\text{pitot} \leq p_0$                   \\ \hline
+                \xrowht[()]{5mm} \cellcolor{Gray!40}Staudruck         & $q$                                 & $p_0 - p = \frac{\rho}{2}\,v^2$ & $p_0 - p > \frac{\rho}{2}\,v^2$                &
+            \end{tabular}
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
