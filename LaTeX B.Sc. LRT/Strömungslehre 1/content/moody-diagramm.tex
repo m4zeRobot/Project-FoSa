@@ -1,0 +1,54 @@
+\rotatebox{90}{%
+\begin{minipage}{270mm}
+    \centering
+    \section*{\myul{Moody-Diagramm}}
+
+    \begin{minipage}[t]{0.14\textwidth}
+        \centering
+        \titlerm{Laminar}\\ \vspace{2mm}
+        \circled{1}\\ \vspace{-4mm}
+        \begin{equation*}
+            \lambda = \frac{64}{\mathrm{Re}}
+        \end{equation*}
+    \end{minipage}%
+    \vline
+    \begin{minipage}[t]{0.15\textwidth}
+        \centering
+        \titlerm{Blasius}\\ \vspace{2mm}
+        \circled{2}\\ \vspace{-4mm}
+        \begin{equation*}
+            \lambda = \frac{\text{0,3164}}{\sqrt[4]{\mathrm{Re}}}
+        \end{equation*}
+    \end{minipage}%
+    \vline
+    \begin{minipage}[t]{0.23\textwidth}
+        \centering
+        \titlerm{Prandtl}\\ \vspace{2mm}
+        \circled{2}\\ \vspace{-4mm}
+        \begin{equation*}
+            \frac{3}{\sqrt{\lambda}} = 2\,\log_{10}\!\left(\mathrm{Re}\,\sqrt{\lambda}\right) - \text{0,8}
+        \end{equation*}
+    \end{minipage}%
+    \vline
+    \begin{minipage}[t]{0.26\textwidth}
+        \centering
+        \titlerm{Übergangsbereich}\\ \vspace{2mm}
+        \circled{4}\\ \vspace{-4mm}
+        \begin{equation*}
+            \frac{1}{\sqrt{\lambda}} = \text{1,14} - 2\,\log_{10}\!\left(\frac{k_S}{D} + \frac{\text{9,35}}{\mathrm{Re}\,\sqrt{\lambda}}\right)
+        \end{equation*}%
+        \vspace{-2mm}
+    \end{minipage}%
+    \vline
+    \begin{minipage}[t]{0.21\textwidth}
+        \centering
+        \titlerm{Turbulent \& Rau}\\ \vspace{2mm}
+        \circled{5}\\ \vspace{-4mm}
+        \begin{equation*}
+            \lambda = \left(\text{1,14} - 2\,\log_{10}\!\left(\frac{k_S}{D}\right)\right)^{-2}
+        \end{equation*}
+    \end{minipage}%
+    \vspace{5mm}\\
+    \includegraphics[width=\textwidth]{moody-diagramm.pdf}
+\end{minipage}%
+}

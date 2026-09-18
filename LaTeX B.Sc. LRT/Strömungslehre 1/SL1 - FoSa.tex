@@ -56,6 +56,9 @@
     \hspace{-6pt}\addstackgap[0.5\dimexpr#2\relax]{\vphantom{#1}}%
 }
 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
 % ---- Eigene Tabellenlinie mit variabler Dicke definieren
 % Nutzung: \Cline{<erste Spalte>-<letzte Spalte>}{<Dicke>}
 \makeatletter
@@ -145,5 +148,7 @@
 %\include{content/impulssatz.tex} <- in "kontinuitätsgleichung.tex" enthalten
 
 \include{content/navier-stokes-gleichungen.tex}
+
+\include{content/moody-diagramm.tex}
 
 \end{document}
