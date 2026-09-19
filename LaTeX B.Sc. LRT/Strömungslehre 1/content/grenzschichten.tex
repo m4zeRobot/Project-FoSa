@@ -1,0 +1,110 @@
+% ### Erste Seite der Grenzschichten ###
+\centering
+\vspace{31mm} %44mm
+\section*{\myul{Grenzschichten}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{22mm}
+
+    % A1) Erste Kachel relativ zum Seitenursprung
+    \setlength{\cellwidth}{46mm}
+    \Tile{A1}{([xshift=10mm, yshift=-68mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Wandschubspannung}\\ \vspace{-2mm}
+            \begin{equation*}
+                \tau_0 = \frac{\rho\,v_\infty^2}{6}\,\frac{\text{d}\delta}{\text{d}x}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{46mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Grenzschichtdicke}\\ \vspace{-2mm}
+            \begin{equation*}
+                \frac{\delta}{x} = \sqrt{\frac{12\,\nu}{v_\infty\,x}} = \sqrt{\frac{12}{\mathrm{Re}_x}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{98mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlebf{Widerstandsbeiwert}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.48\cellwidth-\TileSep}
+                \centering
+                \titlerm{Lokal}\\ \vspace{-4mm}
+                \begin{equation*}
+                    c_\text{f} = \frac{2}{\sqrt{12\,\mathrm{Re}_x}} = \frac{2\,\tau_0(x)}{\rho\,v_\infty^2}
+                \end{equation*}
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Gesamt}\\ \vspace{-4mm}
+                \begin{equation*}
+                    c_\text{W} = 2\,\sqrt{\frac{\nu}{3\,v_\infty\,x}} = \frac{2}{\sqrt{3\,\mathrm{Re}_x}}
+                \end{equation*}%
+                \vspace{-2.25mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{15mm}
+
+    % X2) Eigene Zeile für die Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{8mm}
+        {
+            \titlebf{Grenzschichtgleichungen}
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Kontinuitätsgleichung}\\ \vspace{-4mm}
+            \begin{equation*}
+                \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{28mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{$y$-Impuls}\\ \vspace{-4mm}
+            \begin{equation*}
+                \frac{\partial p}{\partial y} = 0
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{58mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{$x$-Impuls}\\ \vspace{-4mm}
+            \begin{equation*}
+                u\,\frac{\partial u}{\partial x} + v\,\frac{\partial u}{\partial y} = -\frac{1}{\rho}\,\frac{\partial p}{\partial x} + \nu\,\frac{\partial^2 u}{\partial y^2}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{54mm}
+    \Tile{D2}{(C2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Randbedingungen}\\ \vspace{-5mm}
+            \begin{equation*}
+                \underbrace{u = v = 0}_{y\,=\,0}\qquad \underbrace{u = u_\delta(x)}_{y\,=\,\delta}
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
