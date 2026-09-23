@@ -1,0 +1,85 @@
+% ### Erste Seite der Rohrhydraulik ###
+\centering
+\vspace{44mm}
+\section*{\myul{Rohrhydraulik}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{37mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Bernoulli-Gleichung}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{70mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Stationär}\\ \vspace{-2mm}
+            \begin{equation*}
+                \frac{u_1^2}{2\,g} + \frac{p_1}{\gamma} + z_1 = \frac{u_2^2}{2\,g} + \frac{p_2}{\gamma} + z_2 + H_{\text{E,}\,1\rightarrow 2}
+            \end{equation*}
+            \begin{equation*}
+                \resizebox{\cellwidth-2\TileSep}{!}{%
+                    $\displaystyle\frac{\rho}{2}\,u_1^2 + p_1 + \gamma\,z_1 = \frac{\rho}{2}\,u_2^2 + p_2 + \gamma\,z_2 + \Delta p_{\text{V,}\,1\rightarrow 2}$
+                }
+            \end{equation*}%
+            \vspace{1mm}
+            \begin{equation*}
+                \Delta p_{\text{V,}\,1\rightarrow 2} = \gamma H_{\text{E,}\,1\rightarrow 2}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{38mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Mittelwerte Stationär}\\ \vspace{-3mm}
+            \begin{equation*}
+                \overline{u} = \frac{1}{T}\,\int_{t_1}^{t_1 + T} u(t)\,\text{d}t
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Reynoldszahl}\\ \vspace{-3mm}
+            \begin{equation*}
+                \mathrm{Re}_D = \frac{\overline{u}\,D}{\nu}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{82mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Tatsächlich Instationär}\\ \vspace{-3mm}
+            \begin{equation*}
+                \resizebox{\cellwidth-2\TileSep}{!}{%
+                    $\displaystyle\frac{u_1^2}{2\,g} + \frac{p_1}{\gamma} + z_1 = \frac{u_2^2}{2\,g} + \frac{p_2}{\gamma} + z_2 + \frac{1}{g}\,\int_{s_1}^{s_2} \frac{\partial u}{\partial t}\,\text{d}s + H_{\text{E,}\,1\rightarrow 2}$
+                }
+            \end{equation*}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \titlerm{Universelles Rohrreibungsgesetz}\\ \vspace{1mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \vspace{-2mm}
+                \begin{equation*}
+                    \Delta p_{\text{V,}\,1\rightarrow 2} = \lambda\,\frac{L\,\rho}{2\,D}\,\overline{u}^2
+                \end{equation*}%
+                \vspace{-3mm}
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \vspace{-2mm}
+                \begin{equation*}
+                    h_{\text{r,}\,1\rightarrow 2} = \lambda\,\frac{L\,\overline{u}^2}{2\,D\,g}
+                \end{equation*}%
+                \vspace{-3mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
