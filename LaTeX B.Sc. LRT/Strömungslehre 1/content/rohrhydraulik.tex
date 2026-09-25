@@ -315,11 +315,11 @@
             \begin{minipage}{0.55\cellwidth-\TileSep}
                 \centering
                 \begin{tabular}{c|c|c}
-                    \multicolumn{2}{c|}{\xrowht[()]{2mm} Eintrittskante} & $\zeta_\text{e}$ \\ \hline
-                    \xrowht[()]{2mm} \multirow{3}{*}{a} & Scharf         & 0,5              \\ \cline{2-3}
-                    \xrowht[()]{2mm}                    & Gebrochen      & 0,25             \\ \cline{2-3}
-                    \xrowht[()]{2mm}                    & Gut Abgerundet & 0,06             \\ \hline
-                    \xrowht[()]{2mm} b                  & Vorspringend   & $<$ 3,0
+                    \multicolumn{2}{c|}{\xrowht[()]{2mm} Eintrittskante}  & $\zeta_\text{e}$ \\ \hline
+                    \xrowht[()]{2mm} \multirow{3}{*}{a)} & Scharf         & 0,5              \\ \cline{2-3}
+                    \xrowht[()]{2mm}                     & Gebrochen      & 0,25             \\ \cline{2-3}
+                    \xrowht[()]{2mm}                     & Gut Abgerundet & 0,06             \\ \hline
+                    \xrowht[()]{2mm} b)                  & Vorspringend   & $<$ 3,0
                 \end{tabular}
             \end{minipage}%
             \begin{minipage}{0.45\cellwidth-\TileSep}
@@ -357,16 +357,180 @@
             \end{tabular}
             }
             \\ \vspace{2mm}
-            \begin{minipage}{0.4\cellwidth-\TileSep}
+            \begin{minipage}{0.3\cellwidth-\TileSep}
                 \centering
                 \begin{equation*}
                     \overline{u}_\nu = \frac{Q}{A_\nu}
                 \end{equation*}
             \end{minipage}%
-            \begin{minipage}{0.4\cellwidth-\TileSep}
+            \begin{minipage}{0.6\cellwidth-\TileSep}
                 \centering
-                \includegraphics[width=0.8\textwidth]{images/keil.pdf}
+                \includegraphics[width=0.9\textwidth]{images/rohr-geometrieverlust-schieber.pdf}
             \end{minipage}
         }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Zweite Seite der Rohrhydraulik ###
+\newpage
+\centering
+\vspace{44mm}
+\section*{\myul{Rohrhydraulik}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{100.5mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Verluste durch Rohrgeometrie}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{80mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Krümmer}\\ \vspace{1mm}
+            \includegraphics[width=0.9\cellwidth]{images/krümmer-diagramm.pdf}\\ \vspace{-2mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt}\\ \vspace{1.5mm}
+            \hspace{-2mm}\includegraphics[width=0.82\cellwidth]{images/krümmer-verlustbeiwerte.pdf}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{110mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Verengung}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \myul{Allmähliche Verengung (Düse)}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \Delta p_\text{Düse} = \frac{\rho}{2}\,\overline{u}_2^2\left[1-\left(\frac{A_2}{A_1}\right)^2\right]
+                \end{equation*}
+                \myul{Druckverlustbeiwert}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \zeta_f \approx 0
+                \end{equation*}
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \myul{Plötzliche Verengung}\\ \vspace{-4mm}
+                \begin{equation*}
+                    \Delta p_\text{Eng} = \frac{\rho}{2}\,\overline{u}_2^2\left[1-\left(\frac{A_2^*}{A_1}\right)^2\right]
+                \end{equation*}
+                \myul{Druckverlustbeiwert}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \zeta_f = \left(\frac{A_2}{A_2^*}-1\right)^2 = \left(\frac{1}{\mu}-1\right)^2
+                \end{equation*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{20mm}
+
+    % X2) Eigene Zeile für die Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{12mm}
+        {
+            \titlebf{Diffusor}\\ \vspace{1mm}
+            \titlerm{Allmähliche Erweiterung}
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Ideal}\\ \vspace{-3mm}
+            \begin{equation*}
+                \Delta p_\text{ideal} = \frac{\rho}{2}\,\overline{u}_1^2\left[1-\left(\frac{A_1}{A_2}\right)^2\right]
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Real}\\ \vspace{-3mm}
+            \begin{equation*}
+                \Delta p_\text{real} = \eta\,\frac{\rho}{2}\,\overline{u}_1^2\left[1-\left(\frac{A_1}{A_2}\right)^2\right]
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C2) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{40mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Diffusorwirkungsgrad}\\ \vspace{-3mm}
+            \begin{equation*}
+                \eta = \frac{\Delta p_\text{real}}{\Delta p_\text{ideal}}
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D2) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{D2}{(C2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Druckverlustbeiwert}\\ \vspace{-3mm}
+            \begin{equation*}
+                \zeta = \left(\text{0,12} \dots \text{0,2}\right)\left[1-\left(\frac{A_1}{A_2}\right)^2\right]
+            \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{25mm}
+
+    % X3) Eigene Zeile für die Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{8mm}
+        {
+            \titlerm{Plötzliche Erweiterung}
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{48mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Ideal}\\ \vspace{-1mm}
+            \begin{equation*}
+                \Delta p_\text{ideal} = \frac{\rho}{2}\,\overline{u}_1^2\left[1-\left(\frac{A_1}{A_2}\right)^2\right]
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{56mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Real}\\ \vspace{-1mm}
+            \begin{equation*}
+                \Delta p_\text{Carnot} = \frac{\rho}{2}\,\overline{u}_1^2\left[2\,\frac{A_1}{A_2}\left(1-\frac{A_1}{A_2}\right)\right]
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % C3) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{38mm}
+    \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Druckverlustbeiwert}\\ \vspace{-1mm}
+            \begin{equation*}
+                \zeta = \left(1-\frac{A_1}{A_2}\right)^2
+            \end{equation*}
+        }{0}{1}{1}{0}
+
+    % D3) Vierte Kachel rechts anbauen
+    \setlength{\cellwidth}{48mm}
+    \Tile{D3}{(C3.north east)}{\cellwidth}{\rowheight}
+        {
+            ttt
+        }{0}{0}{1}{0}
 
 \end{tikzpicture}
