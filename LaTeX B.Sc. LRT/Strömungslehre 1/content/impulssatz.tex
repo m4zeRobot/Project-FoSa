@@ -90,7 +90,7 @@
                 };
                 \node[draw, align=center, rounded corners, minimum width=1cm, minimum height=8mm, below=of B] (C) {
                     Zusammenstellung der Kräfte \\
-                    $\underline{F} = \underline{F}_p + \underline{F}_f + \underline{F}_\text{K} + \underline{F}_\text{R}$
+                    $\underline{F} = \underline{F}_p + \underline{F}_\text{f} + \underline{F}_\text{K} + \underline{F}_\text{R}$
                 };
                 \node[draw, align=center, rounded corners, minimum width=1cm, minimum height=8mm, below=of C] (D) {
                     Lösung der Gleichung\\[1.0ex]
@@ -115,17 +115,17 @@
             \end{equation*}%
             \vspace{-1mm}
             \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
-            \titlebf{Volumenkräfte $F_f$}\\ \vspace{-3mm}
+            \titlebf{Volumenkräfte $F_\mathrm{f}$}\\ \vspace{-3mm}
             \begin{equation*}
                 \underline{F}_\text{f} = \iiint_V \rho\,\underline{f}\,\text{d}V
             \end{equation*}%
             \vspace{1mm}\\
             \titlerm{Schwerefeld}\\ \vspace{-4mm}
             \begin{equation*}
-                \text{d}\underline{F}_f = \rho\,\underline{g}\,\text{d}V
+                \text{d}\underline{F}_\text{f} = \rho\,\underline{g}\,\text{d}V
             \end{equation*}
             \begin{equation*}
-                \underline{F}_f = \iiint_V \rho\,\underline{g}\,\text{d}V
+                \underline{F}_\text{f} = \iiint_V \rho\,\underline{g}\,\text{d}V
             \end{equation*}
         }{0}{1}{1}{0}
 
@@ -436,7 +436,7 @@
             \begin{tabular}{l|c|c|c|c}
                 \xrowht[()]{5mm}                   & \cellcolor{Gray!40}Symbol          & \cellcolor{Gray!40}Inkompressibel & \cellcolor{Gray!40}Kompressibel $\left(\mathrm{Ma} \leq 1\right)$ & \cellcolor{Gray!40}Kompressibel $\left(\mathrm{Ma} > 1\right)$ \\ \hline
                 \xrowht[()]{5mm} \cellcolor{Gray!40}Statischer Druck  & $p$, $p_\text{s}$, $p_\text{stat}$  & $p$                             & $p$                                            & $p$                                         \\ \hline
-                \xrowht[()]{5mm} \cellcolor{Gray!40}Staudruck         & $q$, $p_\text{dyn}$                 & $p_\text{dyn} = p_0 - p = \frac{\rho}{2}\,v^2$ & $p_\text{dyn} = p_0 - p > \frac{\rho}{2}\,v^2$                & \\ \hline
+                \xrowht[()]{5mm} \cellcolor{Gray!40}Dynamischer Druck & $q$, $p_\text{dyn}$                 & $p_\text{dyn} = p_0 - p = \frac{\rho}{2}\,v^2$ & $p_\text{dyn} = p_0 - p > \frac{\rho}{2}\,v^2$                & \\ \hline
                 \xrowht[()]{5mm} \cellcolor{Gray!40}Totaldruck & $p_0$, $p_\text{t}$, $p_\text{ges}$ & $p_0 = p + \frac{\rho}{2}\,v^2$ & \multicolumn{2}{c}{$p_0 = p + \frac{\rho}{2}\,v^2 + \Delta p_\text{komp.} = p\left(1 + \frac{\kappa-1}{2}\,\mathrm{Ma}^2\right)^{\frac{\kappa-1}{\kappa}}$} \\ \hline
                 \xrowht[()]{5mm} \cellcolor{Gray!40}Pitotdruck        & $p_\text{pitot}$                    & $p_\text{pitot} = p_0$          & $p_\text{pitot} = p_0$                         & $p_\text{pitot} \leq p_0$
             \end{tabular}
