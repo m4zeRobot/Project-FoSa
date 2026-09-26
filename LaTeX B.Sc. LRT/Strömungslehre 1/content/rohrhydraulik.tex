@@ -410,23 +410,30 @@
                 \myul{Allmähliche Verengung (Düse)}\\ \vspace{-3mm}
                 \begin{equation*}
                     \Delta p_\text{Düse} = \frac{\rho}{2}\,\overline{u}_2^2\left[1-\left(\frac{A_2}{A_1}\right)^2\right]
-                \end{equation*}
-                \myul{Druckverlustbeiwert}\\ \vspace{-3mm}
+                \end{equation*}%
+                \\ \vspace{1.1mm}
+                \myul{Druckverlustbeiwert}\\ \vspace{-2.1mm}
                 \begin{equation*}
-                    \zeta_f \approx 0
-                \end{equation*}
+                    \zeta_\text{f} \approx 0
+                \end{equation*}%
+                \\ \vspace{4mm}
+                \includegraphics[width=0.75\textwidth]{images/verengung-allmählich.pdf}
             \end{minipage}%
             \vline
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
-                \myul{Plötzliche Verengung}\\ \vspace{-4mm}
+                \myul{Plötzliche Verengung}\\ \vspace{-5mm}
                 \begin{equation*}
                     \Delta p_\text{Eng} = \frac{\rho}{2}\,\overline{u}_2^2\left[1-\left(\frac{A_2^*}{A_1}\right)^2\right]
                 \end{equation*}
                 \myul{Druckverlustbeiwert}\\ \vspace{-3mm}
                 \begin{equation*}
-                    \zeta_f = \left(\frac{A_2}{A_2^*}-1\right)^2 = \left(\frac{1}{\mu}-1\right)^2
-                \end{equation*}
+                    \zeta_\text{f} = \left(\frac{A_2}{A_2^*}-1\right)^2 = \left(\frac{1}{\mu}-1\right)^2
+                \end{equation*}%
+                \\ \vspace{1.1mm}
+                \includegraphics[width=0.75\textwidth]{images/verengung-plötzlich.pdf}\\ \vspace{4mm}
+                \includegraphics[width=0.7\textwidth]{images/verengung-plötzlich-diagramm.pdf} \hspace{3.25mm}%
+                \vspace{6.4mm}
             \end{minipage}
         }{0}{0}{1}{0}
 
@@ -498,7 +505,7 @@
     \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Ideal}\\ \vspace{-1mm}
+            \titlerm{Ideal}\\ \vspace{-0.5mm}
             \begin{equation*}
                 \Delta p_\text{ideal} = \frac{\rho}{2}\,\overline{u}_1^2\left[1-\left(\frac{A_1}{A_2}\right)^2\right]
             \end{equation*}
@@ -509,7 +516,7 @@
     \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Real}\\ \vspace{-1mm}
+            \titlerm{Real}\\ \vspace{0.3mm}
             \begin{equation*}
                 \Delta p_\text{Carnot} = \frac{\rho}{2}\,\overline{u}_1^2\left[2\,\frac{A_1}{A_2}\left(1-\frac{A_1}{A_2}\right)\right]
             \end{equation*}
@@ -520,7 +527,7 @@
     \Tile{C3}{(B3.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Druckverlustbeiwert}\\ \vspace{-1mm}
+            \titlerm{Druckverlustbeiwert}\\ \vspace{-0.2mm}
             \begin{equation*}
                 \zeta = \left(1-\frac{A_1}{A_2}\right)^2
             \end{equation*}
@@ -530,7 +537,8 @@
     \setlength{\cellwidth}{48mm}
     \Tile{D3}{(C3.north east)}{\cellwidth}{\rowheight}
         {
-            ttt
+            \vspace{-\TileSep}
+            \includegraphics[height=\rowheight-\TileSep]{images/diffusor.pdf}
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
