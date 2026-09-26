@@ -24,6 +24,11 @@ Ich empfehle die Installation von [TeX-Live auf Windows](https://tug.org/texlive
 - [LaTeX Utilities](https://marketplace.visualstudio.com/items?itemName=tecosaur.latex-utilities) von tecosaur
 - Optional: [LTeX](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex) von Julian Valentin (Rechtschreib-Korrektur, bei Formelsammlungen eher überflüssig)
 
+## Tipps zum Bearbeiten der Vektorgrafiken
+Alle Vektorgrafiken wurden mit PowerPoint erstellt und anschließend als PDF gespeichert.
+
+Jede Grafik wurde nach dem Speichern noch einmal in dem Open Source Vektorgrafik-Editor [Inkscape](https://inkscape.org/) nachbearbeitet; Inkscape empfielt sich daher zur einfachen Bearbeitung der bereits existierenden PDF-Grafiken.
+
 <hr/>
 
 ## Einige weitere Anmerkungen zur verwendeten Nomenklatur
