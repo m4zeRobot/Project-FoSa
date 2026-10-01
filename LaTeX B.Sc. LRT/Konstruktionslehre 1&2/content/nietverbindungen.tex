@@ -5,7 +5,7 @@
 \begin{tikzpicture}[remember picture, overlay]
 
 % --- ERSTE REIHE: Am Seitenursprung anfangen
-\setlength{\rowheight}{50mm}
+\setlength{\rowheight}{49mm}
 
     % X1) Eigene Zeile für die Überschrift
     \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{18mm}
@@ -31,7 +31,7 @@
                 s &= \text{Minimale Blechdicke}
             \end{align*}
             }%
-            \vspace{-1mm}
+            \\ \vspace{1mm}
             \includegraphics[width=\dimexpr\cellwidth-2\TileSep]{images/niete.pdf}
         }{0}{1}{1}{0}
 
@@ -50,8 +50,8 @@
                 P_\text{B} &= \text{Bemessungs-Bruchlast}                  \\
                 P_\text{V} &= \text{Versagenslast}                         \\
                 R_\text{C} &= \text{Scherfestigkeit}                       \\
-                d_\text{R} &= \text{Nietschaftdurchmesser}                 \\
-                           &= d \text{ (Pass- und Blindniet)}              \\
+                d_\text{R} &= \text{Nietschaftdurchmesser}                 \\[-0.6ex]
+                           &= d \text{ (Pass- und Blindniet)}              \\[-0.6ex]
                            &= d + \text{0,05\,mm} \text{ (Geschlag. Niet)} \\
                 n          &= \text{Nietzahl}                              \\
                 m          &= \text{Schnittigkeit}
@@ -106,6 +106,85 @@
                 R_\text{p0,2} &= \text{Dehngrenze}
             \end{align*}
             }
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{72mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Lochleibung (Universalniete)}\\ \vspace{-4mm}
+            \begin{equation*}
+                P_\text{B} \stackrel{!}{\leq} P_\text{V} = d_\text{R}~s~n~\text{min}\!
+                \begin{cases}
+                    \sigma_\text{LB} \\
+                    \text{1,5}~\sigma_\text{L2}
+                \end{cases}
+            \end{equation*}%
+            \vspace{-3.5mm}
+            {\scriptsize
+            \begin{align*}
+                P_\text{B}       &= \text{Bemessungs-Bruchlast}                  \\
+                P_\text{V}       &= \text{Versagenslast}                         \\
+                d_\text{R}       &= \text{Nietschaftdurchmesser}                 \\[-0.6ex]
+                                 &= d \text{ (Pass- und Blindniet)}              \\[-0.6ex]
+                                 &= d + \text{0,05\,mm} \text{ (Geschlag. Niet)} \\
+                s                &= \text{Dünnste Blechdicke}                    \\
+                n                &= \text{Nietzahl}                              \\
+                \sigma_\text{LB} &= \text{Lochleibungsfestigkeit}                \\
+                \sigma_\text{L2} &= \text{Lochleibungsgrenze}                    \\
+                (\sigma_\text{L} &= \text{Lochleibungsspannung})
+            \end{align*}
+            }%
+            \\ \vspace{-1mm}
+            \titlerm{Beachte:}\\ \vspace{1mm}
+            $P_\text{B} = j~j_\text{s}~P_\text{S}$\quad\textbf{oder}\quad$P_\text{B} = d_\text{R}~s~n~\sigma_\text{L}$
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{125mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Lochleibung (Senkniete)}\\ \vspace{-3.5mm}
+            \begin{equation*}
+                P_\text{B} \stackrel{!}{\leq} P_\text{V,LB} = P_\text{V,LB1} + P_\text{V,LB2}\qquad\text{mit: }
+                \begin{array}{l}
+                    P_\text{V,LB1} = d_\text{R}~(s - t)~\sigma_\text{L,min} \\
+                    P_\text{V,LB2} = d_\text{R}~t~\alpha~\sigma_\text{L,min}
+                \end{array}
+            \end{equation*}
+            \vspace{-2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                {\scriptsize
+                \begin{align*}
+                    P_\text{B}     &= \text{Bemessungs-Bruchlast}                  \\
+                    P_\text{V,LB}  &= \text{Gesamt-Versagenslast}                  \\
+                    P_\text{V,LB1} &= \text{Zylindrischer Teil}                    \\
+                    P_\text{V,LB2} &= \text{Konischer Teil}                        \\
+                    s              &= \text{Blechdiche (konisch)}                  \\
+                    t              &= \text{Senktiefe}                             \\
+                    \alpha         &= \text{Abminderungsfaktor}                    \\
+                    d_\text{R}     &= \text{Nietschaftdurchmesser}                 \\[-0.6ex]
+                                   &= d \text{ (Pass- und Blindniet)}              \\[-0.6ex]
+                                   &= d + \text{0,05\,mm} \text{ (Geschlag. Niet)}
+                \end{align*}
+                }%
+                \\ \vspace{-7mm}
+                \begin{equation*}
+                    \sigma_\text{L,min} = \text{min}\!
+                    \begin{cases}
+                        \sigma_\text{LB} \\
+                        \text{1,5}~\sigma_\text{L2}
+                    \end{cases}
+                \end{equation*}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                ttt
+            \end{minipage}
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
