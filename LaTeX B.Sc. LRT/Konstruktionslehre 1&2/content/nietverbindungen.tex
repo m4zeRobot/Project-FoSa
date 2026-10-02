@@ -4,6 +4,12 @@
 
 \begin{tikzpicture}[remember picture, overlay]
 
+% Klebefläche für das erste Register:
+\Tile{K}{([xshift=202mm, yshift=-11mm]current page.north west)}{8mm}{22mm}{%
+    \vspace{4.5mm}\hspace{-3mm}%
+    \rotatebox{90}{Nieten}
+}{1}{0}{1}{1}
+
 % --- ERSTE REIHE: Am Seitenursprung anfangen
 \setlength{\rowheight}{49mm}
 
@@ -109,13 +115,13 @@
         }{0}{0}{1}{0}
 
 % --- ZWEITE REIHE: Am Seitenursprung anfangen
-\setlength{\rowheight}{72mm}
+\setlength{\rowheight}{78mm}
 
     % A2) Erste Kachel unten anbauen
     \setlength{\cellwidth}{65mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Lochleibung (Universalniete)}\\ \vspace{-4mm}
+            \titlebf{Lochleibung (Universalniete)}\\ \vspace{-3mm}
             \begin{equation*}
                 P_\text{B} \stackrel{!}{\leq} P_\text{V} = d_\text{R}~s~n~\text{min}\!
                 \begin{cases}
@@ -138,8 +144,8 @@
                 (\sigma_\text{L} &= \text{Lochleibungsspannung})
             \end{align*}
             }%
-            \\ \vspace{-1mm}
-            \titlerm{Beachte:}\\ \vspace{1mm}
+            \\ \vspace{1mm}
+            \titlerm{Beachte:}\\ \vspace{2mm}
             $P_\text{B} = j~j_\text{s}~P_\text{S}$\quad\textbf{oder}\quad$P_\text{B} = d_\text{R}~s~n~\sigma_\text{L}$
         }{0}{1}{1}{0}
 
@@ -147,7 +153,7 @@
     \setlength{\cellwidth}{125mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Lochleibung (Senkniete)}\\ \vspace{-3.5mm}
+            \titlebf{Lochleibung (Senkniete)}\\ \vspace{-2.25mm}
             \begin{equation*}
                 P_\text{B} \stackrel{!}{\leq} P_\text{V,LB} = P_\text{V,LB1} + P_\text{V,LB2}\qquad\text{mit: }
                 \begin{array}{l}
@@ -155,9 +161,10 @@
                     P_\text{V,LB2} = d_\text{R}~t~\alpha~\sigma_\text{L,min}
                 \end{array}
             \end{equation*}
-            \vspace{-2mm}
-            \begin{minipage}{0.5\cellwidth-\TileSep}
+            \vspace{-1mm}
+            \begin{minipage}[t]{0.47\cellwidth-\TileSep}
                 \centering
+                \vspace{-16.75mm}
                 {\scriptsize
                 \begin{align*}
                     P_\text{B}     &= \text{Bemessungs-Bruchlast}                  \\
@@ -172,7 +179,7 @@
                                    &= d + \text{0,05\,mm} \text{ (Geschlag. Niet)}
                 \end{align*}
                 }%
-                \\ \vspace{-7mm}
+                \\ \vspace{-5mm}
                 \begin{equation*}
                     \sigma_\text{L,min} = \text{min}\!
                     \begin{cases}
@@ -181,10 +188,212 @@
                     \end{cases}
                 \end{equation*}
             \end{minipage}%
-            \begin{minipage}{0.5\cellwidth-\TileSep}
+            \begin{minipage}[t]{0.53\cellwidth-\TileSep}
                 \centering
-                ttt
+                \includegraphics[width=0.75\textwidth]{images/niete-senkkopf.pdf}\\ \vspace{1mm}
+                \includegraphics[width=0.85\textwidth]{images/niete-diagramm.pdf}
             \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{122mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{65mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Nietrechnungstabelle}\\ \vspace{-3.5mm}
+            \begin{equation*}
+                n \stackrel{!}{\geq} \frac{P_\text{B}}{P_\text{V,N}}
+            \end{equation*}%
+            \vspace{-4.5mm}
+            {\scriptsize
+            \begin{align*}
+                n            &= \text{Minimale Nietzahl}      \\[-0.5ex]
+                P_\text{B}   &= \text{Bemessungs-Bruchlast}   \\[-0.5ex]
+                P_\text{V,N} &= \text{Versagenslast pro Niet}
+            \end{align*}
+            }%
+            \resizebox{\cellwidth-2\TileSep}{!}{%
+            \begin{tabular}{|c|ccccc|c|}
+                \hline
+                \xrowht[()]{2mm} \multirow{5}{*}{\begin{tabular}[c]{@{}c@{}}Blechdicke\\ $s$\end{tabular}} & \multicolumn{5}{c|}{$d$} & \multirow{5}{*}{\begin{tabular}[c]{@{}c@{}}Vorraussetz.\\ für die\\ Berechnung\end{tabular}} \\ \cline{2-6}
+                \xrowht[()]{2mm}  & \multicolumn{1}{c|}{2,4} & \multicolumn{1}{c|}{3,2} & \multicolumn{1}{c|}{4,0} & \multicolumn{1}{c|}{4,8} & 5,6 & \\ \cline{2-6}
+                \xrowht[()]{6.5mm}  & \multicolumn{5}{c|}{\begin{tabular}[c]{@{}c@{}}Bruchlasten $\left[\sfrac{\text{N}}{\text{Niet}}\right]$ für\\ einschnittige Verbindungen\end{tabular}}  &  \\ \hline
+                \xrowht[()]{2mm} 0,8 & \multicolumn{1}{c|}{\color{NavyBlue}1240} & \multicolumn{1}{c|}{\color{NavyBlue}1640} & \multicolumn{1}{c|}{\color{NavyBlue}2040} & \multicolumn{1}{c|}{\color{NavyBlue}2440} & \color{ForestGreen}* & \multirow{16.5}{*}{\begin{tabular}[c]{@{}c@{}}$\dfrac{d}{s} \leq \text{5,5}$\\[4.0ex] $\dfrac{e}{d} \geq \text{2,0}$\end{tabular}} \\ \cline{1-6}
+                \xrowht[()]{2mm} 1,0 & \multicolumn{1}{c|}{\color{NavyBlue}1540} & \multicolumn{1}{c|}{\color{NavyBlue}2050} & \multicolumn{1}{c|}{\color{NavyBlue}2550} & \multicolumn{1}{c|}{\color{NavyBlue}3060} & \color{ForestGreen}* & \\ \cline{1-6}
+                \xrowht[()]{2mm} 1,2 & \multicolumn{1}{c|}{\color{NavyBlue}1630} & \multicolumn{1}{c|}{\color{NavyBlue}2460} & \multicolumn{1}{c|}{\color{NavyBlue}3060} & \multicolumn{1}{c|}{\color{NavyBlue}3670} & \color{NavyBlue}4270 & \\ \cline{1-6}
+                \xrowht[()]{2mm} 1,4 & \multicolumn{1}{c|}{\color{NavyBlue}1710} & \multicolumn{1}{c|}{\color{NavyBlue}2740} & \multicolumn{1}{c|}{\color{NavyBlue}3570} & \multicolumn{1}{c|}{\color{NavyBlue}4280} & \color{NavyBlue}4980 & \\ \cline{1-6}
+                \xrowht[()]{2mm} 1,5 & \multicolumn{1}{c|}{\multirow{11.8}{*}{\color{Red}1791}} & \multicolumn{1}{c|}{\color{NavyBlue}2800} & \multicolumn{1}{c|}{\color{NavyBlue}3830} & \multicolumn{1}{c|}{\color{NavyBlue}4580} & \color{NavyBlue}5340 & \\ \cline{1-1} \cline{3-6}
+                \xrowht[()]{2mm} 1,6 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\color{NavyBlue}2880} & \multicolumn{1}{c|}{\color{NavyBlue}4080} & \multicolumn{1}{c|}{\color{NavyBlue}4890} & \color{NavyBlue}5700 & \\ \cline{1-1} \cline{3-6}
+                \xrowht[()]{2mm} 1,8 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\color{NavyBlue}3020} & \multicolumn{1}{c|}{\color{NavyBlue}4320} & \multicolumn{1}{c|}{\color{NavyBlue}5460} & \color{NavyBlue}6400 & \\ \cline{1-1} \cline{3-6}
+                \xrowht[()]{2mm} 2,0 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\multirow{7.8}{*}{\color{Red}3152}} & \multicolumn{1}{c|}{\color{NavyBlue}4460} & \multicolumn{1}{c|}{\color{NavyBlue}5860} & \color{NavyBlue}7120 & \\ \cline{1-1} \cline{4-6}
+                \xrowht[()]{2mm} 2,5 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\color{NavyBlue}4850} & \multicolumn{1}{c|}{\color{NavyBlue}\color{NavyBlue}6200} & \color{NavyBlue}7950 & \\ \cline{1-1} \cline{4-6}
+                \xrowht[()]{2mm} 3,0 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{\multirow{5}{*}{\color{Red}4895}} & \multicolumn{1}{c|}{\multirow{5}{*}{\color{Red}6466}} & \color{NavyBlue}8500 & \\ \cline{1-1} \cline{6-6}
+                \xrowht[()]{2mm} 3,2 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multirow{4}{*}{\color{Red}8775} & \\ \cline{1-1}
+                \xrowht[()]{2mm} 4,0 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} &  &  \\ \cline{1-1}
+                \xrowht[()]{2mm} 5,0 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} &  &  \\ \hline
+                \xrowht[()]{7mm} \begin{tabular}[c]{@{}c@{}}Scherkraft\\ $\left[\sfrac{\text{N}}{\text{Niet}}\right]$\end{tabular} & \multicolumn{1}{c|}{1791} & \multicolumn{1}{c|}{3152} & \multicolumn{1}{c|}{4895} & \multicolumn{1}{c|}{6466} & 8775 &  \\ \hline
+                \xrowht[()]{10mm} \begin{tabular}[c]{@{}c@{}}Kopfzug-\\ Bruchkraft\\ $\left[\sfrac{\text{N}}{\text{Niet}}\right]$\end{tabular} & \multicolumn{1}{c|}{1112} & \multicolumn{1}{c|}{1668} & \multicolumn{1}{c|}{2958} & \multicolumn{1}{c|}{4270} & 5665 &  \\ \hline
+            \end{tabular}
+            }%
+            {\scriptsize
+                \begin{align*}
+                \text{Nietwerkstoff: }&\text{Titan T40 (3.7024)}            \\[-0.5ex]
+                \text{Bauteilwerkstoffe: }&\text{3.1364 T42 und 3.1354 T42}
+            \end{align*}%
+            \\ \vspace{-8mm}
+            \begin{align*}
+                \color{NavyBlue}\text{Blau: }    &\color{NavyBlue}\text{Lochleibung Dimensionierend} \\[-0.5ex]
+                \color{Red}\text{Rot: }          &\color{Red}\text{Abscherung Dimensionierend}       \\[-0.5ex]
+                \color{ForestGreen}\text{Grün: } &\color{ForestGreen}\text{Zu geringe Blechdicke}
+            \end{align*}%
+            }%
+        }{0}{1}{0}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{125mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Versagensdiagramme}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Universalniet}\\ \vspace{-4mm}
+                \begin{equation*}
+                    \overline{s} = \frac{P_\text{V,S}}{\text{min}\!\left\{\sigma_\text{LB}\,;~\text{1,5}~\sigma_\text{L2}\right\}~d_\text{R}}
+                \end{equation*}%
+                \\ \vspace{-3mm}
+                {\scriptsize
+                \begin{align*}
+                    \overline{s}     &= \text{Blechdicke}                            \\
+                    P_\text{V,S}     &= \text{Versagenslast}                         \\
+                    \sigma_\text{LB} &= \text{Lochleibungsfestigkeit}                \\
+                    \sigma_\text{L2} &= \text{Lochleibungsgrenze}                    \\
+                    d_\text{R}       &= \text{Nietschaftdurchmesser}                 \\[-0.6ex]
+                                     &= d \text{ (Pass- und Blindniet)}              \\[-0.6ex]
+                                     &= d + \text{0,05\,mm} \text{ (Geschlag. Niet)}
+                \end{align*}
+                }%
+                \includegraphics[width=0.92\textwidth]{images/versagensdiagramm-universalniet.pdf}\\ \vspace{3mm}
+                \begin{tabular}{l|c|c|c}
+                    \xrowht[()]{1.6mm}                               & $U$  & $V$ & $T$      \\ \hline
+                    \xrowht[()]{1.6mm}\color{Red}Passniete           & 0,85 & 1,3 & 0        \\ \hline
+                    \xrowht[()]{1.6mm}\color{Red}Vollniete           & 0,75 & 1,5 & 0        \\ \hline
+                    \xrowht[()]{1.6mm}\color{YellowOrange}Blindniete & 0,60 & 1,7 & 0,05~$d$
+                \end{tabular}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Senkniet}\\ \vspace{-3.25mm}
+                \begin{equation*}
+                    \Delta s = t\,\left(1-\alpha\right)
+                \end{equation*}%
+                \\ \vspace{-2.55mm}
+                {\scriptsize
+                \begin{align*}
+                    \Delta s   &= \text{Blechdicke}                              \\
+                    P_\text{A} &= P_\text{V,LB2}~\text{(Lochleibung in Senkung)} \\
+                    t          &= \text{Senktiefe}                               \\
+                    \alpha     &= \text{Abminderungsfaktor (Schub)}              \\
+                    U, V       &= \text{Abminderungsfaktoren}                    \\
+                    T          &= \text{Auftretender Schlupf}
+                \end{align*}
+                }%
+                \\ \vspace{2.6mm}
+                \includegraphics[width=0.91\textwidth]{images/versagensdiagramm-senkniet.pdf}
+            \end{minipage}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Zweite Seite der Nietverbindungen ###
+\newpage
+\centering
+\section*{\myul{Nietverbindungen}}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{37mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Interaktionshypothesen (Schub- \& Zugbelastung)}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{52mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Versagen durch Zug}\\ \vspace{-3mm}
+            \begin{equation*}
+                \resizebox{\dimexpr\cellwidth-2\TileSep}{!}{%
+                $\displaystyle P_\text{B} \stackrel{!}{\leq} P_\text{V,Z} = \frac{\pi~d^2}{4}~\text{min}\!
+                \begin{cases}
+                    R_\text{m} \\
+                    \text{1,5}~R_\text{p0,2}
+                \end{cases}$
+                }
+            \end{equation*}%
+            \\ \vspace{-3mm}
+            \begin{align*}
+                P_\text{B,Z}  &= \text{Bemessungs-Bruchlast}   \\
+                d             &= \text{Nietschaft-Durchmesser} \\
+                R_\text{p0,2} &= \text{Dehngrenze}
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{49mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Ausnutzungsverhältnis (Zug)}\\ \vspace{-3mm}
+            \begin{equation*}
+                R_\text{Z} = \frac{P_\text{B,Z}}{P_\text{V,Z}~K}
+            \end{equation*}%
+            \\ \vspace{-3mm}
+            \begin{align*}
+                P_\text{V,Z} &= \text{Versangenslast}        \\
+                K            &= \text{Abminderungsfaktor}    \\
+                R_\text{Z}   &= \text{Ausnutzungsverhältnis}
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % C1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{52mm}
+    \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Ausnutzungsverhältnis (Schub)}\\ \vspace{-3mm}
+            \begin{equation*}
+                R_\text{S} = \frac{P_\text{B,S}}{P_\text{V,S}}
+            \end{equation*}%
+            \\ \vspace{-3mm}
+            \begin{align*}
+                P_\text{B,S} &= \text{Bemessungs-Bruchlast}                              \\
+                P_\text{V,S} &= \text{min}\!\left\{P_\text{V,S}\,;~P_\text{V,LB}\right\} \\
+                R_\text{S}   &= \text{Ausnutzungsverhältnis}
+            \end{align*}
+        }{0}{1}{1}{0}
+
+    % D1) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{37mm}
+    \Tile{D1}{(C1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Reservefaktor}\\ \vspace{-3mm}
+            \begin{equation*}
+                \mu = \frac{\overline{\text{OS}}}{\overline{\text{OP}}} \stackrel{!}{\geq} 1
+            \end{equation*}%
+            \\ \vspace{-3mm}
+            \begin{align*}
+                \mu                  &= \text{Reservefaktor} \\
+                \overline{\text{OS}} &= \text{Distanz O - S} \\
+                \overline{\text{OP}} &= \text{Distanz O - P}
+            \end{align*}
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
