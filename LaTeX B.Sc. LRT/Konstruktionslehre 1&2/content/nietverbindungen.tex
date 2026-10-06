@@ -422,11 +422,11 @@
             \end{minipage}%
             \begin{minipage}{0.26\cellwidth}
                 \centering
-                ttt
+                \includegraphics[width=0.9\textwidth]{images/nieten-interaktionsdiagramm-1.pdf}
             \end{minipage}%
             \begin{minipage}{0.26\cellwidth}
                 \centering
-                ttt
+                \includegraphics[width=0.9\textwidth]{images/nieten-interaktionsdiagramm-2.pdf}
             \end{minipage}%
             \begin{minipage}{0.22\cellwidth-\TileSep}
                 \centering
@@ -439,6 +439,63 @@
                     \item[~] Beispiel A: 99\,\% Zug\\[-0.3ex] bei 60\,\% Schub zulässig
                 \end{itemize}
             \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{50mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{90mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            ttt
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{100mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Abminderungsfaktor $K$}\\ \vspace{1mm}
+            \resizebox{70mm}{!}{%
+            \begin{tabular}{l|cc|cc}
+                \xrowht[()]{2.2mm}                                                                     & \multicolumn{2}{c|}{Kurve}                                                                                                               & \multicolumn{2}{c}{$K$}                                                                       \\ \hline
+                \xrowht[()]{5.5mm} Verbindungselement                                                                  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Dicke\\ Bauteile\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Dünne\\ Bauteile\end{tabular} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Normale\\ Lastfälle\end{tabular}} & Crashfälle \\ \cline{1-1}
+                \xrowht[()]{5.5mm} \begin{tabular}[c]{@{}l@{}}Stahl- / Titanschrauben\\ -Schraubpassniete\end{tabular} & \multicolumn{1}{c|}{A}                                                        & C                                                        & \multicolumn{1}{c|}{1,0}                                                         & 1,0        \\ \cline{1-1}
+                \xrowht[()]{5.5mm} \begin{tabular}[c]{@{}l@{}}Aluminium\\ -Schraubpassniete\end{tabular}               & \multicolumn{1}{c|}{B}                                                        & C                                                        & \multicolumn{1}{c|}{1,0}                                                         & 1,0        \\ \cline{1-1}
+                \xrowht[()]{5.5mm} \begin{tabular}[c]{@{}l@{}}Passniete mit\\ gequetschtem Collar\end{tabular}         & \multicolumn{1}{c|}{D}                                                        & D                                                        & \multicolumn{1}{c|}{0,8}                                                         & 1,0        \\ \cline{1-1}
+                \xrowht[()]{2.2mm} Vollniete                                                                           & \multicolumn{1}{c|}{D}                                                        & D                                                        & \multicolumn{1}{c|}{0,5}                                                         & 1,0        \\ \cline{1-1}
+                \xrowht[()]{2.2mm} Blindniete                                                                          & \multicolumn{1}{c|}{D}                                                        & D                                                        & \multicolumn{1}{c|}{0,2}                                                         & 1,0       
+            \end{tabular}
+            }%
+            \\ \vspace{2mm}
+            {\tiny
+            Dicke Bauteile: Versagen aufgrund von Scherung der Niete bei reiner Schubbelastung\\[-1.5ex]
+            Dünne Bauteile: Versagen aufgrund von Lochleibung bei reiner Schubbelastung}
+        }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{50mm}
+
+    % X4) Eigene Zeile für die Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{8mm}
+        {
+            \titlebf{Informationen}
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Abminderungsfaktor $K$}\\ \vspace{1mm}
+
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Abminderungsfaktor $K$}\\ \vspace{1mm}
+            
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
