@@ -2,13 +2,21 @@
 \centering
 \section*{\myul{Nietverbindungen}}
 
+% Klebefläche für das erste Register:
+\begin{tikzpicture}[remember picture, overlay, x=1mm, y=-1mm]
+    \begin{scope}[shift={(current page.north west)}]
+        \draw (206,33) -- (202,33) -- (202,11) -- (206,11);
+        \node[rotate=90, anchor=center] at (204,22) {Nieten};
+    \end{scope}
+\end{tikzpicture}
+
 \begin{tikzpicture}[remember picture, overlay]
 
-% Klebefläche für das erste Register:
-\Tile{K}{([xshift=202mm, yshift=-11mm]current page.north west)}{8mm}{22mm}{%
-    \vspace{4.5mm}\hspace{-3mm}%
-    \rotatebox{90}{Nieten}
-}{1}{0}{1}{1}
+%\Tile{K}{([xshift=202mm, yshift=-11mm]current page.north west)}{4mm}{22mm}{%
+%    \begin{minipage}[c][22mm]{4mm}
+%        \rotatebox{90}{\scriptsize{}Nieten} \hspace{1mm}
+%    \end{minipage}%
+%}{1}{0}{1}{1}
 
 % --- ERSTE REIHE: Am Seitenursprung anfangen
 \setlength{\rowheight}{49mm}
@@ -448,7 +456,7 @@
     \setlength{\cellwidth}{90mm}
     \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
         {
-            ttt
+            TBD
         }{0}{1}{1}{0}
 
     % B3) Zweite Kachel rechts anbauen
@@ -474,7 +482,7 @@
         }{0}{0}{1}{0}
 
 % --- VIERTE REIHE: Unten anbauen
-\setlength{\rowheight}{50mm}
+\setlength{\rowheight}{68mm}
 
     % X4) Eigene Zeile für die Überschrift
     \Tile{X4}{(A3.south west)}{190mm}{8mm}
@@ -483,19 +491,77 @@
         }{0}{0}{0}{0}
 
     % A4) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{95mm}
+    \setlength{\cellwidth}{97mm}
     \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Abminderungsfaktor $K$}\\ \vspace{1mm}
-
+            \vspace{-1.5\TileSep}
+            \begin{itemize}
+                \scriptsize
+                \item[I.] Einleitung Verbindungstechnik\\ \vspace{-1mm}
+                \begin{itemize}
+                    \item[--] Innovative Werkstoffe und Bauweisen nur bei geeigneten,\\ \textbf{verfahrenssicheren} Verbindungstechniken
+                \end{itemize}
+                \item[II.] Nietarten\\ \vspace{-1mm}
+                \begin{itemize}
+                    \item[--] Vollniet, Senkniet, Passniet (geschraubt, gequetscht),\\ Blindniet
+                \end{itemize}
+                \item[III.] Nietverfahren\\ \vspace{-1mm}
+                \begin{itemize}
+                    \item[--] Manuell oder Roboter, Verfahrensschritte, Korrosionsschutz!
+                \end{itemize}
+                \item[IV.] Konstruktive Gestaltung der Nietverbindungen\\ \vspace{-1mm}
+                \begin{itemize}
+                    \item[--] Überlappung oder Lasche, ein- oder mehrreihig, ein- oder\\ zweischnittig, Nietfelder, Schwingfestigkeit
+                \end{itemize}
+                \item[V.] Berechnung von Nietverbindungen\\ \vspace{-1mm}
+                \begin{itemize}
+                    \item[--] Kriterien: Abscheren, Lochleibungsfestigkeit, Lochleibungs-\\ grenze, Ausreißen, minimale Blechdicke
+                    \item[--] Praxis: Versagensdiagramm oder Nietrechnungstabelle
+                    \item[--] Interaktionshypothesen für Schub- und Zugbelastung
+                \end{itemize}
+            \end{itemize}
         }{0}{1}{1}{0}
 
     % B4) Zweite Kachel rechts anbauen
-    \setlength{\cellwidth}{95mm}
+    \setlength{\cellwidth}{93mm}
     \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Abminderungsfaktor $K$}\\ \vspace{1mm}
-            
+            \vspace{-\TileSep}
+            \scriptsize
+            \raggedright
+            \myul{Vorteile:}
+            \begin{itemize}[leftmargin=12pt]
+                \item[--] Hohe \textbf{Verfahrenssicherheit}
+                \item[--] Werkstoffe werden nicht ungünstig beeinflusst\\ (\textbf{keine Gefügeumwandlungen} wie beim Schweißen)
+                \item[--] Fügeteile aus \textbf{verschiedenen Werkstoffen}
+                \item[--] Gute \textbf{Kontrolle} möglich
+                \item[--] \textbf{Demontage ohne Zerstörung} angrenzender Bauteile
+            \end{itemize}
+            \myul{Nachteile:}
+            \begin{itemize}[leftmargin=12pt]
+                \item[--] Nietverbindungen erfordern meist einen hochen \textbf{Zeitaufwand}\\ und sind deshalb teurer
+                \item[--] Nietkonstruktionen sind \textbf{schwerer} als Schweißkonstruktionen,\\ da größere Querschnitte und Überlappungen
+                \item[--] In genieteten Behältern größerer Strömungswiderstand als in\\ Geschweißten
+            \end{itemize}
         }{0}{0}{1}{0}
+
+% --- FÜNFTE REIHE: Unten anbauen
+\setlength{\rowheight}{68mm}
+
+    % A5) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A5}{(A4.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{1mm}
+            \resizebox{0.94\cellwidth}{!}{%
+            \begin{tabular}{l|c|c|c|c}
+                \xrowht[()]{1.8mm} & \textbf{Niet} & \textbf{Passniet} & \textbf{Bolzen} & \textbf{Schraube} \\ \hline
+                \xrowht[()]{9.6mm}\begin{tabular}[c]{@{}l@{}}{\color{Red}Beanspruchung}\\ (Regelfall)\end{tabular} & \begin{tabular}[c]{@{}c@{}}{\color{Red}Abscheren},\\ {\color{Red}Lochleibung}\end{tabular} & \begin{tabular}[c]{@{}c@{}}{\color{Red}Abscheren},\\ {\color{Red}Lochleibung}\end{tabular} & \begin{tabular}[c]{@{}c@{}}{\color{Red}Abscheren},\\ {\color{Red}Biegung},\\ {\color{Red}Flächenpressung}\end{tabular} & \begin{tabular}[c]{@{}c@{}}{\color{Red}Zug}\\ (keine Biegung,\\ keine Querkraft!)\end{tabular} \\ \hline
+                \xrowht[()]{9.6mm}Demontage & \begin{tabular}[c]{@{}c@{}}Nicht lösbar,\\ schwer demontierbar\\ (Aufbohren)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Nicht lösbar,\\ aufwändig demontierbar\\ (Schließring sprengen)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Lösbar,\\ leicht demontierbar\end{tabular} & \begin{tabular}[c]{@{}c@{}}Lösbar,\\ leicht demontierbar\end{tabular} \\ \hline
+                \xrowht[()]{6.4mm}Sicherungselement & Nein & Nein & \begin{tabular}[c]{@{}c@{}}Ja, wenn kein\\ ausreichendes Übermaß\end{tabular} & Ja \\ \hline
+                \xrowht[()]{6.4mm}Bohrungsspiel & \begin{tabular}[c]{@{}c@{}}Vor Montage: Ja\\ In Funktion: Nein\end{tabular} & \begin{tabular}[c]{@{}c@{}}Kein Spiel oder\\ leichtes Übermaß\end{tabular} & \begin{tabular}[c]{@{}c@{}}Scherbolzen: Übergangspassung\\ Gelenkbolzen: Spiel\end{tabular} & \begin{tabular}[c]{@{}c@{}}Ja, zur Vermeidung\\ von Scherung\end{tabular}
+            \end{tabular}
+            }
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
