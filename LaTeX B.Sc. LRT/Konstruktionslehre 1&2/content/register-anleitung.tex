@@ -107,11 +107,11 @@
 \end{minipage}
 \\ \vspace{15mm}
 
-\myul{\textbf{Schritt 3:} Register Aufkleben}\\ \vspace{4mm}\hspace{11mm}
-\begin{tikzpicture}
-    \draw[very thin] (0mm,0mm) -- (0mm,59.4mm) -- (42.0mm,59.4mm) -- (42.0mm,0mm) -- (0mm,0mm);             % Seite
-    \draw[thin]      (42mm,52.8mm) -- (40.4mm,52.8mm) -- (40.4mm,57.2mm) -- (42mm,57.2mm);                  % Register-Platz
-    \draw[->, rounded corners, thin] (49.5mm,29.7mm) -- (47mm,29.7mm) -- (47mm,55mm) -- (43.5mm,55mm);      % Pfeil
-    \draw[thin]      (51mm,27.5mm) -- (51mm,31.9mm) -- (54.2mm,31.9mm) -- (54.2mm,27.5mm) -- (51mm,27.5mm); % Register
-    \draw[very thin] (52.6mm,27.5mm) -- (52.6mm,31.9mm);                                                    % Register-Trenner
+\myul{\textbf{Schritt 3:} Register Aufkleben}\\ \vspace{3mm}\hspace{-64mm}
+\begin{tikzpicture}[remember picture, overlay, x=0.3mm, y=-0.3mm]
+    \draw[very thin] (0,0) -- (0,297) -- (210,297) -- (210,0) -- cycle;                  % Seite
+    \draw[thin]      (206,33) -- (202,33) -- (202,11) -- (206,11);                       % Register-Platz
+    \draw[->, rounded corners, thin] (245,148.5) -- (230,148.5) -- (230,22) -- (215,22); % Pfeil
+    \draw[thin]      (250,159.5) -- (266,159.5) -- (266,137.5) -- (250,137.5) -- cycle;  % Register
+    \draw[very thin] (258,159.5) -- (258,137.5);                                         % Register-Trenner
 \end{tikzpicture}

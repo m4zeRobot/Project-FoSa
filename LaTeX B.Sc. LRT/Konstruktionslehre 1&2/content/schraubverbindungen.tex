@@ -1,0 +1,89 @@
+% ### Erste Seite der Nietverbindungen ###
+\centering
+\section*{\myul{Schraubverbindungen}}
+
+% Klebefläche für das erste Register:
+\begin{tikzpicture}[remember picture, overlay, x=1mm, y=-1mm]
+    \begin{scope}[shift={(current page.north west)}]
+        \draw (206,56) -- (202,56) -- (202,34) -- (206,34);
+        \node[rotate=90, anchor=center] at (204,45) {Schrauben};
+    \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{60mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Begriffsdefinition}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{88mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Verbindungsarten}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Durchschraubverbindung (DSV)\\
+                Hin{\color{Red}\myul{durchschrauben}}\\
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Einschraubverbindung (ESV)\\
+                Hin{\color{Red}\myul{einschrauben}}\\
+            \end{minipage}\\ \vspace{2mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Einschraub{\color{Red}\myul{en}}verbindung\\
+                {\color{Red}\myul{Eine}} Schraube\\
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Mehrschraub{\color{Red}\myul{en}}verbindung\\
+                {\color{Red}\myul{Mehrere}} Schrauben\\
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{102mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Belastungen}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.55\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Längs-/Axialbelastung (Formschluss)\\
+                Betriebskraft $F_\text{A}$ in Längsrichtung\\
+                Vorspannkraft $F_\text{V}$ der Schraube ({\color{Red}\myul{Lastfrei}})\\
+            \end{minipage}%
+            \begin{minipage}[t]{0.45\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Querbelastung (Reibschluss)\\
+                Betriebskraft $F_\text{Q}$ in Querrichtung\\
+                Klemmkraft $F_\text{K}$ ({\color{Red}\myul{Betriebsfall}})\\
+            \end{minipage}\\ \vspace{2mm}
+            \begin{minipage}[t]{0.55\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Zentrische Belastung\\
+                Längs- / Axialbelastung\\
+            \end{minipage}%
+            \begin{minipage}[t]{0.45\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Exzentrische Belastung\\
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
