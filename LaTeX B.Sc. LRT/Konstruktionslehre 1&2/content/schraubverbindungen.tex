@@ -13,7 +13,7 @@
 \begin{tikzpicture}[remember picture, overlay]
 
 % --- ERSTE REIHE: Am Seitenursprung anfangen
-\setlength{\rowheight}{60mm}
+\setlength{\rowheight}{62mm}
 
     % X1) Eigene Zeile für die Überschrift
     \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{8mm}
@@ -31,25 +31,29 @@
                 \centering
                 \scriptsize
                 Durchschraubverbindung (DSV)\\
-                Hin{\color{Red}\myul{durchschrauben}}\\
+                Hin{\color{Red}\myul{durchschrauben}}\\ \vspace{3.75mm}
+                \includegraphics[height=14mm]{images/schrauben-verbindungsarten-1.pdf}
             \end{minipage}%
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
                 \scriptsize
                 Einschraubverbindung (ESV)\\
-                Hin{\color{Red}\myul{einschrauben}}\\
+                Hin{\color{Red}\myul{einschrauben}}\\ \vspace{1.5mm}
+                \includegraphics[height=18mm]{images/schrauben-verbindungsarten-2.pdf}
             \end{minipage}\\ \vspace{2mm}
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
                 \scriptsize
                 Einschraub{\color{Red}en}verbindung\\
-                {\color{Red}\myul{Eine}} Schraube\\
+                {\color{Red}\myul{Eine}} Schraube\\ \vspace{1.5mm}
+                \includegraphics[height=18mm]{images/schrauben-verbindungsarten-3.pdf}
             \end{minipage}%
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
                 \scriptsize
                 Mehrschraub{\color{Red}en}verbindung\\
-                {\color{Red}\myul{Mehrere}} Schrauben\\
+                {\color{Red}\myul{Mehrere}} Schrauben\\ \vspace{1.5mm}
+                \includegraphics[height=18mm]{images/schrauben-verbindungsarten-4.pdf}
             \end{minipage}
         }{0}{1}{1}{0}
 
@@ -58,26 +62,27 @@
     \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Belastungen}\\ \vspace{1mm}
+            \titlerm{Belastungen}\\ \vspace{0.5mm}
             \begin{minipage}[t]{0.55\cellwidth-\TileSep}
                 \centering
                 \scriptsize
                 Längs-/Axialbelastung (Formschluss)\\
-                Betriebskraft $F_\text{A}$ in Längsrichtung\\
-                Vorspannkraft $F_\text{V}$ der Schraube ({\color{Red}\myul{Lastfrei}})\\
+                Betriebskraft {\color{Red}$F_\text{A}$} in Längsrichtung\\
+                Vorspannkraft {\color{Orange}$F_\text{V}$} der Schraube ({\color{Red}\myul{Lastfrei}})\\ \vspace{1.25mm}
+                \includegraphics[height=18mm]{images/schrauben-belastungen-1.pdf}
             \end{minipage}%
             \begin{minipage}[t]{0.45\cellwidth-\TileSep}
                 \centering
                 \scriptsize
                 Querbelastung (Reibschluss)\\
-                Betriebskraft $F_\text{Q}$ in Querrichtung\\
-                Klemmkraft $F_\text{K}$ ({\color{Red}\myul{Betriebsfall}})\\
+                Betriebskraft {\color{Red}$F_\text{Q}$} in Querrichtung\\
+                Klemmkraft {\color{NavyBlue}$F_\text{K}$} ({\color{Red}\myul{Betriebsfall}})\\ \vspace{1.25mm}
+                \includegraphics[height=18mm]{images/schrauben-belastungen-2.pdf}
             \end{minipage}\\ \vspace{2mm}
             \begin{minipage}[t]{0.55\cellwidth-\TileSep}
                 \centering
                 \scriptsize
-                Zentrische Belastung\\
-                Längs- / Axialbelastung\\
+                Zentrische Längs- / Axialbelastung\\
             \end{minipage}%
             \begin{minipage}[t]{0.45\cellwidth-\TileSep}
                 \centering
