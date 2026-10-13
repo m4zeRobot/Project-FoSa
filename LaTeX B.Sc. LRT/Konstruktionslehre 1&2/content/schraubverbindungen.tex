@@ -143,7 +143,7 @@
                 \xrowht[()]{1.5mm}\textbf{Gewindetyp} & \textbf{Ausführung} & \textbf{Beschreibung} \\ \hline
                 \xrowht[()]{7.5mm}Spitzgewinde  & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-1.pdf}} & Übliches Befestigunsgewinde \\
                 \xrowht[()]{7.5mm}Trapezgewinde & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-2.pdf}} & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde\\ (Bsp.: Leitspindeln)\end{tabular} \\
-                \xrowht[()]{7.5mm}Rundgewinde   & TBD & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde für\\ hochverschmutzte Geräte\end{tabular} \\
+                \xrowht[()]{7.5mm}Rundgewinde   & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-3.pdf}} & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde für\\ hochverschmutzte Geräte\end{tabular} \\
                 \xrowht[()]{7.5mm}Sägegewinde   & TBD & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde bei\\ einseitiger Belastungsrichtung\end{tabular} \\
                 \xrowht[()]{7.5mm}Flachgewinde  & TBD & \begin{tabular}[c]{@{}l@{}}Nicht abgeschrägtes\\ Ineinandergreifen der Zähne\end{tabular}
             \end{tabular}%
@@ -449,4 +449,28 @@
             {\color{Red}Faustregel:~~$D_\text{A} = 2\cdot\text{Kleinster Randabstand}$}
         }{0}{0}{0}{0}
 
+\end{tikzpicture}
+
+% ### Dritte Seite der Schraubverbindungen ###
+\newpage
+\centering
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{35mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-9mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Kraft-Verformungs-Schaubild (nur Vorspannkraft $\mathbf{\textit{F}_\mathbf{V}}$)}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{92mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+
+        }{0}{0}{0}{0}
+        
 \end{tikzpicture}
