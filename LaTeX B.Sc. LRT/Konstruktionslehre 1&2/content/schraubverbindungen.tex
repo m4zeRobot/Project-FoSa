@@ -144,8 +144,8 @@
                 \xrowht[()]{7.5mm}Spitzgewinde  & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-1.pdf}} & Übliches Befestigunsgewinde \\
                 \xrowht[()]{7.5mm}Trapezgewinde & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-2.pdf}} & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde\\ (Bsp.: Leitspindeln)\end{tabular} \\
                 \xrowht[()]{7.5mm}Rundgewinde   & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-3.pdf}} & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde für\\ hochverschmutzte Geräte\end{tabular} \\
-                \xrowht[()]{7.5mm}Sägegewinde   & TBD & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde bei\\ einseitiger Belastungsrichtung\end{tabular} \\
-                \xrowht[()]{7.5mm}Flachgewinde  & TBD & \begin{tabular}[c]{@{}l@{}}Nicht abgeschrägtes\\ Ineinandergreifen der Zähne\end{tabular}
+                \xrowht[()]{7.5mm}Sägegewinde   & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-4.pdf}} & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde bei\\ einseitiger Belastungsrichtung\end{tabular} \\
+                \xrowht[()]{7.5mm}Flachgewinde  & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-5.pdf}} & \begin{tabular}[c]{@{}l@{}}Nicht abgeschrägtes\\ Ineinandergreifen der Zähne\end{tabular}
             \end{tabular}%
             }%
         }{0}{0}{1}{0}
@@ -413,18 +413,18 @@
                 \xrowht[()]{5.0mm}$A_\text{ers} =$ & $\dfrac{\pi}{4}\left(D_\text{A}^2-d_\text{h}^2\right)$ & \multicolumn{2}{c|}{$\dfrac{\pi}{4}\left(d_\text{W}^2 - d_\text{h}^2\right) + \dfrac{\pi}{8}\,d_\text{W}\left(D_\text{A} - d_\text{W}\right)\left[\left(x+1\right)^2-1\right]$} & \multicolumn{2}{c}{\hspace{5mm}$\dfrac{\pi}{4}\left(d_\text{W}^2 - d_\text{h}^2\right) + \dfrac{\pi}{8}\,d_\text{W}\,l_\text{k}\left[\left(x+1\right)^2-1\right]$}\hspace{4mm} \\ \hline
                 \multicolumn{2}{c|}{} & \xrowht[()]{12.0mm}\hspace{7mm}\begin{tabular}[c]{@{}c@{}}DSV:\\[0.5ex]$x = \sqrt[3]{\dfrac{l_\text{k}~d_\text{W}}{D_\text{A}^2}}$\end{tabular}\hspace{7mm} & \begin{tabular}[c]{@{}c@{}}ESV:\\[0.5ex]$x = \sqrt[5]{\dfrac{l_\text{k}}{D_\text{A}}}$\end{tabular} & \hspace{3mm}\begin{tabular}[c]{@{}c@{}}DSV:\\[0.5ex]$x = \sqrt[3]{\dfrac{l_\text{k}~d_\text{W}}{\left(d_\text{W}+l_\text{k}\right)^2}}$\end{tabular}\hspace{3mm} & \begin{tabular}[c]{@{}c@{}}ESV:\\[0.5ex]$x = \sqrt[5]{\dfrac{l_\text{k}}{d_\text{W}+l_\text{k}}}$\end{tabular}
             \end{tabular}%
-            \\ \vspace{5mm}
-            \begin{minipage}[t]{0.33\cellwidth-\TileSep}
+            \\ \vspace{8mm}
+            \begin{minipage}{0.25\cellwidth-\TileSep}
                 \centering
-                TBD
+                \includegraphics[height=58.3mm]{images/schrauben-ersatzquerschnitt-1.pdf}\\ \vspace{-4.8mm}
             \end{minipage}%
-            \begin{minipage}[t]{0.33\cellwidth}
+            \begin{minipage}{0.35\cellwidth}
                 \centering
-                TBD
+                \includegraphics[height=61.5mm]{images/schrauben-ersatzquerschnitt-2.pdf}
             \end{minipage}%
-            \begin{minipage}[t]{0.33\cellwidth-\TileSep}
+            \begin{minipage}{0.40\cellwidth-\TileSep}
                 \centering
-                TBD
+                \includegraphics[height=62mm]{images/schrauben-ersatzquerschnitt-3.pdf}
             \end{minipage}%
             \\ \vspace{3mm}
             \begin{minipage}[t]{0.3\cellwidth-\TileSep}
@@ -467,10 +467,97 @@
         }{0}{0}{0}{0}
 
     % A1) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{92mm}
+    \setlength{\cellwidth}{190mm}
     \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
         {
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                TBD
+            \end{minipage}%
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                \titlerm{Verlängerung der Schraube}~$f_\text{S}$~[mm]\\ \vspace{-3mm}
+                \begin{equation*}
+                    f_\text{S} = \delta_\text{S}~F_\text{V}
+                \end{equation*}
+                \titlerm{Verkürzung der Platten}~$f_\text{P}$~[mm]\\ \vspace{-3mm}
+                \begin{equation*}
+                    f_\text{P} = \delta_\text{P}~F_\text{V}
+                \end{equation*}
+            \end{minipage}%
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                {\scriptsize
+                \begin{align*}
+                    F_\text{S}      &= \text{Schraubenkraft}\\
+                    F_\text{P}      &= \text{Plattenkraft}\\
+                    F_\text{V}      &= \text{Vorspannkraft}\\
+                    f_\text{S}      &= \text{Verlängerung der Schraube}\\
+                    f_\text{P}      &= \text{Stauchung der Platte}\\
+                    \delta_\text{S} &= \text{Nachgiebigkeit der Schraube}\\
+                    \delta_\text{P} &= \text{Nachgiebigkeit der Platte}
+                \end{align*}
+                }
+            \end{minipage}
+        }{0}{0}{1}{0}
 
+% --- ZWEITE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{106mm}
+
+    % X2) Eigene Zeile für die Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{8mm}
+        {
+            \titlebf{Verspannungsschaubild}
         }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Zugbelastung}\\ \vspace{2mm}
+            TBD\\ \vspace{36mm}
+            \begin{align*}
+                F_\text{Kl} &= F_\text{V} - F_\text{AP} = F_\text{V} - (1-\Phi)\,F_\text{A} \\
+                F_\text{S} &= F_\text{V} + F_\text{AS} = F_\text{Kl} + F_\text{A}
+            \end{align*}
+            {\scriptsize
+            \begin{align*}
+                F_\text{Kl} &= \text{(Rest-) Klemmkraft} \\
+                F_\text{S}  &= \text{Zugkraft an der Schraube} \\
+                F_\text{V}  &= \text{Vorspannkraft der Schraubenverbindung} \\
+                F_\text{AS} &= \text{Schraubenzusatzkraft} \\
+                F_\text{AP} &= \text{Entlastungskraft der Platten} \\
+                \Phi        &= \text{Kräfteverhältnis} \\
+                F_\text{A}  &= \text{Betriebskraft ({\color{Red}\myul{Zug}}) zwischen Schraube und Platte} \\
+                f_\text{A}  &= \text{Zusätzliche Schrauben{\color{Red}\myul{verlängerung}} bzw.} \\[-0.5ex]
+                            &= \text{Geringere Platten{\color{Red}\myul{stauchung}}} \\
+            \end{align*}
+            }
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Druckbelastung}\\ \vspace{2mm}
+            TBD\\ \vspace{36mm}
+            \begin{align*}
+                F_\text{Kl} &= F_\text{V} - F_\text{AP} = F_\text{V} - (1-\Phi)\,F_\text{A} \\
+                F_\text{S} &= F_\text{V} + F_\text{AS} = F_\text{Kl} + F_\text{A}
+            \end{align*}
+            {\scriptsize
+            \begin{align*}
+                F_\text{Kl} &= \text{(Rest-) Klemmkraft} \\
+                F_\text{S}  &= \text{Zugkraft an der Schraube} \\
+                F_\text{V}  &= \text{Vorspannkraft der Schraubenverbindung} \\
+                F_\text{AS} &= \text{Schraubenzusatzkraft} \\
+                F_\text{AP} &= \text{Entlastungskraft der Platten} \\
+                \Phi        &= \text{Kräfteverhältnis} \\
+                F_\text{A}  &= \text{Betriebskraft ({\color{Red}\myul{Druck}}) zwischen Schraube und Platte} \\
+                f_\text{A}  &= \text{Zusätzliche Schrauben{\color{Red}\myul{verlängerung}} bzw.} \\[-0.5ex]
+                            &= \text{Geringere Platten{\color{Red}\myul{stauchung}}} \\
+            \end{align*}
+            }
+        }{0}{0}{1}{0}
         
 \end{tikzpicture}
