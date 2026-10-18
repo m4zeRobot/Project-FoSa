@@ -772,13 +772,13 @@
         }{0}{0}{1}{0}
 
 % --- DRITTE REIHE: Unten anbauen
-\setlength{\rowheight}{90mm}
+\setlength{\rowheight}{135mm}
 
     % A3) Erste Kachel unten anbauen
     \setlength{\cellwidth}{95mm}
     \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Erforderliche Klemmkraft} {\normalsize$F_\text{Kl,erf}$}\\ \vspace{-2mm}
+            \titlerm{Erforderliche Klemmkraft} {\normalsize$F_\text{Kl,erf}$}\\ \vspace{-1mm}
             \begin{equation*}
                 F_\text{Kl,\,erf} = \frac{1}{z~\mu~m}\,\left(F_\text{Q}+\frac{M}{r_\text{reib}}\right)
             \end{equation*}
@@ -793,19 +793,20 @@
                 M               = &~\text{Wirkendes Drehmoment}                       \\
                 r_\text{reib}   = &~\text{Reibradius der verspannten Flansche}
             \end{align*}
-            }
+            }%
+            \\ \vspace{3mm}
             \resizebox{\cellwidth-3\TileSep}{!}{%
-            \begin{tabular}{l|cc}
+            \begin{tabular}{l|c|c}
                 \multirow{2}{*}{\xrowht[()]{4mm}Stoffpaarung} & \multicolumn{2}{c}{\xrowht[()]{2mm}Haftreibungszahl im Zustand} \\
-                                              & \multicolumn{1}{c|}{\xrowht[()]{2mm}trocken}      & geschmiert  \\ \hline
-                \xrowht[()]{2mm}Stahl - Stahl / Stahlguss     & \multicolumn{1}{c|}{0,1 - 0,23}   & 0,07 - 0,12 \\
-                \xrowht[()]{2mm}Stahl - Grauguss              & \multicolumn{1}{c|}{0,12 - 0,24}  & 0,06 - 0,1  \\
-                \xrowht[()]{2mm}Grauguss - Grauguss           & \multicolumn{1}{c|}{0,15 - 0,3}   & 0,2         \\
-                \xrowht[()]{2mm}Bronze - Stahl                & \multicolumn{1}{c|}{0,12 - 0,28}  & 0,18        \\
-                \xrowht[()]{2mm}Grauguss - Bronze             & \multicolumn{1}{c|}{0,28}         & 0,15 - 0,2  \\
-                \xrowht[()]{2mm}Stahl - Kupferlegierung       & \multicolumn{1}{c|}{0,07}         &             \\
-                \xrowht[()]{2mm}Stahl - Aluminiumlegierung    & \multicolumn{1}{c|}{0,1 - 0,28}   & 0,05 - 0,18 \\
-                \xrowht[()]{2mm}Aluminium - Aluminium         & \multicolumn{1}{c|}{0,21}         &            
+                                              & \xrowht[()]{2mm}\hspace{4.5mm}trocken\hspace{4.5mm}   & geschmiert  \\ \hline
+                \xrowht[()]{2mm}Stahl - Stahl / Stahlguss     & 0,1 - 0,23   & 0,07 - 0,12 \\
+                \xrowht[()]{2mm}Stahl - Grauguss              & 0,12 - 0,24  & 0,06 - 0,1  \\
+                \xrowht[()]{2mm}Grauguss - Grauguss           & 0,15 - 0,3   & 0,2         \\
+                \xrowht[()]{2mm}Bronze - Stahl                & 0,12 - 0,28  & 0,18        \\
+                \xrowht[()]{2mm}Grauguss - Bronze             & 0,28         & 0,15 - 0,2  \\
+                \xrowht[()]{2mm}Stahl - Kupferlegierung       & 0,07         &             \\
+                \xrowht[()]{2mm}Stahl - Aluminiumlegierung    & 0,1 - 0,28   & 0,05 - 0,18 \\
+                \xrowht[()]{2mm}Aluminium - Aluminium         & 0,21         &            
             \end{tabular}
             }
         }{0}{1}{0}{0}
@@ -814,7 +815,175 @@
     \setlength{\cellwidth}{95mm}
     \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
         {
-            TBD
+            \titlerm{Temperaturabhängigkeit der Vorspannung}\\ \vspace{2mm}
+            TBD\\ \vspace{40mm}
+            \begin{equation*}
+                \Delta F_\text{V} = -\frac{\left(\alpha_\text{S}-\alpha_\text{P}\right)\,\left(T_\text{B}-T_\text{M}\right)}{\delta_\text{S}+\delta_\text{P}}~l_\text{k}\!\left(T_\text{M}\right)
+            \end{equation*}
+            \begin{tabular}{c|c}
+                \xrowht[()]{2mm}Material   & $\alpha$                               \\ \hline
+                \xrowht[()]{2mm}Aluminium  & $20\cdot 10^{-6}\,\tfrac{1}{\text{K}}$ \\
+                \xrowht[()]{2mm}Stahl      & $11\cdot 10^{-6}\,\tfrac{1}{\text{K}}$ \\
+                \xrowht[()]{2mm}Invarstahl & $1\cdot 10^{-6}\,\tfrac{1}{\text{K}}$  \\
+            \end{tabular}
+            {\scriptsize
+            \begin{align*}
+                \Delta F_\text{V}      &= \text{Änderung der Vorspannung} \\
+                \alpha_\text{S}        &= \text{Temperatur-Ausdehnungskoeffizient der Schraube} \\
+                \alpha_\text{P}        &= \text{Temperatur-Ausdehnungskoeffizient der Platte} \\
+                T_\text{B}             &= \text{Betriebstemperatur} \\
+                T_\text{M}             &= \text{Montagetemperatur} \\
+                l_\text{k}(T_\text{M}) &= \text{Klemmlänge bei Montagetemperatur} \\
+                \delta_\text{S}        &= \text{Nachgiebigkeit der Schraube} \\
+                \delta_\text{P}        &= \text{Nachgiebigkeit der Platte} \\
+                f_\text{S}             &= \text{Verlängerung der Schraube} \\
+                f_\text{P}             &= \text{Stauchung der Platte}
+            \end{align*}
+            }
         }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Vierte Seite der Schraubverbindungen ###
+\newpage
+\centering
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{113mm}
+
+    % A1) Erste Kachel am Seitenursprung ausrichten
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{([xshift=10mm, yshift=-9mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Setzen}\\ \vspace{2mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                TBD\\ \vspace{40mm}
+                \begin{align*}
+                    f_\text{Z} &= f_\text{SZ} + f_\text{PZ} \\
+                    F_\text{V} &= F_\text{VM} - V_\text{Z} \\
+                    F_\text{Z} &= \frac{f_\text{Z}}{\delta_\text{S}+\delta_\text{P}} = \frac{f_\text{Z}}{\delta_\text{P}}\,\Phi_\text{k} = \frac{f_\text{Z}}{\delta_\text{S}}\,(1-\Phi_\text{k})
+                \end{align*}
+                Klemmkraft $F_\text{Kl}$ wird ebenfalls reduziert!
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Richtwerte für Setzbeträge} $f_\text{Z}$ [$\upmu$m]\\ \vspace{2mm}
+                \hspace{-66mm}Größenordnung:
+                \begin{itemize}
+                    \item Durchschraubverbindung unter Zug/Druck: $f_\text{Z} \approx 10\,\upmu\text{m}$
+                    \item Einschraubverbindung 30\,\% kleiner
+                    \item Schub 30\,\% größer
+                \end{itemize}
+                {\normalsize
+                \begin{equation*}
+                    f_\text{Z} = \sum_i f_{\text{Z,}i}
+                \end{equation*}
+                }
+                \resizebox{\textwidth-\TileSep}{!}{%
+                \begin{tabular}{c|c|c|c|c}
+                    \xrowht[()]{6mm}Gemittelte $R_\text{z}$ &
+                      Belastung &
+                      \begin{tabular}[c]{@{}c@{}}im\\ Gewinde\end{tabular} &
+                      \begin{tabular}[c]{@{}c@{}}je Kopf- /\\ Muttern-\\ Auflage\end{tabular} &
+                      \begin{tabular}[c]{@{}c@{}}je innerer\\ Trennfuge\end{tabular} \\ \hline
+                    \multirow{2}{*}{$R_\text{z} < 10$\,$\upmu$m}             & \xrowht[()]{3mm}Zug / Druck & 3 & 2,5 & 1,5 \\
+                                                                       & \xrowht[()]{3mm}Schub       & 3 & 3   & 2   \\ \hline
+                    \multirow{2.5}{*}{10\,$\upmu$m $\leq R_\text{z} < 40$\,$\upmu$m}  & \xrowht[()]{3mm}Zug / Druck & 3 & 3   & 2   \\
+                                                                       & \xrowht[()]{3mm}Schub       & 3 & 4,5 & 2,5 \\ \hline
+                    \multirow{2.5}{*}{40\,$\upmu$m $\leq R_\text{z} < 100$\,$\upmu$m} & \xrowht[()]{3mm}Zug / Druck & 3 & 4   & 3   \\
+                                                                       & \xrowht[()]{3mm}Schub       & 3 & 6,5 & 3,5
+                \end{tabular}
+                }
+            \end{minipage}%
+            \\ \vspace{1mm}
+            \begin{minipage}[t]{0.38\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    f_\text{Z}  &= \text{Setzbetrag}                           \\
+                    f_\text{SZ} &= \text{Verkürzung der Schraubenverlängerung} \\
+                    f_\text{PZ} &= \text{Reduzierung der Plattenstauchung}     \\
+                    F_\text{V}  &= \text{Tatsächliche Vorspannkraft}           \\
+                    F_\text{VM} &= \text{Montagevorspannkraft}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}[t]{0.3\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    F_\text{Z}      &= \text{Vorspannkraftverlust}           \\
+                    \delta_\text{S} &= \text{Nachgiebigkeit der Schraube}    \\
+                    \delta_\text{P} &= \text{Nachgiebigkeit der Platte}      \\
+                    \Phi_\text{k}   &= \text{Vereinfachtes Kräfteverhältnis} \\
+                \end{align*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{65mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Kräfte des Verspannungsdiagrammes}\\ \vspace{2mm}
+            \begin{tikzpicture}[>=Stealth]
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm](A){
+                    $R_\text{p0,2}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of A](A*){
+                    \scriptsize Minimale\\[-0.5ex] \scriptsize Proportionalitätsgrenze
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=18mm of A](B){
+                    $F_\text{SP,\,max} \stackrel{!}{\leq} R_\text{p0,2}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of B](B*){
+                    \scriptsize $F_\text{SP,\,max} =$ maximal\\[-0.5ex] \scriptsize Zulässige Spannkraft
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=14mm of B](C){
+                    $F_\text{SP} \stackrel{!}{\leq} F_\text{SP,\,max}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of C](C*){
+                    \scriptsize $F_\text{SP} =$ Gewählte Spannkraft\\[-0.5ex] \scriptsize (z.B. aus Tabelle)
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=12mm of C](D){
+                    $F_\text{VM,\,min} = F_\text{VM,\,max} - \Delta F_\text{V}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of D](D*){
+                    \scriptsize $\Delta F_\text{} =$ Streuung der\\[-0.5ex] \scriptsize Vorspannkraft,\\ \scriptsize $F_\text{VM,\,min} =$ minimal\\[-0.5ex] \scriptsize vorhandene Vorspannkraft
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, below=8.45mm of A*](E){
+                    $F_\text{V} = F_\text{VM,\,min} - F_\text{Z}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of E](E*){
+                    \scriptsize $F_\text{Z} =$ Vorspannkraftverlust\\[-0.5ex] \scriptsize durch Setzen\\ \scriptsize $F_\text{V} =$ Minimal vorhandene\\[-0.5ex] \scriptsize Vorspannkraft nach Setzen
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=12mm of E](F){
+                    $F_\text{Kl} = F_\text{V} - F_\text{AP}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of F](F*){
+                    \scriptsize $F_\text{AP} =$ Platten-\\[-0.5ex] \scriptsize Entlastungskraft\\ \scriptsize $F_\text{Kl} =$ Minimal\\[-0.5ex] \scriptsize vorhandene Klemmkraft
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=12mm of F](G){
+                    $F_\text{Kl,\,erf} \stackrel{!}{\leq} F_\text{Kl}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of G](G*){
+                    \scriptsize $F_\text{Kl,\,erf} =$ erforderliche\\[-0.5ex] \scriptsize Klemmkraft
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=6mm of D*](extra){
+                    \myul{Zusätzlich gilt:}\\[1.2ex]
+                    $F_\text{AS} \stackrel{!}{\leq} \text{0,1}~R_\text{p0,2}~A_\text{S}$
+                };
+                \draw[->] (A) -- (B);
+                \draw[->] (B) -- (C);
+                \draw[->] (C) -- (D);
+                \draw[rounded corners=2mm, ->] (D.east) -- ++(6mm,0mm) -- ++(0mm,-26mm) -- ++(-47mm,0mm) -- ++(-10mm,6mm) -- ++(-117mm,0mm) -- ++(0mm,-8mm) -- (E.west);
+                \draw[->] (E) -- (F);
+                \draw[->] (F) -- (G);
+            \end{tikzpicture}
+        }{0}{0}{1}{0}
 
 \end{tikzpicture}
