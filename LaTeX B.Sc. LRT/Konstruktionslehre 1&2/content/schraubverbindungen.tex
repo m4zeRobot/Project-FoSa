@@ -670,7 +670,7 @@
     \Tile{A1}{([xshift=10mm, yshift=-9mm]current page.north west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Schraubenzusatzkraft $F_\text{AS}$}\\ \vspace{-3mm}
+            \titlerm{Schraubenzusatzkraft} {\normalsize$F_\text{AS}$}\\ \vspace{-3mm}
             \begin{align*}
                 F_\text{AS} &= n~F_\text{A}~\frac{\delta_\text{P}}{\delta_\text{P}+\delta_\text{S}} = \Phi~F_\text{A} \\
                 F_\text{AS} &\stackrel{!}{\leq} \text{0,1}~R_\text{p0,2}~A_\text{S}
@@ -705,7 +705,7 @@
     \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
-            \titlerm{Entlastungskraft der Platten $F_\text{AP}$}\\ \vspace{-3mm}
+            \titlerm{Entlastungskraft der Platten} {\normalsize$F_\text{AP}$}\\ \vspace{-3mm}
             \begin{equation*}
                 F_\text{AP} = F_\text{A} - F_\text{AS} = n~F_\text{A}~\frac{\delta_\text{S}}{\delta_\text{S}+\delta_\text{P}} = (1-\Phi)~F_\text{A}
             \end{equation*}
@@ -721,14 +721,14 @@
             }
         }{0}{0}{1}{0}
 
-% --- ZWEITE REIHE: Am Seitenursprung anfangen
+% --- ZWEITE REIHE: Unten anbauen
 \setlength{\rowheight}{62mm}
 
-    % A2) Erste Kachel am Seitenursprung ausrichten
+    % A2) Erste Kachel unten anbauen
     \setlength{\cellwidth}{90mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Kräfteverhältnis $\Phi$}\\ \vspace{-3mm}
+            \titlerm{Kräfteverhältnis} {\normalsize$\Phi$}\\ \vspace{-3mm}
             \begin{align*}
                 \Phi &= n~\Phi_\text{k} = n~\frac{F_\text{AS}}{F_\text{A}} = n~\frac{\delta_\text{P}}{\delta_\text{P}+\delta_\text{S}} \\
                 \Phi_\text{k} &= \frac{\delta_\text{P}}{\delta_\text{P}+\delta_\text{S}}
@@ -748,11 +748,11 @@
             }
         }{0}{1}{1}{0}
 
-    % B2) Erste Kachel am Seitenursprung ausrichten
+    % B2) Zweite Kachel rechts anbauen
     \setlength{\cellwidth}{100mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Krafteinleitungsfaktor $n$}\\ \vspace{2mm}
+            \titlerm{Krafteinleitungsfaktor} {\normalsize$n$}\\ \vspace{2mm}
             \resizebox{\cellwidth-2\TileSep}{!}{%
                 \begin{tabular}{c|l}
                     \xrowht[()]{2mm}$n \approx$ & Fall                                                            \\ \hline
@@ -770,5 +770,51 @@
                 \Rightarrow~&\text{Niedrigeres }n\text{ ist günstiger!}
             \end{align*}
         }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{90mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Erforderliche Klemmkraft} {\normalsize$F_\text{Kl,erf}$}\\ \vspace{-2mm}
+            \begin{equation*}
+                F_\text{Kl,\,erf} = \frac{1}{z~\mu~m}\,\left(F_\text{Q}+\frac{M}{r_\text{reib}}\right)
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                F_\text{Kl,erf} = &~\text{Erforderliche (Mindest-) Klemmkraft}        \\[-0.5ex]
+                                  &~\text{(Schub und / oder Torsion)}                 \\
+                z               = &~\text{Schraubenanzahl}                            \\
+                \mu             = &~\text{(Minimaler) Reibkoeffizient der Trennfugen} \\
+                m               = &~\text{Anzahl Reibkraft-übertragender Trennfugen}  \\
+                F_\text{Q}      = &~\text{Wirkende Querkraft}                         \\
+                M               = &~\text{Wirkendes Drehmoment}                       \\
+                r_\text{reib}   = &~\text{Reibradius der verspannten Flansche}
+            \end{align*}
+            }
+            \resizebox{\cellwidth-3\TileSep}{!}{%
+            \begin{tabular}{l|cc}
+                \multirow{2}{*}{\xrowht[()]{4mm}Stoffpaarung} & \multicolumn{2}{c}{\xrowht[()]{2mm}Haftreibungszahl im Zustand} \\
+                                              & \multicolumn{1}{c|}{\xrowht[()]{2mm}trocken}      & geschmiert  \\ \hline
+                \xrowht[()]{2mm}Stahl - Stahl / Stahlguss     & \multicolumn{1}{c|}{0,1 - 0,23}   & 0,07 - 0,12 \\
+                \xrowht[()]{2mm}Stahl - Grauguss              & \multicolumn{1}{c|}{0,12 - 0,24}  & 0,06 - 0,1  \\
+                \xrowht[()]{2mm}Grauguss - Grauguss           & \multicolumn{1}{c|}{0,15 - 0,3}   & 0,2         \\
+                \xrowht[()]{2mm}Bronze - Stahl                & \multicolumn{1}{c|}{0,12 - 0,28}  & 0,18        \\
+                \xrowht[()]{2mm}Grauguss - Bronze             & \multicolumn{1}{c|}{0,28}         & 0,15 - 0,2  \\
+                \xrowht[()]{2mm}Stahl - Kupferlegierung       & \multicolumn{1}{c|}{0,07}         &             \\
+                \xrowht[()]{2mm}Stahl - Aluminiumlegierung    & \multicolumn{1}{c|}{0,1 - 0,28}   & 0,05 - 0,18 \\
+                \xrowht[()]{2mm}Aluminium - Aluminium         & \multicolumn{1}{c|}{0,21}         &            
+            \end{tabular}
+            }
+        }{0}{1}{0}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            TBD
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
