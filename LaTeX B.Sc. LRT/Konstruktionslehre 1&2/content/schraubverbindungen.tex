@@ -473,7 +473,7 @@
         {
             \begin{minipage}{0.33\cellwidth-\TileSep}
                 \centering
-                TBD
+                \includegraphics[height=\rowheight-2\TileSep]{images/kraft-verformungs-schaubild.pdf}
             \end{minipage}%
             \begin{minipage}{0.33\cellwidth-\TileSep}
                 \centering
@@ -503,7 +503,7 @@
         }{0}{0}{1}{0}
 
 % --- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{91mm}
+\setlength{\rowheight}{101mm}
 
     % A2) Erste Kachel unten anbauen
     \setlength{\cellwidth}{190mm}
@@ -512,14 +512,14 @@
             \titlebf{Verspannungsschaubild}\\ \vspace{2mm}
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
-                \titlerm{Zugbelastung}\\ \vspace{2mm}
-                TBD\\ \vspace{36mm}
+                \titlerm{Zugbelastung}\\ \vspace{1mm}
+                \includegraphics[width=0.35\cellwidth]{images/verspannungsschaubild-zugbelastung.pdf}
             \end{minipage}%
             \vline
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
-                \titlerm{Druckbelastung}\\ \vspace{2mm}
-                TBD\\ \vspace{36mm}
+                \titlerm{Druckbelastung}\\ \vspace{1mm}
+                \includegraphics[width=0.35\cellwidth]{images/verspannungsschaubild-zugbelastung.pdf}
             \end{minipage}
             \begin{align*}
                 F_\text{Kl} &= F_\text{V} - F_\text{AP} = F_\text{V} - (1-\Phi)\,F_\text{A} \\
@@ -530,22 +530,22 @@
                 \centering
                 {\scriptsize
                 \begin{align*}
-                    F_\text{Kl} &= \text{(Rest-) Klemmkraft} \\
-                    F_\text{S}  &= \text{Zugkraft an der Schraube} \\
-                    F_\text{V}  &= \text{Vorspannkraft der Schraubenverbindung} \\
-                    F_\text{AS} &= \text{Schraubenzusatzkraft} \\
-                    F_\text{AP} &= \text{Entlastungskraft der Platten}
+                    \color{NavyBlue}F_\text{Kl}   &\color{NavyBlue}= \text{(Rest-) Klemmkraft} \\
+                    \color{Red}F_\text{S}         &\color{Red}= \text{Zugkraft an der Schraube} \\
+                    \color{Purple}F_\text{V}      &\color{Purple}= \text{Vorspannkraft der Schraubenverbindung} \\
+                    \color{OliveGreen}F_\text{AS} &\color{OliveGreen}= \text{Schraubenzusatzkraft} \\
+                    \color{OliveGreen}F_\text{AP} &\color{OliveGreen}= \text{Entlastungskraft der Platten}
                 \end{align*}
                 }
             \end{minipage}%
-            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+            \begin{minipage}[t]{0.45\cellwidth-\TileSep}
                 \centering
                 {\scriptsize
                 \begin{align*}
                     \Phi        &= \text{Kräfteverhältnis} \\
-                    F_\text{A}  &= \text{Betriebskraft ({\color{Red}\myul{Zug}} / {\color{Red}\myul{Druck}}) zwischen Schraube und Platte} \\
-                    f_\text{A}  &= \text{Zusätzliche Schrauben{\color{Red}\myul{verlängerung}} bzw.} \\[-0.5ex]
-                                &= \text{Geringere Platten{\color{Red}\myul{stauchung}}} \\
+                    F_\text{A}  &= \text{Betriebskraft (\myul{Zug} / \myul{Druck}) zwischen Schraube und Platte} \\
+                    f_\text{A}  &= \text{Zusätzliche Schrauben\myul{verlängerung} bzw.} \\[-0.5ex]
+                                &= \text{Geringere Platten\myul{stauchung}} \\
                 \end{align*}
                 }
             \end{minipage}
