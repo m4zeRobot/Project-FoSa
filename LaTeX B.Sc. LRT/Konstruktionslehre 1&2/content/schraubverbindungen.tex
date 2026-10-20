@@ -503,7 +503,7 @@
         }{0}{0}{1}{0}
 
 % --- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{101mm}
+\setlength{\rowheight}{106mm}
 
     % A2) Erste Kachel unten anbauen
     \setlength{\cellwidth}{190mm}
@@ -512,20 +512,20 @@
             \titlebf{Verspannungsschaubild}\\ \vspace{2mm}
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
-                \titlerm{Zugbelastung}\\ \vspace{1mm}
-                \includegraphics[width=0.35\cellwidth]{images/verspannungsschaubild-zugbelastung.pdf}
+                \titlerm{Zugbelastung}\\ \vspace{6.5mm}
+                \includegraphics[width=0.36\cellwidth]{images/verspannungsschaubild-zugbelastung.pdf}
             \end{minipage}%
             \vline
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
                 \titlerm{Druckbelastung}\\ \vspace{1mm}
-                \includegraphics[width=0.35\cellwidth]{images/verspannungsschaubild-zugbelastung.pdf}
+                \includegraphics[width=0.34\cellwidth]{images/verspannungsschaubild-druckbelastung.pdf}
             \end{minipage}
             \begin{align*}
                 F_\text{Kl} &= F_\text{V} - F_\text{AP} = F_\text{V} - (1-\Phi)\,F_\text{A} \\
                 F_\text{S} &= F_\text{V} + F_\text{AS} = F_\text{Kl} + F_\text{A}
             \end{align*}%
-            \\ \vspace{-5mm}
+            \\ \vspace{-6mm}
             \begin{minipage}[t]{0.38\cellwidth-\TileSep}
                 \centering
                 {\scriptsize
@@ -542,10 +542,10 @@
                 \centering
                 {\scriptsize
                 \begin{align*}
-                    \Phi        &= \text{Kräfteverhältnis} \\
-                    F_\text{A}  &= \text{Betriebskraft (\myul{Zug} / \myul{Druck}) zwischen Schraube und Platte} \\
-                    f_\text{A}  &= \text{Zusätzliche Schrauben\myul{verlängerung} bzw.} \\[-0.5ex]
-                                &= \text{Geringere Platten\myul{stauchung}} \\
+                    \Phi                          &= \text{Kräfteverhältnis} \\
+                    \color{OliveGreen}F_\text{A}  &\color{OliveGreen}= \text{Betriebskraft (\myul{Zug} / \myul{Druck}) zwischen Schraube und Platte} \\
+                    f_\text{A}                    &= \text{Zusätzliche Schrauben\myul{verlängerung} bzw.} \\[-0.5ex]
+                                                  &= \text{Geringere Platten\myul{stauchung}} \\
                 \end{align*}
                 }
             \end{minipage}
@@ -553,7 +553,7 @@
         }{0}{0}{1}{0}
 
 % --- DRITTE REIHE: Unten anbauen
-\setlength{\rowheight}{60mm}
+\setlength{\rowheight}{55mm}
 
     % X3) Eigene Zeile für die Überschrift
     \Tile{X3}{(A2.south west)}{190mm}{8mm}
@@ -565,7 +565,7 @@
     \setlength{\cellwidth}{90mm}
     \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
         {
-            TBD
+            \includegraphics[width=0.94\cellwidth]{images/schwellende-zugbelastung.pdf}
         }{0}{0}{0}{0}
 
     % B3) Zweite Kachel rechts anbauen
@@ -575,11 +575,11 @@
             \vspace{-\TileSep}
             \begin{minipage}{0.5\cellwidth-\TileSep}
                 \centering
-                Schraubenkraft-Amplitude $F_\text{Sa}$:
+                \myul{Schraubenkraft-Amplitude} $F_\text{Sa}$
                 \begin{equation*}
                     F_\text{Sa} = \Phi\,\frac{F_\text{Ao} - F_\text{Au}}{2}
                 \end{equation*}
-                Mittlere Schraubenkraft $F_\text{Sm}$:
+                \myul{Mittlere Schraubenkraft} $F_\text{Sm}$
                 \begin{align*}
                     F_\text{Sm} &= F_\text{V} + F_\text{Sa} \\
                                 &= F_\text{V} + \Phi\,\frac{F_\text{Ao} - F_\text{Au}}{2}
@@ -600,20 +600,20 @@
                 }
             \end{minipage}%
             \\ \vspace{6mm}
-            Gesamte Schraubenkraft $F_\text{S}(t)$:
+            \myul{Gesamte Schraubenkraft} $F_\text{S}(t)$
                 \begin{equation*}
                     F_\text{Su} = F_\text{Sm} - F_\text{Sa}~;\quad F_\text{So} = F_\text{Sm} + F_\text{Sa}
                 \end{equation*}
         }{0}{0}{1}{0}
 
 % --- VIERTE REIHE: Unten anbauen
-\setlength{\rowheight}{60mm}
+\setlength{\rowheight}{56mm}
 
     % A4) Erste Kachel unten anbauen
     \setlength{\cellwidth}{90mm}
     \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
         {
-            TBD
+            \includegraphics[width=0.9\cellwidth]{images/schwellende-druckbelastung.pdf}\hspace{3.6mm}
         }{0}{0}{0}{0}
 
     % B3) Zweite Kachel rechts anbauen
@@ -640,7 +640,7 @@
     \setlength{\cellwidth}{56mm}
     \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Spannungsquerschnitt $A_\text{S}$}\\ \vspace{-2mm}
+            \titlerm{Spannungsquerschnitt} {\normalsize$A_\text{S}$}\\ \vspace{-2mm}
             \begin{equation*}
                 A_\text{S} = \frac{\pi~d_\text{S}^2}{4} = \frac{\pi\,\left(2\,d - \text{1,87639}~P\right)^2}{16}
             \end{equation*}
@@ -973,7 +973,7 @@
                 \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of G](G*){
                     \scriptsize $F_\text{Kl,\,erf} =$ erforderliche\\[-0.5ex] \scriptsize Klemmkraft
                 };
-                \node[align=center, minimum width=1cm, minimum height=8mm, below=6mm of D*](extra){
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=7mm of D*](extra){
                     \myul{Zusätzlich gilt:}\\[1.2ex]
                     $F_\text{AS} \stackrel{!}{\leq} \text{0,1}~R_\text{p0,2}~A_\text{S}$
                 };
