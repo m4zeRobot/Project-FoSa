@@ -1,0 +1,989 @@
+% ### Erste Seite der Schraubverbindungen ###
+\centering
+\section*{\myul{Schraubverbindungen}}
+
+% Klebefläche für das erste Register:
+\begin{tikzpicture}[remember picture, overlay, x=1mm, y=-1mm]
+    \begin{scope}[shift={(current page.north west)}]
+        \draw (206,56) -- (202,56) -- (202,34) -- (206,34);
+        \node[rotate=90, anchor=center] at (204,45) {Schrauben};
+    \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{62mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-16mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Begriffsdefinition}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{88mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Verbindungsarten}\\ \vspace{1mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Durchschraubverbindung (DSV)\\
+                Hin{\color{Red}\myul{durchschrauben}}\\ \vspace{3.75mm}
+                \includegraphics[height=14mm]{images/schrauben-verbindungsarten-1.pdf}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Einschraubverbindung (ESV)\\
+                Hin{\color{Red}\myul{einschrauben}}\\ \vspace{1.5mm}
+                \includegraphics[height=18mm]{images/schrauben-verbindungsarten-2.pdf}
+            \end{minipage}\\ \vspace{2mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Einschraub{\color{Red}en}verbindung\\
+                {\color{Red}\myul{Eine}} Schraube\\ \vspace{1.5mm}
+                \includegraphics[height=18mm]{images/schrauben-verbindungsarten-3.pdf}
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Mehrschraub{\color{Red}en}verbindung\\
+                {\color{Red}\myul{Mehrere}} Schrauben\\ \vspace{1.5mm}
+                \includegraphics[height=18mm]{images/schrauben-verbindungsarten-4.pdf}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{102mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Belastungen}\\ \vspace{0.5mm}
+            \begin{minipage}[t]{0.55\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Längs-/Axialbelastung (Formschluss)\\
+                Betriebskraft {\color{Red}$F_\text{A}$} in Längsrichtung\\
+                Vorspannkraft {\color{Orange}$F_\text{V}$} der Schraube ({\color{Red}\myul{Lastfrei}})\\ \vspace{1.25mm}
+                \includegraphics[height=18mm]{images/schrauben-belastungen-1.pdf}
+            \end{minipage}%
+            \begin{minipage}[t]{0.45\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Querbelastung (Reibschluss)\\
+                Betriebskraft {\color{Red}$F_\text{Q}$} in Querrichtung\\
+                Klemmkraft {\color{NavyBlue}$F_\text{K}$} ({\color{Red}\myul{Betriebsfall}})\\ \vspace{1.25mm}
+                \includegraphics[height=18mm]{images/schrauben-belastungen-2.pdf}
+            \end{minipage}\\ \vspace{2.5mm}
+            \begin{minipage}[t]{0.55\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Zentrische Längs- / Axialbelastung\\ \vspace{2.75mm}
+                \includegraphics[height=16.5mm]{images/schrauben-belastungen-3.pdf}
+            \end{minipage}%
+            \begin{minipage}[t]{0.45\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                Exzentrische Belastung\\ \vspace{1.5mm}
+                \includegraphics[height=18mm]{images/schrauben-belastungen-4.pdf}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{58mm}
+
+    % X2) Eigene Zeile für die Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{7mm}
+        {
+            \titlebf{Gewindearten}
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \resizebox{0.84\cellwidth}{!}{%
+            \begin{tabular}{l|l|l}
+                \xrowht[()]{1.5mm}\textbf{Bezeichnung} & \textbf{Durchmesser} & \textbf{Fläche} \\ \hline
+                \xrowht[()]{5.0mm}\begin{tabular}[c]{@{}l@{}}Außen- /\\[-0.25ex] Nenndurchmesser\end{tabular} & $d$ & $A_\text{N} = \tfrac{\pi~d^2}{4}$ \\ \hline
+                \xrowht[()]{3.5mm}\color{NavyBlue}Flankendurchmesser & $d_2 = d - \text{0,64952}\cdot P$ & $A_2 = \tfrac{\pi~d_2^2}{4}$ \\ \hline
+                \xrowht[()]{3.5mm}\color{ForestGreen}Kerndurchmesser & $d_3 = d - \text{1,22687}\cdot P$ & $A_3 = \tfrac{\pi~d_3^2}{4}$ \\ \hline
+                \xrowht[()]{3.5mm}\color{Red}Spannungsdurchmesser & $d_\text{S} = \text{0,5} \cdot (d_2 + d_3)$ & $A_\text{S} = \tfrac{\pi~d_\text{S}^2}{4}$
+            \end{tabular}%
+            }%
+            \\ \vspace{1mm}
+            {\scriptsize($P$ = Gewindesteigung in [mm])}\\ \vspace{1mm}
+            \begin{minipage}{0.4\cellwidth-\TileSep}
+                \centering
+                \vspace{1mm}
+                \includegraphics[height=20mm]{images/gewinde-durchmesser-1.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.3\cellwidth}
+                \centering
+                \includegraphics[height=20mm]{images/gewinde-durchmesser-2.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.3\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=20mm]{images/gewinde-durchmesser-3.pdf}
+            \end{minipage}%
+        }{0}{1}{1}{0}
+
+    % B2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \resizebox{\cellwidth-2\TileSep}{!}{%
+            \begin{tabular}{l|c|l}
+                \xrowht[()]{1.5mm}\textbf{Gewindetyp} & \textbf{Ausführung} & \textbf{Beschreibung} \\ \hline
+                \xrowht[()]{7.5mm}Spitzgewinde  & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-1.pdf}} & Übliches Befestigunsgewinde \\
+                \xrowht[()]{7.5mm}Trapezgewinde & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-2.pdf}} & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde\\ (Bsp.: Leitspindeln)\end{tabular} \\
+                \xrowht[()]{7.5mm}Rundgewinde   & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-3.pdf}} & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde für\\ hochverschmutzte Geräte\end{tabular} \\
+                \xrowht[()]{7.5mm}Sägegewinde   & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-4.pdf}} & \begin{tabular}[c]{@{}l@{}}Bewegungsgewinde bei\\ einseitiger Belastungsrichtung\end{tabular} \\
+                \xrowht[()]{7.5mm}Flachgewinde  & \raisebox{-0.35\height}{\includegraphics[height=8mm]{images/gewindetyp-5.pdf}} & \begin{tabular}[c]{@{}l@{}}Nicht abgeschrägtes\\ Ineinandergreifen der Zähne\end{tabular}
+            \end{tabular}%
+            }%
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{35mm}
+
+    % X3) Eigene Zeile für die Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{7mm}
+        {
+            \titlebf{Festigkeitsklassen}
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \begin{minipage}{0.7\cellwidth-\TileSep}
+                \centering
+                \begin{tabular}{cclcc|lll}
+                    \xrowht[()]{2.0mm}8.8 ($\leq$ M16) & 8.8 ($>$ M16) & 9.8 & 10.9 & 12.9 & \multicolumn{3}{c}{Festigkeitsklasse} \\ \hline
+                    \xrowht[()]{2.0mm}640                   & 640                      & 720 & 900  & 1080 & Nennwert       & $R_\text{p0,2}$ & {[}MPa{]}      \\ \cline{1-6}
+                    \xrowht[()]{2.0mm}640                   & 660                      & 720 & 920  & 1100 & min.           & $R_\text{p0,2}$ & {[}MPa{]}      \\ \hline
+                    \xrowht[()]{2.0mm}800                   & 800                      & 900 & 1000 & 1200 & Nennwert       & $R_\text{m}$    & {[}MPa{]}         \\ \cline{1-6}
+                    \xrowht[()]{2.0mm}800                   & 830                      & 900 & 1040 & 1220 & min.           & $R_\text{m}$    & {[}MPa{]}        
+                \end{tabular}%
+                \\ \vspace{1mm}
+                {\scriptsize
+                Bei Muttern wird nur die 1. Zahl angegeben.\\[-0.75ex]
+                Immer Schrauben und Muttern gleicher Festigkeitsklassen kombinieren!
+                }
+            \end{minipage}%
+            \begin{minipage}{0.3\cellwidth-\TileSep}
+                \centering
+                \vspace{-5mm}
+                \begin{align*}
+                    R_\text{m} &= 100\cdot(\text{1.\,Zahl}) \\[1.0ex]
+                    R_\text{p0,2} &= \frac{R_\text{m}}{10}\cdot(\text{2.\,Zahl})
+                \end{align*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{35mm}
+
+    % X4) Eigene Zeile für die Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{7mm}
+        {
+            \titlebf{Grobdimensionierung nach VDI 2230}
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.55\cellwidth-\TileSep}
+                \centering
+                \setstretch{1.1}
+                \begin{enumerate}[leftmargin=*]
+                    \item Angreifende Betriebskraft $F_\text{A}$, $F_\text{Q}$ bestimmen
+                    \item Wahl der Zeile mit der nächst größeren Kraft $F_\text{A}$, $F_\text{Q}$
+                    \item Berücksichtigung der Einbaufälle:\\[1.0ex] \hspace{2mm}
+                    \begin{tabular}{lll}
+                        Fall 0      & (Axial, Statisch, Zentrisch)    & +\,0 Zeilen \\[0.25ex]
+                        Fall I      & (Querkraft, Statisch/Dynamisch) & +\,4 Zeilen \\[0.25ex]
+                        Fall II     & (Axial, Dynamisch, Exzentrisch) & +\,2 Zeilen \\[0.25ex]
+                        Fall III\,a & (Axial, Dynamisch, Zentrisch)   & +\,1 Zeile  \\[0.25ex]
+                        Fall III\,b & (Axial, Statisch, Exzentrisch)  & +\,1 Zeile
+                    \end{tabular}
+                    \item Ablesen der Mindestvorspannkraft $F_\text{V,\,min}$ (Momentane Zeile)
+                    \item Berücksichtigung des Anziehverfahrens:\\[1.0ex] \hspace{2mm}
+                    \begin{tabular}{ll}
+                        Winkel-/Streckgrenzenkontrolle: & +\,0 Zeilen \\[0.25ex]
+                        Drehmomentschlüssel             & +\,1 Zeile  \\[0.25ex]
+                        Drehschrauber                   & +\,2 Zeilen
+                    \end{tabular}
+                    \item Ablesen des Nenndurchmessers $d$ der Schraube, je nach\\[-0.25ex] gewünschter Festigkeitsklasse
+                \end{enumerate}
+            \end{minipage}%
+            \begin{minipage}{0.35\cellwidth-\TileSep}
+                \centering
+                \resizebox{54mm}{!}{%
+                \begin{tabular}{l|r|r|r}
+                    \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Kraft\\$F_\text{A}$, $F_\text{Q}$ [N]\end{tabular}} & \multicolumn{3}{c}{Nenndurchmesser [mm]}  \\ \cline{2-4}
+                                           & \multicolumn{3}{c}{Festigkeitsklasse} \\ \cline{2-4}
+                                           & 12.9 & 10.9 & 8.8 \\ \hline
+                    250                    & \hspace{8.25mm} & \hspace{8.25mm} & \\ \hline
+                    400                    &    &    & \\ \hline
+                    630                    &    &    & \\ \hline
+                    1.000                  &    &    & \\ \hline
+                    1.600                  & 3  & 3  & 3 \\ \hline
+                    2.500                  & 3  & 3  & 4 \\ \hline
+                    4.000                  & 4  & 4  & 5 \\ \hline
+                    6.300                  & 4  & 5  & 5 \\ \hline
+                    10.000                 & 5  & 6  & 8 \\ \hline
+                    16.000                 & 6  & 8  & 8 \\ \hline
+                    25.000                 & 8  & 10 & 10 \\ \hline
+                    40.000                 & 10 & 12 & 14 \\ \hline
+                    63.000                 & 12 & 14 & 16 \\ \hline
+                    100.000                & 16 & 16 & 20 \\ \hline
+                    160.000                & 20 & 20 & 24 \\ \hline
+                    250.000                & 24 & 27 & 30 \\ \hline
+                    400.000                & 30 & 36 & \\ \hline
+                    630.000                & 36 &    & 
+                \end{tabular}
+                }
+            \end{minipage}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Zweite Seite der Schraubverbindungen ###
+\newpage
+\centering
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{35mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-9mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Schraubenberechnung}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{92mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Elastische Längenänderung} {\normalsize$f$ [mm]}\\ \vspace{-2.45mm}
+            \begin{equation*}
+                f = \varepsilon~l = \frac{l~\sigma}{E} = \frac{F~l}{E~A}
+            \end{equation*}%
+            \\ \vspace{-4mm}
+            \begin{minipage}[t]{0.3\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    l           &= \text{Stablänge} \\
+                    E           &= \text{E-Modul} \\
+                    \sigma      &= \text{Spannung} \\
+                    \varepsilon &= \text{Dehnung}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}[t]{0.6\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    f           &= \text{Elastische Längenänderung} \\
+                    F           &= \text{Kraft }(F > 0\text{: Zug; }F < 0\text{: Druck}) \\
+                    A           &= \text{Querschnittsfläche}
+                \end{align*}
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B1) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{98mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Allgemeine Nachgiebigkeit} {\normalsize$\delta$ $\left[\tfrac{\text{mm}}{\text{N}}\right]$}\\ \vspace{-4mm}
+            \begin{equation*}
+                \delta = \frac{1}{C} = \frac{f}{F} = \frac{l}{E~A}\quad\Rightarrow\quad \delta_i = \sum\limits_{i=1}^n \frac{l_i}{E_\text{s}~A_i}
+            \end{equation*}%
+            \\ \vspace{-5mm}
+            \begin{minipage}[t]{0.35\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    \delta &= \text{Nachgiebigkeit} \\
+                    l      &= \text{Stablänge} \\
+                    E      &= \text{E-Modul} \\
+                    A      &= \text{Querschnittsfläche}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}[t]{0.60\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    f &= \text{Elastische Längenänderung} \\
+                    F &= \text{Kraft }(F > 0\text{: Zug; }F < 0\text{: Druck}) \\
+                    C &= \text{Federkonstante des Stabs}
+                \end{align*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{82mm}
+
+    % X2) Eigene Zeile für die Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{8mm}
+        {
+            \titlebf{Spezifische Nachgiebigkeiten}
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{126mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Schraubennachgiebigkeit} {\normalsize$\delta_\text{S}$ $\left[\tfrac{\text{mm}}{\text{N}}\right]$}\\ \vspace{-3mm}
+            \begin{align*}
+                \delta_\text{S} &= \frac{f_\text{S}}{F_\text{V}} = \frac{f_\text{A}}{F_\text{AS}} \\[0.75ex]
+                                &= \delta_\text{SK} + \delta_1 + \delta_2 +\,\dots\,+ \delta_i + \delta_\text{G} + \delta_\text{M} \\
+                                &= \frac{1}{E_\text{S}}\left(\frac{l_\text{SK}}{A_\text{N}} + \frac{l_1}{A_{l_1}} + \frac{l_2}{A_{l_2}} +\,\dots\,+ \frac{l_i}{A_{l_i}} + \frac{l_\text{G}}{A_3} + \frac{l_\text{UG}}{A_3} + \frac{l_\text{M}}{A_\text{N}}\right)
+            \end{align*}%
+            \\ \vspace{-3mm}
+            {\scriptsize
+            \begin{align*}
+                \delta_i   &= \text{Nachgiebigkeit des Teilquerschnitts }i \\
+                E_\text{S} &= \text{Elastizitätsmodul des Schraubenwerkstoffs} \\
+                l_i        &= \text{Länge des zylindrischen Einzelelements }i
+            \end{align*}
+            }\resizebox{\cellwidth-4\TileSep}{!}{%
+            \begin{tabular}{llccc}
+                \xrowht[()]{1.6mm}Symbol                            & Bezeichnung                        & Fallunterscheidung & Formel                       & Querschnitt                      \\ \hline
+                \xrowht[()]{1.6mm}\multirow{2.25}{*}{$l_\text{SK}$} & \multirow{2.25}{*}{eff. Kopflänge} & Außensechskant     & $l_\text{SK}$ = \text{0,5}~d & \multirow{2.25}{*}{$A_\text{N}$} \\
+                \xrowht[()]{1.6mm}                                  &                                    & Innensechskant     & $l_\text{SK}$ = \text{0,4}~d &                                  \\ \hline
+                \xrowht[()]{1.6mm}$l_\text{G}$                      & eff. Außengewindelänge             &                    & $l_\text{G}$ = \text{0,5}~d  & \multirow{2.25}{*}{$A_3$}        \\
+                \xrowht[()]{1.6mm}$l_\text{UG}$                     & ung. Außengewindelänge             &                    & (Rechnen)                    &                                  \\ \hline
+                \xrowht[()]{1.6mm}\multirow{2.25}{*}{$l_\text{M}$}  & eff. Mutterlänge                   & DSV                & $l_\text{M}$ = \text{0,4}~d  & \multirow{2.25}{*}{$A_\text{N}$} \\
+                \xrowht[()]{1.6mm}                                  & eff. Innengewindelänge             & ESV                & $l_\text{M}$ = \text{0,33}~d & 
+            \end{tabular}
+            }
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{64mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Plattennachgiebigkeit} {\normalsize$\delta_\text{P}$ $\left[\tfrac{\text{mm}}{\text{N}}\right]$}\\ \vspace{-0.5mm}
+            \begin{align*}
+                \delta_\text{P} &= \frac{f_\text{P}}{F_\text{V}} = \frac{f_\text{A}}{F_\text{AP}} \\[0.5ex]
+                                &= \frac{l_\text{k}}{E_\text{P}~A_\text{ers}}
+            \end{align*}%
+            \\ \vspace{0.5mm}
+            {\scriptsize
+            \begin{align*}
+                \delta_\text{P} &= \text{Nachgiebigkeit der Platten}             \\
+                f_\text{P}      &= \text{Plattenstauchung}                       \\
+                F_\text{V}      &= \text{Vorspannkraft}                          \\
+                f_\text{A}      &= \text{Längenänderung aufgrund von }F_\text{A} \\
+                F_\text{AP}     &= \text{Entlastungskraft der Platten}           \\
+                l_\text{k}      &= \text{Klemmlänge}                             \\
+                E_\text{P}      &= \text{E-Modul der Platten}                    \\
+                A_\text{ers}    &= \text{Ersatzquerschnittsfläche}
+            \end{align*}
+            }
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{135mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Ersatzquerschnitt} {\normalsize$A_\text{ers}$ $\left[\text{mm}^2\right]$}\\ \vspace{3mm}
+            \begin{tabular}{c|c|c|c|c|c}
+                \xrowht[()]{2.5mm}Bedingung & $d_\text{W} \geq D_\text{A}$ & \multicolumn{2}{c|}{$d_\text{W} < D_\text{A} \leq d_\text{W} + l_\text{k}$} & \multicolumn{2}{c}{$D_\text{A} \geq d_\text{W} + l_\text{k}$} \\ \hline
+                \xrowht[()]{5.0mm}$A_\text{ers} =$ & $\dfrac{\pi}{4}\left(D_\text{A}^2-d_\text{h}^2\right)$ & \multicolumn{2}{c|}{$\dfrac{\pi}{4}\left(d_\text{W}^2 - d_\text{h}^2\right) + \dfrac{\pi}{8}\,d_\text{W}\left(D_\text{A} - d_\text{W}\right)\left[\left(x+1\right)^2-1\right]$} & \multicolumn{2}{c}{\hspace{5mm}$\dfrac{\pi}{4}\left(d_\text{W}^2 - d_\text{h}^2\right) + \dfrac{\pi}{8}\,d_\text{W}\,l_\text{k}\left[\left(x+1\right)^2-1\right]$}\hspace{4mm} \\ \hline
+                \multicolumn{2}{c|}{} & \xrowht[()]{12.0mm}\hspace{7mm}\begin{tabular}[c]{@{}c@{}}DSV:\\[0.5ex]$x = \sqrt[3]{\dfrac{l_\text{k}~d_\text{W}}{D_\text{A}^2}}$\end{tabular}\hspace{7mm} & \begin{tabular}[c]{@{}c@{}}ESV:\\[0.5ex]$x = \sqrt[5]{\dfrac{l_\text{k}}{D_\text{A}}}$\end{tabular} & \hspace{3mm}\begin{tabular}[c]{@{}c@{}}DSV:\\[0.5ex]$x = \sqrt[3]{\dfrac{l_\text{k}~d_\text{W}}{\left(d_\text{W}+l_\text{k}\right)^2}}$\end{tabular}\hspace{3mm} & \begin{tabular}[c]{@{}c@{}}ESV:\\[0.5ex]$x = \sqrt[5]{\dfrac{l_\text{k}}{d_\text{W}+l_\text{k}}}$\end{tabular}
+            \end{tabular}%
+            \\ \vspace{8mm}
+            \begin{minipage}{0.25\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=58.3mm]{images/schrauben-ersatzquerschnitt-1.pdf}\\ \vspace{-4.8mm}
+            \end{minipage}%
+            \begin{minipage}{0.35\cellwidth}
+                \centering
+                \includegraphics[height=61.5mm]{images/schrauben-ersatzquerschnitt-2.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.40\cellwidth-\TileSep}
+                \centering
+                \vspace{-1mm}
+                \includegraphics[height=62mm]{images/schrauben-ersatzquerschnitt-3.pdf}
+            \end{minipage}%
+            \\ \vspace{3mm}
+            \begin{minipage}[t]{0.3\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    A_\text{ers} &= \text{Ersatzquerschnitt}           \\
+                    D_\text{A} &= \text{Außendurchmesser der Platten} \\
+                    d_\text{W}   &= \text{Durchmesser der Kopfauflage}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}[t]{0.3\cellwidth}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    l_\text{k} &= \text{Klemmlänge}                       \\
+                    d_\text{h} &= \text{Durchmesser des Durchgangsloches} \\
+                    x          &= \text{Konstante}
+                \end{align*}
+            \end{minipage}
+            \\ \vspace{3mm}
+            {\color{Red}Faustregel:~~$D_\text{A} = 2\cdot\text{Kleinster Randabstand}$}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Dritte Seite der Schraubverbindungen ###
+\newpage
+\centering
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{35mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-9mm]current page.north west)}{190mm}{8mm}
+        {
+            \titlebf{Kraft-Verformungs-Schaubild (nur Vorspannkraft $\mathbf{\textit{F}_\mathbf{V}}$)}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=\rowheight-2\TileSep]{images/kraft-verformungs-schaubild.pdf}
+            \end{minipage}%
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                \titlerm{Verlängerung der Schraube}~$f_\text{S}$~[mm]\\ \vspace{-3mm}
+                \begin{equation*}
+                    f_\text{S} = \delta_\text{S}~F_\text{V}
+                \end{equation*}
+                \titlerm{Verkürzung der Platten}~$f_\text{P}$~[mm]\\ \vspace{-3mm}
+                \begin{equation*}
+                    f_\text{P} = \delta_\text{P}~F_\text{V}
+                \end{equation*}
+            \end{minipage}%
+            \begin{minipage}{0.33\cellwidth-\TileSep}
+                \centering
+                {\scriptsize
+                \begin{align*}
+                    F_\text{S}      &= \text{Schraubenkraft}\\
+                    F_\text{P}      &= \text{Plattenkraft}\\
+                    F_\text{V}      &= \text{Vorspannkraft}\\
+                    f_\text{S}      &= \text{Verlängerung der Schraube}\\
+                    f_\text{P}      &= \text{Stauchung der Platte}\\
+                    \delta_\text{S} &= \text{Nachgiebigkeit der Schraube}\\
+                    \delta_\text{P} &= \text{Nachgiebigkeit der Platte}
+                \end{align*}
+                }
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{106mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Verspannungsschaubild}\\ \vspace{2mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Zugbelastung}\\ \vspace{6.5mm}
+                \includegraphics[width=0.36\cellwidth]{images/verspannungsschaubild-zugbelastung.pdf}
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Druckbelastung}\\ \vspace{1mm}
+                \includegraphics[width=0.34\cellwidth]{images/verspannungsschaubild-druckbelastung.pdf}
+            \end{minipage}
+            \begin{align*}
+                F_\text{Kl} &= F_\text{V} - F_\text{AP} = F_\text{V} - (1-\Phi)\,F_\text{A} \\
+                F_\text{S} &= F_\text{V} + F_\text{AS} = F_\text{Kl} + F_\text{A}
+            \end{align*}%
+            \\ \vspace{-6mm}
+            \begin{minipage}[t]{0.38\cellwidth-\TileSep}
+                \centering
+                {\scriptsize
+                \begin{align*}
+                    \color{NavyBlue}F_\text{Kl}   &\color{NavyBlue}= \text{(Rest-) Klemmkraft} \\
+                    \color{Red}F_\text{S}         &\color{Red}= \text{Zugkraft an der Schraube} \\
+                    \color{Purple}F_\text{V}      &\color{Purple}= \text{Vorspannkraft der Schraubenverbindung} \\
+                    \color{OliveGreen}F_\text{AS} &\color{OliveGreen}= \text{Schraubenzusatzkraft} \\
+                    \color{OliveGreen}F_\text{AP} &\color{OliveGreen}= \text{Entlastungskraft der Platten}
+                \end{align*}
+                }
+            \end{minipage}%
+            \begin{minipage}[t]{0.45\cellwidth-\TileSep}
+                \centering
+                {\scriptsize
+                \begin{align*}
+                    \Phi                          &= \text{Kräfteverhältnis} \\
+                    \color{OliveGreen}F_\text{A}  &\color{OliveGreen}= \text{Betriebskraft (\myul{Zug} / \myul{Druck}) zwischen Schraube und Platte} \\
+                    f_\text{A}                    &= \text{Zusätzliche Schrauben\myul{verlängerung} bzw.} \\[-0.5ex]
+                                                  &= \text{Geringere Platten\myul{stauchung}} \\
+                \end{align*}
+                }
+            \end{minipage}
+            
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{55mm}
+
+    % X3) Eigene Zeile für die Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{8mm}
+        {
+            \titlebf{Dynamische Belastung}
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{90mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \includegraphics[width=0.94\cellwidth]{images/schwellende-zugbelastung.pdf}
+        }{0}{0}{0}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{100mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                \myul{Schraubenkraft-Amplitude} $F_\text{Sa}$
+                \begin{equation*}
+                    F_\text{Sa} = \Phi\,\frac{F_\text{Ao} - F_\text{Au}}{2}
+                \end{equation*}
+                \myul{Mittlere Schraubenkraft} $F_\text{Sm}$
+                \begin{align*}
+                    F_\text{Sm} &= F_\text{V} + F_\text{Sa} \\
+                                &= F_\text{V} + \Phi\,\frac{F_\text{Ao} - F_\text{Au}}{2}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                {\scriptsize \vspace{-5mm}
+                \begin{align*}
+                    F_\text{Sa} &= \text{Schraubenkraft-Amplitude} \\
+                    F_\text{So} &= \text{Schrauben-Oberkraft} \\
+                    F_\text{Sm} &= \text{Mittlere Schraubenkraft} \\
+                    \Phi        &= \text{Kräfteverhältnis} \\
+                    F_\text{Ao} &= \text{Maximale Betriebskraft} \\
+                    F_\text{Au} &= \text{Minimale Betriebskraft} \\
+                    F_\text{V}  &= \text{Vorspannkraft}
+                \end{align*}
+                }
+            \end{minipage}%
+            \\ \vspace{6mm}
+            \myul{Gesamte Schraubenkraft} $F_\text{S}(t)$
+                \begin{equation*}
+                    F_\text{Su} = F_\text{Sm} - F_\text{Sa}~;\quad F_\text{So} = F_\text{Sm} + F_\text{Sa}
+                \end{equation*}
+        }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{56mm}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{90mm}
+    \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
+        {
+            \includegraphics[width=0.9\cellwidth]{images/schwellende-druckbelastung.pdf}\hspace{3.6mm}
+        }{0}{0}{0}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{44mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Dauerfestigkeit}\\ \vspace{-2mm}
+            \begin{equation*}
+                \sigma_\text{a} = \frac{F_\text{Sa}}{A_\text{S}} \stackrel{!}{\leq} \frac{\sigma_\text{A}}{S_\text{D}}
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                \sigma_\text{a} = &~\text{Spannungsamplitude}    \\
+                F_\text{Sa}     = &~\text{Amplitudenkraft}       \\
+                A_\text{S}      = &~\text{Spannungsquerschnitt}  \\
+                \sigma_\text{A} = &~\text{Dauerfestigkeit}       \\
+                S_\text{D}      = &~\text{Sicherheitsfaktor für} \\[-0.5ex]
+                                  &~\text{Dauerfestigkeit}
+            \end{align*}
+            }
+        }{0}{1}{0}{0}
+
+    % C3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{56mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Spannungsquerschnitt} {\normalsize$A_\text{S}$}\\ \vspace{-2mm}
+            \begin{equation*}
+                A_\text{S} = \frac{\pi~d_\text{S}^2}{4} = \frac{\pi\,\left(2\,d - \text{1,87639}~P\right)^2}{16}
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                A_\text{S} &= \text{Spannungsquerschnitt} \\
+                d_\text{S} &= \text{Spannungsdurchmesser} \\
+                d          &= \text{Nenndurchmesser}      \\
+                P          &= \text{Gewindesteigung}
+            \end{align*}
+            }
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Dritte Seite der Schraubverbindungen ###
+\newpage
+\centering
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{50mm}
+
+    % A1) Erste Kachel am Seitenursprung ausrichten
+    \setlength{\cellwidth}{95mm}
+    \Tile{A1}{([xshift=10mm, yshift=-9mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Schraubenzusatzkraft} {\normalsize$F_\text{AS}$}\\ \vspace{-3mm}
+            \begin{align*}
+                F_\text{AS} &= n~F_\text{A}~\frac{\delta_\text{P}}{\delta_\text{P}+\delta_\text{S}} = \Phi~F_\text{A} \\
+                F_\text{AS} &\stackrel{!}{\leq} \text{0,1}~R_\text{p0,2}~A_\text{S}
+            \end{align*}
+            \begin{minipage}{0.6\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \vspace{-3mm}
+                \begin{align*}
+                    F_\text{AS}     &= \text{Schraubenzusatzkraft}        \\
+                    \delta_\text{P} &= \text{Nachgiebigkeit der Platte}   \\
+                    \delta_\text{S} &= \text{Nachgiebigkeit der schraube} \\
+                    F_\text{A}      &= \text{Axiale Betriebskraft}        \\
+                    \Phi            &= \text{Kräfteverhältnis}            \\
+                    A_\text{S}      &= \text{Spannungsquerschnitt}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}{0.4\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                {\color{Red}Belastung am \\
+                \myul{Schraubenkopf:}}   \\[1.5ex]
+                $\Phi = \Phi_\text{k}$   \\[1.5ex]
+                {\color{Red}Belastung im \\
+                \myul{Bauteil:}}         \\[1.5ex]
+                $\Phi = n~\Phi_\text{k}$ \\[1.5ex]
+            \end{minipage}
+        }{0}{1}{1}{0}
+
+    % B1) Erste Kachel am Seitenursprung ausrichten
+    \setlength{\cellwidth}{95mm}
+    \Tile{B1}{(A1.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Entlastungskraft der Platten} {\normalsize$F_\text{AP}$}\\ \vspace{-3mm}
+            \begin{equation*}
+                F_\text{AP} = F_\text{A} - F_\text{AS} = n~F_\text{A}~\frac{\delta_\text{S}}{\delta_\text{S}+\delta_\text{P}} = (1-\Phi)~F_\text{A}
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                F_\text{AP}     &= \text{Entlastungskraft der Platten} \\
+                F_\text{A}      &= \text{Axiale Betriebskraft}         \\
+                F_\text{AS}     &= \text{Schraubenzusatzkraft}         \\
+                \delta_\text{S} &= \text{Nachgiebigkeit der schraube}  \\
+                \delta_\text{P} &= \text{Nachgiebigkeit der Platte}    \\
+                \Phi_\text{k}   &= \text{Kräfteverhältnis}
+            \end{align*}
+            }
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{62mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{90mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Kräfteverhältnis} {\normalsize$\Phi$}\\ \vspace{-3mm}
+            \begin{align*}
+                \Phi &= n~\Phi_\text{k} = n~\frac{F_\text{AS}}{F_\text{A}} = n~\frac{\delta_\text{P}}{\delta_\text{P}+\delta_\text{S}} \\
+                \Phi_\text{k} &= \frac{\delta_\text{P}}{\delta_\text{P}+\delta_\text{S}}
+            \end{align*}
+            {\scriptsize
+            \vspace{-2mm}
+            \begin{align*}
+                \Phi            &= \text{Kräfteverhältnis}               \\
+                \Phi_\text{k}   &= \text{Vereinfachtes Kräfteverhältnis} \\
+                n               &= \text{Krafteinleitungsfaktor}         \\
+                F_\text{AS}     &= \text{Schraubenzusatzkraft}           \\
+                F_\text{A}      &= \text{Axiale Betriebskraft}           \\
+                \delta_\text{P} &= \text{Nachgiebigkeit der Platte}      \\
+                \delta_\text{S} &= \text{Nachgiebigkeit der Schraube}    \\
+                l_\text{k}      &= \text{Klemmlänge}
+            \end{align*}
+            }
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{100mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Krafteinleitungsfaktor} {\normalsize$n$}\\ \vspace{2mm}
+            \resizebox{\cellwidth-2\TileSep}{!}{%
+                \begin{tabular}{c|l}
+                    \xrowht[()]{2mm}$n \approx$ & Fall                                                            \\ \hline
+                    \xrowht[()]{2mm}1           & Querbeanspruchte, reibschlüssige Schraubenverbindung            \\
+                    \xrowht[()]{2mm}0,7         & Ungünstige Deckelverschraubung, Kraftangriff weit vor Trennfuge \\
+                    \xrowht[()]{2mm}0,5         & Typischer Normalfall                                            \\
+                    \xrowht[()]{2mm}0,3         & Günstiger Fall mit Kraftangriff nahe Trennfuge
+                \end{tabular}
+            }
+            \begin{align*}
+                            &\text{Betriebskraft }F_\text{A}\text{ wirkt innerhalb der Platten}                   \\
+                \Rightarrow~&\text{Annahme: Nur die Länge }n\cdot l_\text{k}\text{ wird entlastet} \\
+                \Rightarrow~&\text{Steifung der Platten (steilere Kennlinie)}                      \\
+                \Rightarrow~&\text{Belastung der Schrauben (flachere Kennlinie)}                   \\
+                \Rightarrow~&\text{Niedrigeres }n\text{ ist günstiger!}
+            \end{align*}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{135mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Erforderliche Klemmkraft} {\normalsize$F_\text{Kl,erf}$}\\ \vspace{-1mm}
+            \begin{equation*}
+                F_\text{Kl,\,erf} = \frac{1}{z~\mu~m}\,\left(F_\text{Q}+\frac{M}{r_\text{reib}}\right)
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                F_\text{Kl,erf} = &~\text{Erforderliche (Mindest-) Klemmkraft}        \\[-0.5ex]
+                                  &~\text{(Schub und / oder Torsion)}                 \\
+                z               = &~\text{Schraubenanzahl}                            \\
+                \mu             = &~\text{(Minimaler) Reibkoeffizient der Trennfugen} \\
+                m               = &~\text{Anzahl Reibkraft-übertragender Trennfugen}  \\
+                F_\text{Q}      = &~\text{Wirkende Querkraft}                         \\
+                M               = &~\text{Wirkendes Drehmoment}                       \\
+                r_\text{reib}   = &~\text{Reibradius der verspannten Flansche}
+            \end{align*}
+            }%
+            \\ \vspace{3mm}
+            \resizebox{\cellwidth-3\TileSep}{!}{%
+            \begin{tabular}{l|c|c}
+                \multirow{2}{*}{\xrowht[()]{4mm}Stoffpaarung} & \multicolumn{2}{c}{\xrowht[()]{2mm}Haftreibungszahl im Zustand} \\
+                                              & \xrowht[()]{2mm}\hspace{4.5mm}trocken\hspace{4.5mm}   & geschmiert  \\ \hline
+                \xrowht[()]{2mm}Stahl - Stahl / Stahlguss     & 0,1 - 0,23   & 0,07 - 0,12 \\
+                \xrowht[()]{2mm}Stahl - Grauguss              & 0,12 - 0,24  & 0,06 - 0,1  \\
+                \xrowht[()]{2mm}Grauguss - Grauguss           & 0,15 - 0,3   & 0,2         \\
+                \xrowht[()]{2mm}Bronze - Stahl                & 0,12 - 0,28  & 0,18        \\
+                \xrowht[()]{2mm}Grauguss - Bronze             & 0,28         & 0,15 - 0,2  \\
+                \xrowht[()]{2mm}Stahl - Kupferlegierung       & 0,07         &             \\
+                \xrowht[()]{2mm}Stahl - Aluminiumlegierung    & 0,1 - 0,28   & 0,05 - 0,18 \\
+                \xrowht[()]{2mm}Aluminium - Aluminium         & 0,21         &            
+            \end{tabular}
+            }
+        }{0}{1}{0}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Temperaturabhängigkeit der Vorspannung}\\ \vspace{2mm}
+            TBD\\ \vspace{40mm}
+            \begin{equation*}
+                \Delta F_\text{V} = -\frac{\left(\alpha_\text{S}-\alpha_\text{P}\right)\,\left(T_\text{B}-T_\text{M}\right)}{\delta_\text{S}+\delta_\text{P}}~l_\text{k}\!\left(T_\text{M}\right)
+            \end{equation*}
+            \begin{tabular}{c|c}
+                \xrowht[()]{2mm}Material   & $\alpha$                               \\ \hline
+                \xrowht[()]{2mm}Aluminium  & $20\cdot 10^{-6}\,\tfrac{1}{\text{K}}$ \\
+                \xrowht[()]{2mm}Stahl      & $11\cdot 10^{-6}\,\tfrac{1}{\text{K}}$ \\
+                \xrowht[()]{2mm}Invarstahl & $1\cdot 10^{-6}\,\tfrac{1}{\text{K}}$  \\
+            \end{tabular}
+            {\scriptsize
+            \begin{align*}
+                \Delta F_\text{V}      &= \text{Änderung der Vorspannung} \\
+                \alpha_\text{S}        &= \text{Temperatur-Ausdehnungskoeffizient der Schraube} \\
+                \alpha_\text{P}        &= \text{Temperatur-Ausdehnungskoeffizient der Platte} \\
+                T_\text{B}             &= \text{Betriebstemperatur} \\
+                T_\text{M}             &= \text{Montagetemperatur} \\
+                l_\text{k}(T_\text{M}) &= \text{Klemmlänge bei Montagetemperatur} \\
+                \delta_\text{S}        &= \text{Nachgiebigkeit der Schraube} \\
+                \delta_\text{P}        &= \text{Nachgiebigkeit der Platte} \\
+                f_\text{S}             &= \text{Verlängerung der Schraube} \\
+                f_\text{P}             &= \text{Stauchung der Platte}
+            \end{align*}
+            }
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Vierte Seite der Schraubverbindungen ###
+\newpage
+\centering
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{113mm}
+
+    % A1) Erste Kachel am Seitenursprung ausrichten
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{([xshift=10mm, yshift=-9mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Setzen}\\ \vspace{2mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                TBD\\ \vspace{40mm}
+                \begin{align*}
+                    f_\text{Z} &= f_\text{SZ} + f_\text{PZ} \\
+                    F_\text{V} &= F_\text{VM} - V_\text{Z} \\
+                    F_\text{Z} &= \frac{f_\text{Z}}{\delta_\text{S}+\delta_\text{P}} = \frac{f_\text{Z}}{\delta_\text{P}}\,\Phi_\text{k} = \frac{f_\text{Z}}{\delta_\text{S}}\,(1-\Phi_\text{k})
+                \end{align*}
+                Klemmkraft $F_\text{Kl}$ wird ebenfalls reduziert!
+            \end{minipage}%
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Richtwerte für Setzbeträge} $f_\text{Z}$ [$\upmu$m]\\ \vspace{2mm}
+                \hspace{-66mm}Größenordnung:
+                \begin{itemize}
+                    \item Durchschraubverbindung unter Zug/Druck: $f_\text{Z} \approx 10\,\upmu\text{m}$
+                    \item Einschraubverbindung 30\,\% kleiner
+                    \item Schub 30\,\% größer
+                \end{itemize}
+                {\normalsize
+                \begin{equation*}
+                    f_\text{Z} = \sum_i f_{\text{Z,}i}
+                \end{equation*}
+                }
+                \resizebox{\textwidth-\TileSep}{!}{%
+                \begin{tabular}{c|c|c|c|c}
+                    \xrowht[()]{6mm}Gemittelte $R_\text{z}$ &
+                      Belastung &
+                      \begin{tabular}[c]{@{}c@{}}im\\ Gewinde\end{tabular} &
+                      \begin{tabular}[c]{@{}c@{}}je Kopf- /\\ Muttern-\\ Auflage\end{tabular} &
+                      \begin{tabular}[c]{@{}c@{}}je innerer\\ Trennfuge\end{tabular} \\ \hline
+                    \multirow{2}{*}{$R_\text{z} < 10$\,$\upmu$m}             & \xrowht[()]{3mm}Zug / Druck & 3 & 2,5 & 1,5 \\
+                                                                       & \xrowht[()]{3mm}Schub       & 3 & 3   & 2   \\ \hline
+                    \multirow{2.5}{*}{10\,$\upmu$m $\leq R_\text{z} < 40$\,$\upmu$m}  & \xrowht[()]{3mm}Zug / Druck & 3 & 3   & 2   \\
+                                                                       & \xrowht[()]{3mm}Schub       & 3 & 4,5 & 2,5 \\ \hline
+                    \multirow{2.5}{*}{40\,$\upmu$m $\leq R_\text{z} < 100$\,$\upmu$m} & \xrowht[()]{3mm}Zug / Druck & 3 & 4   & 3   \\
+                                                                       & \xrowht[()]{3mm}Schub       & 3 & 6,5 & 3,5
+                \end{tabular}
+                }
+            \end{minipage}%
+            \\ \vspace{1mm}
+            \begin{minipage}[t]{0.38\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    f_\text{Z}  &= \text{Setzbetrag}                           \\
+                    f_\text{SZ} &= \text{Verkürzung der Schraubenverlängerung} \\
+                    f_\text{PZ} &= \text{Reduzierung der Plattenstauchung}     \\
+                    F_\text{V}  &= \text{Tatsächliche Vorspannkraft}           \\
+                    F_\text{VM} &= \text{Montagevorspannkraft}
+                \end{align*}
+            \end{minipage}%
+            \begin{minipage}[t]{0.3\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \begin{align*}
+                    F_\text{Z}      &= \text{Vorspannkraftverlust}           \\
+                    \delta_\text{S} &= \text{Nachgiebigkeit der Schraube}    \\
+                    \delta_\text{P} &= \text{Nachgiebigkeit der Platte}      \\
+                    \Phi_\text{k}   &= \text{Vereinfachtes Kräfteverhältnis} \\
+                \end{align*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{65mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Kräfte des Verspannungsdiagrammes}\\ \vspace{2mm}
+            \begin{tikzpicture}[>=Stealth]
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm](A){
+                    $R_\text{p0,2}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of A](A*){
+                    \scriptsize Minimale\\[-0.5ex] \scriptsize Proportionalitätsgrenze
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=18mm of A](B){
+                    $F_\text{SP,\,max} \stackrel{!}{\leq} R_\text{p0,2}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of B](B*){
+                    \scriptsize $F_\text{SP,\,max} =$ maximal\\[-0.5ex] \scriptsize Zulässige Spannkraft
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=14mm of B](C){
+                    $F_\text{SP} \stackrel{!}{\leq} F_\text{SP,\,max}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of C](C*){
+                    \scriptsize $F_\text{SP} =$ Gewählte Spannkraft\\[-0.5ex] \scriptsize (z.B. aus Tabelle)
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=12mm of C](D){
+                    $F_\text{VM,\,min} = F_\text{VM,\,max} - \Delta F_\text{V}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of D](D*){
+                    \scriptsize $\Delta F_\text{} =$ Streuung der\\[-0.5ex] \scriptsize Vorspannkraft,\\ \scriptsize $F_\text{VM,\,min} =$ minimal\\[-0.5ex] \scriptsize vorhandene Vorspannkraft
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, below=8.45mm of A*](E){
+                    $F_\text{V} = F_\text{VM,\,min} - F_\text{Z}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of E](E*){
+                    \scriptsize $F_\text{Z} =$ Vorspannkraftverlust\\[-0.5ex] \scriptsize durch Setzen\\ \scriptsize $F_\text{V} =$ Minimal vorhandene\\[-0.5ex] \scriptsize Vorspannkraft nach Setzen
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=12mm of E](F){
+                    $F_\text{Kl} = F_\text{V} - F_\text{AP}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of F](F*){
+                    \scriptsize $F_\text{AP} =$ Platten-\\[-0.5ex] \scriptsize Entlastungskraft\\ \scriptsize $F_\text{Kl} =$ Minimal\\[-0.5ex] \scriptsize vorhandene Klemmkraft
+                };
+                \node[draw, rounded corners, minimum width=1cm, minimum height=8mm, right=12mm of F](G){
+                    $F_\text{Kl,\,erf} \stackrel{!}{\leq} F_\text{Kl}$
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=2mm of G](G*){
+                    \scriptsize $F_\text{Kl,\,erf} =$ erforderliche\\[-0.5ex] \scriptsize Klemmkraft
+                };
+                \node[align=center, minimum width=1cm, minimum height=8mm, below=7mm of D*](extra){
+                    \myul{Zusätzlich gilt:}\\[1.2ex]
+                    $F_\text{AS} \stackrel{!}{\leq} \text{0,1}~R_\text{p0,2}~A_\text{S}$
+                };
+                \draw[->] (A) -- (B);
+                \draw[->] (B) -- (C);
+                \draw[->] (C) -- (D);
+                \draw[rounded corners=2mm, ->] (D.east) -- ++(6mm,0mm) -- ++(0mm,-26mm) -- ++(-47mm,0mm) -- ++(-10mm,6mm) -- ++(-117mm,0mm) -- ++(0mm,-8mm) -- (E.west);
+                \draw[->] (E) -- (F);
+                \draw[->] (F) -- (G);
+            \end{tikzpicture}
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}

@@ -1,0 +1,22 @@
+% Diese Seite verwendet eine eigene Seitengeometrie und verzichtet auf die Fußnote.
+\newgeometry{left=2cm, right=2cm, top=1cm, bottom=1cm}
+\thispagestyle{empty}
+
+% Überschrift der Seite, zentriert
+\begin{center}
+    \section*{\underline{Symbolverzeichnis}}
+\end{center}
+\vspace{-4mm}
+\begin{raggedright}
+\begin{table}[H]
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{l c c l}
+        \xrowht[()]{2.8mm} \textbf{Symbol}                           & \textbf{Einheit}                            & \textbf{(SI-Einheit)}                                      & \textbf{Bedeutung}                                                             \\
+        \xrowht[()]{2.8mm} $F$                                       & $\left[\text{N}\right]$                     & $\left[\frac{\text{kg}\cdot\text{m}}{\text{s}^2}\right]$   & Kraft                                                                 \\
+    \end{tabular}
+    }
+\end{table}
+
+\end{raggedright}
+
+\restoregeometry
