@@ -565,7 +565,7 @@
     \setlength{\cellwidth}{90mm}
     \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
         {
-            \includegraphics[width=0.92\cellwidth]{images/schwellende-zugbelastung.pdf}
+            \includegraphics[width=0.94\cellwidth]{images/schwellende-zugbelastung.pdf}
         }{0}{0}{0}{0}
 
     % B3) Zweite Kachel rechts anbauen
@@ -613,7 +613,7 @@
     \setlength{\cellwidth}{90mm}
     \Tile{A4}{(A3.south west)}{\cellwidth}{\rowheight}
         {
-            \includegraphics[width=0.88\cellwidth]{images/schwellende-druckbelastung.pdf}\hspace{3.6mm}
+            \includegraphics[width=0.90\cellwidth]{images/schwellende-druckbelastung.pdf}\hspace{3.6mm}
         }{0}{0}{0}{0}
 
     % B3) Zweite Kachel rechts anbauen
@@ -772,7 +772,7 @@
         }{0}{0}{1}{0}
 
 % --- DRITTE REIHE: Unten anbauen
-\setlength{\rowheight}{135mm}
+\setlength{\rowheight}{137mm}
 
     % A3) Erste Kachel unten anbauen
     \setlength{\cellwidth}{95mm}
@@ -797,8 +797,8 @@
             \\ \vspace{3mm}
             \resizebox{\cellwidth-3\TileSep}{!}{%
             \begin{tabular}{l|c|c}
-                \multirow{2}{*}{\xrowht[()]{4mm}Stoffpaarung} & \multicolumn{2}{c}{\xrowht[()]{2mm}Haftreibungszahl im Zustand} \\
-                                              & \xrowht[()]{2mm}\hspace{4.5mm}trocken\hspace{4.5mm}   & geschmiert  \\ \hline
+                             & \multicolumn{2}{c}{\xrowht[()]{2mm}Haftreibungszahl im Zustand} \\
+                Stoffpaarung & \xrowht[()]{2mm}\hspace{4.5mm}trocken\hspace{4.5mm}   & geschmiert  \\ \hline
                 \xrowht[()]{2mm}Stahl - Stahl / Stahlguss     & 0,1 - 0,23   & 0,07 - 0,12 \\
                 \xrowht[()]{2mm}Stahl - Grauguss              & 0,12 - 0,24  & 0,06 - 0,1  \\
                 \xrowht[()]{2mm}Grauguss - Grauguss           & 0,15 - 0,3   & 0,2         \\
@@ -815,8 +815,8 @@
     \setlength{\cellwidth}{95mm}
     \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Temperaturabhängigkeit der Vorspannung}\\ \vspace{2mm}
-            TBD\\ \vspace{40mm}
+            \titlerm{Temperaturabhängigkeit der Vorspannung}\\ \vspace{3mm}
+            \includegraphics[width=0.7\cellwidth]{images/schrauben-diagramm-temperatur-vorspannung.pdf}\\ \vspace{-2mm}
             \begin{equation*}
                 \Delta F_\text{V} = -\frac{\left(\alpha_\text{S}-\alpha_\text{P}\right)\,\left(T_\text{B}-T_\text{M}\right)}{\delta_\text{S}+\delta_\text{P}}~l_\text{k}\!\left(T_\text{M}\right)
             \end{equation*}
