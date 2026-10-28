@@ -1,0 +1,25 @@
+% ### Erste Seite der Bolzenverbindungen ###
+\centering
+\section*{\myul{Bolzenverbindungen}}
+
+% Klebefläche für das erste Register:
+\begin{tikzpicture}[remember picture, overlay, x=1mm, y=-1mm]
+    \begin{scope}[shift={(current page.north west)}]
+        \draw (206,79) -- (202,79) -- (202,57) -- (206,57);
+        \node[rotate=90, anchor=center] at (204,68) {Bolzen};
+    \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{62mm}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{88mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            TBD
+        }{0}{1}{1}{0}
+
+\end{tikzpicture}

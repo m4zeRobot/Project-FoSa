@@ -858,9 +858,9 @@
     \Tile{A1}{([xshift=10mm, yshift=-9mm]current page.north west)}{\cellwidth}{\rowheight}
         {
             \titlebf{Setzen}\\ \vspace{2mm}
-            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
                 \centering
-                TBD\\ \vspace{40mm}
+                \includegraphics[height=48mm]{images/schrauben-diagramm-setzen.pdf}\\ \vspace{-3mm}
                 \begin{align*}
                     f_\text{Z} &= f_\text{SZ} + f_\text{PZ} \\
                     F_\text{V} &= F_\text{VM} - V_\text{Z} \\
@@ -868,7 +868,7 @@
                 \end{align*}
                 Klemmkraft $F_\text{Kl}$ wird ebenfalls reduziert!
             \end{minipage}%
-            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
                 \centering
                 \titlerm{Richtwerte für Setzbeträge} $f_\text{Z}$ [$\upmu$m]\\ \vspace{2mm}
                 \hspace{-66mm}Größenordnung:
@@ -889,12 +889,12 @@
                       \begin{tabular}[c]{@{}c@{}}im\\ Gewinde\end{tabular} &
                       \begin{tabular}[c]{@{}c@{}}je Kopf- /\\ Muttern-\\ Auflage\end{tabular} &
                       \begin{tabular}[c]{@{}c@{}}je innerer\\ Trennfuge\end{tabular} \\ \hline
-                    \multirow{2}{*}{$R_\text{z} < 10$\,$\upmu$m}             & \xrowht[()]{3mm}Zug / Druck & 3 & 2,5 & 1,5 \\
-                                                                       & \xrowht[()]{3mm}Schub       & 3 & 3   & 2   \\ \hline
-                    \multirow{2.5}{*}{10\,$\upmu$m $\leq R_\text{z} < 40$\,$\upmu$m}  & \xrowht[()]{3mm}Zug / Druck & 3 & 3   & 2   \\
-                                                                       & \xrowht[()]{3mm}Schub       & 3 & 4,5 & 2,5 \\ \hline
-                    \multirow{2.5}{*}{40\,$\upmu$m $\leq R_\text{z} < 100$\,$\upmu$m} & \xrowht[()]{3mm}Zug / Druck & 3 & 4   & 3   \\
-                                                                       & \xrowht[()]{3mm}Schub       & 3 & 6,5 & 3,5
+                    \multirow{2}{*}{$R_\text{z} < 10$\,$\upmu$m}                      & \xrowht[()]{3mm} Zug / Druck & 3 & 2,5 & 1,5 \\
+                                                                                      & \xrowht[()]{3mm} Schub       & 3 & 3   & 2   \\ \hline
+                    \multirow{2.5}{*}{10\,$\upmu$m $\leq R_\text{z} < 40$\,$\upmu$m}  & \xrowht[()]{3mm} Zug / Druck & 3 & 3   & 2   \\
+                                                                                      & \xrowht[()]{3mm} Schub       & 3 & 4,5 & 2,5 \\ \hline
+                    \multirow{2.5}{*}{40\,$\upmu$m $\leq R_\text{z} < 100$\,$\upmu$m} & \xrowht[()]{3mm} Zug / Druck & 3 & 4   & 3   \\
+                                                                                      & \xrowht[()]{3mm} Schub       & 3 & 6,5 & 3,5
                 \end{tabular}
                 }
             \end{minipage}%
@@ -923,13 +923,13 @@
         }{0}{0}{1}{0}
 
 % --- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{65mm}
+\setlength{\rowheight}{67mm}
 
     % A2) Erste Kachel unten anbauen
     \setlength{\cellwidth}{190mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
         {
-            \titlebf{Kräfte des Verspannungsdiagrammes}\\ \vspace{2mm}
+            \titlebf{Kräfte des Verspannungsdiagrammes}\\ \vspace{4mm}
             \begin{tikzpicture}[>=Stealth]
                 \node[draw, rounded corners, minimum width=1cm, minimum height=8mm](A){
                     $R_\text{p0,2}$
@@ -985,5 +985,289 @@
                 \draw[->] (F) -- (G);
             \end{tikzpicture}
         }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{78mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{117mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Dimensionierungstabelle nach VDI 2230}\\ \vspace{3mm}
+            \resizebox{\cellwidth-2\TileSep}{!}{%
+            \begin{tabular}{lc|c|cccccccccc}
+                \multicolumn{2}{c|}{Nenndurchm. $d$}                                   & \multicolumn{2}{r}{M4}\hspace{-0.25mm} & \xrowht[()]{2mm}M5 & M6 & M8 & M10 & M12 & (M14) & M16 & M20 & M24 \\ \hline
+                \multirow{7.4}{*}{\begin{tabular}[c]{@{}c@{}}$\mu_\text{ges}=$\\[0.5ex]$\text{0,12}$\end{tabular}} & \multirow{3.6}{*}{$F_\text{SP}$ [kN]} & \xrowht[()]{2mm} 8.8  & 4,05 & 6,6  & 7,0  & 17,2 & 27,5 & 40,0  & 55,0  & 75,0 & 121 & 175  \\
+                \xrowht[()]{2mm}&                                 & 10.9 & 6,0  & 9,7  & 13,7 & 25,0 & 40,0 & 59,0  & 80,0  & 111  & 173 & 249  \\
+                \xrowht[()]{2mm}&                                 & 12.9 & 7,0  & 11,4 & 16,1 & 29,5 & 47,0 & 69,0  & 94,0  & 130  & 202 & 290  \\ \cline{2-13}
+                \xrowht[()]{2mm}& \multirow{3.6}{*}{$M_\text{A}$ [Nm]} & 8.8  & 2,8  & 5,5  & 9,5  & 23   & 46   & 79    & 125   & 195  & 390 & 670  \\
+                \xrowht[()]{2mm}&                                 & 10.9 & 4,1  & 8,1  & 14,0 & 34   & 68   & 117   & 185   & 280  & 560 & 960  \\
+                \xrowht[()]{2mm}&                                 & 12.9 & 4,8  & 9,5  & 16,5 & 40   & 79   & 135   & 215   & 330  & 650 & 1120 \\ \hline
+                \multirow{7.4}{*}{\begin{tabular}[c]{@{}c@{}}$\mu_\text{ges}=$\\[0.5ex]$\text{0,14}$\end{tabular}} & \multirow{3.6}{*}{$F_\text{SP}$ [kN]} & \xrowht[()]{2mm} 8.8  & 3,9  & 6,4  & 9,0  & 16,5 & 26,0 & 38,5  & 53,0  & 72,0 & 117 & 168  \\
+                \xrowht[()]{2mm}&                                 & 10.9 & 5,7  & 9,3  & 13,2 & 24,2 & 38,5 & 46,0  & 77,0  & 106  & 166 & 239  \\
+                \xrowht[()]{2mm}&                                 & 12.9 & 6,7  & 10,9 & 15,4 & 28,5 & 45,0 & 66,0  & 90,0  & 124  & 194 & 280  \\ \cline{2-13}
+                \xrowht[()]{2mm}& \multirow{3.6}{*}{$M_\text{A}$ [Nm]} & 8.8  & 3,1  & 6,1  & 10,4 & 25   & 51   & 87    & 140   & 215  & 430 & 740  \\
+                \xrowht[()]{2mm}&                                 & 10.9 & 4,5  & 8,9  & 15,5 & 37   & 75   & 130   & 205   & 310  & 620 & 1060 \\
+                \xrowht[()]{2mm}&                                 & 12.9 & 5,3  & 10,4 & 18,0 & 43   & 87   & 150   & 240   & 370  & 720 & 1240 \\ \hline
+            \end{tabular}
+            }%
+            \vspace{2mm}
+            {\scriptsize$F_\text{SP} \stackrel{!}{\geq} F_\text{V,\,max}$\,;\quad Streckgrenzen- / Drehwinkel-gesteuertes Anziehen: $\dfrac{F_\text{SP}}{\text{0,9}}\stackrel{!}{\geq} F_\text{V,\,max}$ \\ \vspace{2mm}
+            Falls Schraube nicht in Tabelle enthalten $\Rightarrow$ Eigene Berechnung der Werte}
+        }{0}{1}{0}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{73mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Grenzflächenpressungen $\mathbf{\textit{p}_\mathbf{G}}$}\\ \vspace{3mm}
+            \resizebox{\cellwidth-2\TileSep}{!}{%
+            \begin{tabular}{l|l|c}
+                \multicolumn{2}{c|}{Auflagewerkstoff}                                                   & \xrowht[()]{2mm} $p_\text{G}$ \\ \hline
+                \multirow{9}{*}{Stahl}                & \xrowht[()]{2mm} S235, C15N                     & 300                           \\
+                \xrowht[()]{2mm}                      & E295, C35N                                      & 500                           \\
+                \xrowht[()]{2mm}                      & S355, C45N                                      & 600                           \\
+                \xrowht[()]{2mm}                      & Stahl Vergütet, $R_\text{m} > 900\,\text{MPa}$  & 900                           \\
+                \xrowht[()]{2mm}                      & Stahl Vergütet, $R_\text{m} > 1200\,\text{MPa}$ & 1200                          \\
+                \xrowht[()]{2mm}                      & C15 einsatzgehärtet Eht 0,6\,mm                 & 1400                          \\
+                \xrowht[()]{2mm}                      & 16MnCr5 u.ä. einsatzgehärtet Eht 1\,mm          & 1800                          \\ \hline
+                \multirow{2.4}{*}{Guss}               & \xrowht[()]{2mm} GG25                           & 850                           \\
+                \xrowht[()]{2mm}                      & GGG50, GTS 45                                   & 500                           \\ \hline
+                \multirow{3.6}{*}{Al.-Leg.}           & \xrowht[()]{2mm} MgAl9                          & 150                           \\
+                \xrowht[()]{2mm}                      & AlSi12Cu                                        & 300                           \\
+                \xrowht[()]{2mm}                      & AlSi6Cu                                         & 250                           \\
+            \end{tabular}
+            }
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Fünfte Seite der Schraubverbindungen ###
+\newpage
+\centering
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{62mm}
+
+    % A1) Erste Kachel am Seitenursprung ausrichten
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{([xshift=10mm, yshift=-9mm]current page.north west)}{\cellwidth}{\rowheight}
+        {
+            \titlebf{Montage von Schraubenverbindungen}\\ \vspace{2mm}
+            \titlerm{Maximale Vorspannkraft} {\normalsize$F_\text{V,\,max}$}\\ \vspace{4mm}
+            \begin{minipage}{0.52\cellwidth-\TileSep}
+                \centering
+                \vspace{-5mm}
+                \begin{equation*}
+                    F_\text{VM} = F_\text{V,\,max} = \alpha_\text{A}~F_\text{V,\,min} = \alpha_\text{A}\,\left(F_\text{Kl,\,erf} + F_\text{Z} + (1-\Phi)\,F_\text{A}\right)
+                \end{equation*}
+                {\scriptsize
+                \begin{align*}
+                    F_\text{VM}       &= \text{Montagevorspannkraft}               \\
+                    F_\text{V,\,max}  &= \text{Maximale Vorspannkraft}             \\
+                    F_\text{V,\,min}  &= \text{Minimale Vorspannkraft}             \\
+                    \alpha_\text{A}   &= \text{Anziehfaktor}                       \\
+                    F_\text{Kl,\,erf} &= \text{Erforderliche (Mindest-)Klemmkraft} \\
+                    F_\text{Z}        &= \text{Vorspannkraftverlust}               \\
+                    \Phi              &= \text{Kräfteverhältnis}                   \\
+                    F_\text{A}        &= \text{Betriebskraft}
+                \end{align*}
+                }
+            \end{minipage}%
+            \begin{minipage}{0.48\cellwidth-\TileSep}
+                \centering
+                \includegraphics[height=42mm]{images/schrauben-diagramm-montage.pdf}
+            \end{minipage}
+        }{0}{0}{0}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{72mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{130mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \resizebox{\cellwidth-2\TileSep}{0.5\rowheight}{%
+            \begin{tabular}{llcc}
+                \xrowht[()]{6mm}Verfahren & Eignung, Besonderheiten & Anziehfaktor $\alpha_\text{A}$ & \begin{tabular}{c} Streuung der \\ Vorspannung \end{tabular} \\ \hline
+                \xrowht[()]{6mm}\begin{tabular}[c]{@{}l@{}} Von Hand \\ (Schraubenschlüssel) \end{tabular} & \begin{tabular}[c]{@{}l@{}}Untergeordnete Verbindungen ($<8.8$), \\ nur ruhend belastet\end{tabular} & 2,5 - 4 & Zu    Groß! \\ \hline
+                \xrowht[()]{6mm}\begin{tabular}[c]{@{}l@{}} Schlagschrauber \\ (Impulsgesteuert) \end{tabular} & \begin{tabular}[c]{@{}l@{}}Voranziehen, individuelle\\ Einstellung erforderlich\end{tabular} & 2,5 - 4 & $\pm\,    43\%$ - $\pm\,60\%$ \\ \hline
+                \xrowht[()]{6mm}\begin{tabular}[c]{@{}l@{}} Drehschrauber \\ (Rutschkupplung) \end{tabular} & Industrielle Fertigung & 1,7 - 2,5 & $\pm\,26\%$ - $\pm\,43\%$ \\ \hline
+                \xrowht[()]{6mm}\begin{tabular}[c]{@{}l@{}} Drehmomentschlüssel \\ (Signalgebend) \end{tabular} & Stark Reibungsabhängig & 1,4 - 1,6 & $\pm\,17\%$ - $\pm\,23\%$ \\ \hline
+                \xrowht[()]{10.5mm}Hydraulisches Anziehen & \begin{tabular}[c]{@{}l@{}} Keine Torsion der Schraube, \\ Rückfedern der Bauteile, \\ \enquote{Große} Schrauben \end{tabular} & 1,2 - 1,6 & $\pm\,9\%$ - $\pm\,23\%$   \\ \hline
+                \xrowht[()]{10.5mm}Längenmessung & \begin{tabular}[c]{@{}l@{}} Mechanische Längenmessung, \\ bei Klemmlänge $l_\text{k} \geq 10\,\mathrm{mm}$ \\ $\Rightarrow 5\,\upmu\mathrm{m}$ / $100\,\text{MPa}$ \end  {tabular} & 1,1 - 1,5 & $\pm\,5\%$ -  $\pm\,20\%$      \\ \hline
+                \xrowht[()]{6mm}\begin{tabular}[c]{@{}l@{}} Drehwinkelgesteuertes \\ Anziehen \end{tabular} & Anziehen bis $100\,\%\,R_\text{p0,2}$ & 1,0 & $\pm\,5\%$ - $\pm\,12\%$ \\ \hline
+                \xrowht[()]{6mm}\begin{tabular}[c]{@{}l@{}} Streckgrenzengesteuertes \\ Anziehen \end{tabular} & Anziehen bis $100\,\%\,R_\text{p0,2}$ & 1,0 & $\pm\,5\%$ - $\pm\,12\%$
+            \end{tabular}
+            }
+        }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{60mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Anziehbeanspruchung der Schraube}\\ \vspace{-2mm}
+            \begin{equation*}
+                \sigma_\text{red} = \sqrt{\sigma_\text{VM}^2+3\,\tau_\text{A}^2}~\stackrel{!}{\leq}~\text{0,9}~R_\text{p0,2}
+            \end{equation*}
+            \begin{equation*}
+                \sigma_\text{VM} = \frac{F_\text{VM}}{A_\text{S}}\,;\quad \tau_\text{A} = \frac{16~M_\text{A}}{\pi~d_\text{S}^3}
+            \end{equation*}
+            \\ \vspace{2mm}
+            {\scriptsize
+            Streckgrenzen- / Drehwinkelgesteuertes\\[0.25ex] Anziehen: \myul{Faktor 0,9 entfällt}!\\ \vspace{-1mm}
+            \begin{align*}
+                \sigma_\text{red} &= \text{Vergleichsspannung}       \\
+                \sigma_\text{VM}  &= \text{Montage-Vorspannung}      \\
+                \tau_\text{A}     &= \text{Montage-Torsionsspannung} \\
+                F_\text{VM}       &= \text{Montagevorspannkraft}     \\
+                A_\text{S}        &= \text{Spannungsquerschnitt}     \\
+                M_\text{A}        &= \text{Anziehmoment}             \\
+                d_\text{S}        &= \text{Spannungsdurchmesser}
+            \end{align*}
+            }
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{60mm}
+
+    % X3) Eigene Zeile für die Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{8mm}
+        {
+            \titlebf{Anziehmoment $\mathbf{\textit{M}_\mathbf{A}}$}
+        }{0}{0}{0}{0}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \begin{equation*}
+                M_\text{G} = F_\text{VM}~\frac{d_2}{2}~\tan\!\left(\varphi\,{\color{red}\pm}\,\rho\right)\quad
+                \begin{cases}
+                    {\color{red}+}\text{ beim Anziehen}\\
+                    {\color{red}-}\text{ beim Lösen}
+                \end{cases}
+            \end{equation*}
+            \\ \vspace{-2mm}
+            {\scriptsize
+            \begin{align*}
+                \text{1.}~~\varphi &> \rho\text{: }F_\text{U}\text{ gegen Bewegungsrichtung (Bewegungsgewinde)} \\
+                \text{2.}~~\varphi &= \rho\text{: }F_\text{U} = 0 \\
+                \text{3.}~~\varphi &< \rho\text{: }F_\text{U}\text{ in Bewegungsrichtung (Bewegungsgewinde)}
+            \end{align*}
+            \begin{align*}
+                M_\text{G}  &= \text{Gewindemoment}           \\
+                F_\text{VM} &= \text{Montagevorspannkraft}    \\
+                d_2         &= \text{Flankendurchmesser}      \\
+                \varphi     &= \text{Gewinde-Steigungswinkel} \\
+                \rho        &= \text{Reibungswinkel}          \\
+                F_\text{U}  &= \text{Umfangskraft}
+            \end{align*}
+            }
+        }{0}{1}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \begin{equation*}
+                M_\text{A} = F_\text{VM}\,\left[\text{0,159}~P + \mu_\text{ges}\left(\text{0,577}~d_2 + \frac{d_\text{k}}{2}\right)\right]
+            \end{equation*}
+            \\ \vspace{2mm}
+            {\scriptsize
+            Vereinfacht (Sechskant; Normalgewinde; $\mu_\text{ges} = \text{0,12}$):
+            }
+            \begin{equation*}
+                M_\text{A} \approx \text{0,17}~F_\text{VM}~d
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                M_\text{A}     &= \text{Rechnerisches Anziehmoment}                              \\
+                F_\text{VM}    &= \text{Montagevorspannkraft}                                    \\
+                P              &= \text{Gewindesteigung}                                         \\
+                \mu_\text{ges} &= \text{Gesamtreibungszahl von Gewinde \& Kopf- / Mutterauflage} \\
+                d_2            &= \text{Flankendurchmesser}                                      \\
+                d_\text{k}     &= \text{Wirksamer Reibungsdurchmesser an Kopf / Mutter}          \\
+                d              &= \text{Nenndurchmesser}
+            \end{align*}
+            }
+        }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{54mm}
+
+    % X4) Eigene Zeile für die Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{8mm}
+        {
+            \titlebf{Flächenpressung $\mathbf{\textit{p}}$ unter der Auflagefläche}
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{70mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{90\,\% Ausnutzung von $R_\text{p0,2}$ durch $\sigma_\text{red}$}\\ \vspace{-2mm}
+            \begin{equation*}
+                p = \frac{F_\text{SP} + \Phi~F_\text{A}}{A_\text{P}} \approx \frac{F_\text{SP}}{\text{0,9}~A_\text{P}} \stackrel{!}{\leq} p_\text{G}
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                p           &= \text{Flächenpressung}                      \\
+                F_\text{SP} &= \text{Spannkraft}                           \\
+                \Phi        &= \text{Kräfteverhältnis}                     \\
+                F_\text{A}  &= \text{Betriebskraft}                        \\
+                A_\text{P}  &= \text{Auflagefläche}                        \\
+                p_\text{G}  &= \text{Quetschgrenze (Grenzflächenpressung)}
+            \end{align*}
+            }
+        }{0}{1}{0}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{50mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Auflagefläche $A_\text{P}$}\\ \vspace{-0.75mm}
+            \begin{equation*}
+                A_\text{P} = \frac{\pi}{4}\left(d_\text{W}^2-d_\text{h}^2\right)
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                A_\text{P} = &~\text{Auflagefläche; ggf.} \\[-0.5ex]
+                             &~\text{Senkung beachten!}   \\[0.5ex]
+                d_\text{W} = &~\text{Durchmesser der}     \\[-0.5ex]
+                             &~\text{Kopfauflage}         \\[0.5ex]
+                d_\text{h} = &~\text{Durchmesser des}     \\[-0.5ex]
+                             &~\text{Durchgangslochs}
+            \end{align*}
+            }
+            $p_\text{G}$ auf \myul{vorheriger Seite}!
+        }{0}{1}{0}{0}
+
+    % C4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{70mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Streckgrenzen- / Drehwinkelgesteuertes}\\
+            \titlerm{Anziehen bis $R_\text{p0,2}$}\\ \vspace{-2mm}
+            \begin{equation*}
+                p = \text{1,2}~\frac{F_\text{SP}}{\text{0,9}~A_\text{P}} \stackrel{!}{\leq} p_\text{G}
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                p           &= \text{Flächenpressung}                      \\
+                F_\text{SP} &= \text{Spannkraft}                           \\
+                A_\text{P}  &= \text{Auflagefläche}                        \\
+                p_\text{G}  &= \text{Quetschgrenze (Grenzflächenpressung)}
+            \end{align*}
+            }
+        }{0}{0}{0}{0}
 
 \end{tikzpicture}
