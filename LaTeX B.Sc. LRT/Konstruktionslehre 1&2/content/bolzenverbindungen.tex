@@ -13,13 +13,60 @@
 \begin{tikzpicture}[remember picture, overlay]
 
 % --- ERSTE REIHE: Am Seitenursprung anfangen
-\setlength{\rowheight}{62mm}
+\setlength{\rowheight}{47mm}
 
     % A1) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{88mm}
+    \setlength{\cellwidth}{190mm}
     \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
         {
-            TBD
+            \vspace{-\TileSep}
+            \begin{minipage}{0.68\cellwidth-\TileSep}
+                \centering
+                \resizebox{\textwidth}{!}{%
+                \begin{tabular}{lcc}
+                    \xrowht[()]{2mm}\textbf{Einbaufall} & \textbf{Bemessungs-Stangenkraft} & \textbf{Bemessungs-Biegemoment} \\ \hline
+                    \xrowht[()]{11mm}\begin{tabular}[c]{@{}l@{}}Einbaufall 1:\\ Spielpassung in Gabel\\ Spielpassung in Stange\end{tabular} & $F_\text{B} = j_\text{s}~j~F_\text{S}$ & $M_\text{b,B} = \dfrac{F_\text{B}~(t_\text{s}+2\,t_\text{G})}{8}$ \\ \hline
+                    \xrowht[()]{11mm}\begin{tabular}[c]{@{}l@{}}Einbaufall 2:\\ Übermaßpassung in Gabel\\ Spielpassung in Stange\end{tabular} & $F_\text{B} = j_\text{s}~j~F_\text{S}$ & $M_\text{b,B} = \dfrac{F_\text{B}~t_\text{s}}{8}$ \\ \hline
+                    \xrowht[()]{11mm}\begin{tabular}[c]{@{}l@{}}Einbaufall 1:\\ Spielpassung in Gabel\\ Übermaßpassung in Stange\end{tabular} & $F_\text{B} = j_\text{s}~j~F_\text{S}$ & $M_\text{b,B} = \dfrac{F_\text{B}~t_\text{G}}{4}$
+                \end{tabular}
+                }
+            \end{minipage}%
+            \begin{minipage}{0.32\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \vspace{-2mm}
+                \begin{align*}
+                    F_\text{B}   &= \text{Bemessungs-Stangenkraft}       \\
+                    j_\text{s}   &= \text{Sicherheitsvielfaches}         \\
+                    j            &= \text{Sicherheitsfaktor (Allg. 1,5)} \\
+                    M_\text{b,B} &= \text{Bemessungs-Biegemoment}        \\
+                    t_\text{S}   &= \text{Stangendicke}                  \\
+                    t_\text{G}   &= \text{Gabeldicke}
+                \end{align*}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{60mm}
+
+    % X2) Eigene Zeile für die Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{8mm}
+        {
+            \titlebf{Scherung}
+        }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Roloff / Matek}
         }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Handbuch Strukturberechnung (HSB)}
+        }{0}{0}{1}{0}
 
 \end{tikzpicture}
