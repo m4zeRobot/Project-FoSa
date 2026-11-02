@@ -27,7 +27,7 @@
                     \xrowht[()]{2mm}\textbf{Einbaufall} & \textbf{Bemessungs-Stangenkraft} & \textbf{Bemessungs-Biegemoment} \\ \hline
                     \xrowht[()]{11mm}\begin{tabular}[c]{@{}l@{}}Einbaufall 1:\\ Spielpassung in Gabel\\ Spielpassung in Stange\end{tabular} & $F_\text{B} = j_\text{s}~j~F_\text{S}$ & $M_\text{b,B} = \dfrac{F_\text{B}~(t_\text{s}+2\,t_\text{G})}{8}$ \\ \hline
                     \xrowht[()]{11mm}\begin{tabular}[c]{@{}l@{}}Einbaufall 2:\\ Übermaßpassung in Gabel\\ Spielpassung in Stange\end{tabular} & $F_\text{B} = j_\text{s}~j~F_\text{S}$ & $M_\text{b,B} = \dfrac{F_\text{B}~t_\text{s}}{8}$ \\ \hline
-                    \xrowht[()]{11mm}\begin{tabular}[c]{@{}l@{}}Einbaufall 1:\\ Spielpassung in Gabel\\ Übermaßpassung in Stange\end{tabular} & $F_\text{B} = j_\text{s}~j~F_\text{S}$ & $M_\text{b,B} = \dfrac{F_\text{B}~t_\text{G}}{4}$
+                    \xrowht[()]{11mm}\begin{tabular}[c]{@{}l@{}}Einbaufall 3:\\ Spielpassung in Gabel\\ Übermaßpassung in Stange\end{tabular} & $F_\text{B} = j_\text{s}~j~F_\text{S}$ & $M_\text{b,B} = \dfrac{F_\text{B}~t_\text{G}}{4}$
                 \end{tabular}
                 }
             \end{minipage}%
@@ -47,7 +47,7 @@
         }{0}{0}{1}{0}
 
 % --- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{60mm}
+\setlength{\rowheight}{80mm}
 
     % X2) Eigene Zeile für die Überschrift
     \Tile{X2}{(A1.south west)}{190mm}{8mm}
@@ -59,14 +59,184 @@
     \setlength{\cellwidth}{95mm}
     \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Roloff / Matek}
+            \vspace{-\TileSep}
+            \titlebf{Roloff / Matek}\\ \vspace{1mm}
+            \resizebox{\cellwidth-2\TileSep}{!}{%
+            \begin{minipage}[t]{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Max. Schubspannung $\tau_\text{max}$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \tau_\text{max} = \frac{4}{3}\,\tau_\text{m} = \frac{4~F_\text{B}}{3~m~A_\text{S}}
+                \end{equation*}%
+                \vspace{-4mm}
+                {\scriptsize
+                \begin{align*}
+                    \tau_\text{max} &= \text{Max. Schubspannung}     \\
+                    \tau_\text{m}   &= \text{Mittlere Schubspannung} \\
+                    F_\text{B}      &= \text{Bemessungsstangenkraft} \\
+                    m               &= \text{Schnittigkeit}          \\
+                    A_\text{S}      &= \text{Querschnittsfläche}
+                \end{align*}
+                }
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Versagenssscherkraft $F_\text{s,V}$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    F_\text{s,V} = \frac{1}{\chi}~R_\text{c}~m~A_\text{S}
+                \end{equation*}%
+                \vspace{-4mm}
+                {\scriptsize
+                \begin{align*}
+                    F_\text{s,V}    &= \text{Versagensscherkraft}      \\
+                    \chi            &= \text{Schubspannungsüberhöhung} \\
+                    R_\text{c}      &= \text{Scherfestigkeit}          \\
+                    m               &= \text{Schnittigkeit}            \\
+                    A_\text{S}      &= \text{Querschnittsfläche}
+                \end{align*}
+                }
+            \end{minipage}
+            }
+            \\ \vspace{1.75mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \resizebox{\cellwidth-2\TileSep}{!}{%
+            \begin{minipage}[t]{0.55\cellwidth-\TileSep}
+                \centering
+                \titlerm{Schubspannungsüberhöhung $\chi$}\\ \vspace{-2mm}
+                \begin{equation*}
+                    \chi = \frac{\tau_\text{max}}{\tau_\text{m}} = \frac{4}{3}\left(1+\frac{k}{1+k^2}\right)
+                \end{equation*}%
+                \vspace{-3mm}
+                {\scriptsize
+                \begin{align*}
+                    \chi            &= \text{Schubspannungsüberhöhung} \\
+                    \tau_\text{max} &= \text{Max. Schubspannung}       \\
+                    \tau_\text{m}   &= \text{Mittlere Schubspannung}   \\
+                    k               &= \text{Durchmesserverhältnis}    \\
+                    {\color{red}k}  &{\color{red}= 0~\text{für Vollbolzen!}}
+                \end{align*}
+                }
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.55\cellwidth-\TileSep}
+                \centering
+                \titlerm{Scherfestigkeit $R_\text{c}$}\\ \vspace{6.5mm}
+                {\color{red}Nur, wenn $R_\text{c}$ nicht bekannt!}
+                \vspace{3mm}
+                \begin{align*}
+                    \text{Ruhend:}     &~R_\text{c} = \text{0,2}~R_\text{m}  \\
+                    \text{Schwellend:} &~R_\text{c} = \text{0,15}~R_\text{m} \\
+                    \text{Wechselnd:}  &~R_\text{c} = \text{0,1}~R_\text{m}
+                \end{align*}
+            \end{minipage}
+            }
         }{0}{1}{1}{0}
 
     % B2) Zweite Kachel rechts anbauen
     \setlength{\cellwidth}{95mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
         {
-            \titlerm{Handbuch Strukturberechnung (HSB)}
+            \vspace{-\TileSep}
+            \titlebf{Handbuch Strukturberechnung (HSB)}\\ \vspace{1mm}
+            \resizebox{\cellwidth-2\TileSep}{!}{%
+            \begin{minipage}[t]{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Mittlere Schubspannung $\tau_\text{m}$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    \tau_\text{m} = \frac{F_\text{B}}{m~A_\text{S}}
+                \end{equation*}%
+                \vspace{-3.75mm}
+                {\scriptsize
+                \begin{align*}
+                    \tau_\text{m}   &= \text{Mittlere Schubspannung} \\
+                    F_\text{B}      &= \text{Bemessungsstangenkraft} \\
+                    m               &= \text{Schnittigkeit}          \\
+                    A_\text{S}      &= \text{Querschnittsfläche}
+                \end{align*}
+                }
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.52\cellwidth-\TileSep}
+                \centering
+                \titlerm{Versagenssscherkraft $F_\text{s,V}$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    F_\text{s,V} = \alpha\left(1-k^2\right)~R_\text{c}~m~A_\text{S}
+                \end{equation*}%
+                \vspace{-4.5mm}
+                {\scriptsize
+                \begin{align*}
+                    F_\text{s,V} &= \text{Versagensscherkraft}   \\
+                    \alpha       &= \text{Abminderungsfaktor}    \\
+                    k            &= \text{Durchmesserverhältnis} \\
+                    R_\text{c}   &= \text{Scherfestigkeit}       \\
+                    m            &= \text{Schnittigkeit}
+                \end{align*}
+                }
+                \vspace{-4.8mm}
+            \end{minipage}
+            }
+            \\ \vspace{1.75mm}
+            \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Abminderungsfaktor $\alpha$}\\ \vspace{0.8mm}
+                \includegraphics[width=0.40\cellwidth]{images/bolzen-diagramm-abminderungsfaktor.pdf}
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+                \centering
+                \titlerm{Scherfestigkeit $R_\text{c}$}\\ \vspace{2.5mm}
+                {\color{red}Nur, wenn $R_\text{c}$ nicht bekannt!}
+                \vspace{-1mm}
+                \begin{equation*}
+                    R_\text{c} = \text{0,6}~R_\text{m}
+                \end{equation*}
+                \\ \vspace{-4mm}
+                \hspace{0.5\TileSep}\rule{\dimexpr(0.5\cellwidth-2\TileSep)}{0.5pt} \\ \vspace{0.5mm}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{40mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+        {            
+            \begin{minipage}[t]{0.50\cellwidth-\TileSep}
+                \centering
+                \titlerm{Durchmesserverhältnis $k$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    k = \frac{d_i}{d}
+                \end{equation*}%
+                \vspace{-4mm}
+                {\scriptsize
+                \begin{align*}
+                    k   &= \text{Durchmesserverhältnis} \\
+                    d_i &= \text{Innendurchmesser}      \\
+                    d   &= \text{Außendurchmesser}      \\
+                    {\color{red}k} &{\color{red}= 0~\text{für Vollbolzen!}}
+                \end{align*}
+                }
+            \end{minipage}%
+            \vline
+            \begin{minipage}[t]{0.50\cellwidth-\TileSep}
+                \centering
+                \titlerm{Querschnittsfläche $A_\text{S}$}\\ \vspace{-3mm}
+                \begin{equation*}
+                    A_\text{S} = \frac{\pi~d^2}{4}\left(1-k^2\right)
+                \end{equation*}%
+                \vspace{-4mm}
+                {\scriptsize
+                \begin{align*}
+                    A_\text{S} &= \text{Querschnittsfläche}    \\
+                    d          &= \text{Außendurchmesser}      \\
+                    k          &= \text{Durchmesserverhältnis} \\
+                    {\color{red}k} &{\color{red}= 0~\text{für Vollbolzen!}}
+                \end{align*}
+                }
+            \end{minipage}
         }{0}{0}{1}{0}
 
 \end{tikzpicture}
