@@ -384,10 +384,10 @@
 \begin{tikzpicture}[remember picture, overlay]
 
 % --- ERSTE REIHE: Am Seitenursprung anfangen
-\setlength{\rowheight}{62mm}
+\setlength{\rowheight}{50mm}
 
     % X1) Eigene Zeile für die Überschrift
-    \Tile{X1}{([xshift=10mm, yshift=-9mm]current page.north west)}{190mm}{6mm}
+    \Tile{X1}{([xshift=10mm, yshift=-9mm]current page.north west)}{190mm}{7mm}
         {
             \titlebf{Biegung}
         }{0}{0}{0}{0}
@@ -396,16 +396,105 @@
     \setlength{\cellwidth}{190mm}
     \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
         {
+            \vspace{-\TileSep}
             \titlerm{Versagens-Biegemoment $M_\text{b,V}$}\\ \vspace{2mm}
-            \begin{minipage}{0.5\cellwidth-\TileSep}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
-                TBD
+                \titlerm{Roloff / Matek}\\ \vspace{-2mm}
+                \begin{equation*}
+                    M_\text{b,V} = \sigma_\text{b,zul}~\frac{\pi~d^3}{32}\,\left(1-k^4\right)
+                \end{equation*}
+                \vspace{-2.5mm}
+                {\scriptsize
+                \begin{align*}
+                    M_\text{b,V}        &= \text{Versagensbiegemoment}    \\
+                    \sigma_\text{b,zul} &= \text{Zulässige Biegespannung} \\
+                    W_\text{b}          &= \text{Biegegwiderstandsmoment} \\
+                    d                   &= \text{Außendurchmesser}        \\
+                    k                   &= \text{Durchmesserverhältnis}
+                \end{align*}
+                }
             \end{minipage}%
             \vline
-            \begin{minipage}{0.5\cellwidth-\TileSep}
+            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
-                TBD
+                \titlerm{Handbuch Strukturberechnung (HSB)}\\ \vspace{-2.5mm}
+                \begin{equation*}
+                    M_\text{b,V} = C_\text{b}~\sigma_\text{b,zul}~W_\text{b} = C_\text{b}~\sigma_\text{b,zul}~\frac{\pi~d^3}{32}\,\left(1-k^4\right)
+                \end{equation*}
+                \vspace{-3mm}
+                {\scriptsize
+                \begin{align*}
+                    M_\text{b,V}        &= \text{Versagensbiegemoment}    \\
+                    C_\text{b}          &= \text{Formfaktor}              \\
+                    \sigma_\text{b,zul} &= \text{Zulässige Biegespannung} \\
+                    W_\text{b}          &= \text{Biegegwiderstandsmoment} \\
+                    d                   &= \text{Außendurchmesser}        \\
+                    k                   &= \text{Durchmesserverhältnis}
+                \end{align*}
+                }
             \end{minipage}
         }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Unten anbauen
+\setlength{\rowheight}{60mm}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{58mm}
+    \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
+    {
+        \titlerm{Zulässige Biegespannung $\sigma_\text{b,zul}$}\\ \vspace{1mm}
+        \titlerm{HSB}\\ \vspace{-2mm}
+        \begin{equation*}
+            \sigma_\text{b,zul} =
+            \begin{cases}
+                R_\text{m} \\
+                \text{1,5}~R_\text{p0,2}
+            \end{cases}
+        \end{equation*}
+        \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
+        \titlerm{Roloff / Matek}\\ \vspace{1mm}
+        \begin{align*}
+            \text{Ruhend:}~~    &\sigma_\text{b,zul} = \text{0,3}~R_\text{m} \\
+            \text{Schwellend:}~~&\sigma_\text{b,zul} = \text{0,2}~R_\text{m} \\
+            \text{Wechselnd:}~~ &\sigma_\text{b,zul} = \text{0,15}~R_\text{m}
+        \end{align*}
+    }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{48mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+    {
+        \titlerm{Durchmesserverhältnis $k$}\\ \vspace{-2mm}
+        \begin{equation*}
+            k = \frac{d_i}{d}
+        \end{equation*}
+        {\scriptsize
+        \begin{align*}
+            k   &= \text{Durchmesserverhältnis} \\
+            d_i &= \text{Innendurchmesser}      \\
+            d   &= \text{Außendurchmesser}      \\
+            \color{red}k &\color{red}= 0 \text{ für Vollbolzen!}
+        \end{align*}
+        }
+    }{0}{1}{1}{0}
+
+    % C2) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{84mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+    {
+        \titlerm{Formfaktor $C_\text{b}$}\\ \vspace{1mm}
+        TBD
+    }{0}{0}{1}{0}
+
+% --- DRITTE REIHE: Unten anbauen
+\setlength{\rowheight}{50mm}
+
+    % A3) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+    {
+        TBD
+    }{0}{0}{1}{0}
 
 \end{tikzpicture}
