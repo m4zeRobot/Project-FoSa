@@ -47,7 +47,7 @@
         }{0}{0}{1}{0}
 
 % --- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{80mm}
+\setlength{\rowheight}{79mm}
 
     % X2) Eigene Zeile für die Überschrift
     \Tile{X2}{(A1.south west)}{190mm}{8mm}
@@ -114,9 +114,10 @@
                     \tau_\text{max} &= \text{Max. Schubspannung}       \\
                     \tau_\text{m}   &= \text{Mittlere Schubspannung}   \\
                     k               &= \text{Durchmesserverhältnis}    \\
-                    {\color{red}k}  &{\color{red}= 0~\text{für Vollbolzen!}}
+                    \color{red}k &\color{red}= 0 \text{ für Vollbolzen!}
                 \end{align*}
                 }
+                \vspace{-4.25mm}
             \end{minipage}%
             \vline
             \begin{minipage}[t]{0.55\cellwidth-\TileSep}
@@ -178,12 +179,14 @@
             }
             \\ \vspace{1.75mm}
             \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
-            \begin{minipage}[t]{0.5\cellwidth-\TileSep}
+            \begin{minipage}[t]{0.492\cellwidth-\TileSep}
                 \centering
                 \titlerm{Abminderungsfaktor $\alpha$}\\ \vspace{0.8mm}
-                \includegraphics[width=0.40\cellwidth]{images/bolzen-diagramm-abminderungsfaktor.pdf}
+                \includegraphics[width=0.39\cellwidth]{images/bolzen-diagramm-abminderungsfaktor.pdf}
             \end{minipage}%
             \vline
+            \hspace{0.5\TileSep}
+            \resizebox{0.46\cellwidth}{!}{%
             \begin{minipage}[t]{0.5\cellwidth-\TileSep}
                 \centering
                 \titlerm{Scherfestigkeit $R_\text{c}$}\\ \vspace{2.5mm}
@@ -193,49 +196,215 @@
                     R_\text{c} = \text{0,6}~R_\text{m}
                 \end{equation*}
                 \\ \vspace{-4mm}
-                \hspace{0.5\TileSep}\rule{\dimexpr(0.5\cellwidth-2\TileSep)}{0.5pt} \\ \vspace{0.5mm}
+                \rule{\dimexpr(0.5\cellwidth-\TileSep)}{0.5pt} \\ \vspace{0.5mm}
+                {\scriptsize
+                \vspace{1mm}
+                Anwendung des Abminderungs-\\
+                faktors $\alpha$ wenn gilt:\\[1.8ex]
+                6\,mm $\leq d \leq$ 40\,mm\\[1.0ex]
+                Spielpassung H8/f8 oder enger
+                }
             \end{minipage}
+            }
         }{0}{0}{1}{0}
 
 % --- DRITTE REIHE: Unten anbauen
-\setlength{\rowheight}{40mm}
+\setlength{\rowheight}{24mm}
 
     % A3) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{190mm}
+    \setlength{\cellwidth}{95mm}
     \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
-        {            
-            \begin{minipage}[t]{0.50\cellwidth-\TileSep}
+        {
+            \titlerm{Durchmesserverhältnis $k$}\\ \vspace{-2mm}
+            \begin{minipage}{0.2\cellwidth-\TileSep}
                 \centering
-                \titlerm{Durchmesserverhältnis $k$}\\ \vspace{-3mm}
                 \begin{equation*}
                     k = \frac{d_i}{d}
-                \end{equation*}%
-                \vspace{-4mm}
+                \end{equation*}
+            \end{minipage}%
+            \begin{minipage}{0.45\cellwidth-\TileSep}
+                \centering
                 {\scriptsize
                 \begin{align*}
                     k   &= \text{Durchmesserverhältnis} \\
                     d_i &= \text{Innendurchmesser}      \\
                     d   &= \text{Außendurchmesser}      \\
-                    {\color{red}k} &{\color{red}= 0~\text{für Vollbolzen!}}
+                    \color{red}k &\color{red}= 0 \text{ für Vollbolzen!}
                 \end{align*}
                 }
-            \end{minipage}%
-            \vline
-            \begin{minipage}[t]{0.50\cellwidth-\TileSep}
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+    % B3) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{95mm}
+    \Tile{B3}{(A3.north east)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Querschnittsfläche $A_\text{S}$}\\ \vspace{-2mm}
+            \begin{minipage}{0.35\cellwidth-\TileSep}
                 \centering
-                \titlerm{Querschnittsfläche $A_\text{S}$}\\ \vspace{-3mm}
                 \begin{equation*}
                     A_\text{S} = \frac{\pi~d^2}{4}\left(1-k^2\right)
-                \end{equation*}%
-                \vspace{-4mm}
+                \end{equation*}
+            \end{minipage}%
+            \begin{minipage}{0.45\cellwidth-\TileSep}
+                \centering
                 {\scriptsize
                 \begin{align*}
                     A_\text{S} &= \text{Querschnittsfläche}    \\
                     d          &= \text{Außendurchmesser}      \\
                     k          &= \text{Durchmesserverhältnis} \\
-                    {\color{red}k} &{\color{red}= 0~\text{für Vollbolzen!}}
+                    \color{red}k &\color{red}= 0 \text{ für Vollbolzen!}
                 \end{align*}
                 }
+            \end{minipage}
+        }{0}{0}{1}{0}
+
+% --- VIERTE REIHE: Unten anbauen
+\setlength{\rowheight}{74mm}
+
+    % X4) Eigene Zeile für die Überschrift
+    \Tile{X4}{(A3.south west)}{190mm}{8mm}
+        {
+            \titlebf{Lochleibung}
+        }{0}{0}{0}{0}
+
+    % A4) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{64mm}
+    \Tile{A4}{(X4.south west)}{\cellwidth}{0.53\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Versagenslochleibungskraft $F_\text{L,V}$}\\ \vspace{-0.25mm}
+            \begin{equation*}
+                F_\text{L,V} = \sigma_\text{L,zul}~A_\text{proj}
+            \end{equation*}
+            \vspace{-1.5mm}
+            {\scriptsize
+            \begin{align*}
+                F_\text{L,V}        &= \text{Versagens-Lochleibungskraft}   \\
+                \sigma_\text{L,zul} &= \text{Zul. mittlere Flächenpressung} \\
+                A_\text{proj}       &= \text{Projizierte Bohrungsfläche}
+            \end{align*}
+            }
+        }{0}{1}{1}{0}
+
+    % B4) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{64mm}
+    \Tile{B4}{(A4.north east)}{\cellwidth}{0.53\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Projizierte Bohrungsfläche}\\ \vspace{-2mm}
+            \begin{equation*}
+                A_\text{proj} = \min
+                \begin{cases}
+                    d~t_\text{S}   & \text{Stangenkopf}\\
+                    2~d~t_\text{G} & \text{Gabel}
+                \end{cases}
+            \end{equation*}
+            \vspace{-2mm}
+            {\scriptsize
+            \begin{align*}
+                A_\text{proj} &= \text{Projizierte Bohrungsfläche} \\
+                d             &= \text{Außendurchmesser}           \\
+                t_\text{S}    &= \text{Dicke der Stange}           \\
+                t_\text{G}    &= \text{Dicke der Gabel}
+            \end{align*}
+            }
+        }{0}{0}{1}{0}
+
+    % C4) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{62mm}
+    \Tile{C4}{(B4.north east)}{\cellwidth}{\rowheight}
+        {
+            \vspace{-\TileSep}
+            \titlerm{Zul. Mittlere Flächenpressung $\sigma_\text{L,zul}$}\\ \vspace{-2mm}
+            \begin{equation*}
+                \sigma_\text{L,zul} = \min
+                \begin{cases}
+                    \sigma_\text{LB} \\
+                    \text{1,5}~\sigma_\text{L2}
+                \end{cases}
+            \end{equation*}
+            {\scriptsize
+            \begin{align*}
+                \sigma_\text{L,zul} &= \text{Zul. mittlere Flächenpressung} \\
+                \sigma_\text{LB}    &= \text{Lochleibungsfestigkeit}        \\
+                \sigma_\text{L2}    &= \text{Lochleibungsgrenze}
+            \end{align*}
+            }
+            {\color{red}Wenn $\sigma_\text{LB}$ \& $\sigma_\text{L2}$ nicht bekannt:}
+            \begin{align*}
+                \text{Ruhend:~~}     &\sigma_\text{L,zul} = \text{0,35}~R_\text{m} \\
+                \text{Schwellend:~~} &\sigma_\text{L,zul} = \text{0,25}~R_\text{m}
+            \end{align*}
+            $R_\text{m}$ des schwächeren Werkstoffes
+        }{0}{0}{0}{1}
+
+    % D4) Vierte Kachel wieder unten anbauen
+    \setlength{\cellwidth}{128mm}
+    \Tile{D4}{(A4.south west)}{\cellwidth}{0.47\rowheight}
+        {
+            \titlerm{Lochleibungs- \& Beschlagvielfaches $j_\text{s}$}\\ \vspace{2mm}
+            \begin{minipage}{0.38\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \myul{Typ I: Unbewegliche Verbindung}\\ \vspace{-3mm}
+                \begin{equation*}
+                    j_\text{s} = \text{1,0}
+                \end{equation*}
+                \\ \vspace{-1.5mm}
+                (Bed.: $e \geq \text{1,5}~d$~~\&~~$d < \text{5,5}~s$)\\[2.5ex]
+                \myul{Verbindungsglieder von Beschlägen}
+                \begin{equation*}
+                    j_\text{s} = \text{1,15}
+                \end{equation*}
+            \end{minipage}%
+            \begin{minipage}{0.62\cellwidth-\TileSep}
+                \centering
+                \scriptsize
+                \myul{Typ II: Bewegliche Verbindung (Gleitlager; $< 100$\,RpH)}\\ \vspace{2mm}
+                \resizebox{\textwidth}{!}{%
+                \small
+                \begin{tabular}{c|c|c}
+                    \xrowht[()]{1.9mm}Relativbewegung       & Stöße / Schwingungen  & Lochleibungsvielfaches \\ \hline
+                    \xrowht[()]{1.9mm}\color{red}Nein       & \color{red}Nein       & 1,0                    \\
+                    \xrowht[()]{1.9mm}\color{ForestGreen}Ja & \color{red}Nein       & 2,0                    \\
+                    \xrowht[()]{1.9mm}\color{red}Nein       & \color{ForestGreen}Ja & 2,0                    \\
+                    \xrowht[()]{1.9mm}\color{ForestGreen}Ja & \color{ForestGreen}Ja & 2,5
+                \end{tabular}
+                }
+            \end{minipage}
+        }{0}{0}{0}{0}
+
+\end{tikzpicture}
+
+% ### Zweite Seite der Bolzenverbindungen ###
+\newpage
+\centering
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{62mm}
+
+    % X1) Eigene Zeile für die Überschrift
+    \Tile{X1}{([xshift=10mm, yshift=-9mm]current page.north west)}{190mm}{6mm}
+        {
+            \titlebf{Biegung}
+        }{0}{0}{0}{0}
+
+    % A1) Erste Kachel am Seitenursprung ausrichten
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            \titlerm{Versagens-Biegemoment $M_\text{b,V}$}\\ \vspace{2mm}
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                TBD
+            \end{minipage}%
+            \vline
+            \begin{minipage}{0.5\cellwidth-\TileSep}
+                \centering
+                TBD
             \end{minipage}
         }{0}{0}{1}{0}
 
