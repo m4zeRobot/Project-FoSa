@@ -437,10 +437,10 @@
         }{0}{0}{1}{0}
 
 % --- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{60mm}
+\setlength{\rowheight}{56mm}
 
     % A2) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{58mm}
+    \setlength{\cellwidth}{56mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
     {
         \titlerm{Zulässige Biegespannung $\sigma_\text{b,zul}$}\\ \vspace{1mm}
@@ -453,7 +453,7 @@
             \end{cases}
         \end{equation*}
         \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
-        \titlerm{Roloff / Matek}\\ \vspace{1mm}
+        \titlerm{Roloff / Matek}\\ \vspace{-2mm}
         \begin{align*}
             \text{Ruhend:}~~    &\sigma_\text{b,zul} = \text{0,3}~R_\text{m} \\
             \text{Schwellend:}~~&\sigma_\text{b,zul} = \text{0,2}~R_\text{m} \\
@@ -462,13 +462,14 @@
     }{0}{1}{1}{0}
 
     % B2) Zweite Kachel rechts anbauen
-    \setlength{\cellwidth}{48mm}
+    \setlength{\cellwidth}{46mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
     {
         \titlerm{Durchmesserverhältnis $k$}\\ \vspace{-2mm}
         \begin{equation*}
             k = \frac{d_i}{d}
         \end{equation*}
+        \vspace{-2mm}
         {\scriptsize
         \begin{align*}
             k   &= \text{Durchmesserverhältnis} \\
@@ -480,7 +481,7 @@
     }{0}{1}{1}{0}
 
     % C2) Dritte Kachel rechts anbauen
-    \setlength{\cellwidth}{84mm}
+    \setlength{\cellwidth}{88mm}
     \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
     {
         \titlerm{Formfaktor $C_\text{b}$}\\ \vspace{1mm}
@@ -490,11 +491,22 @@
 % --- DRITTE REIHE: Unten anbauen
 \setlength{\rowheight}{50mm}
 
+    % X3) Eigene Zeile für die Überschrift
+    \Tile{X3}{(A2.south west)}{190mm}{7mm}
+        {
+            \titlebf{Zusätzliche Zugbelastung}
+        }{0}{0}{0}{0}
+
     % A3) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{190mm}
-    \Tile{A3}{(A2.south west)}{\cellwidth}{\rowheight}
+    \setlength{\cellwidth}{64mm}
+    \Tile{A3}{(X3.south west)}{\cellwidth}{\rowheight}
     {
-        TBD
-    }{0}{0}{1}{0}
+        \vspace{-\TileSep}
+        \titlerm{Zug- \& Scherbelastung}\\ \vspace{-2mm}
+        \begin{equation*}
+            R_\text{z}^2 + R_\text{s}^2 = \left(\frac{F_\text{z,B}}{F_\text{z,V}}\right)^2 + \left(\frac{F_\text{s,B}}{F_\text{s,V}}\right)^2 \stackrel{!}{\leq} 1
+        \end{equation*}
+        
+    }{0}{1}{1}{0}
 
 \end{tikzpicture}
