@@ -1,0 +1,25 @@
+% ### Erste Seite der Augenverbindungen ###
+\centering
+\section*{\myul{Augenverbindungen}}
+
+% Klebefläche für das erste Register:
+\begin{tikzpicture}[remember picture, overlay, x=1mm, y=-1mm]
+    \begin{scope}[shift={(current page.north west)}]
+        \draw (206,102) -- (202,102) -- (202,80) -- (206,80);
+        \node[rotate=90, anchor=center] at (204,91) {Augen};
+    \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% --- ERSTE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{50mm}
+
+    % A1) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{190mm}
+    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+        {
+            TBD
+        }{0}{0}{1}{0}
+
+\end{tikzpicture}
