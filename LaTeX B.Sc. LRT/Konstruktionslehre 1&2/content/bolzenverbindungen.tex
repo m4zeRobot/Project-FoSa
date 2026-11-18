@@ -17,7 +17,7 @@
 
     % A1) Erste Kachel unten anbauen
     \setlength{\cellwidth}{190mm}
-    \Tile{A1}{(X1.south west)}{\cellwidth}{\rowheight}
+    \Tile{A1}{([xshift=10mm, yshift=-16mm]current page.north west)}{\cellwidth}{\rowheight}
         {
             \vspace{-\TileSep}
             \begin{minipage}{0.68\cellwidth-\TileSep}
@@ -493,9 +493,9 @@
 
     % X3) Eigene Zeile für die Überschrift
     \Tile{X3}{(A2.south west)}{190mm}{7mm}
-        {
-            \titlebf{Zusätzliche Zugbelastung}
-        }{0}{0}{0}{0}
+    {
+        \titlebf{Zusätzliche Zugbelastung}
+    }{0}{0}{0}{0}
 
     % A3) Erste Kachel unten anbauen
     \setlength{\cellwidth}{63mm}
