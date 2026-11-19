@@ -437,10 +437,10 @@
         }{0}{0}{1}{0}
 
 % --- ZWEITE REIHE: Unten anbauen
-\setlength{\rowheight}{56mm}
+\setlength{\rowheight}{58mm}
 
     % A2) Erste Kachel unten anbauen
-    \setlength{\cellwidth}{56mm}
+    \setlength{\cellwidth}{55mm}
     \Tile{A2}{(A1.south west)}{\cellwidth}{\rowheight}
     {
         \titlerm{Zulässige Biegespannung $\sigma_\text{b,zul}$}\\ \vspace{1mm}
@@ -452,6 +452,7 @@
                 \text{1,5}~R_\text{p0,2}
             \end{cases}
         \end{equation*}
+        \\ \vspace{2mm}
         \rule{\dimexpr\cellwidth-2\TileSep}{0.5pt} \\ \vspace{0.5mm}
         \titlerm{Roloff / Matek}\\ \vspace{-2mm}
         \begin{align*}
@@ -462,7 +463,7 @@
     }{0}{1}{1}{0}
 
     % B2) Zweite Kachel rechts anbauen
-    \setlength{\cellwidth}{46mm}
+    \setlength{\cellwidth}{45mm}
     \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
     {
         \titlerm{Durchmesserverhältnis $k$}\\ \vspace{-2mm}
@@ -481,11 +482,20 @@
     }{0}{1}{1}{0}
 
     % C2) Dritte Kachel rechts anbauen
-    \setlength{\cellwidth}{88mm}
+    \setlength{\cellwidth}{90mm}
     \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
     {
-        \titlerm{Formfaktor $C_\text{b}$}\\ \vspace{1mm}
-        TBD
+        \titlerm{Formfaktor $C_\text{b}$}\\ \vspace{0.5mm}
+        \begin{minipage}{0.74\cellwidth-\TileSep}
+            \centering
+            \includegraphics[width=\textwidth]{images/bolzen-diagramm-formfaktor.pdf}
+        \end{minipage}%
+        \begin{minipage}{0.26\cellwidth-\TileSep}
+            \centering
+            \color{Red}$C_\text{b} = 1$\\
+            \color{Red}für \\
+            \color{Red}Vollbolzen!
+        \end{minipage}%
     }{0}{0}{1}{0}
 
 % --- DRITTE REIHE: Unten anbauen
@@ -575,7 +585,7 @@
     {
         \titlebf{Anwendungsfaktor $\mathbf{\textit{K}}_\text{A}$}\\ \vspace{2mm}
         \begin{tabular}{l|l|c|c}
-            \xrowht[()]{3mm}\textbf{Betriebsart} & \textbf{Bsp. für Maschinen / Bauteile} & \textbf{Stoßart} & $\mathbf{\textit{K}}_\text{A}$ \\ \hline
+            \xrowht[()]{3mm}\textbf{Betriebsart} & \textbf{Bsp. für Maschinen / Bauteile} & \textbf{Stoßart} & \textbf{$\textit{K}_\text{A}$} \\ \hline
             \xrowht[()]{6mm}Gleichförmige, umlaufende Bewegung & \begin{tabular}[c]{@{}l@{}}Elektrische Maschinen, Schleifmaschinen,\\ Dampf- und Wasserturbinen, umlaufende Verdichter\end{tabular} & leicht & 1,0 - 1,1 \\ \hline
             \xrowht[()]{6mm}\begin{tabular}[c]{@{}l@{}}Gleichförmige hin- und\\ hergehende Bewegungen\end{tabular} & \begin{tabular}[c]{@{}l@{}}Dampfmaschinen, Verbrennungskraftmaschinen,\\Hobel- und Drehmaschinen, Kolbenverdichter\end{tabular} & mittel & 1,2 - 1,4 \\ \hline
             \xrowht[()]{6mm}\begin{tabular}[c]{@{}l@{}}Umlaufende bzw. hin- und\\ herlaufende stoßüberlagerte Bewegungen\end{tabular} & \begin{tabular}[c]{@{}l@{}}Kunststoffpressen, Biege- und Richtmaschinen,\\ Walzwerksgetriebe\end{tabular} & mittelstark & 1,3 - 1,5 \\ \hline

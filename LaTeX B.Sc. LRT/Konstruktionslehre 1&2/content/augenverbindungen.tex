@@ -87,7 +87,7 @@
     \Tile{C1}{(B1.north east)}{\cellwidth}{\rowheight}
     {
         \vspace{-\TileSep}
-        \begin{minipage}{0.4\cellwidth-\TileSep}
+        \begin{minipage}{0.5\cellwidth-\TileSep}
             \centering
             \titlerm{Scheitelhöhe $s$}\\ \vspace{-1.5mm}
             \begin{equation*}
@@ -97,21 +97,78 @@
             \begin{equation*}
                 c \stackrel{!}{\geq}\frac{F_\text{B}~S_\text{M}}{2~t_\text{S}~R_\text{e}} + \frac{d_\text{L}}{3}
             \end{equation*}
+            \vspace{8mm}
         \end{minipage}%
-        \begin{minipage}{0.6\cellwidth-\TileSep}
+        \begin{minipage}{0.5\cellwidth-\TileSep}
             \centering
-            TBD
+            \includegraphics[width=0.8\textwidth]{images/augen-spannungen-maße.pdf}
         \end{minipage}%
-        \vspace{2mm}
+        \vspace{-10mm}
         {\scriptsize
         \begin{align*}
             a          &= \text{Scheitelhöhe}                                                    \\
             F_\text{B} &= \text{Bemessungslast}                                                  \\
-            S_\text{M} &= \text{Teilsicherheitsbeiwert } (\text{Allg.: }S_\text{M} = \text{1,1}) \\
             t_\text{S} &= \text{Dicke der Stange}                                                \\
             R_\text{e} &= \text{Streckgrenze}                                                    \\
+            S_\text{M} &= \text{Teilsicherheitsbeiwert } (\text{Allg.: }S_\text{M} = \text{1,1}) \\
             d_\text{L} &= \text{Lochdurchmesser}                                                 \\
             c          &= \text{Wangenbreite}
+        \end{align*}
+        }
+    }{0}{0}{1}{0}
+
+% --- ZWEITE REIHE: Am Seitenursprung anfangen
+\setlength{\rowheight}{50mm}
+
+    % X2) Eigene Zeile für die Überschrift
+    \Tile{X2}{(A1.south west)}{190mm}{8mm}
+    {
+        \titlebf{Augen- \& Bolzendimensionierung nach Handbuch Strukturberechnung (HSB)}
+    }{0}{0}{0}{0}
+
+    % A2) Erste Kachel unten anbauen
+    \setlength{\cellwidth}{42mm}
+    \Tile{A2}{(X2.south west)}{\cellwidth}{\rowheight}
+    {
+        \vspace{-\TileSep}
+        \titlerm{Lastrichtung}\\ \vspace{2mm}
+        \includegraphics[width=\cellwidth-4\TileSep]{images/augen-lastrichtung.pdf}
+    }{0}{1}{1}{0}
+
+    % B2) Zweite Kachel rechts anbauen
+    \setlength{\cellwidth}{70mm}
+    \Tile{B2}{(A2.north east)}{\cellwidth}{\rowheight}
+    {
+        \vspace{-\TileSep}
+        \titlerm{Fertigungsrichtung}\\ \vspace{4mm}
+        \includegraphics[width=\cellwidth-4\TileSep]{images/augen-fertigungsrichtung.pdf}\\ \vspace{4mm}
+        \begin{tabular}{rlr}
+             &  & Gewünscht \\
+            Richtung I: & Längsrichtung & L \\
+            Richtung II: & Querrichtung & LT, ST, T
+        \end{tabular}
+    }{0}{1}{1}{0}
+
+    % C2) Dritte Kachel rechts anbauen
+    \setlength{\cellwidth}{78mm}
+    \Tile{C2}{(B2.north east)}{\cellwidth}{\rowheight}
+    {
+        \vspace{-\TileSep}
+        \titlerm{Belastung in Längsrichtung (Richtung I)}\\ \vspace{1mm}
+        \begin{equation*}
+            F_\text{V} = \min\!
+            \begin{cases}
+                F_\text{w,V} \\
+                F_\text{s,V} \\
+                \text{1,5}~F_\text{FL,V}
+            \end{cases}
+        \end{equation*}
+        {\scriptsize
+        \begin{align*}
+            F_\text{V}    &= \text{Versagenslast}                          \\
+            F_\text{w,V}  &= \text{Versagenslast (Wangenbruch)}            \\
+            F_\text{s,V}  &= \text{Versagenslast (Ausscheren im Scheitel)} \\
+            F_\text{FL,V} &= \text{Versagenslast (Fließbelatung)}
         \end{align*}
         }
     }{0}{0}{1}{0}
